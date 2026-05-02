@@ -268,67 +268,10 @@ python app.py
 
 ---
 
-### Running with Docker
-
-```bash
-# Build and start all services
-docker-compose up --build
-
-# Stop all services
-docker-compose down
-```
-
----
-
-### Running with Kubernetes
-
-```bash
-# Apply all manifests
-kubectl apply -f k8s/
-
-# Check pod status
-kubectl get pods
-
-# Access via port-forward
-kubectl port-forward svc/api-gateway 8082:8082
-```
-
----
-
 ## 🔧 Configuration
 
 Most services read from **environment variables** with local defaults. **Keep secrets out of Git!**
 
-```env
-# MySQL
-DB_URL=jdbc:mysql://localhost:3306/healthcare_db
-DB_USERNAME=root
-DB_PASSWORD=yourpassword
-
-# PostgreSQL (Doctors_service)
-POSTGRES_URL=jdbc:postgresql://localhost:5432/doctors_db
-POSTGRES_USERNAME=postgres
-POSTGRES_PASSWORD=yourpassword
-
-# Redis (user-service, Doctors_service)
-REDIS_HOST=localhost
-REDIS_PORT=6379
-
-# JWT — must match across all services that validate tokens
-JWT_SECRET=your_jwt_secret_key
-JWT_EXPIRATION=86400000
-
-# OAuth2
-OAUTH2_CLIENT_ID=your_client_id
-OAUTH2_CLIENT_SECRET=your_client_secret
-
-# Internal service communication
-INTERNAL_API_KEY=your_internal_key
-```
-
-> ⚠️ `appointment-service` is strict about required env vars — see `services/appointment-service/src/main/resources/application.properties`.
-
----
 
 ## 🧪 Testing & Quality
 
