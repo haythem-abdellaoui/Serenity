@@ -1,0 +1,138 @@
+.page {
+  display: grid;
+  gap: 1rem;
+}
+
+.page-header {
+  display: grid;
+  gap: 0.45rem;
+  justify-items: start;
+  margin-bottom: 0;
+}
+
+.header-copy h1 {
+  margin: 0;
+}
+
+.header-copy p {
+  margin: 0.25rem 0 0;
+  color: #5d7d7a;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #d8e5ef;
+  border-radius: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tbody tr.clickable {
+  cursor: pointer;
+}
+
+tbody tr.clickable:hover {
+  background: #f8fbff;
+}
+
+tbody tr.clickable.active {
+  background: #eef7ff;
+}
+
+th,
+td {
+  padding: 0.7rem;
+  border-bottom: 1px solid #eef3f7;
+  text-align: left;
+}
+
+th {
+  background: #f4f9fc;
+}
+
+.actions {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 1px solid #c8d8e7;
+  background: #fff;
+  border-radius: 7px;
+  padding: 0.24rem 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.1;
+  cursor: pointer;
+}
+
+.status {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.status.pending {
+  color: #a86b0d;
+}
+
+.status.accepted,
+.status.ready_for_pickup {
+  color: #1f7a35;
+}
+
+.status.rejected {
+  color: #af2222;
+}
+
+.error {
+  color: #b52424;
+}
+
+.success {
+  color: #1d7a2a;
+}
+
+.details {
+  margin-top: 1rem;
+  border: 1px solid #d8e5ef;
+  border-radius: 12px;
+  background: #fff;
+  padding: 1rem;
+}
+
+.details-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.close-btn {
+  border: 1px solid #c8d8e7;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.35rem 0.65rem;
+}
+
+.line-items ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.line-items li {
+  margin-bottom: 0.4rem;
+}
+
+.med-name {
+  font-weight: 700;
+  margin-right: 0.55rem;
+}
+
+.meta {
+  margin-right: 0.75rem;
+  color: #47627b;
+}

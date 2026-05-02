@@ -1,0 +1,107 @@
+
+
+.breadcrumb {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+
+  .sep {
+    margin: 0 0.35rem;
+    opacity: 0.6;
+  }
+}
+
+select {
+  font: inherit;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+/* ═══ ICD-10 Autocomplete ═══ */
+.icd-field {
+  position: relative;
+}
+
+.icd-hint {
+  font-weight: 400;
+  color: #6c63ff;
+  font-size: 0.78rem;
+  margin-left: 0.4rem;
+}
+
+.icd-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #fff;
+  border: 1px solid var(--border, #d1d5db);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.icd-searching {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.saas-spinner-sm {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #e0e0e0;
+  border-top-color: #6c63ff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.icd-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover {
+    background: #f0efff;
+  }
+}
+
+.icd-code {
+  display: inline-block;
+  background: linear-gradient(135deg, #6c63ff, #48c6ef);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.icd-name {
+  font-size: 0.88rem;
+  color: #333;
+}
+
+.icd-empty {
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: #aaa;
+  text-align: center;
+}

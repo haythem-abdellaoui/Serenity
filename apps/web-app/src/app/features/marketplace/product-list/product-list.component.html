@@ -1,0 +1,134 @@
+<section class="marketplace-page container">
+  <header class="hero">
+    <h1>Articles Discovery</h1>
+    <p>Explore calm, supportive digital content through short previews before choosing to unlock.</p>
+  </header>
+
+  <div class="toolbar">
+    <div class="filters">
+      <input
+        type="text"
+        placeholder="Search products"
+        [(ngModel)]="query"
+        (ngModelChange)="onQueryInputChange()"
+        (keyup.enter)="loadProducts()" />
+
+      <select [(ngModel)]="selectedCategory" (change)="loadProducts()">
+        <option value="">All categories</option>
+        <option *ngFor="let c of categories" [value]="c.value">{{ c.label }}</option>
+      </select>
+
+      <select [(ngModel)]="selectedType" (change)="loadProducts()">
+        <option value="">All types</option>
+        <option *ngFor="let t of types" [value]="t.value">{{ t.label }}</option>
+      </select>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-secondary" routerLink="/marketplace/cart">Cart</a>
+      <a class="btn btn-secondary" routerLink="/marketplace/orders">My Unlocks</a>
+      <button class="btn btn-secondary" type="button" (click)="toggleQuiz()">
+        {{ showQuiz ? 'Hide Scan' : 'Find My Match' }}
+      </button>
+      <button class="btn btn-reset" type="button" [class.animating]="resetAnimating" (click)="clearFiltersSmooth()">
+        Reset
+      </button>
+    </div>
+  </div>
+
+  <section class="quiz-card" *ngIf="showQuiz">
+    <h3>30-second Wellness Scan</h3>
+    <p>Answer 3 quick questions and get product suggestions focused on your current needs.</p>
+
+    <div class="quiz-grid">
+      <label>
+        Anxiety level today
+        <select [(ngModel)]="anxietyLevel">
+          <option [ngValue]="1">1 - Very low</option>
+          <option [ngValue]="2">2 - Low</option>
+          <option [ngValue]="3">3 - Moderate</option>
+          <option [ngValue]="4">4 - High</option>
+          <option [ngValue]="5">5 - Very high</option>
+        </select>
+      </label>
+
+      <label>
+        Stress level this week
+        <select [(ngModel)]="stressLevel">
+          <option [ngValue]="1">1 - Very low</option>
+          <option [ngValue]="2">2 - Low</option>
+          <option [ngValue]="3">3 - Moderate</option>
+          <option [ngValue]="4">4 - High</option>
+          <option [ngValue]="5">5 - Very high</option>
+        </select>
+      </label>
+
+      <label>
+        Sleep support need
+        <select [(ngModel)]="sleepNeed">
+          <option [ngValue]="1">1 - Not needed</option>
+          <option [ngValue]="2">2 - Slightly needed</option>
+          <option [ngValue]="3">3 - Moderate</option>
+          <option [ngValue]="4">4 - Needed</option>
+          <option [ngValue]="5">5 - Strongly needed</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="quiz-actions">
+      <button class="btn btn-primary" type="button" [disabled]="quizSubmitting" (click)="submitQuiz()">
+        {{ quizSubmitting ? 'Analyzing...' : 'Get Recommendations' }}
+      </button>
+      <button class="btn btn-outline" type="button" (click)="resetQuiz()">Reset Scan</button>
+    </div>
+
+    <p class="quiz-error" *ngIf="quizError">{{ quizError }}</p>
+    <p class="quiz-reasoning" *ngIf="quizReasoning">{{ quizReasoning }}</p>
+
+    <div class="recommendation-grid" *ngIf="quizRecommendations.length > 0">
+      <article class="recommendation-item" *ngFor="let item of quizRecommendations">
+        <div>
+          <h4>{{ item.productName }}</h4>
+          <span class="rec-category">{{ item.category }}</span>
+        </div>
+        <strong class="rec-score">{{ item.confidence }}% match</strong>
+        <p>{{ item.reason }}</p>
+        <button class="btn btn-secondary" type="button" (click)="openDetails(item.productId)">View</button>
+      </article>
+    </div>
+  </section>
+
+  <p class="hint" *ngIf="isManager()">Manager mode enabled: catalog management APIs are active.</p>
+
+  <p *ngIf="loading">Loading products...</p>
+
+  <div class="grid" *ngIf="!loading && hasResults">
+    <article
+      class="product-card"
+      *ngFor="let product of products"
+      tabindex="0"
+      role="button"
+      (click)="openDetails(product.id)"
+      (keydown.enter)="openDetails(product.id)"
+      (keydown.space)="$event.preventDefault(); openDetails(product.id)">
+      <img [src]="product.imageUrl || 'assets/logo.png'" [alt]="product.name" />
+      <div class="content">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <div class="meta">
+          <span>{{ product.category }}</span>
+          <span>{{ product.type }}</span>
+        </div>
+        <strong class="price">{{ product.price | currency:'TND ' }}</strong>
+        <p class="supportive-note" *ngIf="isDigital(product)">Start with a gentle preview. Unlock only when you feel ready.</p>
+        <span class="card-hint">Tap to open details and preview options</span>
+      </div>
+    </article>
+  </div>
+
+  <section class="empty-state" *ngIf="!loading && !hasResults">
+    <h3>No articles match these filters yet</h3>
+    <p>Try broadening your search terms or clearing one filter to keep exploring calmly.</p>
+    <button class="btn btn-secondary" type="button" (click)="clearFiltersSmooth()">Clear filters</button>
+  </section>
+</section>

@@ -1,0 +1,66 @@
+<div class="container ocr-notifications-page admin-mode">
+  <div class="page-header">
+    <div class="page-title-group">
+      <h1>Insurance Workbench</h1>
+      <p class="page-subtitle">Claim mismatch alerts sent to admin accounts.</p>
+    </div>
+  </div>
+
+  <nav class="sub-tabs">
+    <a routerLink="/admin/insurance" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Claims</a>
+    <a routerLink="/admin/insurance/statistics" routerLinkActive="active">Statistics</a>
+    <a routerLink="/admin/insurance/ocr-notifications" routerLinkActive="active">Notifications</a>
+  </nav>
+
+  <div *ngIf="errorMessage" class="alert alert-error">{{ errorMessage }}</div>
+
+  <div class="summary-cards" *ngIf="!loading && !errorMessage">
+    <div class="summary-card">
+      <span class="label">Total Alerts</span>
+      <strong>{{ ocrNotifications.length }}</strong>
+    </div>
+    <div class="summary-card major">
+      <span class="label">Major Mismatches</span>
+      <strong>{{ majorCount }}</strong>
+    </div>
+    <div class="summary-card minor">
+      <span class="label">Minor Mismatches</span>
+      <strong>{{ minorCount }}</strong>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="loading-container">
+    <span class="spinner"></span>
+    <p>Loading OCR notifications...</p>
+  </div>
+
+  <div *ngIf="!loading && !errorMessage && ocrNotifications.length === 0" class="empty-state card">
+    <p>No OCR notifications found yet.</p>
+  </div>
+
+  <div *ngIf="!loading && !errorMessage && ocrNotifications.length > 0" class="card notifications-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Title</th>
+          <th>Message</th>
+          <th>Claim</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let n of ocrNotifications">
+          <td><span [class]="getTypeClass(n.type)">{{ getTypeLabel(n.type) }}</span></td>
+          <td>{{ n.title }}</td>
+          <td class="message-cell">{{ n.message }}</td>
+          <td>
+            <a *ngIf="n.claimId" [routerLink]="['/admin/insurance', n.claimId]">#{{ n.claimId }}</a>
+            <span *ngIf="!n.claimId">-</span>
+          </td>
+          <td>{{ n.createdAt | date:'medium' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

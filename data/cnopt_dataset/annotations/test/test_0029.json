@@ -1,0 +1,474 @@
+{
+  "id": "test_0029",
+  "image": "images/test/test_0029.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Lina Gharbi",
+    "registration_number": "RP-2022-017440",
+    "issue_date": "19/04/2025"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        90,
+        94,
+        146,
+        107
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        183,
+        79,
+        273,
+        100
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        283.203125,
+        79,
+        416.203125,
+        100
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        425.921875,
+        79,
+        481.921875,
+        100
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        491.375,
+        79,
+        694.375,
+        100
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        183,
+        116,
+        259,
+        132
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        266.0,
+        116,
+        354.0,
+        132
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        183,
+        145,
+        253,
+        160
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        78,
+        251,
+        256,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        265.9375,
+        251,
+        503.9375,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        78,
+        322,
+        138,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        145.984375,
+        323,
+        258.984375,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        266.203125,
+        327,
+        311.203125,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        319.046875,
+        328,
+        327.046875,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        78,
+        370,
+        134,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        141.640625,
+        371,
+        165.640625,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        173.4375,
+        369,
+        266.4375,
+        393
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        273.6875,
+        376,
+        281.6875,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lina",
+      "bbox": [
+        289,
+        370,
+        346,
+        388
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Gharbi",
+      "bbox": [
+        354.1875,
+        370,
+        444.1875,
+        388
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        78,
+        417,
+        173,
+        436
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        180.96875,
+        418,
+        328.96875,
+        441
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        336.8125,
+        424,
+        344.8125,
+        436
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2022-017440",
+      "bbox": [
+        352,
+        418,
+        575,
+        436
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        78,
+        466,
+        115,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        122.703125,
+        466,
+        229.703125,
+        487
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        237.359375,
+        471,
+        267.359375,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        273.90625,
+        466,
+        366.90625,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        374.515625,
+        466,
+        404.515625,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        412.140625,
+        466,
+        494.140625,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        501.75,
+        466,
+        544.75,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        551.875,
+        466,
+        714.875,
+        489
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        78,
+        514,
+        135,
+        532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        142.984375,
+        514,
+        290.984375,
+        537
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        298.828125,
+        520,
+        306.828125,
+        532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "19/04/2025",
+      "bbox": [
+        314,
+        514,
+        465,
+        534
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        78,
+        562,
+        133,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        140.421875,
+        568,
+        148.421875,
+        580
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        156,
+        562,
+        247,
+        580
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        78,
+        699,
+        117,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        123.859375,
+        698,
+        136.859375,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rennes,",
+      "bbox": [
+        144.34375,
+        700,
+        232.34375,
+        718
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        239.046875,
+        699,
+        259.046875,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "19/04/2025",
+      "bbox": [
+        265.6875,
+        700,
+        392.6875,
+        718
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        662,
+        757,
+        759,
+        776
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        764.859375,
+        756,
+        858.859375,
+        772
+      ],
+      "label": "O"
+    }
+  ]
+}

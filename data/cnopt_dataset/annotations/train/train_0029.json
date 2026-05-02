@@ -1,0 +1,474 @@
+{
+  "id": "train_0029",
+  "image": "images/train/train_0029.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Emma Chevalier",
+    "registration_number": "ORD-24-2025-5511",
+    "issue_date": "2023-04-30"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        88,
+        93,
+        144,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        181,
+        78,
+        271,
+        99
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        281.203125,
+        78,
+        337.203125,
+        99
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        346.65625,
+        78,
+        549.65625,
+        99
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        181,
+        115,
+        257,
+        131
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        264.0,
+        115,
+        352.0,
+        131
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        181,
+        144,
+        251,
+        159
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        76,
+        250,
+        287,
+        270
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        296.546875,
+        250,
+        534.546875,
+        270
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        76,
+        321,
+        136,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        143.984375,
+        322,
+        256.984375,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        264.203125,
+        326,
+        309.203125,
+        344
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        317.046875,
+        327,
+        325.046875,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        76,
+        369,
+        132,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        139.640625,
+        370,
+        163.640625,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        171.4375,
+        368,
+        264.4375,
+        392
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        271.6875,
+        375,
+        279.6875,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Emma",
+      "bbox": [
+        287,
+        369,
+        370,
+        387
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Chevalier",
+      "bbox": [
+        377.984375,
+        369,
+        505.984375,
+        387
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        76,
+        416,
+        171,
+        435
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        178.96875,
+        417,
+        326.96875,
+        440
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        334.8125,
+        423,
+        342.8125,
+        435
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-24-2025-5511",
+      "bbox": [
+        350,
+        417,
+        606,
+        435
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        76,
+        465,
+        200,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        207.984375,
+        464,
+        289.984375,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        297.265625,
+        464,
+        312.265625,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        319.59375,
+        465,
+        369.59375,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        376.8125,
+        465,
+        406.8125,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        414.4375,
+        470,
+        498.4375,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        505.59375,
+        465,
+        653.59375,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        661.4375,
+        470,
+        691.4375,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        697.984375,
+        465,
+        798.984375,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        76,
+        513,
+        133,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        140.984375,
+        513,
+        288.984375,
+        536
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        296.828125,
+        519,
+        304.828125,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-04-30",
+      "bbox": [
+        312,
+        513,
+        466,
+        531
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        76,
+        561,
+        131,
+        584
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        138.421875,
+        567,
+        146.421875,
+        579
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        154,
+        561,
+        245,
+        579
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        76,
+        698,
+        115,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        121.859375,
+        697,
+        134.859375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lille,",
+      "bbox": [
+        142.34375,
+        698,
+        193.34375,
+        717
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        200.453125,
+        698,
+        220.453125,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-04-30",
+      "bbox": [
+        227.09375,
+        699,
+        355.09375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        664,
+        756,
+        761,
+        775
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        766.859375,
+        755,
+        860.859375,
+        771
+      ],
+      "label": "O"
+    }
+  ]
+}

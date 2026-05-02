@@ -1,0 +1,514 @@
+{
+  "id": "train_0049",
+  "image": "images/train/train_0049.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Marie Ben Ali",
+    "registration_number": "ORD-74-2023-3928",
+    "issue_date": "2024-03-31"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        84,
+        77,
+        140,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        177,
+        62,
+        292,
+        83
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        301.3125,
+        62,
+        434.3125,
+        83
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        444.03125,
+        62,
+        483.03125,
+        83
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        492.8125,
+        62,
+        601.8125,
+        83
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        611.1875,
+        62,
+        667.1875,
+        83
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        676.640625,
+        62,
+        879.640625,
+        83
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        177,
+        99,
+        253,
+        115
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        260.0,
+        99,
+        348.0,
+        115
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        177,
+        128,
+        247,
+        143
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        72,
+        234,
+        283,
+        254
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        292.546875,
+        234,
+        530.546875,
+        254
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        72,
+        305,
+        132,
+        323
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        139.984375,
+        306,
+        252.984375,
+        323
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        260.203125,
+        310,
+        305.203125,
+        328
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        313.046875,
+        311,
+        321.046875,
+        323
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        72,
+        353,
+        128,
+        371
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        135.640625,
+        354,
+        159.640625,
+        371
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        167.4375,
+        352,
+        260.4375,
+        376
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        267.6875,
+        359,
+        275.6875,
+        371
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marie",
+      "bbox": [
+        283,
+        353,
+        359,
+        371
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Ben",
+      "bbox": [
+        367.8125,
+        353,
+        419.8125,
+        371
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Ali",
+      "bbox": [
+        427.84375,
+        353,
+        462.84375,
+        371
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        72,
+        400,
+        167,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        174.96875,
+        401,
+        322.96875,
+        424
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        330.8125,
+        407,
+        338.8125,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-74-2023-3928",
+      "bbox": [
+        346,
+        401,
+        602,
+        419
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        72,
+        449,
+        196,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        203.984375,
+        448,
+        285.984375,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        293.265625,
+        448,
+        308.265625,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        315.59375,
+        449,
+        365.59375,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        372.8125,
+        449,
+        402.8125,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        410.4375,
+        454,
+        494.4375,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        501.59375,
+        449,
+        649.59375,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        657.4375,
+        454,
+        687.4375,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        693.984375,
+        449,
+        794.984375,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        72,
+        497,
+        129,
+        515
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        136.984375,
+        497,
+        284.984375,
+        520
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        292.828125,
+        503,
+        300.828125,
+        515
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024-03-31",
+      "bbox": [
+        308,
+        497,
+        462,
+        515
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        72,
+        545,
+        127,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        134.421875,
+        551,
+        142.421875,
+        563
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        150,
+        545,
+        241,
+        563
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        72,
+        682,
+        111,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        117.859375,
+        681,
+        130.859375,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nantes,",
+      "bbox": [
+        138.34375,
+        683,
+        223.34375,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        229.84375,
+        682,
+        249.84375,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024-03-31",
+      "bbox": [
+        256.484375,
+        683,
+        384.484375,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        668,
+        740,
+        765,
+        759
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        770.859375,
+        739,
+        864.859375,
+        755
+      ],
+      "label": "O"
+    }
+  ]
+}

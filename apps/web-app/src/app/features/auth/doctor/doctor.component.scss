@@ -1,0 +1,493 @@
+.doctor-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem 2rem 2rem;
+  background: linear-gradient(135deg, #e8f6f5 0%, #f5faf9 40%, #eef5eb 100%);
+  animation: fadeInPage 0.5s ease-out;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.doctor-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: slideUpIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: bottom;
+
+  @media (max-width: 600px) {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+}
+
+@keyframes slideUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.doctor-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+    color: var(--text);
+    animation: slideInDown 0.6s ease-out;
+  }
+
+  p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    animation: slideInDown 0.6s ease-out 0.1s both;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.doctor-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounceIn 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 8px 24px rgba(59, 164, 160, 0.2);
+
+  .material-icons {
+    font-size: 1.75rem;
+    color: white;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.form-group {
+  margin-bottom: 1.75rem;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+
+  &:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+
+  &:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+
+  label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    letter-spacing: 0.3px;
+  }
+
+  .input-animated {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover:not(:focus) {
+      border-color: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 164, 160, 0.1);
+    }
+
+    &:focus {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.upload-hint {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin: -0.3rem 0 0.75rem;
+  font-style: italic;
+}
+
+.file-input-hidden {
+  display: none;
+}
+
+// Upload Button Styles
+.btn-upload-primary {
+  width: 100%;
+  padding: 1.25rem;
+  border: 2px dashed var(--primary);
+  border-radius: var(--radius);
+  background: rgba(59, 164, 160, 0.05);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-family: inherit;
+
+  .material-icons {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background: rgba(59, 164, 160, 0.12);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(59, 164, 160, 0.2);
+
+    .material-icons {
+      transform: scale(1.15) translateY(-2px);
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+// Image Preview Styles
+.image-preview-container {
+  animation: slideInUp 0.4s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-preview-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 1rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.image-preview {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  animation: zoomIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.btn-remove-image {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  color: var(--danger);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-family: inherit;
+
+  .material-icons {
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.btn-upload-new {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+
+  .material-icons {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background: rgba(59, 164, 160, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 164, 160, 0.35);
+
+    .material-icons {
+      transform: rotate(-15deg) scale(1.1);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Alert Styles with animations
+.alert {
+  animation: slideDown 0.4s ease-out;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-message {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Submit Button
+.btn-submit {
+  position: relative;
+  overflow: hidden;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 0.6s ease-out 0.5s both;
+
+  .material-icons {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 164, 160, 0.35);
+
+    .material-icons {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    &:hover {
+      transform: none;
+      box-shadow: var(--shadow);
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 600px) {
+  .doctor-container {
+    padding: 1rem;
+  }
+
+  .doctor-card {
+    padding: 1.5rem;
+  }
+
+  .doctor-header {
+    margin-bottom: 1.5rem;
+
+    h1 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  .doctor-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.75rem;
+
+    .material-icons {
+      font-size: 1.5rem;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-upload-primary {
+    padding: 1rem;
+    font-size: 0.9rem;
+
+    .material-icons {
+      font-size: 1.25rem;
+    }
+  }
+
+  .image-preview-wrapper {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 400px) {
+  .doctor-card {
+    padding: 1.25rem;
+  }
+
+  .doctor-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .btn-upload-primary,
+  .btn-upload-new {
+    padding: 0.9rem;
+    font-size: 0.85rem;
+  }
+}

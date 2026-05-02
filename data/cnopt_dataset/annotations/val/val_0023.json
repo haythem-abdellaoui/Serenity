@@ -1,0 +1,464 @@
+{
+  "id": "val_0023",
+  "image": "images/val/val_0023.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Thomas Simon",
+    "registration_number": "ORD-59-2023-7967",
+    "issue_date": "2022-07-14"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        93,
+        79,
+        149,
+        92
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        186,
+        64,
+        276,
+        85
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        286.203125,
+        64,
+        342.203125,
+        85
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        351.65625,
+        64,
+        554.65625,
+        85
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        186,
+        101,
+        262,
+        117
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        269.0,
+        101,
+        357.0,
+        117
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        186,
+        130,
+        256,
+        145
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        81,
+        236,
+        259,
+        256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        268.9375,
+        236,
+        506.9375,
+        256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        81,
+        307,
+        141,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        148.984375,
+        308,
+        261.984375,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        269.203125,
+        312,
+        314.203125,
+        330
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        322.046875,
+        313,
+        330.046875,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        81,
+        355,
+        137,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        144.640625,
+        356,
+        168.640625,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        176.4375,
+        354,
+        269.4375,
+        378
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        276.6875,
+        361,
+        284.6875,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Thomas",
+      "bbox": [
+        292,
+        355,
+        397,
+        373
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Simon",
+      "bbox": [
+        405.8125,
+        355,
+        489.8125,
+        373
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        81,
+        402,
+        176,
+        421
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        183.96875,
+        403,
+        331.96875,
+        426
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        339.8125,
+        409,
+        347.8125,
+        421
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-59-2023-7967",
+      "bbox": [
+        355,
+        403,
+        611,
+        421
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        81,
+        451,
+        118,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        125.703125,
+        451,
+        232.703125,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        240.359375,
+        456,
+        270.359375,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        276.90625,
+        451,
+        369.90625,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        377.515625,
+        451,
+        407.515625,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        415.140625,
+        451,
+        497.140625,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        504.75,
+        451,
+        547.75,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        554.875,
+        451,
+        717.875,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        81,
+        499,
+        138,
+        517
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        145.984375,
+        499,
+        293.984375,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        301.828125,
+        505,
+        309.828125,
+        517
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2022-07-14",
+      "bbox": [
+        317,
+        499,
+        471,
+        517
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        81,
+        547,
+        136,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        143.421875,
+        553,
+        151.421875,
+        565
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        159,
+        547,
+        250,
+        565
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        81,
+        684,
+        120,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        126.859375,
+        683,
+        139.859375,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lyon,",
+      "bbox": [
+        147.34375,
+        685,
+        205.34375,
+        706
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        211.984375,
+        684,
+        231.984375,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2022-07-14",
+      "bbox": [
+        238.625,
+        685,
+        366.625,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        659,
+        742,
+        756,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        761.859375,
+        741,
+        855.859375,
+        757
+      ],
+      "label": "O"
+    }
+  ]
+}

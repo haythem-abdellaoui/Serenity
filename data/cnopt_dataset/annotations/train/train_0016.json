@@ -1,0 +1,474 @@
+{
+  "id": "train_0016",
+  "image": "images/train/train_0016.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Luc Simon",
+    "registration_number": "ORD-69-2025-6153",
+    "issue_date": "20/02/2022"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        105,
+        95,
+        161,
+        108
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        198,
+        80,
+        288,
+        101
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        298.203125,
+        80,
+        431.203125,
+        101
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        440.921875,
+        80,
+        496.921875,
+        101
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        506.375,
+        80,
+        709.375,
+        101
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        198,
+        117,
+        274,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        281.0,
+        117,
+        369.0,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        198,
+        146,
+        268,
+        161
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        93,
+        252,
+        271,
+        272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        280.9375,
+        252,
+        518.9375,
+        272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        93,
+        323,
+        153,
+        341
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        160.984375,
+        324,
+        273.984375,
+        341
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        281.203125,
+        328,
+        326.203125,
+        346
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        334.046875,
+        329,
+        342.046875,
+        341
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        93,
+        371,
+        149,
+        389
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        156.640625,
+        372,
+        180.640625,
+        389
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        188.4375,
+        370,
+        281.4375,
+        394
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        288.6875,
+        377,
+        296.6875,
+        389
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Luc",
+      "bbox": [
+        304,
+        371,
+        351,
+        389
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Simon",
+      "bbox": [
+        358.984375,
+        371,
+        442.984375,
+        389
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        93,
+        418,
+        188,
+        437
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        195.96875,
+        419,
+        343.96875,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        351.8125,
+        425,
+        359.8125,
+        437
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-69-2025-6153",
+      "bbox": [
+        367,
+        419,
+        623,
+        437
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        93,
+        467,
+        130,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        137.703125,
+        467,
+        244.703125,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        252.359375,
+        472,
+        282.359375,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        288.90625,
+        467,
+        381.90625,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        389.515625,
+        467,
+        419.515625,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        427.140625,
+        467,
+        509.140625,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        516.75,
+        467,
+        559.75,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        566.875,
+        467,
+        729.875,
+        490
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        93,
+        515,
+        150,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        157.984375,
+        515,
+        305.984375,
+        538
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        313.828125,
+        521,
+        321.828125,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "20/02/2022",
+      "bbox": [
+        329,
+        515,
+        480,
+        535
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        93,
+        563,
+        148,
+        586
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        155.421875,
+        569,
+        163.421875,
+        581
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        171,
+        563,
+        262,
+        581
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        93,
+        700,
+        132,
+        717
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        138.859375,
+        699,
+        151.859375,
+        717
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Toulouse,",
+      "bbox": [
+        158.34375,
+        700,
+        262.34375,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        268.9375,
+        700,
+        288.9375,
+        717
+      ],
+      "label": "O"
+    },
+    {
+      "text": "20/02/2022",
+      "bbox": [
+        295.578125,
+        701,
+        422.578125,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        647,
+        758,
+        744,
+        777
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        749.859375,
+        757,
+        843.859375,
+        773
+      ],
+      "label": "O"
+    }
+  ]
+}

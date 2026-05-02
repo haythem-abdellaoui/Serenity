@@ -1,0 +1,464 @@
+{
+  "id": "train_0054",
+  "image": "images/train/train_0054.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Maroc",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Leila Moreau",
+    "registration_number": "ORD-16-2022-8695",
+    "issue_date": "2025-03-03"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        87,
+        88,
+        143,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        180,
+        73,
+        270,
+        94
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        280.203125,
+        73,
+        336.203125,
+        94
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        345.65625,
+        73,
+        548.65625,
+        94
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        180,
+        110,
+        256,
+        126
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        263.0,
+        110,
+        351.0,
+        126
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maroc",
+      "bbox": [
+        180,
+        139,
+        244,
+        154
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        75,
+        245,
+        286,
+        265
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        295.546875,
+        245,
+        533.546875,
+        265
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        75,
+        316,
+        135,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        142.984375,
+        317,
+        255.984375,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        263.203125,
+        321,
+        308.203125,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        316.046875,
+        322,
+        324.046875,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        75,
+        364,
+        131,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        138.640625,
+        365,
+        162.640625,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        170.4375,
+        363,
+        263.4375,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        270.6875,
+        370,
+        278.6875,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Leila",
+      "bbox": [
+        286,
+        364,
+        350,
+        382
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Moreau",
+      "bbox": [
+        358.609375,
+        364,
+        460.609375,
+        382
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        75,
+        411,
+        170,
+        430
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        177.96875,
+        412,
+        325.96875,
+        435
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        333.8125,
+        418,
+        341.8125,
+        430
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-16-2022-8695",
+      "bbox": [
+        349,
+        412,
+        605,
+        430
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        75,
+        460,
+        112,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        119.703125,
+        460,
+        226.703125,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        234.359375,
+        465,
+        264.359375,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        270.90625,
+        460,
+        363.90625,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        371.515625,
+        460,
+        401.515625,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        409.140625,
+        460,
+        491.140625,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        498.75,
+        460,
+        541.75,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        548.875,
+        460,
+        711.875,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        75,
+        508,
+        132,
+        526
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        139.984375,
+        508,
+        287.984375,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        295.828125,
+        514,
+        303.828125,
+        526
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-03-03",
+      "bbox": [
+        311,
+        508,
+        465,
+        526
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        75,
+        556,
+        130,
+        579
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        137.421875,
+        562,
+        145.421875,
+        574
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maroc",
+      "bbox": [
+        153,
+        556,
+        236,
+        574
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        75,
+        693,
+        114,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        120.859375,
+        692,
+        133.859375,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lyon,",
+      "bbox": [
+        141.34375,
+        694,
+        199.34375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        205.984375,
+        693,
+        225.984375,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-03-03",
+      "bbox": [
+        232.625,
+        694,
+        360.625,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        665,
+        751,
+        762,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        767.859375,
+        750,
+        861.859375,
+        766
+      ],
+      "label": "O"
+    }
+  ]
+}

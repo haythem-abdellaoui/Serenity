@@ -1,0 +1,91 @@
+.page {
+  display: grid;
+  gap: 1rem;
+}
+
+.page-header p {
+  margin-top: 0.3rem;
+  color: #5f7e7c;
+}
+
+.default-card.empty {
+  background: #f7fcfb;
+}
+
+.default-card .name {
+  margin: 0.2rem 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.meta {
+  margin: 0.18rem 0;
+  color: #4f6f6c;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.85rem;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.top-row h3 {
+  margin: 0;
+}
+
+.status {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  background: #eef4f4;
+  color: #386260;
+}
+
+.status.pending {
+  background: #fff8e8;
+  color: #886920;
+}
+
+.status.accepted {
+  background: #e6f7ee;
+  color: #1d7a2a;
+}
+
+.status.rejected,
+.status.expired {
+  background: #fdeeee;
+  color: #b42d2d;
+}
+
+.status.ready_for_pickup,
+.status.collected {
+  background: #e9f4ff;
+  color: #1f5689;
+}
+
+.pickup {
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  background: #eaf7ec;
+  color: #196a24;
+  font-weight: 700;
+}
+
+.hint {
+  color: #5a7674;
+  margin: 0;
+}
+
+.error {
+  color: #b52424;
+}

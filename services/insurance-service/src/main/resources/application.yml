@@ -1,0 +1,59 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  config:
+    # Works whether you run from the service folder or repo root.
+    import: optional:file:./.env[.properties],optional:file:./services/insurance-service/.env[.properties]
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-ms: ${JWT_EXPIRATION}
+  upload:
+    dir: ${UPLOAD_DIR}
+  public-base-url: ${INSURANCE_PUBLIC_BASE_URL}
+  claim-risk-model:
+    url: ${CLAIM_RISK_MODEL_URL}
+  insurance-portal:
+    api-url: ${INSURANCE_PORTAL_API_URL}
+  status-poller:
+    fixed-delay-ms: ${INSURANCE_STATUS_POLLER_DELAY_MS}
+  ocr:
+    enabled: ${INSURANCE_OCR_ENABLED}
+    strict-major-block: ${INSURANCE_OCR_STRICT_MAJOR_BLOCK}
+    store-full-text: ${INSURANCE_OCR_STORE_FULL_TEXT}
+    admin-alert-user-ids: ${INSURANCE_OCR_ADMIN_ALERT_USER_IDS}
+    amount-major-diff-threshold: ${INSURANCE_OCR_AMOUNT_MAJOR_DIFF_THRESHOLD}
+    amount-minor-diff-threshold: ${INSURANCE_OCR_AMOUNT_MINOR_DIFF_THRESHOLD}
+    max-pages-per-pdf: ${INSURANCE_OCR_MAX_PAGES_PER_PDF}
+    max-chars-per-file: ${INSURANCE_OCR_MAX_CHARS_PER_FILE}
+    tesseract:
+      language: ${INSURANCE_OCR_LANG}
+      datapath: ${INSURANCE_OCR_TESSDATA_PATH}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

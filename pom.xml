@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>healthcare-system</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>healthcare-system</name>
+    <description>Aggregator POM: import this in IntelliJ so the Maven tool window lists all backend services.</description>
+
+    <properties>
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <!-- Default: CI/terminal environment variable -->
+        <!--suppress UnresolvedMavenProperty -->
+        <sonar.token>${env.SONAR_TOKEN}</sonar.token>
+        <!--
+          IMPORTANT:
+          Do NOT use a repo-wide glob here (e.g. **/target/site/jacoco/jacoco.xml).
+          In multi-module analysis that makes each module import other modules' coverage,
+          producing "File X.java not found in project sources" warnings and wrong coverage.
+
+          Using a relative path makes Sonar resolve it per-module (module baseDir).
+        -->
+        <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+
+        <!--
+          Per professor requirement we only write tests for the service layer.
+          So we measure coverage on service code only (across all microservices).
+        -->
+        <sonar.coverage.inclusions>**/service/**</sonar.coverage.inclusions>
+        <sonar.coverage.exclusions>
+            **/*Application.java,
+            **/controller/**,
+            **/dto/**,
+            **/entity/**,
+            **/repository/**,
+            **/config/**,
+            **/security/**,
+            **/exception/**,
+            **/mapper/**,
+            **/generated/**,
+            **/service/**/*Payload*.java,
+            **/service/**/*Mapper*.java,
+            **/service/**/*Client*.java
+        </sonar.coverage.exclusions>
+        <sonar.java.binaries>**/target/classes</sonar.java.binaries>
+
+    </properties>
+
+    <profiles>
+        <!-- Local dev convenience: load SONAR_TOKEN from a gitignored .env file -->
+        <profile>
+            <id>dotenv</id>
+            <activation>
+                <file>
+                    <exists>${maven.multiModuleProjectDirectory}/.env</exists>
+                </file>
+            </activation>
+            <properties>
+                <!--suppress UnresolvedMavenProperty -->
+                <sonar.token>${SONAR_TOKEN}</sonar.token>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>properties-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <executions>
+                            <execution>
+                                <id>load-dotenv</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>read-project-properties</goal>
+                                </goals>
+                                <configuration>
+                                    <files>
+                                        <file>${maven.multiModuleProjectDirectory}/.env</file>
+                                    </files>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.10.0.2594</version>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.12</version>
+
+                <executions>
+                    <!-- prepares agent for all tests -->
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+
+                    <!-- generates report after tests -->
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <modules>
+        <module>services/user-service</module>
+        <module>services/insurance-service</module>
+        <module>services/API_Gatewya</module>
+        <module>services/appointment-service</module>
+        <module>services/marketplace-service</module>
+        <module>services/monitoring-service</module>
+        <module>services/pharmacy-service</module>
+        <module>services/derbelmicroservice</module>
+    </modules>
+</project>

@@ -1,0 +1,514 @@
+{
+  "id": "train_0097",
+  "image": "images/train/train_0097.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Belgique",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Lina Martin",
+    "registration_number": "FR-PHAR-208873",
+    "issue_date": "02/04/2023"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        106,
+        79,
+        162,
+        92
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        199,
+        64,
+        289,
+        85
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        299.203125,
+        64,
+        355.203125,
+        85
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        364.65625,
+        64,
+        567.65625,
+        85
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        199,
+        101,
+        275,
+        117
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        282.0,
+        101,
+        370.0,
+        117
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Belgique",
+      "bbox": [
+        199,
+        129,
+        291,
+        149
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        94,
+        236,
+        305,
+        256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        314.546875,
+        236,
+        552.546875,
+        256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AU",
+      "bbox": [
+        562.015625,
+        236,
+        606.015625,
+        256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TABLEAU",
+      "bbox": [
+        615.3125,
+        236,
+        755.3125,
+        256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DE",
+      "bbox": [
+        765.515625,
+        236,
+        807.515625,
+        256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L’ORDRE",
+      "bbox": [
+        817.640625,
+        236,
+        948.640625,
+        256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        94,
+        307,
+        154,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        161.984375,
+        308,
+        274.984375,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        282.203125,
+        312,
+        327.203125,
+        330
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        335.046875,
+        313,
+        343.046875,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        94,
+        355,
+        150,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        157.640625,
+        356,
+        181.640625,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        189.4375,
+        354,
+        282.4375,
+        378
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        289.6875,
+        361,
+        297.6875,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lina",
+      "bbox": [
+        305,
+        355,
+        362,
+        373
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Martin",
+      "bbox": [
+        370.1875,
+        355,
+        459.1875,
+        373
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        94,
+        402,
+        189,
+        421
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        196.96875,
+        403,
+        344.96875,
+        426
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        352.8125,
+        409,
+        360.8125,
+        421
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-208873",
+      "bbox": [
+        368,
+        403,
+        598,
+        421
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        94,
+        451,
+        131,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        138.703125,
+        450,
+        308.703125,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        315.875,
+        451,
+        422.875,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        430.53125,
+        456,
+        460.53125,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        467.078125,
+        451,
+        560.078125,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        567.6875,
+        451,
+        597.6875,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        605.3125,
+        451,
+        687.3125,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        694.921875,
+        451,
+        737.921875,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        745.046875,
+        451,
+        908.046875,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        94,
+        499,
+        151,
+        517
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        158.984375,
+        499,
+        306.984375,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        314.828125,
+        505,
+        322.828125,
+        517
+      ],
+      "label": "O"
+    },
+    {
+      "text": "02/04/2023",
+      "bbox": [
+        330,
+        499,
+        481,
+        519
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        94,
+        547,
+        149,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        156.421875,
+        553,
+        164.421875,
+        565
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Belgique",
+      "bbox": [
+        172,
+        547,
+        291,
+        570
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        94,
+        684,
+        133,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        139.859375,
+        683,
+        152.859375,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Strasbourg,",
+      "bbox": [
+        160.34375,
+        684,
+        288.34375,
+        706
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        294.921875,
+        684,
+        314.921875,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "02/04/2023",
+      "bbox": [
+        321.5625,
+        685,
+        448.5625,
+        703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        646,
+        742,
+        743,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        748.859375,
+        741,
+        842.859375,
+        757
+      ],
+      "label": "O"
+    }
+  ]
+}

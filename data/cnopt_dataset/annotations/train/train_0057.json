@@ -1,0 +1,494 @@
+{
+  "id": "train_0057",
+  "image": "images/train/train_0057.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Marie Robert",
+    "registration_number": "FR-PHAR-799916",
+    "issue_date": "2025-12-20"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        86,
+        85,
+        142,
+        98
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        179,
+        70,
+        294,
+        91
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        303.3125,
+        70,
+        436.3125,
+        91
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        446.03125,
+        70,
+        485.03125,
+        91
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        494.8125,
+        70,
+        603.8125,
+        91
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        613.1875,
+        70,
+        669.1875,
+        91
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        678.640625,
+        70,
+        881.640625,
+        91
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        179,
+        107,
+        255,
+        123
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        262.0,
+        107,
+        350.0,
+        123
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        179,
+        136,
+        249,
+        151
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        74,
+        242,
+        285,
+        262
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        294.546875,
+        242,
+        532.546875,
+        262
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        74,
+        313,
+        134,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        141.984375,
+        314,
+        254.984375,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        262.203125,
+        318,
+        307.203125,
+        336
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        315.046875,
+        319,
+        323.046875,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        74,
+        361,
+        130,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        137.640625,
+        362,
+        161.640625,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        169.4375,
+        360,
+        262.4375,
+        384
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        269.6875,
+        367,
+        277.6875,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marie",
+      "bbox": [
+        285,
+        361,
+        361,
+        379
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Robert",
+      "bbox": [
+        369.8125,
+        361,
+        461.8125,
+        379
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        74,
+        408,
+        169,
+        427
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        176.96875,
+        409,
+        324.96875,
+        432
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        332.8125,
+        415,
+        340.8125,
+        427
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-799916",
+      "bbox": [
+        348,
+        409,
+        578,
+        427
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        74,
+        457,
+        111,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        118.703125,
+        457,
+        225.703125,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        233.359375,
+        462,
+        263.359375,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        269.90625,
+        457,
+        362.90625,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        370.515625,
+        457,
+        400.515625,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        408.140625,
+        457,
+        490.140625,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        497.75,
+        457,
+        540.75,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        547.875,
+        457,
+        710.875,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        74,
+        505,
+        131,
+        523
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        138.984375,
+        505,
+        286.984375,
+        528
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        294.828125,
+        511,
+        302.828125,
+        523
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-12-20",
+      "bbox": [
+        310,
+        505,
+        464,
+        523
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        74,
+        553,
+        129,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        136.421875,
+        559,
+        144.421875,
+        571
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        152,
+        553,
+        243,
+        571
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        74,
+        690,
+        113,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        119.859375,
+        689,
+        132.859375,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marseille,",
+      "bbox": [
+        140.34375,
+        690,
+        245.34375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        252.71875,
+        690,
+        272.71875,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-12-20",
+      "bbox": [
+        279.359375,
+        691,
+        407.359375,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        666,
+        748,
+        763,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        768.859375,
+        747,
+        862.859375,
+        763
+      ],
+      "label": "O"
+    }
+  ]
+}

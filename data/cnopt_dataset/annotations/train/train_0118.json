@@ -1,0 +1,524 @@
+{
+  "id": "train_0118",
+  "image": "images/train/train_0118.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Lina Durand",
+    "registration_number": "ORD-98-2022-0945",
+    "issue_date": "18 août 2023"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        106,
+        72,
+        162,
+        85
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        199,
+        57,
+        289,
+        78
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        299.203125,
+        57,
+        432.203125,
+        78
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        441.921875,
+        57,
+        497.921875,
+        78
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        507.375,
+        57,
+        710.375,
+        78
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        199,
+        94,
+        275,
+        110
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        282.0,
+        94,
+        370.0,
+        110
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        199,
+        123,
+        269,
+        138
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        94,
+        229,
+        272,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        281.9375,
+        229,
+        519.9375,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        94,
+        300,
+        154,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        161.984375,
+        301,
+        274.984375,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        282.203125,
+        305,
+        327.203125,
+        323
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        335.046875,
+        306,
+        343.046875,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        94,
+        348,
+        150,
+        366
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        157.640625,
+        349,
+        181.640625,
+        366
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        189.4375,
+        347,
+        282.4375,
+        371
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        289.6875,
+        354,
+        297.6875,
+        366
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lina",
+      "bbox": [
+        305,
+        348,
+        362,
+        366
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Durand",
+      "bbox": [
+        370.1875,
+        348,
+        469.1875,
+        366
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        94,
+        395,
+        189,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        196.96875,
+        396,
+        344.96875,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        352.8125,
+        402,
+        360.8125,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-98-2022-0945",
+      "bbox": [
+        368,
+        396,
+        624,
+        414
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        94,
+        444,
+        218,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        225.984375,
+        443,
+        307.984375,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        315.265625,
+        443,
+        330.265625,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        337.59375,
+        444,
+        387.59375,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        394.8125,
+        444,
+        424.8125,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        432.4375,
+        449,
+        516.4375,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        523.59375,
+        444,
+        671.59375,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        679.4375,
+        449,
+        709.4375,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        715.984375,
+        444,
+        816.984375,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        94,
+        492,
+        151,
+        510
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        158.984375,
+        492,
+        306.984375,
+        515
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        314.828125,
+        498,
+        322.828125,
+        510
+      ],
+      "label": "O"
+    },
+    {
+      "text": "18",
+      "bbox": [
+        330,
+        492,
+        363,
+        510
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "août",
+      "bbox": [
+        371.765625,
+        491,
+        432.765625,
+        510
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2023",
+      "bbox": [
+        441.375,
+        492,
+        508.375,
+        510
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        94,
+        540,
+        149,
+        563
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        156.421875,
+        546,
+        164.421875,
+        558
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        172,
+        540,
+        263,
+        558
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        94,
+        677,
+        133,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        139.859375,
+        676,
+        152.859375,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bordeaux,",
+      "bbox": [
+        160.34375,
+        677,
+        272.34375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        279.484375,
+        677,
+        299.484375,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "18",
+      "bbox": [
+        306.125,
+        678,
+        334.125,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "août",
+      "bbox": [
+        341.125,
+        676,
+        391.125,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023",
+      "bbox": [
+        397.625,
+        678,
+        453.625,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        646,
+        735,
+        743,
+        754
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        748.859375,
+        734,
+        842.859375,
+        750
+      ],
+      "label": "O"
+    }
+  ]
+}

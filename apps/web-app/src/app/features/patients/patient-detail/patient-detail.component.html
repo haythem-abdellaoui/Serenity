@@ -1,0 +1,30 @@
+<div class="container medical-page">
+  <div class="page-head">
+    <h1>Patient details</h1>
+    <div class="head-actions">
+      <a routerLink="/patients" class="btn btn-secondary">Back to list</a>
+      <a *ngIf="patient" [routerLink]="['/patients', patient.id, 'records']" class="btn btn-primary">Records</a>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="state-muted">Loading…</div>
+
+  <div *ngIf="patient && !loading" class="detail-card">
+    <dl class="detail-grid">
+      <dt>Last name</dt>
+      <dd>{{ patient.lastName }}</dd>
+      <dt>First name</dt>
+      <dd>{{ patient.firstName }}</dd>
+      <dt>Date of birth</dt>
+      <dd>{{ patient.dateOfBirth || '—' }}</dd>
+      <dt>Gender</dt>
+      <dd>{{ patient.gender || '—' }}</dd>
+      <dt>Blood type</dt>
+      <dd>{{ patient.bloodType || '—' }}</dd>
+      <dt>Phone</dt>
+      <dd>{{ patient.phone || '—' }}</dd>
+      <dt>Allergies</dt>
+      <dd>{{ patient.allergies || '—' }}</dd>
+    </dl>
+  </div>
+</div>

@@ -1,0 +1,157 @@
+<div class="container">
+  <section class="page">
+    <header class="page-header">
+      <div>
+        <h1>Pharmacist Workspace</h1>
+        <p>Track prescriptions faster and monitor low-stock medicines in one focused view.</p>
+      </div>
+      <div class="header-actions">
+        <a routerLink="/pharmacy/my-pharmacy" class="icon-link" aria-label="Manage Pharmacy">
+          <span class="icon-shell" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.22 7.22 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 13.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.58.23-1.13.54-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L2.71 8.48a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32a.5.5 0 0 0 .6.22l2.39-.96c.5.4 1.05.71 1.63.94l.36 2.54a.5.5 0 0 0 .49.42h3.8a.5.5 0 0 0 .49-.42l.36-2.54c.58-.23 1.13-.54 1.63-.94l2.39.96a.5.5 0 0 0 .6-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58ZM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7Z"/>
+            </svg>
+          </span>
+          <span>Manage Pharmacy</span>
+        </a>
+        <a routerLink="/pharmacy/inbox" class="btn btn-ghost btn-compact">Open Full Inbox</a>
+      </div>
+    </header>
+
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+    <p class="hint" *ngIf="loading">Loading dashboard data...</p>
+
+    <section class="filter-card" *ngIf="!loading">
+      <div class="search-block">
+        <label for="prescription-search">Search Prescriptions</label>
+        <input
+          id="prescription-search"
+          type="text"
+          placeholder="Search patient, doctor, pharmacy, or medicine..."
+          [(ngModel)]="search"
+          (ngModelChange)="onFiltersChanged()"
+        />
+      </div>
+
+      <div class="filter-grid">
+        <label class="field">
+          <span>Status</span>
+          <select [(ngModel)]="statusFilter" (ngModelChange)="onFiltersChanged()">
+            <option *ngFor="let option of statusOptions" [value]="option.value">{{ option.label }}</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>From Date</span>
+          <input type="date" [(ngModel)]="fromDate" (ngModelChange)="onFiltersChanged()" />
+        </label>
+
+        <label class="field">
+          <span>To Date</span>
+          <input type="date" [(ngModel)]="toDate" (ngModelChange)="onFiltersChanged()" />
+        </label>
+
+        <label class="field">
+          <span>Sort By</span>
+          <select [(ngModel)]="sortBy" (ngModelChange)="onFiltersChanged()">
+            <option *ngFor="let option of sortByOptions" [value]="option.value">{{ option.label }}</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Direction</span>
+          <select [(ngModel)]="direction" (ngModelChange)="onFiltersChanged()">
+            <option *ngFor="let option of directionOptions" [value]="option.value">{{ option.label }}</option>
+          </select>
+        </label>
+
+        <button type="button" class="btn btn-reset" (click)="resetFilters()">Reset Filters</button>
+      </div>
+    </section>
+
+    <section class="dashboard-grid" *ngIf="!loading">
+      <article class="panel prescriptions-panel">
+        <div class="panel-head">
+          <h2>Pharmacy Prescriptions</h2>
+          <span class="count-pill">{{ filteredPrescriptions.length }}</span>
+        </div>
+
+        <div class="prescription-list" *ngIf="filteredPrescriptions.length > 0; else emptyPrescriptions">
+          <article
+            class="prescription-row"
+            *ngFor="let item of filteredPrescriptions"
+            role="button"
+            tabindex="0"
+            (click)="openPrescription(item)"
+            (keydown.enter)="openPrescription(item)"
+            (keydown.space)="$event.preventDefault(); openPrescription(item)">
+            <div class="row-main">
+              <p class="title">{{ medicineSummary(item) }}</p>
+              <p class="meta">{{ item.patientName }} - {{ item.doctorName }}</p>
+              <p class="meta" *ngIf="extraLineCount(item) > 0">+{{ extraLineCount(item) }} more medicine line(s)</p>
+            </div>
+
+            <div class="row-side">
+              <span [class]="statusClass(item.status)">{{ item.status }}</span>
+              <p class="date">{{ item.createdAt | date:'mediumDate' }}</p>
+            </div>
+          </article>
+        </div>
+
+        <ng-template #emptyPrescriptions>
+          <p class="empty">No prescriptions match current filters.</p>
+        </ng-template>
+      </article>
+
+      <article class="panel stock-panel">
+        <div class="panel-head">
+          <h2>Low Stock (&lt;= 5)</h2>
+          <a routerLink="/pharmacy/stock" class="stock-cta" aria-label="Open stock">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.75-1.25c-.69 0-1.25.56-1.25 1.25v.75h15v-.75c0-.69-.56-1.25-1.25-1.25H5.75ZM19.5 9h-15v8.25c0 .69.56 1.25 1.25 1.25h12.5c.69 0 1.25-.56 1.25-1.25V9Zm-11 3.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 1 1 0 1.5h-5.5a.75.75 0 0 1-.75-.75Z"/>
+            </svg>
+            <span>Open Stock</span>
+          </a>
+        </div>
+
+        <div class="stock-list" *ngIf="lowStockItems.length > 0; else emptyStock">
+          <button
+            type="button"
+            class="stock-row"
+            *ngFor="let item of lowStockItems"
+            (click)="openStockManagement()">
+            <span class="name">{{ item.medicineName }}</span>
+            <span class="qty">{{ item.quantity }}</span>
+          </button>
+        </div>
+
+        <ng-template #emptyStock>
+          <p class="empty">No medicines are currently in low stock.</p>
+        </ng-template>
+
+        <div class="sub-section">
+          <div class="panel-head compact">
+            <h2>Needs Insurance Upload</h2>
+            <span class="count-pill">{{ insuranceMissingItems.length }}</span>
+          </div>
+
+          <div class="stock-list" *ngIf="insuranceMissingItems.length > 0; else emptyInsuranceMissing">
+            <button
+              type="button"
+              class="stock-row"
+              *ngFor="let item of insuranceMissingItems"
+              (click)="openPrescription(item)">
+              <span class="name">{{ medicineSummary(item) }} - {{ item.patientName }}</span>
+              <span class="qty">{{ item.readyAt | date:'shortTime' }}</span>
+            </button>
+          </div>
+
+          <ng-template #emptyInsuranceMissing>
+            <p class="empty">No overdue ready prescriptions are missing insurance upload.</p>
+          </ng-template>
+        </div>
+      </article>
+    </section>
+  </section>
+</div>
+

@@ -1,0 +1,504 @@
+{
+  "id": "test_0004",
+  "image": "images/test/test_0004.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Julie Moreau",
+    "registration_number": "RP-2025-965190",
+    "issue_date": "2025-09-26"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        98,
+        93,
+        154,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        191,
+        78,
+        306,
+        99
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        315.3125,
+        78,
+        448.3125,
+        99
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        458.03125,
+        78,
+        497.03125,
+        99
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        506.8125,
+        78,
+        615.8125,
+        99
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        625.1875,
+        78,
+        681.1875,
+        99
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        690.640625,
+        78,
+        893.640625,
+        99
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        191,
+        115,
+        267,
+        131
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        274.0,
+        115,
+        362.0,
+        131
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        191,
+        144,
+        261,
+        159
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        86,
+        250,
+        297,
+        270
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        306.546875,
+        250,
+        544.546875,
+        270
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        86,
+        321,
+        146,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        153.984375,
+        322,
+        266.984375,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        274.203125,
+        326,
+        319.203125,
+        344
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        327.046875,
+        327,
+        335.046875,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        86,
+        369,
+        142,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        149.640625,
+        370,
+        173.640625,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        181.4375,
+        368,
+        274.4375,
+        392
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        281.6875,
+        375,
+        289.6875,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Julie",
+      "bbox": [
+        295,
+        369,
+        356,
+        392
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Moreau",
+      "bbox": [
+        364.140625,
+        369,
+        466.140625,
+        387
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        86,
+        416,
+        181,
+        435
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        188.96875,
+        417,
+        336.96875,
+        440
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        344.8125,
+        423,
+        352.8125,
+        435
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2025-965190",
+      "bbox": [
+        360,
+        417,
+        583,
+        435
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        86,
+        465,
+        123,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        130.703125,
+        464,
+        300.703125,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        307.875,
+        465,
+        414.875,
+        486
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        422.53125,
+        470,
+        452.53125,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        459.078125,
+        465,
+        552.078125,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        559.6875,
+        465,
+        589.6875,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        597.3125,
+        465,
+        679.3125,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        686.921875,
+        465,
+        729.921875,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        737.046875,
+        465,
+        900.046875,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        86,
+        513,
+        143,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        150.984375,
+        513,
+        298.984375,
+        536
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        306.828125,
+        519,
+        314.828125,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-09-26",
+      "bbox": [
+        322,
+        513,
+        476,
+        531
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        86,
+        561,
+        141,
+        584
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        148.421875,
+        567,
+        156.421875,
+        579
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        164,
+        561,
+        255,
+        579
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        86,
+        698,
+        125,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        131.859375,
+        697,
+        144.859375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bordeaux,",
+      "bbox": [
+        152.34375,
+        698,
+        264.34375,
+        717
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        271.484375,
+        698,
+        291.484375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-09-26",
+      "bbox": [
+        298.125,
+        699,
+        426.125,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        654,
+        756,
+        751,
+        775
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        756.859375,
+        755,
+        850.859375,
+        771
+      ],
+      "label": "O"
+    }
+  ]
+}

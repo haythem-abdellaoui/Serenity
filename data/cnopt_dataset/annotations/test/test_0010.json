@@ -1,0 +1,514 @@
+{
+  "id": "test_0010",
+  "image": "images/test/test_0010.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Canada",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Antoine Ben Amor",
+    "registration_number": "RP-2023-195426",
+    "issue_date": "16 mars 2024"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        83,
+        86,
+        139,
+        99
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        176,
+        71,
+        266,
+        92
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        276.203125,
+        71,
+        332.203125,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        341.65625,
+        71,
+        544.65625,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        176,
+        108,
+        252,
+        124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        259.0,
+        108,
+        347.0,
+        124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Canada",
+      "bbox": [
+        176,
+        136,
+        256,
+        152
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        71,
+        243,
+        282,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        291.546875,
+        243,
+        529.546875,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        71,
+        314,
+        131,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        138.984375,
+        315,
+        251.984375,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        259.203125,
+        319,
+        304.203125,
+        337
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        312.046875,
+        320,
+        320.046875,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        71,
+        362,
+        127,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        134.640625,
+        363,
+        158.640625,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        166.4375,
+        361,
+        259.4375,
+        385
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        266.6875,
+        368,
+        274.6875,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Antoine",
+      "bbox": [
+        282,
+        362,
+        387,
+        380
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Ben",
+      "bbox": [
+        395.59375,
+        362,
+        447.59375,
+        380
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Amor",
+      "bbox": [
+        455.625,
+        362,
+        527.625,
+        380
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        71,
+        409,
+        166,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        173.96875,
+        410,
+        321.96875,
+        433
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        329.8125,
+        416,
+        337.8125,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2023-195426",
+      "bbox": [
+        345,
+        410,
+        568,
+        428
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        71,
+        458,
+        108,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        115.703125,
+        458,
+        222.703125,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        230.359375,
+        463,
+        260.359375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        266.90625,
+        458,
+        359.90625,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        367.515625,
+        458,
+        397.515625,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        405.140625,
+        458,
+        487.140625,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        494.75,
+        458,
+        537.75,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        544.875,
+        458,
+        707.875,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        71,
+        506,
+        128,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        135.984375,
+        506,
+        283.984375,
+        529
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        291.828125,
+        512,
+        299.828125,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": "16",
+      "bbox": [
+        307,
+        506,
+        340,
+        524
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "mars",
+      "bbox": [
+        348.765625,
+        511,
+        415.765625,
+        524
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2024",
+      "bbox": [
+        424.46875,
+        506,
+        491.46875,
+        524
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        71,
+        554,
+        126,
+        577
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        133.421875,
+        560,
+        141.421875,
+        572
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Canada",
+      "bbox": [
+        149,
+        554,
+        250,
+        572
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        71,
+        691,
+        110,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        116.859375,
+        690,
+        129.859375,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rennes,",
+      "bbox": [
+        137.34375,
+        692,
+        225.34375,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        232.046875,
+        691,
+        252.046875,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "16",
+      "bbox": [
+        258.6875,
+        692,
+        286.6875,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mars",
+      "bbox": [
+        293.6875,
+        696,
+        348.6875,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024",
+      "bbox": [
+        356.125,
+        692,
+        412.125,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        669,
+        749,
+        766,
+        768
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        771.859375,
+        748,
+        865.859375,
+        764
+      ],
+      "label": "O"
+    }
+  ]
+}

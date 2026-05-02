@@ -1,0 +1,464 @@
+{
+  "id": "train_0079",
+  "image": "images/train/train_0079.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Belgique",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Camille Martin",
+    "registration_number": "RP-2025-764308",
+    "issue_date": "15/05/2023"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        107,
+        78,
+        163,
+        91
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        200,
+        63,
+        290,
+        84
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        300.203125,
+        63,
+        356.203125,
+        84
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        365.65625,
+        63,
+        568.65625,
+        84
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        200,
+        100,
+        276,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        283.0,
+        100,
+        371.0,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Belgique",
+      "bbox": [
+        200,
+        128,
+        292,
+        148
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        95,
+        235,
+        306,
+        255
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        315.546875,
+        235,
+        553.546875,
+        255
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        95,
+        306,
+        155,
+        324
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        162.984375,
+        307,
+        275.984375,
+        324
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        283.203125,
+        311,
+        328.203125,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        336.046875,
+        312,
+        344.046875,
+        324
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        95,
+        354,
+        151,
+        372
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        158.640625,
+        355,
+        182.640625,
+        372
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        190.4375,
+        353,
+        283.4375,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        290.6875,
+        360,
+        298.6875,
+        372
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Camille",
+      "bbox": [
+        306,
+        354,
+        406,
+        372
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Martin",
+      "bbox": [
+        414.171875,
+        354,
+        503.171875,
+        372
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        95,
+        401,
+        190,
+        420
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        197.96875,
+        402,
+        345.96875,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        353.8125,
+        408,
+        361.8125,
+        420
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2025-764308",
+      "bbox": [
+        369,
+        402,
+        592,
+        420
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        95,
+        450,
+        132,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        139.703125,
+        450,
+        246.703125,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        254.359375,
+        455,
+        284.359375,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        290.90625,
+        450,
+        383.90625,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        391.515625,
+        450,
+        421.515625,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        429.140625,
+        450,
+        511.140625,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        518.75,
+        450,
+        561.75,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        568.875,
+        450,
+        731.875,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        95,
+        498,
+        152,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        159.984375,
+        498,
+        307.984375,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        315.828125,
+        504,
+        323.828125,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "15/05/2023",
+      "bbox": [
+        331,
+        498,
+        482,
+        518
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        95,
+        546,
+        150,
+        569
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        157.421875,
+        552,
+        165.421875,
+        564
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Belgique",
+      "bbox": [
+        173,
+        546,
+        292,
+        569
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        95,
+        683,
+        134,
+        700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        140.859375,
+        682,
+        153.859375,
+        700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lyon,",
+      "bbox": [
+        161.34375,
+        684,
+        219.34375,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        225.984375,
+        683,
+        245.984375,
+        700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "15/05/2023",
+      "bbox": [
+        252.625,
+        684,
+        379.625,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        645,
+        741,
+        742,
+        760
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        747.859375,
+        740,
+        841.859375,
+        756
+      ],
+      "label": "O"
+    }
+  ]
+}

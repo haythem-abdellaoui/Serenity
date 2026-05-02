@@ -1,0 +1,97 @@
+<div class="container medical-page">
+  <div class="page-head">
+    <h1>{{ isEdit ? 'Edit medical record' : 'New medical record' }}</h1>
+  </div>
+
+  <p class="breadcrumb" *ngIf="patientId">
+    <a routerLink="/patients">Patients</a>
+    <span class="sep">/</span>
+    <a [routerLink]="['/patients', patientId]">Patient</a>
+    <span class="sep">/</span>
+    <a [routerLink]="['/patients', patientId, 'records']">Records</a>
+  </p>
+
+  <div *ngIf="loading" class="state-muted">Loading…</div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="card-form" *ngIf="!loading">
+    <div class="form-grid">
+
+      <!-- ICD-10 Smart Diagnosis Field -->
+      <div class="field full icd-field">
+        <span>Diagnosis * <small class="icd-hint">🔍 ICD-10 autocomplete</small></span>
+        <input
+          type="text"
+          formControlName="diagnosis"
+          maxlength="255"
+          placeholder="Type a diagnosis (e.g. migraine, diabetes, asthma)..."
+          (input)="onDiagnosisInput($event)"
+          (blur)="hideIcdDropdown()"
+          autocomplete="off" />
+        <small class="err" *ngIf="form.get('diagnosis')?.invalid && form.get('diagnosis')?.touched">Required (max 255 characters)</small>
+
+        <!-- ICD-10 Dropdown -->
+        <div class="icd-dropdown" *ngIf="showIcdDropdown || icdSearching">
+          <div class="icd-searching" *ngIf="icdSearching">
+            <span class="saas-spinner-sm"></span> Searching ICD-10 codes...
+          </div>
+          <div
+            class="icd-item"
+            *ngFor="let result of icdResults"
+            (mousedown)="selectDiagnosis(result)">
+            <span class="icd-code">{{ result.code }}</span>
+            <span class="icd-name">{{ result.name }}</span>
+          </div>
+          <div class="icd-empty" *ngIf="!icdSearching && icdResults.length === 0">
+            No ICD-10 codes found
+          </div>
+        </div>
+      </div>
+
+      <label class="field">
+        <span>Date *</span>
+        <input type="date" formControlName="date" />
+        <small class="err" *ngIf="form.get('date')?.invalid && form.get('date')?.touched">Date is required</small>
+      </label>
+      <label class="field">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span>Severity *</span>
+          <button type="button" class="btn btn-sm" 
+                  style="background: linear-gradient(135deg, #6c63ff, #48c6ef); color: white; border: none; border-radius: 4px; padding: 2px 8px; font-size: 0.75rem; cursor: pointer; transition: transform 0.2s;"
+                  (click)="autoPredictSeverity()"
+                  [disabled]="aiPredicting">
+            ✨ {{ aiPredicting ? 'Predicting...' : 'Auto-Detect via AI' }}
+          </button>
+        </div>
+        <select formControlName="severity">
+          <option *ngFor="let s of severities" [value]="s">{{ s }}</option>
+        </select>
+        <small class="err" *ngIf="form.get('severity')?.invalid && form.get('severity')?.touched">Severity is required</small>
+      </label>
+      <label class="field">
+        <span>Status *</span>
+        <select formControlName="status">
+          <option *ngFor="let s of statuses" [value]="s">{{ s }}</option>
+        </select>
+        <small class="err" *ngIf="form.get('status')?.invalid && form.get('status')?.touched">Status is required</small>
+      </label>
+      <label class="field full">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+          <span>Notes</span>
+          <button type="button" class="btn btn-sm" 
+                  [ngStyle]="{'background': isListening ? '#ef4444' : '#10b981', 'color': 'white', 'border': 'none', 'border-radius': '4px', 'padding': '4px 10px', 'font-size': '0.75rem', 'cursor': 'pointer', 'transition': 'background 0.3s', 'display': 'flex', 'align-items': 'center', 'gap': '5px'}"
+                  (click)="startDictation()">
+            <span class="material-icons" style="font-size: 1rem;">{{ isListening ? 'mic' : 'mic_none' }}</span>
+            {{ isListening ? 'Listening... Speak now' : 'Dictate Notes' }}
+          </button>
+        </div>
+        <textarea formControlName="notes" rows="4" maxlength="2000" [placeholder]="isListening ? 'Listening to your voice... 🎤' : 'Add your consultation notes here...'"></textarea>
+        <small class="err" *ngIf="form.get('notes')?.invalid && form.get('notes')?.touched">Max 2000 characters</small>
+      </label>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+      <button type="submit" class="btn btn-primary" [disabled]="saving">Save</button>
+    </div>
+  </form>
+</div>

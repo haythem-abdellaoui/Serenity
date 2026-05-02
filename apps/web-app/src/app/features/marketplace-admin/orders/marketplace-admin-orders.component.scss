@@ -1,0 +1,447 @@
+// ─── Dark mode variables ──────────────────────
+$dark-bg: #0f1119;
+$dark-surface: #181b2a;
+$dark-card: #1e2235;
+$dark-border: #272b3f;
+$dark-hover: #252940;
+$dark-text: #8b90a7;
+$dark-text-bright: #e2e5f0;
+$accent: #3BA4A0;
+$danger: #f44747;
+$success: #4caf50;
+
+// ─── Page Layout ──────────────────────────────
+.admin-marketplace-page {
+  max-width: 1400px;
+  padding: 1.75rem 0;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  > div:first-child {
+    flex: 1;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: $dark-text-bright;
+      margin: 0 0 0.25rem 0;
+    }
+
+    .header-subtitle {
+      color: $dark-text;
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  .order-count {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background: rgba(59, 164, 160, 0.1);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    color: $accent;
+  }
+}
+
+// ─── Alert Messages ───────────────────────────
+.alert {
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  &.alert-success {
+    background: rgba(76, 175, 80, 0.15);
+    color: #4caf50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+  }
+
+  &.alert-error {
+    background: rgba(244, 71, 71, 0.15);
+    color: $danger;
+    border: 1px solid rgba(244, 71, 71, 0.3);
+  }
+}
+
+// ─── Loading & Empty States ───────────────────
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: $dark-text;
+  font-size: 0.95rem;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: $dark-text;
+
+  svg {
+    margin-bottom: 1rem;
+    stroke: $dark-text;
+    opacity: 0.5;
+  }
+
+  p {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+// ─── Orders Table ─────────────────────────────
+.orders-table-wrapper {
+  background: $dark-card;
+  border: 1px solid $dark-border;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+
+  thead {
+    background: $dark-surface;
+    border-bottom: 2px solid $dark-border;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  th {
+    padding: 0.875rem 1.25rem;
+    text-align: left;
+    font-weight: 700;
+    color: $dark-text;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  td {
+    padding: 0.875rem 1.25rem;
+    border-bottom: 1px solid $dark-border;
+    color: $dark-text-bright;
+  }
+
+  tbody tr:hover {
+    background: $dark-hover;
+  }
+
+  thead tr:hover {
+    background: $dark-surface;
+  }
+}
+
+// ─── Column Widths ────────────────────────────
+.col-id { width: 12%; }
+.col-customer { width: 22%; }
+.col-amount { width: 12%; }
+.col-items { width: 8%; }
+.col-status { width: 12%; }
+.col-date { width: 15%; }
+.col-actions { width: 19%; }
+
+// ─── Order Row ────────────────────────────────
+.order-row {
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
+  &.expanded {
+    background: rgba(59, 164, 160, 0.08) !important;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+}
+
+.expand-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: $accent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .order-row.expanded & svg {
+    transform: rotate(180deg);
+  }
+}
+
+// ─── Customer Info ────────────────────────────
+.customer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  .email {
+    color: $dark-text-bright;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+}
+
+.item-count {
+  display: inline-block;
+  background: rgba(59, 164, 160, 0.15);
+  color: $accent;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+// ─── Status Badge ─────────────────────────────
+.status-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+
+  &.status-paid {
+    background: rgba(76, 175, 80, 0.15);
+    color: #4caf50;
+  }
+
+  &.status-created {
+    background: rgba(59, 164, 160, 0.15);
+    color: $accent;
+  }
+
+  &.status-cancelled {
+    background: rgba(244, 71, 71, 0.15);
+    color: $danger;
+  }
+}
+
+// ─── Action Buttons ───────────────────────────
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.status-select {
+  padding: 0.5rem 0.75rem;
+  background: $dark-surface;
+  color: $dark-text-bright;
+  border: 1px solid $dark-border;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    border-color: $accent;
+    outline: none;
+  }
+
+  option {
+    background: $dark-surface;
+    color: $dark-text-bright;
+  }
+}
+
+.btn-delete {
+  background: rgba(244, 71, 71, 0.1);
+  color: $danger;
+  border: 1px solid rgba(244, 71, 71, 0.3);
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover:not(:disabled) {
+    background: rgba(244, 71, 71, 0.2);
+    border-color: $danger;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// ─── Order Details Row ────────────────────────
+.order-details-row {
+  background: rgba(59, 164, 160, 0.05);
+
+  td {
+    padding: 0 !important;
+    border: none !important;
+  }
+}
+
+.order-details {
+  padding: 1.5rem;
+  background: $dark-surface;
+  border-top: 1px solid $dark-border;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-section {
+  h4 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $accent;
+    margin: 0 0 0.75rem 0;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: $dark-text-bright;
+
+    strong {
+      color: $dark-text-bright;
+      font-weight: 600;
+    }
+  }
+}
+
+// ─── Order Items ──────────────────────────────
+.order-items {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $dark-border;
+
+  h4 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $accent;
+    margin: 0 0 1rem 0;
+  }
+}
+
+.items-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem;
+  background: $dark-card;
+  border-radius: 0.4rem;
+  border: 1px solid $dark-border;
+
+  .item-name {
+    font-weight: 500;
+    color: $dark-text-bright;
+  }
+
+  .item-qty,
+  .item-price {
+    color: $dark-text;
+    font-size: 0.875rem;
+  }
+
+  .item-price {
+    text-align: right;
+    font-weight: 600;
+    color: $accent;
+  }
+}
+
+// ─── Responsive ───────────────────────────────
+@media (max-width: 1024px) {
+  .col-id { width: 10%; }
+  .col-customer { width: 20%; }
+  .col-amount { width: 12%; }
+  .col-items { width: 8%; }
+  .col-status { width: 12%; }
+  .col-date { width: 12%; }
+  .col-actions { width: 26%; }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .orders-table {
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 0.625rem 0.875rem !important;
+  }
+
+  .col-id { width: 12%; }
+  .col-customer { width: 18%; }
+  .col-amount { width: 10%; }
+  .col-items { width: 8%; }
+  .col-status { width: 10%; }
+  .col-date { display: none; }
+  .col-actions { width: 34%; }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .status-select,
+  .btn-delete {
+    width: 100%;
+  }
+}
+

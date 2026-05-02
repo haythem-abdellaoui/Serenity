@@ -1,0 +1,146 @@
+<div class="dashboard-shell">
+  <div class="container dashboard-shell-inner">
+    <div class="dashboard-layout">
+      <section class="dashboard-left">
+        <div class="welcome-section">
+          <div class="welcome-icon">👋</div>
+          <div class="welcome-text">
+            <h1>Hello, {{ getDisplayName() }}!</h1>
+            <p>{{ activePreset.greeting }}</p>
+          </div>
+        </div>
+
+        <div class="cards-row">
+          <section class="card dash-card sticky-card">
+            <div class="dash-head">
+              <h2>{{ activePreset.focusTitle }}</h2>
+              <span class="chev material-icons" aria-hidden="true">chevron_right</span>
+            </div>
+            <div class="dash-subtitle">{{ activePreset.focusSubtitle }}</div>
+            <div class="dash-line"></div>
+            <div class="sticky-head">
+              <div class="sticky-meta">
+                <div class="dash-kicker">Sticky note</div>
+                <div class="sticky-pager">Page {{ stickyIndex + 1 }} / {{ stickyPageCount }}</div>
+              </div>
+              <div class="sticky-actions">
+                <button type="button" class="sticky-icon" (click)="pinCurrentSticky()" [disabled]="canPinCurrent">
+                  <span class="material-icons" aria-hidden="true">push_pin</span>
+                </button>
+                <button type="button" class="sticky-icon" (click)="stickyPrev()" [disabled]="stickyIndex === 0">
+                  <span class="material-icons" aria-hidden="true">chevron_left</span>
+                </button>
+                <button type="button" class="sticky-icon" (click)="stickyNext()" [disabled]="stickyIndex >= stickyPageCount - 1">
+                  <span class="material-icons" aria-hidden="true">chevron_right</span>
+                </button>
+                <button type="button" class="sticky-icon" (click)="stickyAddPage()">
+                  <span class="material-icons" aria-hidden="true">note_add</span>
+                </button>
+                <button type="button" class="sticky-icon danger" (click)="stickyDeletePage()">
+                  <span class="material-icons" aria-hidden="true">delete</span>
+                </button>
+              </div>
+            </div>
+
+            <textarea
+              class="sticky-text"
+              [attr.data-color]="stickyColor"
+              [value]="stickyCurrentText"
+              (input)="onStickyTextChange(($any($event.target)).value)"
+              placeholder="Write reminders for today… (resets at midnight)"
+              rows="6"
+            ></textarea>
+            <div class="sticky-saved-corner" [class.show]="stickySavedPulse">Saved</div>
+          </section>
+
+          <section class="card dash-card">
+            <div class="dash-head">
+              <h2>{{ activePreset.metricsTitle }}</h2>
+            </div>
+            <div class="metric">
+              <div class="metric-left">
+                <div class="metric-label">{{ activePreset.metricRows[0].label }}</div>
+                <div class="sparkline"></div>
+              </div>
+              <div class="metric-value">
+                {{ activePreset.metricRows[0].value }} <span>{{ activePreset.metricRows[0].unit }}</span>
+              </div>
+            </div>
+            <div class="metric">
+              <div class="metric-left">
+                <div class="metric-label">{{ activePreset.metricRows[1].label }}</div>
+                <div class="sparkline" [class.alt]="activePreset.metricRows[1].alt"></div>
+              </div>
+              <div class="metric-value">
+                {{ activePreset.metricRows[1].value }} <span>{{ activePreset.metricRows[1].unit }}</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="card dash-card">
+            <div class="dash-head">
+              <h2>{{ activePreset.circleTitle }}</h2>
+            </div>
+            <div class="care-mini">
+              <div class="care-mini-row" *ngFor="let p of activePreset.circleRows">
+                <div class="mini-avatar">{{ p.initials }}</div>
+                <div class="mini-meta">
+                  <div class="mini-name">{{ p.name }}</div>
+                  <div class="mini-role">{{ p.role }}</div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="contact-btn" (click)="onContactCareCircle()">{{ activePreset.contactLabel }}</button>
+          </section>
+        </div>
+
+        <div class="wide-sections">
+          <section class="card wide-card">
+            <div class="wide-head">
+              <h2>{{ activePreset.timelineTitle }}</h2>
+            </div>
+            <div class="wide-sub">{{ activePreset.timelineSubtitle }}</div>
+            <div class="timeline">
+              <div class="timeline-row" *ngFor="let appt of activePreset.timelineRows">
+                <div class="bullet"></div>
+                <div class="timeline-main">
+                  <div class="timeline-title">{{ appt.title }}</div>
+                  <div class="timeline-sub">{{ appt.when }}</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card wide-card">
+            <div class="wide-head">
+              <h2>{{ activePreset.listTitle }}</h2>
+            </div>
+            <div class="wide-sub">{{ activePreset.listSubtitle }}</div>
+            <div class="meds">
+              <div class="med-row" *ngFor="let med of activePreset.listRows">
+                <div class="med-name">{{ med.name }} <span class="med-muted">- {{ med.schedule }}</span></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="cards-grid" *ngIf="authService.isAdmin()">
+          <div class="card stat-card">
+            <div class="stat-icon icon-sage">
+              <span class="material-icons">group</span>
+            </div>
+            <div class="stat-info">
+              <p class="stat-label">Admin Access</p>
+              <p class="stat-value">
+                <a routerLink="/users">Manage Users</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Intentionally empty: keeps right side clean for the hero art -->
+      <aside class="dashboard-right" aria-hidden="true"></aside>
+    </div>
+  </div>
+</div>

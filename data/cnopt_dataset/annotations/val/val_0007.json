@@ -1,0 +1,474 @@
+{
+  "id": "val_0007",
+  "image": "images/val/val_0007.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Jean Garcia",
+    "registration_number": "FR-PHAR-778457",
+    "issue_date": "25/05/2022"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        92,
+        70,
+        148,
+        83
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        185,
+        55,
+        275,
+        76
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        285.203125,
+        55,
+        341.203125,
+        76
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        350.65625,
+        55,
+        553.65625,
+        76
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        185,
+        92,
+        261,
+        108
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        268.0,
+        92,
+        356.0,
+        108
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        185,
+        121,
+        255,
+        136
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        80,
+        227,
+        291,
+        247
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        300.546875,
+        227,
+        538.546875,
+        247
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        80,
+        298,
+        140,
+        316
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        147.984375,
+        299,
+        260.984375,
+        316
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        268.203125,
+        303,
+        313.203125,
+        321
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        321.046875,
+        304,
+        329.046875,
+        316
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        80,
+        346,
+        136,
+        364
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        143.640625,
+        347,
+        167.640625,
+        364
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        175.4375,
+        345,
+        268.4375,
+        369
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        275.6875,
+        352,
+        283.6875,
+        364
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jean",
+      "bbox": [
+        289,
+        346,
+        350,
+        369
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Garcia",
+      "bbox": [
+        357.875,
+        346,
+        443.875,
+        364
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        80,
+        393,
+        175,
+        412
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        182.96875,
+        394,
+        330.96875,
+        417
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        338.8125,
+        400,
+        346.8125,
+        412
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-778457",
+      "bbox": [
+        354,
+        394,
+        584,
+        412
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        80,
+        442,
+        204,
+        460
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        211.984375,
+        441,
+        293.984375,
+        460
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        301.265625,
+        441,
+        316.265625,
+        460
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        323.59375,
+        442,
+        373.59375,
+        460
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        380.8125,
+        442,
+        410.8125,
+        460
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        418.4375,
+        447,
+        502.4375,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        509.59375,
+        442,
+        657.59375,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        665.4375,
+        447,
+        695.4375,
+        460
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        701.984375,
+        442,
+        802.984375,
+        460
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        80,
+        490,
+        137,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        144.984375,
+        490,
+        292.984375,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        300.828125,
+        496,
+        308.828125,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": "25/05/2022",
+      "bbox": [
+        316,
+        490,
+        467,
+        510
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        80,
+        538,
+        135,
+        561
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        142.421875,
+        544,
+        150.421875,
+        556
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        158,
+        538,
+        249,
+        556
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        80,
+        675,
+        119,
+        692
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        125.859375,
+        674,
+        138.859375,
+        692
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nice,",
+      "bbox": [
+        146.34375,
+        675,
+        201.34375,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        208.53125,
+        675,
+        228.53125,
+        692
+      ],
+      "label": "O"
+    },
+    {
+      "text": "25/05/2022",
+      "bbox": [
+        235.171875,
+        676,
+        362.171875,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        660,
+        733,
+        757,
+        752
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        762.859375,
+        732,
+        856.859375,
+        748
+      ],
+      "label": "O"
+    }
+  ]
+}

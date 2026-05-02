@@ -1,0 +1,32 @@
+@import '../patient-list/patient-list.component.scss';
+
+.head-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.detail-card {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  max-width: 640px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0.75rem 1rem;
+  font-size: 0.95rem;
+
+  dt {
+    color: var(--text-light);
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--text);
+  }
+}

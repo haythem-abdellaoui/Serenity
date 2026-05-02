@@ -1,0 +1,204 @@
+<div class="dashboard-page">
+  <header class="dashboard-hero">
+    <div class="hero-text">
+      <p class="eyebrow">Monitoring</p>
+      <h1>Mood trends</h1>
+      <p class="subtitle">
+        One chart per patient. For each calendar day, all mood entries that day are averaged to a single point (one y per day on the x-axis). The line connects those daily points (mood 0–10 on Y).
+      </p>
+    </div>
+    <button type="button" class="btn-back" (click)="goBack()">Back to Monitoring</button>
+  </header>
+
+  <div *ngIf="loading" class="state-box">
+    <div class="spinner"></div>
+    <p>Loading analytics…</p>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-box">{{ errorMessage }}</div>
+
+  <div *ngIf="!loading && !errorMessage" class="dashboard-content">
+    <div *ngIf="patientDots.length === 0" class="state-box empty-state">
+      <p>No assigned patient mood entries yet.</p>
+    </div>
+
+    <section *ngIf="patientDots.length > 0" class="kpi-row">
+      <div class="kpi-card">
+        <span class="kpi-label">Portfolio average</span>
+        <span class="kpi-value">{{ portfolioAverageMood | number:'1.1-1' }}<span class="unit">/10</span></span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Crisis history</span>
+        <span class="kpi-value">{{ crisisPatientCount }}<span class="unit subtle">patients</span></span>
+      </div>
+      <div class="kpi-card accent-risk">
+        <span class="kpi-label">High risk</span>
+        <span class="kpi-value risk">{{ highRiskCount }}</span>
+      </div>
+    </section>
+
+    <section *ngIf="patientSeries.length > 0" class="patient-charts-section">
+      <h2 class="section-title">Mood over time</h2>
+      <p class="section-hint">Select a patient below or click a point. Multiple moods in the same second are averaged.</p>
+
+      <div class="patient-charts-grid">
+        <ng-container *ngFor="let series of patientSeries">
+          <article
+            *ngIf="patientDotById(series.patientId) as chartPatient"
+            class="patient-chart-card"
+            [class.card-active]="selectedPatient?.patientId === series.patientId">
+          <div class="card-top">
+            <div class="card-title-block">
+              <h3>{{ series.patientName }}</h3>
+              <span class="risk-pill" [ngClass]="getRiskClass(chartPatient.riskScore)">
+                Risk {{ chartPatient.riskScore | number:'1.0-0' }}
+              </span>
+            </div>
+            <button type="button" class="btn-focus" (click)="selectPatient(chartPatient)">Details</button>
+          </div>
+
+          <div class="chart-wrap">
+            <svg [attr.viewBox]="'0 0 ' + chartWidth + ' ' + chartHeight" class="curve-svg" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient [attr.id]="'fill-' + series.patientId" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" [attr.stop-color]="series.color" stop-opacity="0.14" />
+                  <stop offset="100%" [attr.stop-color]="series.color" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+
+              <g class="grid-lines">
+                <line
+                  *ngFor="let tick of yTicks"
+                  [attr.x1]="yAxisX"
+                  [attr.y1]="chartHeight - padding - (tick / 10) * (chartHeight - (padding * 2))"
+                  [attr.x2]="chartWidth - padding"
+                  [attr.y2]="chartHeight - padding - (tick / 10) * (chartHeight - (padding * 2))">
+                </line>
+              </g>
+
+              <line [attr.x1]="yAxisX" [attr.y1]="padding" [attr.x2]="yAxisX" [attr.y2]="xAxisY" class="axis"></line>
+              <line [attr.x1]="yAxisX" [attr.y1]="xAxisY" [attr.x2]="chartWidth - padding" [attr.y2]="xAxisY" class="axis"></line>
+
+              <path
+                *ngIf="series.path && series.points.length > 1"
+                [attr.d]="series.path + ' L ' + series.points[series.points.length - 1].x + ' ' + xAxisY + ' L ' + series.points[0].x + ' ' + xAxisY + ' Z'"
+                class="curve-area-fill"
+                [attr.fill]="'url(#fill-' + series.patientId + ')'"></path>
+
+              <path *ngIf="series.path" [attr.d]="series.path" class="curve-line-patient" [attr.stroke]="series.color"></path>
+
+              <text [attr.x]="chartWidth / 2" [attr.y]="chartHeight - 8" class="axis-label axis-label-x">Time</text>
+              <text
+                [attr.x]="14"
+                [attr.y]="chartHeight / 2"
+                [attr.transform]="'rotate(-90 14 ' + (chartHeight / 2) + ')'"
+                class="axis-label axis-label-y">
+                Mood (0–10)
+              </text>
+
+              <g *ngFor="let tick of yTicks">
+                <text
+                  [attr.x]="yAxisX - 10"
+                  [attr.y]="chartHeight - padding - (tick / 10) * (chartHeight - (padding * 2)) + 4"
+                  class="tick-label">
+                  {{ tick }}
+                </text>
+              </g>
+
+              <g *ngFor="let xt of series.xTicks">
+                <text [attr.x]="xt.x" [attr.y]="chartHeight - 26" class="tick-label tick-label-x">{{ xt.label }}</text>
+              </g>
+
+              <circle
+                *ngFor="let pt of series.points"
+                [attr.cx]="pt.x"
+                [attr.cy]="pt.y"
+                [attr.r]="selectedPatient?.patientId === series.patientId ? 7 : 5.5"
+                class="curve-dot-entry"
+                [attr.stroke]="series.color"
+                role="button"
+                tabindex="0"
+                [class.active]="selectedPatient?.patientId === series.patientId"
+                (mouseenter)="onChartPointEnter(chartPatient, pt.mood, pt.at, pt.aggregatedCount)"
+                (mouseleave)="onChartPointLeave()"
+                (keydown)="onChartPointKeydown($event, chartPatient)"
+                (click)="selectPatient(chartPatient)">
+              </circle>
+            </svg>
+
+            <div
+              class="chart-tooltip"
+              *ngIf="hoveredTooltip && hoveredTooltip.patientId === series.patientId">
+              <span class="tt-name">{{ hoveredTooltip.patientName }}</span>
+              <span class="tt-mood">
+                <ng-container *ngIf="hoveredTooltip.aggregatedCount > 1">
+                  {{ hoveredTooltip.mood | number:'1.1-1' }}/10
+                  <span class="tt-avg">(avg of {{ hoveredTooltip.aggregatedCount }} entries that day)</span>
+                </ng-container>
+                <ng-container *ngIf="hoveredTooltip.aggregatedCount <= 1">
+                  {{ hoveredTooltip.mood | number:'1.0-0' }}/10
+                </ng-container>
+              </span>
+              <span class="tt-time">{{ hoveredTooltip.at | date:'medium' }}</span>
+            </div>
+          </div>
+        </article>
+        </ng-container>
+      </div>
+    </section>
+
+    <div *ngIf="patientDots.length > 0" class="details-grid">
+      <aside class="rank-card">
+        <h2>Priority</h2>
+        <p class="aside-hint">Highest risk first</p>
+        <div class="rank-list">
+          <button
+            type="button"
+            *ngFor="let patient of rankedPatients"
+            class="rank-item"
+            [class.active]="selectedPatient?.patientId === patient.patientId"
+            (click)="selectPatient(patient)">
+            <span class="name">{{ patient.patientName }}</span>
+            <span class="score" [ngClass]="getRiskClass(patient.riskScore)">
+              {{ patient.riskScore | number:'1.0-0' }}
+            </span>
+          </button>
+        </div>
+      </aside>
+
+      <section *ngIf="selectedPatient" class="history-card">
+        <div class="history-header">
+          <div>
+            <h2>{{ selectedPatientName }}</h2>
+            <p class="patient-sub">Mood history &amp; notes</p>
+          </div>
+          <div class="mini-metrics">
+            <span class="metric">Risk {{ selectedPatient.riskScore | number:'1.0-0' }} · {{ getRiskBand(selectedPatient.riskScore) }}</span>
+            <span class="metric">Latest {{ selectedPatient.latestMood | number:'1.1-1' }}/10</span>
+            <span class="metric">Avg {{ selectedPatient.averageMood | number:'1.1-1' }}/10</span>
+            <span class="metric">Crisis {{ selectedPatient.crisisRate * 100 | number:'1.0-0' }}%</span>
+          </div>
+        </div>
+
+        <div class="history-list">
+          <div class="history-item" *ngFor="let entry of selectedPatient.entries">
+            <div class="entry-top">
+              <span class="score">{{ moodLevel(entry.moodScore) | number:'1.1-1' }}/10</span>
+              <span class="date">{{ entry.createdAt | date:'medium' }}</span>
+            </div>
+            <p class="desc">{{ entry.moodDescription }}</p>
+
+            <div class="triggers" *ngIf="getEntryTriggers(entry.id).length > 0">
+              <span class="trigger-chip" *ngFor="let trigger of getEntryTriggers(entry.id)">
+                {{ trigger.triggerType }} ({{ trigger.intensity }}/10)
+              </span>
+            </div>
+            <div class="no-trigger" *ngIf="getEntryTriggers(entry.id).length === 0">
+              No clinical triggers on this entry
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

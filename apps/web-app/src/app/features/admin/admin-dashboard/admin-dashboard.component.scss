@@ -1,0 +1,277 @@
+$dark-bg: #0f1119;
+$dark-surface: #181b2a;
+$dark-card: #1e2235;
+$dark-border: #272b3f;
+$dark-hover: #252940;
+$dark-text: #8b90a7;
+$dark-text-bright: #e2e5f0;
+$accent: #3BA4A0;
+
+.admin-page {
+  max-width: 1200px;
+}
+
+.page-title {
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: $dark-text-bright;
+    margin-bottom: 0.2rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: $dark-text;
+  }
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $dark-text-bright;
+    margin: 0;
+  }
+}
+
+.link-manage {
+  color: $accent;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: $dark-card;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid $dark-border;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: $accent;
+    box-shadow: 0 4px 12px rgba(59, 164, 160, 0.1);
+  }
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  &.blue { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+  &.green { background: rgba(76, 175, 80, 0.15); color: #4caf50; }
+  &.teal { background: rgba(59, 164, 160, 0.15); color: #5ec4c0; }
+  &.purple { background: rgba(139, 92, 246, 0.15); color: #bfa6f8; }
+  &.orange { background: rgba(255, 152, 0, 0.15); color: #ff9800; }
+  &.yellow { background: rgba(255, 193, 7, 0.15); color: #ffc107; }
+  &.red { background: rgba(244, 71, 71, 0.15); color: #f44747; }
+
+  svg {
+    stroke: currentColor;
+  }
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: $dark-text-bright;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: $dark-text;
+  font-weight: 500;
+}
+
+.loading-state {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  color: $dark-text;
+  font-size: 0.9rem;
+}
+
+.recent-section {
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $dark-text-bright;
+    margin-bottom: 1rem;
+  }
+}
+
+.table-card {
+  background: $dark-card;
+  border-radius: 0.75rem;
+  border: 1px solid $dark-border;
+  overflow: hidden;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      background: $dark-surface;
+      color: $dark-text;
+      border-bottom-color: $dark-border;
+      padding: 0.875rem 1.25rem;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      color: $dark-text-bright;
+      border-bottom-color: $dark-border;
+      padding: 0.875rem 1.25rem;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid $dark-border;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background: $dark-hover;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.user-avatar-sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 0.4rem;
+  background: linear-gradient(135deg, $accent, darken($accent, 8%));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+
+  &[data-role='ADMIN'] {
+    background: rgba(139, 92, 246, 0.15);
+    color: #bfa6f8;
+  }
+
+  &[data-role='DOCTOR'] {
+    background: rgba(76, 175, 80, 0.15);
+    color: #4caf50;
+  }
+
+  &[data-role='PHARMACIST'] {
+    background: rgba(255, 193, 7, 0.15);
+    color: #ffc107;
+  }
+
+  &[data-role='MARKETPLACE_MANAGER'] {
+    background: rgba(236, 72, 153, 0.15);
+    color: #f472b6;
+  }
+
+  &[data-role='PATIENT'] {
+    background: rgba(59, 164, 160, 0.15);
+    color: $accent;
+  }
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+
+  &.active {
+    background: #4caf50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  }
+
+  &.inactive {
+    background: $dark-text;
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+
+    th, td {
+      padding: 0.625rem 0.875rem !important;
+    }
+  }
+}

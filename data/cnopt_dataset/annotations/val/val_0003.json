@@ -1,0 +1,474 @@
+{
+  "id": "val_0003",
+  "image": "images/val/val_0003.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Australia",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Sophie Dupont",
+    "registration_number": "FR-PHAR-735683",
+    "issue_date": "2023-01-06"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        95,
+        85,
+        151,
+        98
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        188,
+        70,
+        278,
+        91
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        288.203125,
+        70,
+        344.203125,
+        91
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        353.65625,
+        70,
+        556.65625,
+        91
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        188,
+        107,
+        264,
+        123
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        271.0,
+        107,
+        359.0,
+        123
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Australia",
+      "bbox": [
+        188,
+        135,
+        281,
+        151
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        83,
+        242,
+        261,
+        262
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        270.9375,
+        242,
+        508.9375,
+        262
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        83,
+        313,
+        143,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        150.984375,
+        314,
+        263.984375,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        271.203125,
+        318,
+        316.203125,
+        336
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        324.046875,
+        319,
+        332.046875,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        83,
+        361,
+        139,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        146.640625,
+        362,
+        170.640625,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        178.4375,
+        360,
+        271.4375,
+        384
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        278.6875,
+        367,
+        286.6875,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sophie",
+      "bbox": [
+        294,
+        361,
+        387,
+        384
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Dupont",
+      "bbox": [
+        394.921875,
+        361,
+        493.921875,
+        384
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        83,
+        408,
+        178,
+        427
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        185.96875,
+        409,
+        333.96875,
+        432
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        341.8125,
+        415,
+        349.8125,
+        427
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-735683",
+      "bbox": [
+        357,
+        409,
+        587,
+        427
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        83,
+        457,
+        207,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        214.984375,
+        456,
+        296.984375,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        304.265625,
+        456,
+        319.265625,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        326.59375,
+        457,
+        376.59375,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        383.8125,
+        457,
+        413.8125,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        421.4375,
+        462,
+        505.4375,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        512.59375,
+        457,
+        660.59375,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        668.4375,
+        462,
+        698.4375,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        704.984375,
+        457,
+        805.984375,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        83,
+        505,
+        140,
+        523
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        147.984375,
+        505,
+        295.984375,
+        528
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        303.828125,
+        511,
+        311.828125,
+        523
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-01-06",
+      "bbox": [
+        319,
+        505,
+        473,
+        523
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        83,
+        553,
+        138,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        145.421875,
+        559,
+        153.421875,
+        571
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Australia",
+      "bbox": [
+        161,
+        553,
+        283,
+        571
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        83,
+        690,
+        122,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        128.859375,
+        689,
+        141.859375,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marseille,",
+      "bbox": [
+        149.34375,
+        690,
+        254.34375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        261.71875,
+        690,
+        281.71875,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-01-06",
+      "bbox": [
+        288.359375,
+        691,
+        416.359375,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        657,
+        748,
+        754,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        759.859375,
+        747,
+        853.859375,
+        763
+      ],
+      "label": "O"
+    }
+  ]
+}

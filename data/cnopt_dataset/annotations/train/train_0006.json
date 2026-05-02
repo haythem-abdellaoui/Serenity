@@ -1,0 +1,524 @@
+{
+  "id": "train_0006",
+  "image": "images/train/train_0006.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Emma Durand",
+    "registration_number": "ORD-83-2022-0840",
+    "issue_date": "2023-09-25"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        100,
+        74,
+        156,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        193,
+        59,
+        283,
+        80
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        293.203125,
+        59,
+        426.203125,
+        80
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        435.921875,
+        59,
+        491.921875,
+        80
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        501.375,
+        59,
+        704.375,
+        80
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        193,
+        96,
+        269,
+        112
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        276.0,
+        96,
+        364.0,
+        112
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        193,
+        125,
+        263,
+        140
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        88,
+        231,
+        299,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        308.546875,
+        231,
+        546.546875,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AU",
+      "bbox": [
+        556.015625,
+        231,
+        600.015625,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TABLEAU",
+      "bbox": [
+        609.3125,
+        231,
+        749.3125,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DE",
+      "bbox": [
+        759.515625,
+        231,
+        801.515625,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L’ORDRE",
+      "bbox": [
+        811.640625,
+        231,
+        942.640625,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        88,
+        302,
+        148,
+        320
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        155.984375,
+        303,
+        268.984375,
+        320
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        276.203125,
+        307,
+        321.203125,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        329.046875,
+        308,
+        337.046875,
+        320
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        88,
+        350,
+        144,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        151.640625,
+        351,
+        175.640625,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        183.4375,
+        349,
+        276.4375,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        283.6875,
+        356,
+        291.6875,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Emma",
+      "bbox": [
+        299,
+        350,
+        382,
+        368
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Durand",
+      "bbox": [
+        389.984375,
+        350,
+        488.984375,
+        368
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        88,
+        397,
+        183,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        190.96875,
+        398,
+        338.96875,
+        421
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        346.8125,
+        404,
+        354.8125,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-83-2022-0840",
+      "bbox": [
+        362,
+        398,
+        618,
+        416
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        88,
+        446,
+        125,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        132.703125,
+        445,
+        302.703125,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        309.875,
+        446,
+        416.875,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        424.53125,
+        451,
+        454.53125,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        461.078125,
+        446,
+        554.078125,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        561.6875,
+        446,
+        591.6875,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        599.3125,
+        446,
+        681.3125,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        688.921875,
+        446,
+        731.921875,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        739.046875,
+        446,
+        902.046875,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        88,
+        494,
+        145,
+        512
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        152.984375,
+        494,
+        300.984375,
+        517
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        308.828125,
+        500,
+        316.828125,
+        512
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-09-25",
+      "bbox": [
+        324,
+        494,
+        478,
+        512
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        88,
+        542,
+        143,
+        565
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        150.421875,
+        548,
+        158.421875,
+        560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        166,
+        542,
+        257,
+        560
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        88,
+        679,
+        127,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        133.859375,
+        678,
+        146.859375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nantes,",
+      "bbox": [
+        154.34375,
+        680,
+        239.34375,
+        698
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        245.84375,
+        679,
+        265.84375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-09-25",
+      "bbox": [
+        272.484375,
+        680,
+        400.484375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        652,
+        737,
+        749,
+        756
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        754.859375,
+        736,
+        848.859375,
+        752
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+<section class="admin-marketplace-page">
+  <header class="header-row">
+    <div>
+      <h2>Marketplace Orders</h2>
+      <p class="header-subtitle">Manage all customer orders</p>
+    </div>
+    <div class="header-actions">
+      <span class="order-count">{{ orders.length }} orders</span>
+      <a class="btn btn-secondary" routerLink="/admin/marketplace">Back to Products</a>
+    </div>
+  </header>
+
+  <!-- Success Message -->
+  <div class="alert alert-success" *ngIf="successMessage">{{ successMessage }}</div>
+
+  <!-- Error Message -->
+  <div class="alert alert-error" *ngIf="error">{{ error }}</div>
+
+  <!-- Loading State -->
+  <div class="loading-state" *ngIf="loading">
+    <span>Loading orders...</span>
+  </div>
+
+  <!-- Empty State -->
+  <div class="empty-state" *ngIf="!loading && orders.length === 0">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="21" r="1"></circle>
+      <circle cx="20" cy="21" r="1"></circle>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+    <p>No orders found</p>
+  </div>
+
+  <!-- Orders Table -->
+  <div class="orders-table-wrapper" *ngIf="!loading && orders.length > 0">
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th class="col-id">Order ID</th>
+          <th class="col-customer">Customer</th>
+          <th class="col-amount">Amount</th>
+          <th class="col-items">Items</th>
+          <th class="col-status">Status</th>
+          <th class="col-date">Date</th>
+          <th class="col-actions">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let order of orders">
+          <tr class="order-row" [class.expanded]="expandedOrderId === order.id">
+            <td class="col-id">
+              <button class="expand-btn" (click)="toggleExpandOrder(order.id)" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <strong>#{{ order.id }}</strong>
+            </td>
+            <td class="col-customer">
+              <div class="customer-info">
+                <span class="email">{{ order.customerEmail }}</span>
+              </div>
+            </td>
+            <td class="col-amount">
+              <strong>{{ order.totalAmount | currency:'TND ' }}</strong>
+            </td>
+            <td class="col-items">
+              <span class="item-count">{{ getTotalItems(order) }}</span>
+            </td>
+            <td class="col-status">
+              <span class="status-badge" [ngClass]="getStatusClass(order.status)">
+                {{ order.status }}
+              </span>
+            </td>
+            <td class="col-date">
+              <small>{{ order.createdAt | date:'short' }}</small>
+            </td>
+            <td class="col-actions">
+              <div class="action-buttons">
+                <select class="status-select" [value]="order.status" (change)="updateStatus(order.id, $any($event.target).value)">
+                  <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+                </select>
+                <button
+                  class="btn-delete"
+                  type="button"
+                  (click)="deleteOrder(order.id)"
+                  [disabled]="deletingOrderId === order.id"
+                  title="Delete order"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Expanded Details Row -->
+          <tr class="order-details-row" *ngIf="expandedOrderId === order.id">
+            <td colspan="7">
+              <div class="order-details">
+                <div class="details-grid">
+                  <div class="detail-section">
+                    <h4>Order Information</h4>
+                    <p><strong>Order ID:</strong> #{{ order.id }}</p>
+                    <p><strong>Status:</strong> <span class="status-badge" [ngClass]="getStatusClass(order.status)">{{ order.status }}</span></p>
+                    <p><strong>Created:</strong> {{ order.createdAt | date:'medium' }}</p>
+                  </div>
+
+                  <div class="detail-section">
+                    <h4>Customer Information</h4>
+                    <p><strong>Email:</strong> {{ order.customerEmail }}</p>
+                    <p><strong>Shipping Address:</strong> {{ order.shippingAddress }}</p>
+                    <p *ngIf="order.customerNote"><strong>Note:</strong> {{ order.customerNote }}</p>
+                  </div>
+
+                  <div class="detail-section">
+                    <h4>Order Summary</h4>
+                    <p><strong>Total Amount:</strong> {{ order.totalAmount | currency:'TND ' }}</p>
+                    <p><strong>Items:</strong> {{ getTotalItems(order) }}</p>
+                  </div>
+                </div>
+
+                <div class="order-items" *ngIf="order.items && order.items.length > 0">
+                  <h4>Items</h4>
+                  <div class="items-list">
+                    <div class="item" *ngFor="let item of order.items">
+                      <span class="item-name">{{ item.productName }}</span>
+                      <span class="item-qty">Qty: {{ item.quantity }}</span>
+                      <span class="item-price">{{ item.unitPrice | currency:'TND ' }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</section>

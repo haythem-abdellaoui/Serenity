@@ -1,0 +1,87 @@
+<div class="container">
+  <section class="page">
+    <header class="page-header">
+      <div>
+        <h1>Add New Medicine</h1>
+        <p>Create a medicine item with quantity and image information.</p>
+      </div>
+    </header>
+
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="card form">
+      <div class="fields-grid">
+        <label class="field">
+          <span class="field-title">Medicine Name</span>
+          <input formControlName="medicineName" type="text" maxlength="80" placeholder="e.g. Paracetamol 500mg" />
+          <span class="field-error" *ngIf="getControl('medicineName')?.touched && getControl('medicineName')?.invalid">
+            <ng-container *ngIf="getControl('medicineName')?.errors?.['required']">Medicine name is required.</ng-container>
+            <ng-container *ngIf="getControl('medicineName')?.errors?.['minlength']">Minimum 2 characters required.</ng-container>
+            <ng-container *ngIf="getControl('medicineName')?.errors?.['maxlength']">Maximum 80 characters allowed.</ng-container>
+          </span>
+        </label>
+
+        <label class="field">
+          <span class="field-title">Stock Quantity</span>
+          <input formControlName="quantity" type="number" min="0" max="9999" step="1" inputmode="numeric" />
+          <span class="field-error" *ngIf="getControl('quantity')?.touched && getControl('quantity')?.invalid">
+            <ng-container *ngIf="getControl('quantity')?.errors?.['required']">Stock quantity is required.</ng-container>
+            <ng-container *ngIf="getControl('quantity')?.errors?.['min']">Quantity cannot be negative.</ng-container>
+            <ng-container *ngIf="getControl('quantity')?.errors?.['max']">Maximum quantity is 9999.</ng-container>
+            <ng-container *ngIf="getControl('quantity')?.errors?.['pattern']">Quantity must be a whole number.</ng-container>
+          </span>
+        </label>
+      </div>
+
+      <div class="upload-row">
+        <div class="upload-panel">
+          <div class="field">
+            <span class="field-title">Upload Image</span>
+            <input
+              class="file-input"
+              type="file"
+              accept="image/*"
+              id="medicineUpload"
+              (change)="onImageSelected($event)" />
+            <label class="upload-box" for="medicineUpload">
+              <span class="upload-title">Click to upload</span>
+              <span class="upload-subtitle">PNG, JPG up to 5MB</span>
+              <span class="upload-meta">A clear package photo helps patients recognize the medicine.</span>
+            </label>
+          </div>
+          <p class="hint" *ngIf="uploadingImage">Reading image...</p>
+
+          <label class="field secondary">
+            <span class="field-title">Or Image URL</span>
+            <input formControlName="imageUrl" type="text" maxlength="500" placeholder="https://..." />
+            <span class="field-error" *ngIf="getControl('imageUrl')?.touched && getControl('imageUrl')?.invalid">
+              <ng-container *ngIf="getControl('imageUrl')?.errors?.['invalidUrl']">Use a valid URL (`http/https`) or upload an image.</ng-container>
+              <ng-container *ngIf="getControl('imageUrl')?.errors?.['maxlength']">Maximum 500 characters allowed.</ng-container>
+            </span>
+          </label>
+        </div>
+
+        <div class="preview card" *ngIf="imagePreviewUrl || form.value.imageUrl">
+          <h3>Image Preview</h3>
+          <img [src]="imagePreviewUrl || form.value.imageUrl" alt="Medicine preview" />
+        </div>
+      </div>
+
+      <label class="field">
+        <span class="field-title">Description</span>
+        <textarea formControlName="description" rows="4" maxlength="500" placeholder="Optional details"></textarea>
+        <span class="field-error" *ngIf="getControl('description')?.touched && getControl('description')?.errors?.['maxlength']">
+          Maximum 500 characters allowed.
+        </span>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary" [disabled]="saving || uploadingImage">
+          {{ saving ? 'Saving...' : 'Add Medicine' }}
+        </button>
+        <button type="button" class="btn" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </section>
+</div>

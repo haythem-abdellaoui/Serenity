@@ -1,0 +1,179 @@
+<div class="container">
+  <section class="page">
+    <header class="page-header">
+      <div>
+        <h1>Stock Management</h1>
+        <p>Search medicines and manage quantity, availability, and archive state.</p>
+      </div>
+      <div class="header-actions">
+        <a routerLink="/pharmacy" class="btn btn-ghost btn-compact">Back to Workspace</a>
+        <a routerLink="/pharmacy/stock/new" class="btn btn-primary btn-compact">
+          <span class="btn-icon" aria-hidden="true">+</span>
+          <span>Add New Medicine</span>
+        </a>
+      </div>
+    </header>
+
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div class="toolbar card">
+      <div class="toolbar-main">
+        <label class="search-label">
+          <span>Search medicine</span>
+          <div class="search-input-wrap">
+            <input
+              type="text"
+              [(ngModel)]="query"
+              placeholder="Try: Aspirin, Panadol, Vitamin C"
+              (keyup.enter)="loadStock()" />
+          </div>
+        </label>
+
+        <button type="button" class="btn btn-primary search-btn" (click)="loadStock()">Search</button>
+      </div>
+
+      <label class="checkbox-row">
+        <input type="checkbox" [(ngModel)]="includeArchived" />
+        Show archived medicines
+      </label>
+    </div>
+
+    <p *ngIf="!loading && items.length === 0" class="empty-state">No medicines found.</p>
+
+    <div class="table-card card" *ngIf="!loading && items.length > 0">
+      <div class="table-wrap">
+        <table class="stock-table">
+          <thead>
+            <tr>
+              <th>Medicine</th>
+              <th>Status</th>
+              <th>Quantity</th>
+              <th>Archived</th>
+              <th>Updated</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items; trackBy: trackById" [class.out-stock]="item.state === 'OUT_OF_STOCK'" [class.archived-row]="item.archived">
+              <td [attr.data-label]="'Medicine'" class="medicine-cell">
+                <div class="medicine-main">
+                  <ng-container *ngIf="renamingItemId === item.id; else medicineLabel">
+                    <div class="rename-inline">
+                      <input
+                        type="text"
+                        [(ngModel)]="renameDraft"
+                        (keydown)="onRenameKeydown($event, item)"
+                        maxlength="80"
+                        [attr.aria-label]="'Rename ' + item.medicineName" />
+                      <button type="button" class="btn btn-secondary" (click)="saveRename(item)">Save</button>
+                      <button type="button" class="btn btn-ghost" (click)="cancelRename()">Cancel</button>
+                    </div>
+                  </ng-container>
+                  <ng-template #medicineLabel>
+                    <span class="medicine-name">{{ item.medicineName }}</span>
+                  </ng-template>
+                  <p class="description" *ngIf="item.description">{{ item.description }}</p>
+                </div>
+              </td>
+              <td [attr.data-label]="'Status'">
+                <span class="state-badge" [class.out]="item.state === 'OUT_OF_STOCK'">{{ item.state }}</span>
+              </td>
+              <td [attr.data-label]="'Quantity'" class="qty-cell">
+                <strong>{{ item.quantity }}</strong>
+              </td>
+              <td [attr.data-label]="'Archived'" class="archived-cell">
+                <span class="archived-badge" [class.yes]="item.archived">{{ item.archived ? 'YES' : 'NO' }}</span>
+              </td>
+              <td [attr.data-label]="'Updated'" class="updated-cell">
+                {{ formatUpdated(item.updatedAt) }}
+              </td>
+              <td [attr.data-label]="'Actions'" class="actions-cell">
+                <div class="actions">
+                  <div class="increment-group">
+                    <input
+                      type="number"
+                      min="1"
+                      [(ngModel)]="incrementValue[item.id]"
+                      placeholder="+qty"
+                      [disabled]="item.archived" />
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      (click)="increment(item)"
+                      [disabled]="item.archived">
+                      Add Quantity
+                    </button>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="btn btn-state"
+                    (click)="markOutOfStock(item)"
+                    [disabled]="item.state === 'OUT_OF_STOCK' || item.archived">
+                    Mark Out Of Stock
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    (click)="startRename(item)"
+                    *ngIf="renamingItemId !== item.id"
+                    [disabled]="renamingItemId !== null && renamingItemId !== item.id">
+                    Rename
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn"
+                    [class.btn-danger]="!item.archived"
+                    [class.btn-secondary]="item.archived"
+                    (click)="item.archived ? restore(item) : archive(item)">
+                    {{ item.archived ? 'Restore' : 'Archive' }}
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    (click)="openImageModal(item)">
+                    View Image
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    *ngIf="item.archived"
+                    (click)="deletePermanently(item)">
+                    Delete Permanently
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div
+  class="image-modal-backdrop"
+  *ngIf="selectedImageItem"
+  (click)="closeImageModal()"
+  (keydown.escape)="closeImageModal()">
+  <section
+    class="image-modal card"
+    (click)="$event.stopPropagation()"
+    (keydown.escape)="closeImageModal()">
+    <header class="modal-head">
+      <h3>{{ selectedImageItem.medicineName }}</h3>
+      <button type="button" class="btn btn-secondary" (click)="closeImageModal()">Close</button>
+    </header>
+    <div class="modal-body" *ngIf="selectedImageItem.imageUrl; else missingImage">
+      <img [src]="selectedImageItem.imageUrl" [alt]="selectedImageItem.medicineName" />
+    </div>
+    <ng-template #missingImage>
+      <p class="no-image">No image available for this medicine.</p>
+    </ng-template>
+  </section>
+</div>

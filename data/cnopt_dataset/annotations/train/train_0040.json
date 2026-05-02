@@ -1,0 +1,484 @@
+{
+  "id": "train_0040",
+  "image": "images/train/train_0040.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Leila Ben Ali",
+    "registration_number": "FR-PHAR-264370",
+    "issue_date": "2024-03-12"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        104,
+        89,
+        160,
+        102
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        197,
+        74,
+        287,
+        95
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        297.203125,
+        74,
+        353.203125,
+        95
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        362.65625,
+        74,
+        565.65625,
+        95
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        197,
+        111,
+        273,
+        127
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        280.0,
+        111,
+        368.0,
+        127
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        197,
+        140,
+        267,
+        155
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        92,
+        246,
+        270,
+        266
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        279.9375,
+        246,
+        517.9375,
+        266
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        92,
+        317,
+        152,
+        335
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        159.984375,
+        318,
+        272.984375,
+        335
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        280.203125,
+        322,
+        325.203125,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        333.046875,
+        323,
+        341.046875,
+        335
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        92,
+        365,
+        148,
+        383
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        155.640625,
+        366,
+        179.640625,
+        383
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        187.4375,
+        364,
+        280.4375,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        287.6875,
+        371,
+        295.6875,
+        383
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Leila",
+      "bbox": [
+        303,
+        365,
+        367,
+        383
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Ben",
+      "bbox": [
+        375.609375,
+        365,
+        427.609375,
+        383
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Ali",
+      "bbox": [
+        435.640625,
+        365,
+        470.640625,
+        383
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        92,
+        412,
+        187,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        194.96875,
+        413,
+        342.96875,
+        436
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        350.8125,
+        419,
+        358.8125,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-264370",
+      "bbox": [
+        366,
+        413,
+        596,
+        431
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        92,
+        461,
+        129,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        136.703125,
+        460,
+        306.703125,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        313.875,
+        461,
+        420.875,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        428.53125,
+        466,
+        458.53125,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        465.078125,
+        461,
+        558.078125,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        565.6875,
+        461,
+        595.6875,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        603.3125,
+        461,
+        685.3125,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        692.921875,
+        461,
+        735.921875,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        743.046875,
+        461,
+        906.046875,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        92,
+        509,
+        149,
+        527
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        156.984375,
+        509,
+        304.984375,
+        532
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        312.828125,
+        515,
+        320.828125,
+        527
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024-03-12",
+      "bbox": [
+        328,
+        509,
+        482,
+        527
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        92,
+        557,
+        147,
+        580
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        154.421875,
+        563,
+        162.421875,
+        575
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        170,
+        557,
+        261,
+        575
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        92,
+        694,
+        131,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        137.859375,
+        693,
+        150.859375,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bordeaux,",
+      "bbox": [
+        158.34375,
+        694,
+        270.34375,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        277.484375,
+        694,
+        297.484375,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024-03-12",
+      "bbox": [
+        304.125,
+        695,
+        432.125,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        648,
+        752,
+        745,
+        771
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        750.859375,
+        751,
+        844.859375,
+        767
+      ],
+      "label": "O"
+    }
+  ]
+}

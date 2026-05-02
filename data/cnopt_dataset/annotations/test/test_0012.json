@@ -1,0 +1,474 @@
+{
+  "id": "test_0012",
+  "image": "images/test/test_0012.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Maroc",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Nadia Richard",
+    "registration_number": "ORD-53-2022-3619",
+    "issue_date": "2024-11-07"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        101,
+        82,
+        157,
+        95
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        194,
+        67,
+        284,
+        88
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        294.203125,
+        67,
+        350.203125,
+        88
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        359.65625,
+        67,
+        562.65625,
+        88
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        194,
+        104,
+        270,
+        120
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        277.0,
+        104,
+        365.0,
+        120
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maroc",
+      "bbox": [
+        194,
+        133,
+        258,
+        148
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        89,
+        239,
+        267,
+        259
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        276.9375,
+        239,
+        514.9375,
+        259
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        89,
+        310,
+        149,
+        328
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        156.984375,
+        311,
+        269.984375,
+        328
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        277.203125,
+        315,
+        322.203125,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        330.046875,
+        316,
+        338.046875,
+        328
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        89,
+        358,
+        145,
+        376
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        152.640625,
+        359,
+        176.640625,
+        376
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        184.4375,
+        357,
+        277.4375,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        284.6875,
+        364,
+        292.6875,
+        376
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nadia",
+      "bbox": [
+        300,
+        358,
+        378,
+        376
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Richard",
+      "bbox": [
+        386.28125,
+        358,
+        489.28125,
+        376
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        89,
+        405,
+        184,
+        424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        191.96875,
+        406,
+        339.96875,
+        429
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        347.8125,
+        412,
+        355.8125,
+        424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-53-2022-3619",
+      "bbox": [
+        363,
+        406,
+        619,
+        424
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        89,
+        454,
+        126,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        133.703125,
+        453,
+        303.703125,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        310.875,
+        454,
+        417.875,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        425.53125,
+        459,
+        455.53125,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        462.078125,
+        454,
+        555.078125,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        562.6875,
+        454,
+        592.6875,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        600.3125,
+        454,
+        682.3125,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        689.921875,
+        454,
+        732.921875,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        740.046875,
+        454,
+        903.046875,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        89,
+        502,
+        146,
+        520
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        153.984375,
+        502,
+        301.984375,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        309.828125,
+        508,
+        317.828125,
+        520
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024-11-07",
+      "bbox": [
+        325,
+        502,
+        479,
+        520
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        89,
+        550,
+        144,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        151.421875,
+        556,
+        159.421875,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maroc",
+      "bbox": [
+        167,
+        550,
+        250,
+        568
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        89,
+        687,
+        128,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        134.859375,
+        686,
+        147.859375,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nice,",
+      "bbox": [
+        155.34375,
+        687,
+        210.34375,
+        706
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        217.53125,
+        687,
+        237.53125,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024-11-07",
+      "bbox": [
+        244.171875,
+        688,
+        372.171875,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        651,
+        745,
+        748,
+        764
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        753.859375,
+        744,
+        847.859375,
+        760
+      ],
+      "label": "O"
+    }
+  ]
+}

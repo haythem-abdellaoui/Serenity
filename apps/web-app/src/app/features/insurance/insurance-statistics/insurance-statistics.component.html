@@ -1,0 +1,271 @@
+<div class="container insurance-stats-page animate">
+  <div class="page-header">
+    <div>
+      <h1>Insurance Analytics</h1>
+      <p class="subtitle">Portfolio overview for all insurance claims</p>
+    </div>
+  </div>
+
+  <nav class="sub-tabs">
+    <a
+      routerLink="/admin/insurance"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Claims
+    </a>
+    <a
+      routerLink="/admin/insurance/statistics"
+      routerLinkActive="active"
+    >
+      Statistics
+    </a>
+    <a
+      routerLink="/admin/insurance/ocr-notifications"
+      routerLinkActive="active"
+    >
+      Notifications
+    </a>
+  </nav>
+
+  <div *ngIf="errorMessage" class="alert alert-error">{{ errorMessage }}</div>
+
+  <div *ngIf="loading" class="loading-container">
+    <span class="spinner"></span>
+    <p>Loading statistics...</p>
+  </div>
+
+  <div *ngIf="!loading && forbidden" class="card forbidden-card">
+    <h2>Restricted Area</h2>
+    <p>Only administrators can access insurance statistics.</p>
+  </div>
+
+  <div *ngIf="!loading && !forbidden" class="stats-layout">
+    <!-- Time range & insights -->
+    <section class="card range-and-insights">
+      <div class="range-switcher">
+        <button
+          type="button"
+          [class.active]="timeRange === 'ALL'"
+          (click)="onTimeRangeChange('ALL')"
+        >
+          All time
+        </button>
+        <button
+          type="button"
+          [class.active]="timeRange === 'LAST_7'"
+          (click)="onTimeRangeChange('LAST_7')"
+        >
+          Last 7 days
+        </button>
+        <button
+          type="button"
+          [class.active]="timeRange === 'LAST_30'"
+          (click)="onTimeRangeChange('LAST_30')"
+        >
+          Last 30 days
+        </button>
+        <button
+          type="button"
+          [class.active]="timeRange === 'LAST_90'"
+          (click)="onTimeRangeChange('LAST_90')"
+        >
+          Last 90 days
+        </button>
+        <button
+          type="button"
+          [class.active]="timeRange === 'THIS_YEAR'"
+          (click)="onTimeRangeChange('THIS_YEAR')"
+        >
+          This year
+        </button>
+      </div>
+
+      <div class="insights" *ngIf="insights.length">
+        <h3>Key insights</h3>
+        <ul>
+          <li *ngFor="let insight of insights">{{ insight }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card kpi-grid">
+      <div class="kpi">
+        <p class="kpi-label">Total Claims</p>
+        <p class="kpi-value">{{ displayTotalClaims }}</p>
+      </div>
+      <div class="kpi">
+        <p class="kpi-label">Total Amount Claimed</p>
+        <p class="kpi-value">{{ displayTotalAmount | currency:'TND':'symbol':'1.0-0' }}</p>
+      </div>
+      <div class="kpi">
+        <p class="kpi-label">Total Reimbursed</p>
+        <p class="kpi-value text-success">{{ displayTotalReimbursed | currency:'TND':'symbol':'1.0-0' }}</p>
+      </div>
+      <div class="kpi">
+        <p class="kpi-label">Reimbursement Rate</p>
+        <p class="kpi-value">{{ displayReimbursementRate | number:'1.0-1' }}%</p>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="card clickable">
+        <h3>Claims by Status</h3>
+        <div class="status-bars">
+          <div
+            *ngFor="let bucket of statusBuckets"
+            class="status-row"
+            (click)="goToClaimsWithStatus(bucket.key)"
+            (keydown.enter)="goToClaimsWithStatus(bucket.key)"
+            (keydown.space)="goToClaimsWithStatus(bucket.key)"
+          >
+            <div class="status-label">{{ bucket.label }}</div>
+            <div class="status-bar-wrapper">
+              <div
+                class="status-bar"
+                [class.pending]="bucket.key === 'PENDING'"
+                [class.approved]="bucket.key === 'APPROVED'"
+                [class.rejected]="bucket.key === 'REJECTED'"
+                [style.width.%]="totalClaims ? (bucket.count / totalClaims) * 100 : 0"
+              ></div>
+            </div>
+            <div class="status-value">{{ bucket.count }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Monthly Trend</h3>
+        <div *ngIf="monthlyStats.length === 0" class="empty-mini">
+          No data yet.
+        </div>
+        <div *ngIf="monthlyStats.length > 0" class="mini-table">
+          <div class="mini-header">
+            <span>Month</span>
+            <span>Claims</span>
+            <span>Amount</span>
+            <span>Reimbursed</span>
+          </div>
+          <div *ngFor="let m of monthlyStats" class="mini-row">
+            <span>{{ m.month }}</span>
+            <span>
+              <span class="month-bar-wrapper" *ngIf="maxMonthlyCount">
+                <span
+                  class="month-bar"
+                  [style.width.%]="(m.count / maxMonthlyCount) * 100"
+                ></span>
+              </span>
+              {{ m.count }}
+            </span>
+            <span>{{ m.amount | currency:'TND':'symbol':'1.0-0' }}</span>
+            <span>{{ m.reimbursed | currency:'TND':'symbol':'1.0-0' }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="card">
+        <h3>Top Insurance Companies</h3>
+        <div *ngIf="companyStats.length === 0" class="empty-mini">
+          No data yet.
+        </div>
+        <div *ngIf="companyStats.length > 0" class="mini-table">
+          <div class="mini-header">
+            <span>Company</span>
+            <span>Claims</span>
+            <span>Amount</span>
+            <span>Reimbursed</span>
+          </div>
+          <div *ngFor="let c of companyStats" class="mini-row">
+            <span>{{ c.company }}</span>
+            <span>{{ c.count }}</span>
+            <span>{{ c.amount | currency:'TND':'symbol':'1.0-0' }}</span>
+            <span>{{ c.reimbursed | currency:'TND':'symbol':'1.0-0' }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>By Insurance Grade</h3>
+        <div *ngIf="gradeStats.length === 0" class="empty-mini">
+          No data yet.
+        </div>
+        <div *ngIf="gradeStats.length > 0" class="mini-table">
+          <div class="mini-header">
+            <span>Grade</span>
+            <span>Claims</span>
+            <span>Amount</span>
+            <span>Reimbursed</span>
+          </div>
+          <div *ngFor="let g of gradeStats" class="mini-row">
+            <span>Grade {{ g.grade }}</span>
+            <span>{{ g.count }}</span>
+            <span>{{ g.amount | currency:'TND':'symbol':'1.0-0' }}</span>
+            <span>{{ g.reimbursed | currency:'TND':'symbol':'1.0-0' }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card remittance-ocr-report">
+      <h3>Reimbursements &amp; OCR checks per claim</h3>
+      <div *ngIf="remittanceOcrSummary.length === 0" class="empty-mini">
+        No rows to show yet.
+      </div>
+      <ng-container *ngIf="remittanceOcrSummary.length > 0">
+        <div class="mini-table wide">
+          <div class="mini-header">
+            <span>Reference</span>
+            <span>Member</span>
+            <span>Status</span>
+            <span>Company</span>
+            <span>Claim date</span>
+            <span>Remit. rows</span>
+            <span>Sum remit.</span>
+            <span>OCR audits</span>
+          </div>
+          <div *ngFor="let row of remittanceReportPagedRows" class="mini-row">
+            <span>
+              <a [routerLink]="['/admin/insurance', row.claimId]">{{ remittanceClaimReferenceLabel(row) }}</a>
+            </span>
+            <span class="member-name">{{ getRemittanceUserLabel(row.userId) }}</span>
+            <span class="status-pill">{{ row.status }}</span>
+            <span>{{ row.insuranceCompany }}</span>
+            <span>{{ row.claimDate | date:'mediumDate' }}</span>
+            <span>{{ row.remboursementCount }}</span>
+            <span>{{ row.totalRemboursementPaid | currency:'TND':'symbol':'1.0-2' }}</span>
+            <span>{{ row.ocrAuditCount }}</span>
+          </div>
+        </div>
+        <div class="report-pagination" *ngIf="remittanceReportPageCount > 1">
+          <span class="report-range">
+            Showing {{ remittanceReportRangeFrom }}–{{ remittanceReportRangeTo }} of {{ remittanceOcrSummary.length }}
+          </span>
+          <div class="report-nav">
+            <button
+              type="button"
+              class="report-page-btn"
+              (click)="remittanceReportGoPrev()"
+              [disabled]="remittanceReportPageIndex === 0"
+            >
+              Previous
+            </button>
+            <span class="report-page-indicator">
+              Page {{ remittanceReportPageIndex + 1 }} / {{ remittanceReportPageCount }}
+            </span>
+            <button
+              type="button"
+              class="report-page-btn"
+              (click)="remittanceReportGoNext()"
+              [disabled]="remittanceReportPageIndex >= remittanceReportPageCount - 1"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </ng-container>
+    </section>
+  </div>
+</div>
+

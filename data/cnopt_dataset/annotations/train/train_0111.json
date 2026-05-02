@@ -1,0 +1,484 @@
+{
+  "id": "train_0111",
+  "image": "images/train/train_0111.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Belgique",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Luc Dubois",
+    "registration_number": "ORD-07-2024-7834",
+    "issue_date": "15/06/2024"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        101,
+        87,
+        157,
+        100
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        194,
+        72,
+        284,
+        93
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        294.203125,
+        72,
+        427.203125,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        436.921875,
+        72,
+        492.921875,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        502.375,
+        72,
+        705.375,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        194,
+        109,
+        270,
+        125
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        277.0,
+        109,
+        365.0,
+        125
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Belgique",
+      "bbox": [
+        194,
+        137,
+        286,
+        157
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        89,
+        244,
+        300,
+        264
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        309.546875,
+        244,
+        547.546875,
+        264
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        89,
+        315,
+        149,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        156.984375,
+        316,
+        269.984375,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        277.203125,
+        320,
+        322.203125,
+        338
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        330.046875,
+        321,
+        338.046875,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        89,
+        363,
+        145,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        152.640625,
+        364,
+        176.640625,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        184.4375,
+        362,
+        277.4375,
+        386
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        284.6875,
+        369,
+        292.6875,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Luc",
+      "bbox": [
+        300,
+        363,
+        347,
+        381
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Dubois",
+      "bbox": [
+        354.984375,
+        363,
+        447.984375,
+        381
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        89,
+        410,
+        184,
+        429
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        191.96875,
+        411,
+        339.96875,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        347.8125,
+        417,
+        355.8125,
+        429
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-07-2024-7834",
+      "bbox": [
+        363,
+        411,
+        619,
+        429
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        89,
+        459,
+        126,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        133.703125,
+        458,
+        303.703125,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        310.875,
+        459,
+        417.875,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        425.53125,
+        464,
+        455.53125,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        462.078125,
+        459,
+        555.078125,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        562.6875,
+        459,
+        592.6875,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        600.3125,
+        459,
+        682.3125,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        689.921875,
+        459,
+        732.921875,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        740.046875,
+        459,
+        903.046875,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        89,
+        507,
+        146,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        153.984375,
+        507,
+        301.984375,
+        530
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        309.828125,
+        513,
+        317.828125,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "15/06/2024",
+      "bbox": [
+        325,
+        507,
+        476,
+        527
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        89,
+        555,
+        144,
+        578
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        151.421875,
+        561,
+        159.421875,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Belgique",
+      "bbox": [
+        167,
+        555,
+        286,
+        578
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        89,
+        692,
+        128,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        134.859375,
+        691,
+        147.859375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bordeaux,",
+      "bbox": [
+        155.34375,
+        692,
+        267.34375,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        274.484375,
+        692,
+        294.484375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "15/06/2024",
+      "bbox": [
+        301.125,
+        693,
+        428.125,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        651,
+        750,
+        748,
+        769
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        753.859375,
+        749,
+        847.859375,
+        765
+      ],
+      "label": "O"
+    }
+  ]
+}

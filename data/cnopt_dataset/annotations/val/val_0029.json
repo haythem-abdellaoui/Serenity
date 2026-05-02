@@ -1,0 +1,464 @@
+{
+  "id": "val_0029",
+  "image": "images/val/val_0029.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Sarah Richard",
+    "registration_number": "FR-PHAR-728893",
+    "issue_date": "22/10/2025"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        84,
+        72,
+        140,
+        85
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        177,
+        57,
+        267,
+        78
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        277.203125,
+        57,
+        333.203125,
+        78
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        342.65625,
+        57,
+        545.65625,
+        78
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        177,
+        94,
+        253,
+        110
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        260.0,
+        94,
+        348.0,
+        110
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        177,
+        123,
+        247,
+        138
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        72,
+        229,
+        250,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        259.9375,
+        229,
+        497.9375,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        72,
+        300,
+        132,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        139.984375,
+        301,
+        252.984375,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        260.203125,
+        305,
+        305.203125,
+        323
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        313.046875,
+        306,
+        321.046875,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        72,
+        348,
+        128,
+        366
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        135.640625,
+        349,
+        159.640625,
+        366
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        167.4375,
+        347,
+        260.4375,
+        371
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        267.6875,
+        354,
+        275.6875,
+        366
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sarah",
+      "bbox": [
+        283,
+        348,
+        362,
+        366
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Richard",
+      "bbox": [
+        369.984375,
+        348,
+        472.984375,
+        366
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        72,
+        395,
+        167,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        174.96875,
+        396,
+        322.96875,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        330.8125,
+        402,
+        338.8125,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-728893",
+      "bbox": [
+        346,
+        396,
+        576,
+        414
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        72,
+        444,
+        109,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        116.703125,
+        444,
+        223.703125,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        231.359375,
+        449,
+        261.359375,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        267.90625,
+        444,
+        360.90625,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        368.515625,
+        444,
+        398.515625,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        406.140625,
+        444,
+        488.140625,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        495.75,
+        444,
+        538.75,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        545.875,
+        444,
+        708.875,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        72,
+        492,
+        129,
+        510
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        136.984375,
+        492,
+        284.984375,
+        515
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        292.828125,
+        498,
+        300.828125,
+        510
+      ],
+      "label": "O"
+    },
+    {
+      "text": "22/10/2025",
+      "bbox": [
+        308,
+        492,
+        459,
+        512
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        72,
+        540,
+        127,
+        563
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        134.421875,
+        546,
+        142.421875,
+        558
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        150,
+        540,
+        241,
+        558
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        72,
+        677,
+        111,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        117.859375,
+        676,
+        130.859375,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nantes,",
+      "bbox": [
+        138.34375,
+        678,
+        223.34375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        229.84375,
+        677,
+        249.84375,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "22/10/2025",
+      "bbox": [
+        256.484375,
+        678,
+        383.484375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        668,
+        735,
+        765,
+        754
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        770.859375,
+        734,
+        864.859375,
+        750
+      ],
+      "label": "O"
+    }
+  ]
+}

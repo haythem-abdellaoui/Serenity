@@ -1,0 +1,504 @@
+{
+  "id": "test_0027",
+  "image": "images/test/test_0027.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Australia",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Claire Martin",
+    "registration_number": "FR-PHAR-546156",
+    "issue_date": "2024-12-01"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        99,
+        86,
+        155,
+        99
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        192,
+        71,
+        307,
+        92
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        316.3125,
+        71,
+        449.3125,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        459.03125,
+        71,
+        498.03125,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        507.8125,
+        71,
+        616.8125,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        626.1875,
+        71,
+        682.1875,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        691.640625,
+        71,
+        894.640625,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        192,
+        108,
+        268,
+        124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        275.0,
+        108,
+        363.0,
+        124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Australia",
+      "bbox": [
+        192,
+        136,
+        285,
+        152
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        87,
+        243,
+        298,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        307.546875,
+        243,
+        545.546875,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        87,
+        314,
+        147,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        154.984375,
+        315,
+        267.984375,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        275.203125,
+        319,
+        320.203125,
+        337
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        328.046875,
+        320,
+        336.046875,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        87,
+        362,
+        143,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        150.640625,
+        363,
+        174.640625,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        182.4375,
+        361,
+        275.4375,
+        385
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        282.6875,
+        368,
+        290.6875,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Claire",
+      "bbox": [
+        298,
+        362,
+        376,
+        380
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Martin",
+      "bbox": [
+        384.765625,
+        362,
+        473.765625,
+        380
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        87,
+        409,
+        182,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        189.96875,
+        410,
+        337.96875,
+        433
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        345.8125,
+        416,
+        353.8125,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-546156",
+      "bbox": [
+        361,
+        410,
+        591,
+        428
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        87,
+        458,
+        211,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        218.984375,
+        457,
+        300.984375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        308.265625,
+        457,
+        323.265625,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        330.59375,
+        458,
+        380.59375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        387.8125,
+        458,
+        417.8125,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        425.4375,
+        463,
+        509.4375,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        516.59375,
+        458,
+        664.59375,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        672.4375,
+        463,
+        702.4375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        708.984375,
+        458,
+        809.984375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        87,
+        506,
+        144,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        151.984375,
+        506,
+        299.984375,
+        529
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        307.828125,
+        512,
+        315.828125,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024-12-01",
+      "bbox": [
+        323,
+        506,
+        477,
+        524
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        87,
+        554,
+        142,
+        577
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        149.421875,
+        560,
+        157.421875,
+        572
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Australia",
+      "bbox": [
+        165,
+        554,
+        287,
+        572
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        87,
+        691,
+        126,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        132.859375,
+        690,
+        145.859375,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nice,",
+      "bbox": [
+        153.34375,
+        691,
+        208.34375,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        215.53125,
+        691,
+        235.53125,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024-12-01",
+      "bbox": [
+        242.171875,
+        692,
+        370.171875,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        653,
+        749,
+        750,
+        768
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        755.859375,
+        748,
+        849.859375,
+        764
+      ],
+      "label": "O"
+    }
+  ]
+}

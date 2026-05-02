@@ -1,0 +1,474 @@
+{
+  "id": "test_0011",
+  "image": "images/test/test_0011.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Lina Richard",
+    "registration_number": "RP-2025-547750",
+    "issue_date": "14/07/2022"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        97,
+        89,
+        153,
+        102
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        190,
+        74,
+        280,
+        95
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        290.203125,
+        74,
+        346.203125,
+        95
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        355.65625,
+        74,
+        558.65625,
+        95
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        190,
+        111,
+        266,
+        127
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        273.0,
+        111,
+        361.0,
+        127
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        190,
+        140,
+        260,
+        155
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        85,
+        246,
+        263,
+        266
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        272.9375,
+        246,
+        510.9375,
+        266
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        85,
+        317,
+        145,
+        335
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        152.984375,
+        318,
+        265.984375,
+        335
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        273.203125,
+        322,
+        318.203125,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        326.046875,
+        323,
+        334.046875,
+        335
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        85,
+        365,
+        141,
+        383
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        148.640625,
+        366,
+        172.640625,
+        383
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        180.4375,
+        364,
+        273.4375,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        280.6875,
+        371,
+        288.6875,
+        383
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lina",
+      "bbox": [
+        296,
+        365,
+        353,
+        383
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Richard",
+      "bbox": [
+        361.1875,
+        365,
+        464.1875,
+        383
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        85,
+        412,
+        180,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        187.96875,
+        413,
+        335.96875,
+        436
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        343.8125,
+        419,
+        351.8125,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2025-547750",
+      "bbox": [
+        359,
+        413,
+        582,
+        431
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        85,
+        461,
+        122,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        129.703125,
+        460,
+        299.703125,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        306.875,
+        461,
+        413.875,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        421.53125,
+        466,
+        451.53125,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        458.078125,
+        461,
+        551.078125,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        558.6875,
+        461,
+        588.6875,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        596.3125,
+        461,
+        678.3125,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        685.921875,
+        461,
+        728.921875,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        736.046875,
+        461,
+        899.046875,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        85,
+        509,
+        142,
+        527
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        149.984375,
+        509,
+        297.984375,
+        532
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        305.828125,
+        515,
+        313.828125,
+        527
+      ],
+      "label": "O"
+    },
+    {
+      "text": "14/07/2022",
+      "bbox": [
+        321,
+        509,
+        472,
+        529
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        85,
+        557,
+        140,
+        580
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        147.421875,
+        563,
+        155.421875,
+        575
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        163,
+        557,
+        254,
+        575
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        85,
+        694,
+        124,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        130.859375,
+        693,
+        143.859375,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lille,",
+      "bbox": [
+        151.34375,
+        694,
+        202.34375,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        209.453125,
+        694,
+        229.453125,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "14/07/2022",
+      "bbox": [
+        236.09375,
+        695,
+        363.09375,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        655,
+        752,
+        752,
+        771
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        757.859375,
+        751,
+        851.859375,
+        767
+      ],
+      "label": "O"
+    }
+  ]
+}

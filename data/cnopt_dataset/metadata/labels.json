@@ -1,0 +1,15 @@
+{
+  "labels": [
+    "O",
+    "B-AUTHORITY",
+    "I-AUTHORITY",
+    "B-NAME",
+    "I-NAME",
+    "B-REG_NUMBER",
+    "I-REG_NUMBER",
+    "B-ISSUE_DATE",
+    "I-ISSUE_DATE",
+    "B-COUNTRY",
+    "I-COUNTRY"
+  ]
+}

@@ -1,0 +1,544 @@
+{
+  "id": "val_0018",
+  "image": "images/val/val_0018.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Amine Petit",
+    "registration_number": "RP-2022-396509",
+    "issue_date": "2022-02-06"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        93,
+        86,
+        149,
+        99
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        186,
+        71,
+        301,
+        92
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        310.3125,
+        71,
+        443.3125,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        453.03125,
+        71,
+        492.03125,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        501.8125,
+        71,
+        610.8125,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        620.1875,
+        71,
+        676.1875,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        685.640625,
+        71,
+        888.640625,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        186,
+        108,
+        262,
+        124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        269.0,
+        108,
+        357.0,
+        124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        186,
+        137,
+        256,
+        152
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        81,
+        243,
+        292,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        301.546875,
+        243,
+        539.546875,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AU",
+      "bbox": [
+        549.015625,
+        243,
+        593.015625,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TABLEAU",
+      "bbox": [
+        602.3125,
+        243,
+        742.3125,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DE",
+      "bbox": [
+        752.515625,
+        243,
+        794.515625,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L’ORDRE",
+      "bbox": [
+        804.640625,
+        243,
+        935.640625,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        81,
+        314,
+        141,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        148.984375,
+        315,
+        261.984375,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        269.203125,
+        319,
+        314.203125,
+        337
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        322.046875,
+        320,
+        330.046875,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        81,
+        362,
+        137,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        144.640625,
+        363,
+        168.640625,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        176.4375,
+        361,
+        269.4375,
+        385
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        276.6875,
+        368,
+        284.6875,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Amine",
+      "bbox": [
+        292,
+        362,
+        377,
+        380
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Petit",
+      "bbox": [
+        385.5625,
+        362,
+        450.5625,
+        380
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        81,
+        409,
+        176,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        183.96875,
+        410,
+        331.96875,
+        433
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        339.8125,
+        416,
+        347.8125,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2022-396509",
+      "bbox": [
+        355,
+        410,
+        578,
+        428
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        81,
+        458,
+        205,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        212.984375,
+        457,
+        294.984375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        302.265625,
+        457,
+        317.265625,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        324.59375,
+        458,
+        374.59375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        381.8125,
+        458,
+        411.8125,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        419.4375,
+        463,
+        503.4375,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        510.59375,
+        458,
+        658.59375,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        666.4375,
+        463,
+        696.4375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        702.984375,
+        458,
+        803.984375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        81,
+        506,
+        138,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        145.984375,
+        506,
+        293.984375,
+        529
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        301.828125,
+        512,
+        309.828125,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2022-02-06",
+      "bbox": [
+        317,
+        506,
+        471,
+        524
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        81,
+        554,
+        136,
+        577
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        143.421875,
+        560,
+        151.421875,
+        572
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        159,
+        554,
+        250,
+        572
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        81,
+        691,
+        120,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        126.859375,
+        690,
+        139.859375,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nice,",
+      "bbox": [
+        147.34375,
+        691,
+        202.34375,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        209.53125,
+        691,
+        229.53125,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2022-02-06",
+      "bbox": [
+        236.171875,
+        692,
+        364.171875,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        659,
+        749,
+        756,
+        768
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        761.859375,
+        748,
+        855.859375,
+        764
+      ],
+      "label": "O"
+    }
+  ]
+}

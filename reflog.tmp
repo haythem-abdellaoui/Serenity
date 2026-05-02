@@ -1,0 +1,10 @@
+d6b027d HEAD@{0}: merge derbel: Fast-forward
+5bc8cff HEAD@{1}: checkout: moving from derbel to main
+d6b027d HEAD@{2}: commit: some modifications
+503540c HEAD@{3}: commit: added some changes and apis
+0f4a345 HEAD@{4}: commit: added fda api and qrcode
+35693d5 HEAD@{5}: pull origin main: Fast-forward
+a9b15e6 HEAD@{6}: checkout: moving from main to derbel
+5bc8cff HEAD@{7}: commit: merging after haithem branch
+e6234a4 HEAD@{8}: commit (merge): Merge branch derbel into main
+7a3761c HEAD@{9}: checkout: moving from derbel to main

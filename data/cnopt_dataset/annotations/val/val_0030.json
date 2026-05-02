@@ -1,0 +1,474 @@
+{
+  "id": "val_0030",
+  "image": "images/val/val_0030.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Sophie Dupont",
+    "registration_number": "FR-PHAR-746309",
+    "issue_date": "2023-10-02"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        86,
+        84,
+        142,
+        97
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        179,
+        69,
+        269,
+        90
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        279.203125,
+        69,
+        412.203125,
+        90
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        421.921875,
+        69,
+        477.921875,
+        90
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        487.375,
+        69,
+        690.375,
+        90
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        179,
+        106,
+        255,
+        122
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        262.0,
+        106,
+        350.0,
+        122
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        179,
+        135,
+        249,
+        150
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        74,
+        241,
+        285,
+        261
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        294.546875,
+        241,
+        532.546875,
+        261
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        74,
+        312,
+        134,
+        330
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        141.984375,
+        313,
+        254.984375,
+        330
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        262.203125,
+        317,
+        307.203125,
+        335
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        315.046875,
+        318,
+        323.046875,
+        330
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        74,
+        360,
+        130,
+        378
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        137.640625,
+        361,
+        161.640625,
+        378
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        169.4375,
+        359,
+        262.4375,
+        383
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        269.6875,
+        366,
+        277.6875,
+        378
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sophie",
+      "bbox": [
+        285,
+        360,
+        378,
+        383
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Dupont",
+      "bbox": [
+        385.921875,
+        360,
+        484.921875,
+        383
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        74,
+        407,
+        169,
+        426
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        176.96875,
+        408,
+        324.96875,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        332.8125,
+        414,
+        340.8125,
+        426
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-746309",
+      "bbox": [
+        348,
+        408,
+        578,
+        426
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        74,
+        456,
+        111,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        118.703125,
+        456,
+        225.703125,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        233.359375,
+        461,
+        263.359375,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        269.90625,
+        456,
+        362.90625,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        370.515625,
+        456,
+        400.515625,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        408.140625,
+        456,
+        490.140625,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        497.75,
+        456,
+        540.75,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        547.875,
+        456,
+        710.875,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        74,
+        504,
+        131,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        138.984375,
+        504,
+        286.984375,
+        527
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        294.828125,
+        510,
+        302.828125,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-10-02",
+      "bbox": [
+        310,
+        504,
+        464,
+        522
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        74,
+        552,
+        129,
+        575
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        136.421875,
+        558,
+        144.421875,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        152,
+        552,
+        243,
+        570
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        74,
+        689,
+        113,
+        706
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        119.859375,
+        688,
+        132.859375,
+        706
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nantes,",
+      "bbox": [
+        140.34375,
+        690,
+        225.34375,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        231.84375,
+        689,
+        251.84375,
+        706
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-10-02",
+      "bbox": [
+        258.484375,
+        690,
+        386.484375,
+        706
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        666,
+        747,
+        763,
+        766
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        768.859375,
+        746,
+        862.859375,
+        762
+      ],
+      "label": "O"
+    }
+  ]
+}

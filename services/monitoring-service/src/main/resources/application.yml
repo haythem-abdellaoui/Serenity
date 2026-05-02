@@ -1,0 +1,48 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+
+  application:
+    name: monitoring-service
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: false
+        generate_statistics: false
+
+logging:
+  level:
+    root: INFO
+    com.serenity.monitoring: DEBUG
+
+app:
+  cors:
+    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://localhost:4200,http://localhost:3000}
+    allow-credentials: ${APP_CORS_ALLOW_CREDENTIALS:true}
+  jwt:
+    secret: ${JWT_SECRET}
+  digest:
+    cron: ${MONITORING_WEEKLY_DIGEST_CRON}
+    timezone: ${MONITORING_WEEKLY_DIGEST_TIMEZONE}
+  cleanup:
+    cron: ${MONITORING_CLEANUP_CRON}
+    timezone: ${MONITORING_CLEANUP_TIMEZONE}
+    retention-days: ${MONITORING_CLEANUP_RETENTION_DAYS}
+  # Python FastAPI in Serenity/services/monitoring -ai (default port 5150)
+  monitoring-ai:
+    enabled: ${MONITORING_AI_ENABLED}
+    url: ${MONITORING_AI_URL}

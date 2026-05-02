@@ -1,0 +1,51 @@
+<div class="wishlist-container">
+  <h2>My Wishlist</h2>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="loading" class="spinner">
+    Loading wishlist...
+  </div>
+
+  <div *ngIf="!loading && wishlistItems.length === 0" class="empty-message">
+    <p>Your wishlist is empty</p>
+    <button class="btn btn-primary" (click)="goToMarketplace()">
+      Continue Shopping
+    </button>
+  </div>
+
+  <div *ngIf="!loading && wishlistItems.length > 0" class="wishlist-items">
+    <div class="wishlist-header">
+      <h4>{{ wishlistItems.length }} item(s) in wishlist</h4>
+    </div>
+
+    <div class="items-grid">
+      <div *ngFor="let item of wishlistItems" class="wishlist-item">
+        <div class="item-image">
+          <img [src]="item.productImageUrl" [alt]="item.productName" class="product-image" />
+        </div>
+        <div class="item-content">
+          <h5 class="item-name">{{ item.productName }}</h5>
+          <p class="item-price">{{ item.productPrice | currency }}</p>
+          <p class="item-date">Added: {{ item.addedAt | date: 'short' }}</p>
+        </div>
+        <div class="item-actions">
+          <button class="btn btn-sm btn-primary" (click)="viewProduct(item.productId)">
+            View Details
+          </button>
+          <button class="btn btn-sm btn-success" *ngIf="canAddToCart(item)" (click)="addToCart(item.productId)">
+            Add to Cart
+          </button>
+          <button class="btn btn-sm btn-success" *ngIf="!canAddToCart(item)" (click)="viewProduct(item.productId)">
+            Open Preview
+          </button>
+          <button class="btn btn-sm btn-danger" (click)="removeFromWishlist(item.productId)">
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

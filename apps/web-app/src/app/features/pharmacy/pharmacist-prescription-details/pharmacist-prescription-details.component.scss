@@ -1,0 +1,349 @@
+:host {
+  --rx-bg: linear-gradient(180deg, #e9f6fb 0%, #f5fbff 100%);
+  --rx-card: #ffffffdb;
+  --rx-border: #cfe2ef;
+  --rx-text: #17344f;
+  --rx-muted: #557089;
+  --rx-accent: #2793c7;
+  --rx-accent-soft: #e7f4fd;
+}
+
+.rx-page {
+  display: grid;
+  gap: 1rem;
+  background: var(--rx-bg);
+  border: 1px solid #d6e9f4;
+  border-radius: 1.1rem;
+  padding: 1rem;
+}
+
+.rx-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.9rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.title-block h1 {
+  margin: 0;
+  color: #0e2f48;
+}
+
+.title-block p {
+  margin: 0.3rem 0 0;
+  color: var(--rx-muted);
+}
+
+.workspace {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.card {
+  border: 1px solid var(--rx-border);
+  border-radius: 1rem;
+  background: var(--rx-card);
+  box-shadow: 0 14px 30px -26px rgba(24, 74, 105, 0.52);
+  padding: 0.95rem;
+}
+
+.overview-card {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.overview-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.overview-head h2 {
+  margin: 0;
+  color: #0f2f48;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.65rem 0.95rem;
+}
+
+.label {
+  margin: 0;
+  color: var(--rx-muted);
+  font-size: 0.85rem;
+}
+
+.value {
+  margin: 0.15rem 0 0;
+  color: var(--rx-text);
+  font-weight: 700;
+}
+
+.status-pill {
+  justify-self: start;
+  display: inline-flex;
+  border-radius: 999px;
+  align-items: center;
+  line-height: 1;
+  padding: 0.36rem 0.66rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  background: #edf4f8;
+  color: #35617c;
+  min-height: 1.6rem;
+  width: fit-content;
+}
+
+.status-pill-pending {
+  background: #fff8e8;
+  color: #896820;
+}
+
+.status-pill-accepted {
+  background: #e6f7ee;
+  color: #1d7a2a;
+}
+
+.status-pill-rejected,
+.status-pill-expired {
+  background: #fdeeee;
+  color: #b42d2d;
+}
+
+.status-pill-ready_for_pickup,
+.status-pill-collected {
+  background: #e1fbf5;
+  color: #0f6f70;
+}
+
+.rejection-note {
+  margin: 0;
+  color: #912f2f;
+  background: #fff1f1;
+  border: 1px solid #f1d5d5;
+  border-radius: 0.75rem;
+  padding: 0.55rem 0.65rem;
+}
+
+.action-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.reject-panel {
+  border: 1px solid #f0d3d3;
+  background: #fff7f7;
+  border-radius: 0.85rem;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.reject-panel h3 {
+  margin: 0;
+  color: #4e2222;
+}
+
+.reject-panel p {
+  margin: 0;
+  color: #6e4545;
+  font-size: 0.9rem;
+}
+
+.reject-panel label {
+  color: #4e2222;
+  font-weight: 700;
+}
+
+.reject-panel textarea {
+  width: 100%;
+  min-height: 96px;
+  border: 1px solid #d9bcbc;
+  border-radius: 0.7rem;
+  padding: 0.6rem;
+  font: inherit;
+  color: #3e2323;
+  background: #fff;
+}
+
+.reject-panel textarea:focus-visible {
+  outline: none;
+  border-color: #cc8d8d;
+  box-shadow: 0 0 0 3px rgba(204, 141, 141, 0.22);
+}
+
+.reject-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.insurance-upload {
+  display: grid;
+  gap: 0.75rem;
+  background: #f7fbff;
+}
+
+.insurance-upload-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.insurance-upload-head h3 {
+  margin: 0;
+  color: #13354f;
+}
+
+.insurance-panel {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.mode-buttons {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.mode-buttons .btn.active {
+  border-color: #2e9aca;
+  box-shadow: 0 0 0 2px rgba(46, 154, 202, 0.2);
+}
+
+.mode-card {
+  display: grid;
+  gap: 0.45rem;
+  border: 1px solid #d5e8f4;
+  border-radius: 0.85rem;
+  background: #fff;
+  padding: 0.75rem;
+}
+
+.mode-card p {
+  margin: 0;
+  color: #37526a;
+}
+
+.insurance-file-input {
+  border: 1px solid #c4dcec;
+  border-radius: 0.6rem;
+  padding: 0.5rem;
+  font: inherit;
+  color: #29506f;
+  background: #fff;
+}
+
+.meds-card {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.section-head h3 {
+  margin: 0;
+  color: #0e2f48;
+}
+
+.medicine-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.medicine-item {
+  border: 1px solid #d7e7f3;
+  border-radius: 0.9rem;
+  background: #fff;
+  padding: 0.7rem;
+  display: grid;
+  gap: 0.42rem;
+}
+
+.medicine-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.line-name {
+  margin: 0;
+  font-weight: 700;
+  color: var(--rx-text);
+  font-size: 1rem;
+}
+
+.qty-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid #bad9eb;
+  background: #eef7fd;
+  color: #2f6284;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+}
+
+.line-meta,
+.line-instructions {
+  margin: 0;
+  color: #3d617d;
+  line-height: 1.35;
+}
+
+.stock-note {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0;
+  border-radius: 999px;
+  background: var(--rx-accent-soft);
+  border: 1px solid #c4e1f0;
+  color: #1f6188;
+  padding: 0.18rem 0.62rem;
+  font-size: 0.83rem;
+}
+
+.hint {
+  margin: 0;
+  color: var(--rx-muted);
+}
+
+.success {
+  margin: 0;
+  color: #1f7a2a;
+}
+
+.error {
+  margin: 0;
+  color: #b52424;
+}
+
+@media (max-width: 860px) {
+  .rx-page {
+    padding: 0.8rem;
+  }
+
+  .rx-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

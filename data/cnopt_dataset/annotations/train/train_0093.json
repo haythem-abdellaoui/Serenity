@@ -1,0 +1,474 @@
+{
+  "id": "train_0093",
+  "image": "images/train/train_0093.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Maroc",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Marie Robert",
+    "registration_number": "FR-PHAR-790114",
+    "issue_date": "02/08/2023"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        102,
+        77,
+        158,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        195,
+        62,
+        285,
+        83
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        295.203125,
+        62,
+        351.203125,
+        83
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        360.65625,
+        62,
+        563.65625,
+        83
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        195,
+        99,
+        271,
+        115
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        278.0,
+        99,
+        366.0,
+        115
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maroc",
+      "bbox": [
+        195,
+        128,
+        259,
+        143
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        90,
+        234,
+        301,
+        254
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        310.546875,
+        234,
+        548.546875,
+        254
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        90,
+        305,
+        150,
+        323
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        157.984375,
+        306,
+        270.984375,
+        323
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        278.203125,
+        310,
+        323.203125,
+        328
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        331.046875,
+        311,
+        339.046875,
+        323
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        90,
+        353,
+        146,
+        371
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        153.640625,
+        354,
+        177.640625,
+        371
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        185.4375,
+        352,
+        278.4375,
+        376
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        285.6875,
+        359,
+        293.6875,
+        371
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marie",
+      "bbox": [
+        301,
+        353,
+        377,
+        371
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Robert",
+      "bbox": [
+        385.8125,
+        353,
+        477.8125,
+        371
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        90,
+        400,
+        185,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        192.96875,
+        401,
+        340.96875,
+        424
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        348.8125,
+        407,
+        356.8125,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-790114",
+      "bbox": [
+        364,
+        401,
+        594,
+        419
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        90,
+        449,
+        214,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        221.984375,
+        448,
+        303.984375,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        311.265625,
+        448,
+        326.265625,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        333.59375,
+        449,
+        383.59375,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        390.8125,
+        449,
+        420.8125,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        428.4375,
+        454,
+        512.4375,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        519.59375,
+        449,
+        667.59375,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        675.4375,
+        454,
+        705.4375,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        711.984375,
+        449,
+        812.984375,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        90,
+        497,
+        147,
+        515
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        154.984375,
+        497,
+        302.984375,
+        520
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        310.828125,
+        503,
+        318.828125,
+        515
+      ],
+      "label": "O"
+    },
+    {
+      "text": "02/08/2023",
+      "bbox": [
+        326,
+        497,
+        477,
+        517
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        90,
+        545,
+        145,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        152.421875,
+        551,
+        160.421875,
+        563
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maroc",
+      "bbox": [
+        168,
+        545,
+        251,
+        563
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        90,
+        682,
+        129,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        135.859375,
+        681,
+        148.859375,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nice,",
+      "bbox": [
+        156.34375,
+        682,
+        211.34375,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        218.53125,
+        682,
+        238.53125,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "02/08/2023",
+      "bbox": [
+        245.171875,
+        683,
+        372.171875,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        650,
+        740,
+        747,
+        759
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        752.859375,
+        739,
+        846.859375,
+        755
+      ],
+      "label": "O"
+    }
+  ]
+}

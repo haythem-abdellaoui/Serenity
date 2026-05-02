@@ -1,0 +1,524 @@
+{
+  "id": "test_0008",
+  "image": "images/test/test_0008.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Jean Chevalier",
+    "registration_number": "ORD-30-2022-6111",
+    "issue_date": "30 novembre 2024"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        99,
+        76,
+        155,
+        89
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        192,
+        61,
+        282,
+        82
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        292.203125,
+        61,
+        425.203125,
+        82
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        434.921875,
+        61,
+        490.921875,
+        82
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        500.375,
+        61,
+        703.375,
+        82
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        192,
+        98,
+        268,
+        114
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        275.0,
+        98,
+        363.0,
+        114
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        192,
+        127,
+        262,
+        142
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        87,
+        233,
+        265,
+        253
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        274.9375,
+        233,
+        512.9375,
+        253
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        87,
+        304,
+        147,
+        322
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        154.984375,
+        305,
+        267.984375,
+        322
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        275.203125,
+        309,
+        320.203125,
+        327
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        328.046875,
+        310,
+        336.046875,
+        322
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        87,
+        352,
+        143,
+        370
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        150.640625,
+        353,
+        174.640625,
+        370
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        182.4375,
+        351,
+        275.4375,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        282.6875,
+        358,
+        290.6875,
+        370
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jean",
+      "bbox": [
+        296,
+        352,
+        357,
+        375
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Chevalier",
+      "bbox": [
+        364.875,
+        352,
+        492.875,
+        370
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        87,
+        399,
+        182,
+        418
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        189.96875,
+        400,
+        337.96875,
+        423
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        345.8125,
+        406,
+        353.8125,
+        418
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-30-2022-6111",
+      "bbox": [
+        361,
+        400,
+        617,
+        418
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        87,
+        448,
+        124,
+        466
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        131.703125,
+        447,
+        301.703125,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        308.875,
+        448,
+        415.875,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        423.53125,
+        453,
+        453.53125,
+        466
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        460.078125,
+        448,
+        553.078125,
+        466
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        560.6875,
+        448,
+        590.6875,
+        466
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        598.3125,
+        448,
+        680.3125,
+        466
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        687.921875,
+        448,
+        730.921875,
+        466
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        738.046875,
+        448,
+        901.046875,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        87,
+        496,
+        144,
+        514
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        151.984375,
+        496,
+        299.984375,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        307.828125,
+        502,
+        315.828125,
+        514
+      ],
+      "label": "O"
+    },
+    {
+      "text": "30",
+      "bbox": [
+        323,
+        496,
+        356,
+        514
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "novembre",
+      "bbox": [
+        364.765625,
+        496,
+        500.765625,
+        514
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2024",
+      "bbox": [
+        508.953125,
+        496,
+        575.953125,
+        514
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        87,
+        544,
+        142,
+        567
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        149.421875,
+        550,
+        157.421875,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        165,
+        544,
+        256,
+        562
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        87,
+        681,
+        126,
+        698
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        132.859375,
+        680,
+        145.859375,
+        698
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nice,",
+      "bbox": [
+        153.34375,
+        681,
+        208.34375,
+        700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        215.53125,
+        681,
+        235.53125,
+        698
+      ],
+      "label": "O"
+    },
+    {
+      "text": "30",
+      "bbox": [
+        242.171875,
+        682,
+        270.171875,
+        698
+      ],
+      "label": "O"
+    },
+    {
+      "text": "novembre",
+      "bbox": [
+        277.171875,
+        681,
+        388.171875,
+        698
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024",
+      "bbox": [
+        395.609375,
+        682,
+        451.609375,
+        698
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        653,
+        739,
+        750,
+        758
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        755.859375,
+        738,
+        849.859375,
+        754
+      ],
+      "label": "O"
+    }
+  ]
+}

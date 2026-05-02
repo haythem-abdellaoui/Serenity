@@ -1,0 +1,464 @@
+{
+  "id": "train_0026",
+  "image": "images/train/train_0026.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Camille Dupont",
+    "registration_number": "ORD-03-2025-9173",
+    "issue_date": "09/01/2022"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        103,
+        78,
+        159,
+        91
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        196,
+        63,
+        286,
+        84
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        296.203125,
+        63,
+        352.203125,
+        84
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        361.65625,
+        63,
+        564.65625,
+        84
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        196,
+        100,
+        272,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        279.0,
+        100,
+        367.0,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        196,
+        129,
+        266,
+        144
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        91,
+        235,
+        269,
+        255
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        278.9375,
+        235,
+        516.9375,
+        255
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        91,
+        306,
+        151,
+        324
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        158.984375,
+        307,
+        271.984375,
+        324
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        279.203125,
+        311,
+        324.203125,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        332.046875,
+        312,
+        340.046875,
+        324
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        91,
+        354,
+        147,
+        372
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        154.640625,
+        355,
+        178.640625,
+        372
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        186.4375,
+        353,
+        279.4375,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        286.6875,
+        360,
+        294.6875,
+        372
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Camille",
+      "bbox": [
+        302,
+        354,
+        402,
+        372
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Dupont",
+      "bbox": [
+        410.171875,
+        354,
+        509.171875,
+        377
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        91,
+        401,
+        186,
+        420
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        193.96875,
+        402,
+        341.96875,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        349.8125,
+        408,
+        357.8125,
+        420
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-03-2025-9173",
+      "bbox": [
+        365,
+        402,
+        621,
+        420
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        91,
+        450,
+        128,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        135.703125,
+        450,
+        242.703125,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        250.359375,
+        455,
+        280.359375,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        286.90625,
+        450,
+        379.90625,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        387.515625,
+        450,
+        417.515625,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        425.140625,
+        450,
+        507.140625,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        514.75,
+        450,
+        557.75,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        564.875,
+        450,
+        727.875,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        91,
+        498,
+        148,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        155.984375,
+        498,
+        303.984375,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        311.828125,
+        504,
+        319.828125,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "09/01/2022",
+      "bbox": [
+        327,
+        498,
+        478,
+        518
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        91,
+        546,
+        146,
+        569
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        153.421875,
+        552,
+        161.421875,
+        564
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        169,
+        546,
+        260,
+        564
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        91,
+        683,
+        130,
+        700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        136.859375,
+        682,
+        149.859375,
+        700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rennes,",
+      "bbox": [
+        157.34375,
+        684,
+        245.34375,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        252.046875,
+        683,
+        272.046875,
+        700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "09/01/2022",
+      "bbox": [
+        278.6875,
+        684,
+        405.6875,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        649,
+        741,
+        746,
+        760
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        751.859375,
+        740,
+        845.859375,
+        756
+      ],
+      "label": "O"
+    }
+  ]
+}

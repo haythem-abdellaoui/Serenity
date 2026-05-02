@@ -1,0 +1,504 @@
+{
+  "id": "val_0020",
+  "image": "images/val/val_0020.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Leila Michel",
+    "registration_number": "RP-2025-417432",
+    "issue_date": "2025-07-15"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        82,
+        74,
+        138,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        175,
+        59,
+        290,
+        80
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        299.3125,
+        59,
+        432.3125,
+        80
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        442.03125,
+        59,
+        481.03125,
+        80
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        490.8125,
+        59,
+        599.8125,
+        80
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        609.1875,
+        59,
+        665.1875,
+        80
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        674.640625,
+        59,
+        877.640625,
+        80
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        175,
+        96,
+        251,
+        112
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        258.0,
+        96,
+        346.0,
+        112
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        175,
+        125,
+        245,
+        140
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        70,
+        231,
+        248,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        257.9375,
+        231,
+        495.9375,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        70,
+        302,
+        130,
+        320
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        137.984375,
+        303,
+        250.984375,
+        320
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        258.203125,
+        307,
+        303.203125,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        311.046875,
+        308,
+        319.046875,
+        320
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        70,
+        350,
+        126,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        133.640625,
+        351,
+        157.640625,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        165.4375,
+        349,
+        258.4375,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        265.6875,
+        356,
+        273.6875,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Leila",
+      "bbox": [
+        281,
+        350,
+        345,
+        368
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Michel",
+      "bbox": [
+        353.609375,
+        350,
+        441.609375,
+        368
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        70,
+        397,
+        165,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        172.96875,
+        398,
+        320.96875,
+        421
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        328.8125,
+        404,
+        336.8125,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2025-417432",
+      "bbox": [
+        344,
+        398,
+        567,
+        416
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        70,
+        446,
+        194,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        201.984375,
+        445,
+        283.984375,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        291.265625,
+        445,
+        306.265625,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        313.59375,
+        446,
+        363.59375,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        370.8125,
+        446,
+        400.8125,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        408.4375,
+        451,
+        492.4375,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        499.59375,
+        446,
+        647.59375,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        655.4375,
+        451,
+        685.4375,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        691.984375,
+        446,
+        792.984375,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        70,
+        494,
+        127,
+        512
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        134.984375,
+        494,
+        282.984375,
+        517
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        290.828125,
+        500,
+        298.828125,
+        512
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-07-15",
+      "bbox": [
+        306,
+        494,
+        460,
+        512
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        70,
+        542,
+        125,
+        565
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        132.421875,
+        548,
+        140.421875,
+        560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        148,
+        542,
+        239,
+        560
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        70,
+        679,
+        109,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        115.859375,
+        678,
+        128.859375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Toulouse,",
+      "bbox": [
+        135.34375,
+        679,
+        239.34375,
+        698
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        245.9375,
+        679,
+        265.9375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-07-15",
+      "bbox": [
+        272.578125,
+        680,
+        400.578125,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        670,
+        737,
+        767,
+        756
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        772.859375,
+        736,
+        866.859375,
+        752
+      ],
+      "label": "O"
+    }
+  ]
+}

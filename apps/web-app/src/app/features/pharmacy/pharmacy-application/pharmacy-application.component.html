@@ -1,0 +1,198 @@
+<div class="container">
+  <section class="application-page">
+    <header class="page-header">
+      <div class="title-block">
+        <h1>Apply as Pharmacist</h1>
+        <p>Submit your official pharmacy verification documents. You can continue using Serenity as a patient while your request is reviewed.</p>
+      </div>
+      <button type="button" class="btn btn-secondary" (click)="continueAsPatient()">Back to Patient Pharmacy</button>
+    </header>
+
+    <article class="status-card" *ngIf="application as app">
+      <h2>Current Request Status</h2>
+      <p class="status-line">
+        <span class="badge" [class.submitted]="app.status === 'SUBMITTED'" [class.rejected]="app.status === 'REJECTED'" [class.approved]="app.status === 'APPROVED'">
+          {{ app.status }}
+        </span>
+      </p>
+      <p *ngIf="app.submittedAt">Submitted: {{ app.submittedAt | date: 'medium' }}</p>
+      <p *ngIf="app.reviewedAt">Reviewed: {{ app.reviewedAt | date: 'medium' }}</p>
+      <p class="review-comment" *ngIf="app.reviewComment">Admin comment: {{ app.reviewComment }}</p>
+      <div class="actions" *ngIf="app.status === 'APPROVED'">
+        <button type="button" class="btn btn-primary" (click)="goToPharmacistWorkspace()">Go To Pharmacist Workspace</button>
+      </div>
+    </article>
+
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <form class="application-form card" [formGroup]="applicationForm" (ngSubmit)="submit()">
+      <section class="form-section">
+        <h3>Pharmacist Information</h3>
+        <div class="grid">
+          <label>
+            First Name
+            <input type="text" formControlName="firstName" />
+          </label>
+          <label>
+            Last Name
+            <input type="text" formControlName="lastName" />
+          </label>
+          <label>
+            Email
+            <input type="email" formControlName="email" />
+          </label>
+          <label>
+            Phone
+            <input type="text" formControlName="phone" />
+          </label>
+          <label>
+            CIN Number
+            <input type="text" formControlName="cinNumber" />
+          </label>
+          <label>
+            CNOP/CNOPT Number
+            <input type="text" formControlName="cnopNumber" />
+          </label>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h3>Pharmacy Information</h3>
+        <div class="grid">
+          <label>
+            Pharmacy Name
+            <input type="text" formControlName="pharmacyName" />
+          </label>
+          <label>
+            Authorization Reference Number
+            <input type="text" formControlName="authorizationReferenceNumber" />
+          </label>
+          <div class="hours-field full-width">
+            <span class="field-title">Opening Hours</span>
+            <div class="hours-grid">
+              <label class="mini-field">
+                <span>Open</span>
+                <input type="time" formControlName="openingFrom" />
+              </label>
+              <label class="mini-field">
+                <span>Close</span>
+                <input type="time" formControlName="openingTo" />
+              </label>
+            </div>
+            <small>Times are saved as HH:MM-HH:MM.</small>
+          </div>
+          <label class="full-width">
+            Address
+            <input type="text" formControlName="addressLine" />
+          </label>
+          <label>
+            City
+            <input type="text" formControlName="city" />
+          </label>
+          <label>
+            Governorate
+            <input type="text" formControlName="governorate" />
+          </label>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h3>Pharmacy Location</h3>
+        <app-location-picker
+          [latitude]="applicationForm.value.latitude ?? null"
+          [longitude]="applicationForm.value.longitude ?? null"
+          [readonly]="!canSubmit"
+          (locationSelected)="onLocationSelected($event)">
+        </app-location-picker>
+        <p class="location-hint" [class.loading]="locationAutoFillLoading" *ngIf="locationAutoFillMessage">
+          {{ locationAutoFillMessage }}
+        </p>
+      </section>
+
+      <section class="form-section">
+        <h3>Required Documents</h3>
+        <div class="documents-grid">
+          <article class="document-card" [class.has-existing]="hasStoredDocument('cin')" [class.has-new]="hasNewDocument('cin')">
+            <p class="document-title">CIN Document (PDF/JPG/PNG)</p>
+            <div class="upload-control">
+              <input
+                #cinInput
+                id="cinDocumentInput"
+                class="sr-only-file-input"
+                type="file"
+                accept=".pdf,.png,.jpg,.jpeg"
+                (change)="onFileSelected($event, 'cin')"
+                [disabled]="!canSubmit" />
+              <button
+                type="button"
+                class="btn btn-secondary btn-upload"
+                (click)="cinInput.click()"
+                [disabled]="!canSubmit"
+                [attr.aria-controls]="'cinDocumentInput'">
+                Choose CIN File
+              </button>
+              <p class="file-name" aria-live="polite">{{ fileNameFor('cin') }}</p>
+            </div>
+            <p class="document-hint" *ngIf="hasStoredDocument('cin')">A CIN document is already stored. Uploading a new file will replace it.</p>
+          </article>
+
+          <article class="document-card" [class.has-existing]="hasStoredDocument('cnopt')" [class.has-new]="hasNewDocument('cnopt')">
+            <p class="document-title">CNOP/CNOPT Proof (PDF/JPG/PNG)</p>
+            <div class="upload-control">
+              <input
+                #cnoptInput
+                id="cnoptDocumentInput"
+                class="sr-only-file-input"
+                type="file"
+                accept=".pdf,.png,.jpg,.jpeg"
+                (change)="onFileSelected($event, 'cnopt')"
+                [disabled]="!canSubmit" />
+              <button
+                type="button"
+                class="btn btn-secondary btn-upload"
+                (click)="cnoptInput.click()"
+                [disabled]="!canSubmit"
+                [attr.aria-controls]="'cnoptDocumentInput'">
+                Choose CNOPT File
+              </button>
+              <p class="file-name" aria-live="polite">{{ fileNameFor('cnopt') }}</p>
+            </div>
+            <p class="document-hint" *ngIf="hasStoredDocument('cnopt')">A CNOP/CNOPT proof is already stored. Uploading a new file will replace it.</p>
+          </article>
+
+          <article class="document-card" [class.has-existing]="hasStoredDocument('legal')" [class.has-new]="hasNewDocument('legal')">
+            <p class="document-title">Legal Pharmacy Control Proof (PDF/JPG/PNG)</p>
+            <div class="upload-control">
+              <input
+                #legalInput
+                id="legalDocumentInput"
+                class="sr-only-file-input"
+                type="file"
+                accept=".pdf,.png,.jpg,.jpeg"
+                (change)="onFileSelected($event, 'legal')"
+                [disabled]="!canSubmit" />
+              <button
+                type="button"
+                class="btn btn-secondary btn-upload"
+                (click)="legalInput.click()"
+                [disabled]="!canSubmit"
+                [attr.aria-controls]="'legalDocumentInput'">
+                Choose Legal File
+              </button>
+              <p class="file-name" aria-live="polite">{{ fileNameFor('legal') }}</p>
+            </div>
+            <p class="document-hint" *ngIf="hasStoredDocument('legal')">A legal proof document is already stored. Uploading a new file will replace it.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary" [disabled]="!canSubmit">
+          {{ submitting ? 'Submitting...' : 'Submit Application' }}
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="continueAsPatient()">Continue As Patient</button>
+      </div>
+    </form>
+  </section>
+</div>

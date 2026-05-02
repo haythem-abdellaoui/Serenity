@@ -1,0 +1,725 @@
+[
+  {
+    "ref": "6cce34f3-e8eb-4fba-9d37-a8bc57907cb5",
+    "patientName": "1",
+    "description": "this is another test for document passage",
+    "amount": 120,
+    "insuranceCompany": "Insurance 5",
+    "insuranceGrade": 2,
+    "status": "REJECTED",
+    "reimbursementAmount": null,
+    "receivedAt": "2026-03-24T13:30:06.309Z",
+    "processedAt": "2026-03-24T13:35:47.035Z",
+    "rejectReason": "More documents are needed for review",
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F1%2F03d6dae4-0048-4eb8-a562-338f19383201_diagramme_classe_pi.png"
+    ]
+  },
+  {
+    "ref": "7a80c1a4-d297-4a91-a3d3-88e6f986d10a",
+    "patientName": "1",
+    "description": "ts=esting the reim calculation",
+    "amount": 119.98,
+    "insuranceCompany": "Insurance 3",
+    "insuranceGrade": 3,
+    "status": "APPROVED",
+    "reimbursementAmount": 21.6,
+    "receivedAt": "2026-03-24T13:38:29.795Z",
+    "processedAt": "2026-03-24T13:38:38.552Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F1%2F32af6880-3be2-4109-93a3-907e1a0009d8_Correction+%E2%80%93+TP7+%E2%80%93+Docker+swarm.pdf"
+    ]
+  },
+  {
+    "ref": "3a7a17ea-5d05-4dc8-85ba-392a340e8d9c",
+    "patientName": "1",
+    "description": "testing the amount change",
+    "amount": 119.97,
+    "insuranceCompany": "Insurance 4",
+    "insuranceGrade": 4,
+    "status": "APPROVED",
+    "reimbursementAmount": 25,
+    "receivedAt": "2026-03-24T13:39:08.479Z",
+    "processedAt": "2026-03-24T13:39:29.923Z",
+    "rejectReason": null,
+    "adjustmentReason": "amount has been lowered due to repetitive claims",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F1%2F0c648eef-c1e1-43d3-88eb-918ca3b02bb1_docker_exam_reference.pdf"
+    ]
+  },
+  {
+    "ref": "6341f119-a648-49b1-8ad1-4dad3759b813",
+    "patientName": "1",
+    "description": "testing if the reason passes correctly",
+    "amount": 125,
+    "insuranceCompany": "Insurance 5",
+    "insuranceGrade": 4,
+    "status": "APPROVED",
+    "reimbursementAmount": 31.25,
+    "receivedAt": "2026-03-24T13:46:28.924Z",
+    "processedAt": "2026-03-24T13:46:42.860Z",
+    "rejectReason": null,
+    "adjustmentReason": "this a testing reason",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F1%2F475527ab-f889-46f1-8d94-7223ecc04b76_usecase.png"
+    ]
+  },
+  {
+    "ref": "a6566e0c-767d-4e01-8862-21a8050f917c",
+    "patientName": "1",
+    "description": "this is a test after merge",
+    "amount": 150,
+    "insuranceCompany": "Insurance 3",
+    "insuranceGrade": 3,
+    "status": "APPROVED",
+    "reimbursementAmount": 27,
+    "receivedAt": "2026-03-25T10:50:52.150Z",
+    "processedAt": "2026-03-25T10:51:54.130Z",
+    "rejectReason": null,
+    "adjustmentReason": "document approved and everything is good you will receive your payment within the next 48 hours check your bank account, in case of delay please refer to the nearest agency to you",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F1%2Ff1103eaf-0c58-4f20-b073-79669863b6c5_4884e3f3-e0bf-4e05-8362-d9f509c6bc92.jpg"
+    ]
+  },
+  {
+    "ref": "279f92ab-b74b-4373-865d-dd1471c42cb7",
+    "patientName": "1",
+    "description": "now testing reach to external",
+    "amount": 125,
+    "insuranceCompany": "Insurance 4",
+    "insuranceGrade": 4,
+    "status": "APPROVED",
+    "reimbursementAmount": 31.25,
+    "receivedAt": "2026-03-25T18:23:41.397Z",
+    "processedAt": "2026-03-25T18:23:55.917Z",
+    "rejectReason": null,
+    "adjustmentReason": "good",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F1%2F01b9ac9f-8dd8-40e1-bdfb-defdea64d184_repo.pdf"
+    ]
+  },
+  {
+    "ref": "7ff6de99-6809-4a83-b54c-24ff47ce1f9b",
+    "patientName": "1",
+    "description": "test full insurance claim process",
+    "amount": 149.97,
+    "insuranceCompany": "Insurance 3",
+    "insuranceGrade": 3,
+    "status": "APPROVED",
+    "reimbursementAmount": 26.99,
+    "receivedAt": "2026-03-26T09:26:40.557Z",
+    "processedAt": "2026-03-26T09:28:08.573Z",
+    "rejectReason": null,
+    "adjustmentReason": "all good",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F1%2F940835ad-3f1f-4431-b2c0-8e9fc4ffbc26_docker_exam_reference+%281%29.pdf",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F1%2F2e5633c6-15da-44c8-a669-1370c6fd4db8_Correction+%E2%80%93+TP7+%E2%80%93+Docker+swarm.pdf"
+    ]
+  },
+  {
+    "ref": "8f7928d2-9a89-4fc3-ab3c-af3d364f7662",
+    "patientName": "1",
+    "description": "testing large texts",
+    "amount": 150,
+    "insuranceCompany": "Insurance 3",
+    "insuranceGrade": 3,
+    "status": "APPROVED",
+    "reimbursementAmount": 27,
+    "receivedAt": "2026-03-26T10:08:55.889Z",
+    "processedAt": "2026-03-26T10:09:20.965Z",
+    "rejectReason": null,
+    "adjustmentReason": "hellllllllllllllo this is a testing for the reason field and how will it appear in case of long test",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F1%2F9e456568-3147-4987-a13a-22d5b8fa4297_37ead2b2-e7f4-44ac-9027-02ffa528a417.jpg"
+    ]
+  },
+  {
+    "ref": "45a995fa-0174-4a19-92ac-8539e79438f2",
+    "patientName": "1",
+    "description": "this is a big order",
+    "amount": 1250,
+    "insuranceCompany": "Insurance 3",
+    "insuranceGrade": 2,
+    "status": "REJECTED",
+    "reimbursementAmount": null,
+    "receivedAt": "2026-03-26T10:19:17.789Z",
+    "processedAt": "2026-03-26T10:19:27.681Z",
+    "rejectReason": "this is a scammer",
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F1%2F25829db6-54db-4944-ab38-30d3c368a854_arch_glob.png"
+    ]
+  },
+  {
+    "ref": "39efcfb1-eb36-42ae-b899-b4b6dd3d82df",
+    "patientName": "1",
+    "description": "test merge",
+    "amount": 84.97,
+    "insuranceCompany": "Insurance 4",
+    "insuranceGrade": 2,
+    "status": "APPROVED",
+    "reimbursementAmount": 10.2,
+    "receivedAt": "2026-03-29T10:57:04.340Z",
+    "processedAt": "2026-03-29T10:57:21.057Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F1%2F0042d2df-b4f6-4cae-8b1d-cfda855dcaa9_Gemini_Generated_Image_7ggkk57ggkk57ggk.png"
+    ]
+  },
+  {
+    "ref": "3dc50fa3-47b8-4787-bf54-07933dfd3cb1",
+    "patientName": "3",
+    "description": "i bought meds",
+    "amount": 125,
+    "insuranceCompany": "Insurance 3",
+    "insuranceGrade": 1,
+    "status": "REJECTED",
+    "reimbursementAmount": null,
+    "receivedAt": "2026-03-29T11:14:54.049Z",
+    "processedAt": "2026-03-29T11:15:11.439Z",
+    "rejectReason": "sorry too many requests",
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F31cb8176-89b2-4e93-8428-e22604d92ad0_283791dd-03e0-436b-80d5-a6c28194496b.jpg"
+    ]
+  },
+  {
+    "ref": "70b5fe25-1772-418f-a34c-41903f510eda",
+    "patientName": "162",
+    "description": "gyufgyttfyjt",
+    "amount": 11111,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 1,
+    "status": "APPROVED",
+    "reimbursementAmount": 1111.1,
+    "receivedAt": "2026-03-29T22:31:36.876Z",
+    "processedAt": "2026-03-29T22:35:24.609Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F162%2F90cc0390-d958-4df8-a0a5-8f9a5668dec7_461715472_849274157403977_230643184334225292_n.jpg"
+    ]
+  },
+  {
+    "ref": "9dbe5088-7b4c-4156-8ca1-5d1acd36f5f1",
+    "patientName": "5",
+    "description": "i bought meds give me money back",
+    "amount": 124,
+    "insuranceCompany": "Insurance 3",
+    "insuranceGrade": 4,
+    "status": "APPROVED",
+    "reimbursementAmount": 31,
+    "receivedAt": "2026-03-30T14:27:25.487Z",
+    "processedAt": "2026-03-30T14:27:43.685Z",
+    "rejectReason": null,
+    "adjustmentReason": "GOOD HERE'S YOUR FUCKING MONEY BACK",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F5%2Fdd39c41a-ba92-4616-ab92-51c823c3ba49_carte+etudiant.jpg"
+    ]
+  },
+  {
+    "ref": "14b14dd7-a8e2-4a3b-9a56-67a4ead42e87",
+    "patientName": "8",
+    "description": "azddazazdazd",
+    "amount": 100,
+    "insuranceCompany": "Insurance 1",
+    "insuranceGrade": 2,
+    "status": "APPROVED",
+    "reimbursementAmount": 12,
+    "receivedAt": "2026-03-30T17:14:54.471Z",
+    "processedAt": "2026-03-30T17:15:16.538Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F8%2F3bb06eec-aba7-4c18-9dfd-f0840f6fdbc1_carte+etudiant.jpg"
+    ]
+  },
+  {
+    "ref": "e8b4127a-62d3-4cbc-8562-ccf677c97689",
+    "patientName": "3",
+    "description": "test notis",
+    "amount": 120,
+    "insuranceCompany": "Insurance 3",
+    "insuranceGrade": 2,
+    "status": "REJECTED",
+    "reimbursementAmount": null,
+    "receivedAt": "2026-03-31T07:35:21.560Z",
+    "processedAt": "2026-03-31T07:39:10.626Z",
+    "rejectReason": "unworthy",
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F097f26cb-6b81-4183-bc48-20a2c51be3cd_Gemini_Generated_Image_5qhefk5qhefk5qhe.png"
+    ]
+  },
+  {
+    "ref": "7aef0177-af4d-4067-b725-0fff490403fb",
+    "patientName": "3",
+    "description": "testing new notification for claims",
+    "amount": 125,
+    "insuranceCompany": "Insurance 4",
+    "insuranceGrade": 3,
+    "status": "APPROVED",
+    "reimbursementAmount": 22.5,
+    "receivedAt": "2026-03-31T07:38:45.405Z",
+    "processedAt": "2026-03-31T07:39:15.806Z",
+    "rejectReason": null,
+    "adjustmentReason": "done",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2Fb4f7c7e3-b269-4ce4-9403-fbd01dfdf490_Gemini_Generated_Image_rya6r4rya6r4rya6.png"
+    ]
+  },
+  {
+    "ref": "c414fc95-51bb-4b7c-94d5-113594c9c420",
+    "patientName": "3",
+    "description": "testing admin access",
+    "amount": 99.97,
+    "insuranceCompany": "Insurance 3",
+    "insuranceGrade": 2,
+    "status": "APPROVED",
+    "reimbursementAmount": 12,
+    "receivedAt": "2026-03-31T07:42:01.291Z",
+    "processedAt": "2026-03-31T07:42:31.579Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F62d1dc4e-23d9-4a0c-8238-ea3f11b4d03b_poster4.png"
+    ]
+  },
+  {
+    "ref": "6faed761-26c1-4be9-a135-222abbe17094",
+    "patientName": "4",
+    "description": "testetstetst",
+    "amount": 600,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 3,
+    "status": "APPROVED",
+    "reimbursementAmount": 108,
+    "receivedAt": "2026-04-01T21:39:58.243Z",
+    "processedAt": "2026-04-01T21:40:15.313Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F4%2Faebd329c-f52c-4181-9082-0bdac3343da6_Screenshot+2025-11-07+143248.png"
+    ]
+  },
+  {
+    "ref": "d1741a65-fdbb-41fd-8c90-aac2da8753ee",
+    "patientName": "21",
+    "description": "this is a testing for validation on claim form",
+    "amount": 149.92,
+    "insuranceCompany": "Insurance 3",
+    "insuranceGrade": 3,
+    "status": "APPROVED",
+    "reimbursementAmount": 26.99,
+    "receivedAt": "2026-04-05T11:47:41.465Z",
+    "processedAt": "2026-04-05T11:48:41.581Z",
+    "rejectReason": null,
+    "adjustmentReason": "all good",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F21%2F367d32df-239e-4aeb-8ce8-e257640c2934_SerLogo__1_-removebg-preview.png",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F21%2F830d95a5-c69e-4807-8775-541a32bb82dc_SerLogo+%281%29.png",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F21%2F66b7766c-af19-4837-b461-6554295822fe_mental-health-record-tester-Patient-1774783731974.pdf",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F21%2F74d81723-ba88-47bc-84de-097db9fb5a13_SerLogo+%281%29.png"
+    ]
+  },
+  {
+    "ref": "39a33e7a-aedc-47b9-af40-57d6af3f1f3a",
+    "patientName": "23",
+    "description": "this is a test",
+    "amount": 1550,
+    "insuranceCompany": "Insurance 3",
+    "insuranceGrade": 3,
+    "status": "REJECTED",
+    "reimbursementAmount": null,
+    "receivedAt": "2026-04-05T12:43:43.915Z",
+    "processedAt": "2026-04-05T12:43:52.622Z",
+    "rejectReason": "noope",
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F23%2Ffa57fdf4-17bb-478b-b155-7fa4ce4e9c64_SerLogo+%281%29.png"
+    ]
+  },
+  {
+    "ref": "b657aab6-3329-488e-9f35-f309af41d7aa",
+    "patientName": "3",
+    "description": "this is to test pagination",
+    "amount": 125,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 1,
+    "status": "APPROVED",
+    "reimbursementAmount": 12.5,
+    "receivedAt": "2026-04-05T12:58:32.890Z",
+    "processedAt": "2026-04-05T12:59:01.211Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2Fdcfed4cd-1416-45bb-9daa-df8f5d1634dc_SerLogo+%281%29.png"
+    ]
+  },
+  {
+    "ref": "075ea340-d06f-4328-aee3-7babbfd4a9b1",
+    "patientName": "3",
+    "description": "this is to test pagination 2",
+    "amount": 150,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 2,
+    "status": "APPROVED",
+    "reimbursementAmount": 18,
+    "receivedAt": "2026-04-05T12:58:50.018Z",
+    "processedAt": "2026-04-05T12:58:57.710Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F323dba02-f273-41a7-9eb4-7920985fd3f3_SerLogo__1_-removebg-preview.png"
+    ]
+  },
+  {
+    "ref": "c03ed3b4-c8d0-4c12-96ce-0f142a817459",
+    "patientName": "3",
+    "description": "this is atesting for the new insurance workflow",
+    "amount": 125,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 2,
+    "status": "REJECTED",
+    "reimbursementAmount": null,
+    "receivedAt": "2026-04-09T11:04:49.923Z",
+    "processedAt": "2026-04-09T11:39:58.447Z",
+    "rejectReason": "no non o",
+    "adjustmentReason": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2Fdb5a9277-c8ec-4ed4-80ba-2ae3ec5e984a_Gemini_Generated_Image_qcjwtoqcjwtoqcjw.png",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2Fcb4fd7c1-a715-4bd4-9df6-88921b3dc4d6_Gemini_Generated_Image_pfj41rpfj41rpfj4.png"
+    ],
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": "2026-04-09T11:39:47.393Z"
+  },
+  {
+    "ref": "8f604dff-8c06-48c4-8e44-563896f1337d",
+    "patientName": "3",
+    "description": "this is a test for the response",
+    "amount": 120,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 2,
+    "status": "APPROVED",
+    "reimbursementAmount": 14.4,
+    "receivedAt": "2026-04-09T11:12:45.997Z",
+    "processedAt": "2026-04-09T11:39:30.064Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": "2026-04-09T11:39:23.832Z",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F10379038-df56-4b8f-b980-1fac39903d0b_Gemini_Generated_Image_6bfi0e6bfi0e6bfi.png",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F5ff4022d-094f-423c-8d5f-8505f3820e3c_663360064_1687980179034654_5869463879584342052_n.png",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F1ef1fea9-95f4-4b70-8701-35a9de8b970d_Gemini_Generated_Image_3tepnw3tepnw3tep.png"
+    ]
+  },
+  {
+    "ref": "ffb6c601-4a1b-49b7-9525-5d0462f0a41c",
+    "patientName": "3",
+    "description": "work dude cmon",
+    "amount": 150,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 2,
+    "status": "APPROVED",
+    "reimbursementAmount": 18,
+    "receivedAt": "2026-04-09T11:17:46.297Z",
+    "processedAt": "2026-04-09T11:18:41.057Z",
+    "rejectReason": null,
+    "adjustmentReason": "all gucci",
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": "2026-04-09T11:18:22.758Z",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F4a266101-48f9-49b6-b207-44c41ac7cce9_Gemini_Generated_Image_qcjwtoqcjwtoqcjw.png",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2Fe8d2e348-debc-4d41-9c29-d2f578f2a192_664782689_1505418697592182_7317517457708312985_n.png"
+    ]
+  },
+  {
+    "ref": "369bf2cd-9ccc-44dd-b6ae-f750a8c4464c",
+    "patientName": "3",
+    "description": "readjsutment",
+    "amount": 150,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 3,
+    "status": "REJECTED",
+    "reimbursementAmount": null,
+    "receivedAt": "2026-04-09T11:34:14.862Z",
+    "processedAt": "2026-04-10T10:50:18.608Z",
+    "rejectReason": "naaaah",
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F596afe6d-e0d2-4251-bcc4-538cf1f7dcd5_Gemini_Generated_Image_kytuufkytuufkytu.png"
+    ]
+  },
+  {
+    "ref": "39c628c1-c2df-43fc-85e2-58e409778123",
+    "patientName": "3",
+    "description": "this is a test",
+    "amount": 130,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 3,
+    "status": "APPROVED",
+    "reimbursementAmount": 23.4,
+    "receivedAt": "2026-04-10T10:53:44.051Z",
+    "processedAt": "2026-04-10T11:04:43.099Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": "2026-04-10T11:04:32.589Z",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2Ffe56757e-8658-414e-85d6-17ecce0f4428_medical_invoice+%281%29.pdf",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F93efac1a-7ccf-45ad-a88a-f60da27f1e5d_medical_invoice+%281%29.pdf"
+    ]
+  },
+  {
+    "ref": "fa6e88eb-21a2-4ebf-ad98-f7c07dbc3b1c",
+    "patientName": "3",
+    "description": "test for passage",
+    "amount": 128,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 2,
+    "status": "APPROVED",
+    "reimbursementAmount": 15.36,
+    "receivedAt": "2026-04-10T11:10:25.935Z",
+    "processedAt": "2026-04-10T11:11:32.166Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": "2026-04-10T11:11:18.849Z",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2Fa47ec261-24ff-4af9-8fa2-19eefaa1fd89_medical_invoice_insurance4.pdf",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F5c9f3e2d-2904-40a9-8911-ae28e53294df_medical_invoice+%281%29.pdf"
+    ]
+  },
+  {
+    "ref": "1a681a1e-37c1-4b33-a287-06234a1619b3",
+    "patientName": "3",
+    "description": "testetetet",
+    "amount": 130,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 2,
+    "status": "REJECTED",
+    "reimbursementAmount": null,
+    "receivedAt": "2026-04-10T12:57:30.748Z",
+    "processedAt": "2026-04-10T12:57:44.882Z",
+    "rejectReason": "no",
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F6b3b3881-78ad-4e68-89e9-d61a06115431_medical_invoice+%281%29.pdf"
+    ]
+  },
+  {
+    "ref": "11281533-726c-448b-8e3e-389af1dc5719",
+    "patientName": "3",
+    "description": "efdsfsdfdsd",
+    "amount": 128,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 2,
+    "status": "REJECTED",
+    "reimbursementAmount": null,
+    "receivedAt": "2026-04-10T12:58:03.975Z",
+    "processedAt": "2026-04-10T12:58:50.839Z",
+    "rejectReason": "bad certificate",
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": "2026-04-10T12:58:26.874Z",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2Fc55a85db-7b6e-4a11-a6f6-8b8843535187_medical_invoice_insurance4.pdf",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F4c3ad7ad-26dd-4f40-862a-9f30c0094afb_medical_invoice+%281%29.pdf"
+    ]
+  },
+  {
+    "ref": "3a5204df-df56-418f-87a5-2b9625031b0f",
+    "patientName": "3",
+    "description": "testetsshss",
+    "amount": 128.03,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 2,
+    "status": "REJECTED",
+    "reimbursementAmount": null,
+    "receivedAt": "2026-04-10T13:06:41.292Z",
+    "processedAt": "2026-04-10T13:07:30.163Z",
+    "rejectReason": "ndo",
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": "2026-04-10T13:07:07.963Z",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F4a13a17e-b6d5-4f69-8cac-5e0a100eae50_medical_invoice_insurance4.pdf",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F4d12d960-05cc-451f-b549-09d9a775c596_medical_invoice+%281%29.pdf"
+    ]
+  },
+  {
+    "ref": "227400e2-af63-48fa-9138-74ec6c2726a1",
+    "patientName": "2",
+    "description": "aaaaaaaaaaaaaaaaaaaa",
+    "amount": 149.97,
+    "insuranceCompany": "Insurance 1",
+    "insuranceGrade": 2,
+    "status": "SUBMITTED",
+    "reimbursementAmount": 18,
+    "receivedAt": "2026-04-11T16:47:11.264Z",
+    "processedAt": null,
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": null,
+    "attachmentUrls": []
+  },
+  {
+    "ref": "aec91ca7-a01f-4497-9c43-a56b122ae9c4",
+    "patientName": "2",
+    "description": "rayentest123",
+    "amount": 399.99,
+    "insuranceCompany": "Insurance 1",
+    "insuranceGrade": 2,
+    "status": "APPROVED",
+    "reimbursementAmount": 48,
+    "receivedAt": "2026-04-11T16:48:36.285Z",
+    "processedAt": "2026-04-11T16:49:36.123Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F2%2Fc056f4dc-05d3-479a-acb8-0a02c8d3bf6c_mental-health-record-boussaidi-rayen-1774709880557.pdf"
+    ]
+  },
+  {
+    "ref": "887763e1-fe23-4fd6-84b0-b6113e96e3e5",
+    "patientName": "11",
+    "description": "KFHJFFHGFHG",
+    "amount": 199.96,
+    "insuranceCompany": "Insurance 1",
+    "insuranceGrade": 2,
+    "status": "REJECTED",
+    "reimbursementAmount": null,
+    "receivedAt": "2026-04-14T12:07:52.406Z",
+    "processedAt": "2026-04-14T12:10:26.409Z",
+    "rejectReason": "f off",
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": null,
+    "attachmentUrls": []
+  },
+  {
+    "ref": "1220e48e-edcf-4f7e-88d0-6e3c15117426",
+    "patientName": "11",
+    "description": "hhjfhgjhnbhc",
+    "amount": 128,
+    "insuranceCompany": "Insurance 4",
+    "insuranceGrade": 2,
+    "status": "APPROVED",
+    "reimbursementAmount": 15.36,
+    "receivedAt": "2026-04-14T12:10:58.860Z",
+    "processedAt": "2026-04-14T12:11:20.400Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F11%2Fd5d1866d-0c86-478e-8355-dc8df8bc8bd5_medical_invoice_insurance4.pdf"
+    ]
+  },
+  {
+    "ref": "4bd4c7c9-e326-45aa-9262-ef1c7da44cec",
+    "patientName": "23",
+    "description": "this is a test for the model accuraccy",
+    "amount": 127.95,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 4,
+    "status": "APPROVED",
+    "reimbursementAmount": 31.99,
+    "receivedAt": "2026-04-15T07:44:47.709Z",
+    "processedAt": "2026-04-15T07:45:16.192Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F23%2Fccc547ed-5916-449e-a979-2bb661b7f2bd_medical_invoice+%281%29.pdf"
+    ]
+  },
+  {
+    "ref": "8a342360-df7e-4b0d-8ca2-be01dc2a8b68",
+    "patientName": "3",
+    "description": "hmmmmmmmmmmmmm",
+    "amount": 128,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 2,
+    "status": "APPROVED",
+    "reimbursementAmount": 15.36,
+    "receivedAt": "2026-04-21T09:09:42.734Z",
+    "processedAt": "2026-04-21T09:11:00.824Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2Fe09c732e-1305-453a-9b48-6702617173bc_medical_invoice+%281%29.pdf"
+    ]
+  },
+  {
+    "ref": "9de6f979-5a55-4209-89cc-3674b684e08d",
+    "patientName": "3",
+    "description": "testing flow admin",
+    "amount": 128,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 3,
+    "status": "APPROVED",
+    "reimbursementAmount": 23.04,
+    "receivedAt": "2026-04-21T09:12:13.623Z",
+    "processedAt": "2026-04-21T09:12:35.073Z",
+    "rejectReason": null,
+    "adjustmentReason": null,
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": null,
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2Fe9c93774-bf90-4139-9ed8-00a7c0b6394e_medical_invoice+%281%29.pdf"
+    ]
+  },
+  {
+    "ref": "eeb799b3-fce3-4e70-9c50-591a6b456f19",
+    "patientName": "3",
+    "description": "I bought meds prescribed by my doctor and i am seeking a refund",
+    "amount": 128,
+    "insuranceCompany": "Insurance 2",
+    "insuranceGrade": 2,
+    "status": "APPROVED",
+    "reimbursementAmount": 15.36,
+    "receivedAt": "2026-04-26T13:15:40.145Z",
+    "processedAt": "2026-04-26T13:16:59.423Z",
+    "rejectReason": null,
+    "adjustmentReason": "all good",
+    "infoRequestReason": null,
+    "infoRequestDeadline": null,
+    "infoRespondedAt": "2026-04-26T13:16:16.319Z",
+    "attachmentUrls": [
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F46f2e8db-23ce-4730-9a60-c59a367779c6_medical_invoice.pdf",
+      "http://localhost:8090/api/files/open?path=uploads%2Fclaims%2F3%2F4be7eacb-d47b-4e41-8a9e-7b9ea31c8a3c_medical_invoice+%281%29.pdf"
+    ]
+  }
+]

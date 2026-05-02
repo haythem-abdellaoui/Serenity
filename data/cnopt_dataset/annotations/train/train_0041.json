@@ -1,0 +1,474 @@
+{
+  "id": "train_0041",
+  "image": "images/train/train_0041.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Pierre Michel",
+    "registration_number": "FR-PHAR-323994",
+    "issue_date": "29/12/2024"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        84,
+        86,
+        140,
+        99
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        177,
+        71,
+        267,
+        92
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        277.203125,
+        71,
+        410.203125,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        419.921875,
+        71,
+        475.921875,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        485.375,
+        71,
+        688.375,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        177,
+        108,
+        253,
+        124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        260.0,
+        108,
+        348.0,
+        124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        177,
+        137,
+        247,
+        152
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        72,
+        243,
+        250,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        259.9375,
+        243,
+        497.9375,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        72,
+        314,
+        132,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        139.984375,
+        315,
+        252.984375,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        260.203125,
+        319,
+        305.203125,
+        337
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        313.046875,
+        320,
+        321.046875,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        72,
+        362,
+        128,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        135.640625,
+        363,
+        159.640625,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        167.4375,
+        361,
+        260.4375,
+        385
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        267.6875,
+        368,
+        275.6875,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pierre",
+      "bbox": [
+        283,
+        362,
+        365,
+        380
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Michel",
+      "bbox": [
+        373.4375,
+        362,
+        461.4375,
+        380
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        72,
+        409,
+        167,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        174.96875,
+        410,
+        322.96875,
+        433
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        330.8125,
+        416,
+        338.8125,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-323994",
+      "bbox": [
+        346,
+        410,
+        576,
+        428
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        72,
+        458,
+        109,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        116.703125,
+        458,
+        223.703125,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        231.359375,
+        463,
+        261.359375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        267.90625,
+        458,
+        360.90625,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        368.515625,
+        458,
+        398.515625,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        406.140625,
+        458,
+        488.140625,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        495.75,
+        458,
+        538.75,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        545.875,
+        458,
+        708.875,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        72,
+        506,
+        129,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        136.984375,
+        506,
+        284.984375,
+        529
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        292.828125,
+        512,
+        300.828125,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": "29/12/2024",
+      "bbox": [
+        308,
+        506,
+        459,
+        526
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        72,
+        554,
+        127,
+        577
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        134.421875,
+        560,
+        142.421875,
+        572
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        150,
+        554,
+        241,
+        572
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        72,
+        691,
+        111,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        117.859375,
+        690,
+        130.859375,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rennes,",
+      "bbox": [
+        138.34375,
+        692,
+        226.34375,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        233.046875,
+        691,
+        253.046875,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "29/12/2024",
+      "bbox": [
+        259.6875,
+        692,
+        386.6875,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        668,
+        749,
+        765,
+        768
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        770.859375,
+        748,
+        864.859375,
+        764
+      ],
+      "label": "O"
+    }
+  ]
+}

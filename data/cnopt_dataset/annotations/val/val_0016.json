@@ -1,0 +1,534 @@
+{
+  "id": "val_0016",
+  "image": "images/val/val_0016.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Emma Robert",
+    "registration_number": "RP-2024-352035",
+    "issue_date": "01 juillet 2024"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        102,
+        87,
+        158,
+        100
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        195,
+        72,
+        310,
+        93
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        319.3125,
+        72,
+        452.3125,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        462.03125,
+        72,
+        501.03125,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        510.8125,
+        72,
+        619.8125,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        629.1875,
+        72,
+        685.1875,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        694.640625,
+        72,
+        897.640625,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        195,
+        109,
+        271,
+        125
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        278.0,
+        109,
+        366.0,
+        125
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        195,
+        138,
+        265,
+        153
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        90,
+        244,
+        301,
+        264
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        310.546875,
+        244,
+        548.546875,
+        264
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        90,
+        315,
+        150,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        157.984375,
+        316,
+        270.984375,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        278.203125,
+        320,
+        323.203125,
+        338
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        331.046875,
+        321,
+        339.046875,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        90,
+        363,
+        146,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        153.640625,
+        364,
+        177.640625,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        185.4375,
+        362,
+        278.4375,
+        386
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        285.6875,
+        369,
+        293.6875,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Emma",
+      "bbox": [
+        301,
+        363,
+        384,
+        381
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Robert",
+      "bbox": [
+        391.984375,
+        363,
+        483.984375,
+        381
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        90,
+        410,
+        185,
+        429
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        192.96875,
+        411,
+        340.96875,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        348.8125,
+        417,
+        356.8125,
+        429
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2024-352035",
+      "bbox": [
+        364,
+        411,
+        587,
+        429
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        90,
+        459,
+        127,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        134.703125,
+        459,
+        241.703125,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        249.359375,
+        464,
+        279.359375,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        285.90625,
+        459,
+        378.90625,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        386.515625,
+        459,
+        416.515625,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        424.140625,
+        459,
+        506.140625,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        513.75,
+        459,
+        556.75,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        563.875,
+        459,
+        726.875,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        90,
+        507,
+        147,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        154.984375,
+        507,
+        302.984375,
+        530
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        310.828125,
+        513,
+        318.828125,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "01",
+      "bbox": [
+        326,
+        507,
+        359,
+        525
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "juillet",
+      "bbox": [
+        366.765625,
+        507,
+        445.765625,
+        530
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2024",
+      "bbox": [
+        453.90625,
+        507,
+        520.90625,
+        525
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        90,
+        555,
+        145,
+        578
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        152.421875,
+        561,
+        160.421875,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        168,
+        555,
+        259,
+        573
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        90,
+        692,
+        129,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        135.859375,
+        691,
+        148.859375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lille,",
+      "bbox": [
+        156.34375,
+        692,
+        207.34375,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        214.453125,
+        692,
+        234.453125,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "01",
+      "bbox": [
+        241.09375,
+        693,
+        269.09375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "juillet",
+      "bbox": [
+        275.09375,
+        692,
+        337.09375,
+        714
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024",
+      "bbox": [
+        343.625,
+        693,
+        399.625,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        650,
+        750,
+        747,
+        769
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        752.859375,
+        749,
+        846.859375,
+        765
+      ],
+      "label": "O"
+    }
+  ]
+}

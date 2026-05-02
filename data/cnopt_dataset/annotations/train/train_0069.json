@@ -1,0 +1,504 @@
+{
+  "id": "train_0069",
+  "image": "images/train/train_0069.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Hugo Bernard",
+    "registration_number": "FR-PHAR-444038",
+    "issue_date": "24 août 2023"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        99,
+        87,
+        155,
+        100
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        192,
+        72,
+        282,
+        93
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        292.203125,
+        72,
+        348.203125,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        357.65625,
+        72,
+        560.65625,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        192,
+        109,
+        268,
+        125
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        275.0,
+        109,
+        363.0,
+        125
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        192,
+        138,
+        262,
+        153
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        87,
+        244,
+        265,
+        264
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        274.9375,
+        244,
+        512.9375,
+        264
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        87,
+        315,
+        147,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        154.984375,
+        316,
+        267.984375,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        275.203125,
+        320,
+        320.203125,
+        338
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        328.046875,
+        321,
+        336.046875,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        87,
+        363,
+        143,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        150.640625,
+        364,
+        174.640625,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        182.4375,
+        362,
+        275.4375,
+        386
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        282.6875,
+        369,
+        290.6875,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Hugo",
+      "bbox": [
+        298,
+        363,
+        369,
+        386
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Bernard",
+      "bbox": [
+        377.21875,
+        363,
+        486.21875,
+        381
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        87,
+        410,
+        182,
+        429
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        189.96875,
+        411,
+        337.96875,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        345.8125,
+        417,
+        353.8125,
+        429
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-444038",
+      "bbox": [
+        361,
+        411,
+        591,
+        429
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        87,
+        459,
+        124,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        131.703125,
+        459,
+        238.703125,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        246.359375,
+        464,
+        276.359375,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        282.90625,
+        459,
+        375.90625,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        383.515625,
+        459,
+        413.515625,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        421.140625,
+        459,
+        503.140625,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        510.75,
+        459,
+        553.75,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        560.875,
+        459,
+        723.875,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        87,
+        507,
+        144,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        151.984375,
+        507,
+        299.984375,
+        530
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        307.828125,
+        513,
+        315.828125,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "24",
+      "bbox": [
+        323,
+        507,
+        356,
+        525
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "août",
+      "bbox": [
+        364.765625,
+        506,
+        425.765625,
+        525
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2023",
+      "bbox": [
+        434.375,
+        507,
+        501.375,
+        525
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        87,
+        555,
+        142,
+        578
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        149.421875,
+        561,
+        157.421875,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        165,
+        555,
+        256,
+        573
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        87,
+        692,
+        126,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        132.859375,
+        691,
+        145.859375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nice,",
+      "bbox": [
+        153.34375,
+        692,
+        208.34375,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        215.53125,
+        692,
+        235.53125,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "24",
+      "bbox": [
+        242.171875,
+        693,
+        270.171875,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "août",
+      "bbox": [
+        277.171875,
+        691,
+        327.171875,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023",
+      "bbox": [
+        333.671875,
+        693,
+        389.671875,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        653,
+        750,
+        750,
+        769
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        755.859375,
+        749,
+        849.859375,
+        765
+      ],
+      "label": "O"
+    }
+  ]
+}

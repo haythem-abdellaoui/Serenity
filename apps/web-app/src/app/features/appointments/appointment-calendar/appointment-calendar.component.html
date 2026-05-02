@@ -1,0 +1,43 @@
+<div class="calendar-panel">
+  <div class="calendar-head">
+    <button type="button" class="btn-nav" (click)="prevMonth()" aria-label="Previous month">‹</button>
+    <span class="month-label">{{ monthTitle }}</span>
+    <button type="button" class="btn-nav" (click)="nextMonth()" aria-label="Next month">›</button>
+  </div>
+
+  <div class="legend">
+    <span class="lg lg-doc"><i></i> {{ legendDoctor }}</span>
+    <span class="lg lg-pat" *ngIf="legendPatient?.trim()"><i></i> {{ legendPatient }}</span>
+    <span class="duration-note" *ngIf="showDurationNote">Times show start–end, assuming about {{ slotDurationLabel }} per visit.</span>
+  </div>
+
+  <div class="weekdays">
+    <span *ngFor="let w of weekDays">{{ w }}</span>
+  </div>
+
+  <div class="grid">
+    <button
+      type="button"
+      class="day"
+      *ngFor="let cell of grid"
+      [class.muted]="!cell.inMonth"
+      [class.sel]="isSelected(cell)"
+      [class.doc]="cell.inMonth && cell.doctorBusy"
+      [class.pat]="cell.inMonth && cell.patientBusy"
+      [disabled]="!cell.inMonth"
+      (click)="pickDay(cell)">
+      <span class="num">{{ cell.dayNum }}</span>
+      <div class="cell-slots" *ngIf="cell.inMonth && cell.slotLines.length">
+        <span
+          *ngFor="let line of cell.slotLines"
+          class="slot-chip"
+          [class.doc]="line.source === 'DOCTOR'"
+          [class.pat]="line.source === 'PATIENT'">
+          {{ line.rangeLabel }}
+        </span>
+        <span class="slot-more" *ngIf="cell.slotOverflow > 0">+{{ cell.slotOverflow }}</span>
+      </div>
+    </button>
+  </div>
+
+</div>

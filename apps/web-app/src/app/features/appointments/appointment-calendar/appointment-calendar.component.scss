@@ -1,0 +1,169 @@
+.calendar-panel {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1rem;
+  background: var(--card-bg, #fff);
+}
+
+.calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.btn-nav {
+  border: none;
+  background: rgba(0, 105, 105, 0.12);
+  color: var(--primary, #006969);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.btn-nav:hover {
+  background: rgba(0, 105, 105, 0.2);
+}
+
+.month-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.duration-note {
+  font-size: 0.68rem;
+  color: #777;
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
+.lg {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lg i {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.lg-doc i {
+  background: #0d9488;
+}
+
+.lg-pat i {
+  background: #ea580c;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day {
+  position: relative;
+  min-height: 2.75rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: #f8faf9;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.15rem 0.35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.day.muted {
+  opacity: 0.35;
+  cursor: default;
+  background: transparent;
+}
+
+.day:not(:disabled):hover {
+  border-color: rgba(13, 148, 136, 0.4);
+}
+
+.day.sel {
+  border-color: #0d9488;
+  background: rgba(13, 148, 136, 0.12);
+  font-weight: 700;
+}
+
+.day.doc:not(.muted) {
+  background: rgba(13, 148, 136, 0.08);
+}
+
+.day.pat:not(.muted) {
+  background: rgba(234, 88, 12, 0.08);
+}
+
+.num {
+  align-self: center;
+  font-weight: 600;
+}
+
+.cell-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 0.2rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.slot-chip {
+  font-size: 0.58rem;
+  line-height: 1.15;
+  padding: 1px 3px;
+  border-radius: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.slot-chip.doc {
+  background: rgba(13, 148, 136, 0.22);
+  color: #0f766e;
+}
+
+.slot-chip.pat {
+  background: rgba(234, 88, 12, 0.2);
+  color: #c2410c;
+}
+
+.slot-more {
+  font-size: 0.58rem;
+  color: #666;
+  align-self: center;
+}
+

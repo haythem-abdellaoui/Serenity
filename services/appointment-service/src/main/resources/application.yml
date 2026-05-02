@@ -1,0 +1,55 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  config:
+    import: optional:file:./.env[.properties],optional:file:./services/appointment-service/.env[.properties]
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    properties:
+      mail:
+        smtp:
+          auth: ${MAIL_SMTP_AUTH}
+          starttls:
+            enable: ${MAIL_SMTP_STARTTLS_ENABLE}
+            required: ${MAIL_SMTP_STARTTLS_REQUIRED}
+          ssl:
+            trust: ${MAIL_SMTP_SSL_TRUST}
+          connectiontimeout: ${MAIL_SMTP_CONNECTION_TIMEOUT}
+          timeout: ${MAIL_SMTP_TIMEOUT}
+          writetimeout: ${MAIL_SMTP_WRITE_TIMEOUT}
+
+app:
+  google:
+    calendar:
+      enabled: ${GOOGLE_CALENDAR_ENABLED}
+      # Optional JSON path still read by GoogleCalendarCredentialsLoader if set:
+      credentials-json-path: ${GOOGLE_CALENDAR_CREDENTIALS_JSON:}
+      redirect-uri: ${GOOGLE_CALENDAR_REDIRECT_URI}
+  internal-api-key: ${INTERNAL_API_KEY:}
+  user-service:
+    # Same host as the SPA apiUrl gateway (8082) so lookups work when only the gateway exposes /api/users.
+    # Use http://localhost:8081 if you run user-service without the gateway.
+    base-url: ${USER_SERVICE_URL}
+    internal-base-url: ${USER_SERVICE_INTERNAL_URL}
+  jwt:
+    secret: ${JWT_SECRET:}
+  teleconsultation:
+    default-duration-minutes: ${TELECONSULT_DEFAULT_MINUTES}
+    jitsi-room-prefix: ${JITSI_ROOM_PREFIX}

@@ -1,0 +1,17 @@
+{
+  "dataset_name": "cnopt_like_layoutlmv3_starter",
+  "document_type": "pharmacist_registration_certificate",
+  "primary_reference_style": "France-style Ordre des pharmaciens registration certificate",
+  "splits": {
+    "train": 120,
+    "val": 30,
+    "test": 30
+  },
+  "fields": [
+    "authority_name",
+    "pharmacist_name",
+    "registration_number",
+    "issue_date",
+    "country"
+  ]
+}

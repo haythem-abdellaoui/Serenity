@@ -1,0 +1,207 @@
+<div class="container">
+  <section class="page">
+    <header class="page-header">
+      <button type="button" class="btn btn-secondary" (click)="backToPatientPharmacy()">Back</button>
+      <div class="page-title-block">
+        <h1>Prescription Details</h1>
+        <p>Review medication lines and choose another pharmacy when needed.</p>
+      </div>
+    </header>
+
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <article class="workspace" *ngIf="!loading && prescription as item">
+      <div class="main-column">
+        <section class="card overview-card">
+          <h2>Prescription Details</h2>
+
+          <div class="overview-grid">
+            <div>
+              <p class="label">Primary Physician</p>
+              <p class="value">{{ item.doctorName }}</p>
+            </div>
+            <div>
+              <p class="label">Current Pharmacy</p>
+              <p class="value">{{ item.pharmacyName || 'Not assigned yet' }}</p>
+            </div>
+            <div>
+              <p class="label">Created</p>
+              <p class="value">{{ item.createdAt | date:'medium' }}</p>
+            </div>
+            <div *ngIf="item.readyAt">
+              <p class="label">Ready At</p>
+              <p class="value">{{ item.readyAt | date:'medium' }}</p>
+            </div>
+          </div>
+
+          <p class="rejection-note" *ngIf="item.rejectionReason">Rejection reason: {{ item.rejectionReason }}</p>
+          <span [class]="statusClass(item.status)">{{ statusLabel(item.status) }}</span>
+
+          <div class="insurance-download" *ngIf="item.insuranceDocumentAvailable">
+            <p class="label">Stamped Prescription</p>
+            <p class="value" *ngIf="item.insuranceDocumentUploadedAt">
+              Uploaded {{ item.insuranceDocumentUploadedAt | date:'medium' }}
+            </p>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="downloadInsuranceDocument()"
+              [disabled]="downloadingInsuranceDocument">
+              {{ downloadingInsuranceDocument ? 'Downloading...' : 'Download Stamped Prescription' }}
+            </button>
+          </div>
+        </section>
+
+        <section class="card meds-card">
+          <div class="section-head">
+            <h3>Prescription Medications</h3>
+          </div>
+
+          <ol class="medicine-list" *ngIf="lines.length > 0; else noMedicationLines">
+            <li *ngFor="let line of lines; let i = index; trackBy: trackByLineId">
+              <div class="line-index">{{ i + 1 }}.</div>
+              <div class="line-body">
+                <p class="line-name">{{ line.medicationName }}</p>
+                <p class="line-meta">
+                  {{ line.dosage || 'Dosage not specified' }}
+                  <span *ngIf="line.frequency"> | {{ line.frequency }}</span>
+                  <span *ngIf="line.startDate"> | Start {{ line.startDate | date:'mediumDate' }}</span>
+                  <span *ngIf="line.endDate"> | End {{ line.endDate | date:'mediumDate' }}</span>
+                </p>
+                <p class="line-instructions" *ngIf="line.instructions">{{ line.instructions }}</p>
+              </div>
+              <div class="line-qty">Qty: <strong>{{ line.quantity }}</strong></div>
+            </li>
+          </ol>
+          <ng-template #noMedicationLines>
+            <p class="hint">No medication lines were found for this prescription yet.</p>
+          </ng-template>
+        </section>
+      </div>
+
+      <aside class="card alternatives-card">
+        <div class="section-head">
+          <h3>Alternative Pharmacies</h3>
+          <button
+            *ngIf="item.status === 'PENDING'"
+            type="button"
+            class="btn btn-secondary"
+            (click)="backToPatientPharmacy()">
+            Keep Default
+          </button>
+        </div>
+
+        <div class="map-preview">
+          <app-location-picker
+            [latitude]="selectedMapLatitude"
+            [longitude]="selectedMapLongitude">
+          </app-location-picker>
+          <p class="map-caption" *ngIf="selectedAlternativePharmacy">
+            Previewing: {{ selectedAlternativePharmacy.pharmacyName }}
+          </p>
+          <p class="map-caption" *ngIf="!selectedAlternativePharmacy">
+            Select a recommended pharmacy to preview its location.
+          </p>
+        </div>
+
+        <p class="hint" *ngIf="item.status !== 'PENDING'">
+          Alternative suggestions are available while the prescription is pending.
+        </p>
+
+        <ng-container *ngIf="item.status === 'PENDING'">
+          <p class="hint" *ngIf="alternativesLoading">Checking nearby pharmacies...</p>
+          <p class="hint" *ngIf="locationMessage">{{ locationMessage }}</p>
+          <p class="error" *ngIf="alternativesErrorMessage">{{ alternativesErrorMessage }}</p>
+
+          <div *ngIf="!alternativesLoading && alternatives as result">
+            <div class="message-box neutral">
+              <p>{{ recommendationSummary(result) }}</p>
+              <p class="sub">{{ defaultPharmacyMessage(result) }}</p>
+            </div>
+
+            <p class="hint">{{ result.message }}</p>
+
+            <div *ngIf="result.recommendedMode === 'FULL_MATCH' && result.fullMatchPharmacies.length > 0">
+              <h4>Full Match Within {{ result.fullMatchRadiusKm }} km</h4>
+              <article
+                class="alt-item"
+                [class.selected]="isSelectedAlternative(option)"
+                *ngFor="let option of result.fullMatchPharmacies; trackBy: trackByAlternativeId"
+                role="button"
+                tabindex="0"
+                (click)="selectAlternativeForPreview(option)"
+                (keydown.enter)="selectAlternativeForPreview(option)"
+                (keydown.space)="$event.preventDefault(); selectAlternativeForPreview(option)">
+                <div>
+                  <p class="name">{{ option.pharmacyName }}</p>
+                  <p class="meta" *ngIf="option.distanceKm != null">{{ option.distanceKm }} km away</p>
+                  <p class="meta" *ngIf="option.addressLine">{{ option.addressLine }}</p>
+                  <p class="meta" *ngIf="option.city || option.governorate">
+                    {{ option.city || 'Unknown city' }}{{ option.city && option.governorate ? ', ' : '' }}{{ option.governorate || '' }}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  [disabled]="assigning"
+                  (click)="useAlternativePharmacy(option); $event.stopPropagation()">
+                  {{ assigning ? 'Assigning...' : 'Use This Pharmacy' }}
+                </button>
+              </article>
+            </div>
+
+            <div *ngIf="result.recommendedMode !== 'FULL_MATCH' && result.perMedicineAlternatives.length > 0" class="partial">
+              <h4>Per Medicine Alternatives Within {{ result.partialRadiusKm }} km</h4>
+              <article class="line-alt" *ngFor="let line of result.perMedicineAlternatives; trackBy: trackByPerMedicine">
+                <p class="name">{{ line.medicationName }} (Qty: {{ line.requiredQuantity }})</p>
+                <p class="hint">{{ perMedicineMessage(line) }}</p>
+                <div class="line-pharmacies" *ngIf="line.pharmacies.length > 0">
+                  <div class="line-pharmacy" *ngFor="let option of line.pharmacies; trackBy: trackByAlternativeId">
+                    <span>{{ option.pharmacyName }} - {{ option.distanceKm }} km</span>
+                    <span class="meta">Available: {{ option.availableQuantity }}</span>
+                  </div>
+                </div>
+              </article>
+
+              <h4 *ngIf="canShowSelectableSection(result)">Select One Recommended Pharmacy</h4>
+              <article
+                class="alt-item"
+                [class.selected]="isSelectedAlternative(option)"
+                *ngFor="let option of result.selectablePharmacies; trackBy: trackByAlternativeId"
+                role="button"
+                tabindex="0"
+                (click)="selectAlternativeForPreview(option)"
+                (keydown.enter)="selectAlternativeForPreview(option)"
+                (keydown.space)="$event.preventDefault(); selectAlternativeForPreview(option)">
+                <div>
+                  <p class="name">{{ option.pharmacyName }}</p>
+                  <p class="meta" *ngIf="option.distanceKm != null">{{ option.distanceKm }} km away</p>
+                  <p class="meta" *ngIf="option.addressLine">{{ option.addressLine }}</p>
+                  <p class="meta" *ngIf="option.city || option.governorate">
+                    {{ option.city || 'Unknown city' }}{{ option.city && option.governorate ? ', ' : '' }}{{ option.governorate || '' }}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  [disabled]="assigning"
+                  (click)="useAlternativePharmacy(option); $event.stopPropagation()">
+                  {{ assigning ? 'Assigning...' : 'Use This Pharmacy' }}
+                </button>
+              </article>
+            </div>
+
+            <div class="message-box warning" *ngIf="result.recommendedMode === 'NONE'">
+              <p>No nearby pharmacy currently has your full prescription in stock.</p>
+              <p class="sub">You can keep your default pharmacy and check again later.</p>
+            </div>
+          </div>
+        </ng-container>
+      </aside>
+    </article>
+
+    <p class="hint" *ngIf="loading">Loading prescription details...</p>
+  </section>
+</div>
+

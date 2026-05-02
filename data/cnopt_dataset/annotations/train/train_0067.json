@@ -1,0 +1,474 @@
+{
+  "id": "train_0067",
+  "image": "images/train/train_0067.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Leila Chevalier",
+    "registration_number": "FR-PHAR-158314",
+    "issue_date": "01/02/2022"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        105,
+        91,
+        161,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        198,
+        76,
+        288,
+        97
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        298.203125,
+        76,
+        354.203125,
+        97
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        363.65625,
+        76,
+        566.65625,
+        97
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        198,
+        113,
+        274,
+        129
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        281.0,
+        113,
+        369.0,
+        129
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        198,
+        142,
+        268,
+        157
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        93,
+        248,
+        304,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        313.546875,
+        248,
+        551.546875,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        93,
+        319,
+        153,
+        337
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        160.984375,
+        320,
+        273.984375,
+        337
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        281.203125,
+        324,
+        326.203125,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        334.046875,
+        325,
+        342.046875,
+        337
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        93,
+        367,
+        149,
+        385
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        156.640625,
+        368,
+        180.640625,
+        385
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        188.4375,
+        366,
+        281.4375,
+        390
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        288.6875,
+        373,
+        296.6875,
+        385
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Leila",
+      "bbox": [
+        304,
+        367,
+        368,
+        385
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Chevalier",
+      "bbox": [
+        376.609375,
+        367,
+        504.609375,
+        385
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        93,
+        414,
+        188,
+        433
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        195.96875,
+        415,
+        343.96875,
+        438
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        351.8125,
+        421,
+        359.8125,
+        433
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-158314",
+      "bbox": [
+        367,
+        415,
+        597,
+        433
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        93,
+        463,
+        130,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        137.703125,
+        462,
+        307.703125,
+        486
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        314.875,
+        463,
+        421.875,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        429.53125,
+        468,
+        459.53125,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        466.078125,
+        463,
+        559.078125,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        566.6875,
+        463,
+        596.6875,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        604.3125,
+        463,
+        686.3125,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        693.921875,
+        463,
+        736.921875,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        744.046875,
+        463,
+        907.046875,
+        486
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        93,
+        511,
+        150,
+        529
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        157.984375,
+        511,
+        305.984375,
+        534
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        313.828125,
+        517,
+        321.828125,
+        529
+      ],
+      "label": "O"
+    },
+    {
+      "text": "01/02/2022",
+      "bbox": [
+        329,
+        511,
+        480,
+        531
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        93,
+        559,
+        148,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        155.421875,
+        565,
+        163.421875,
+        577
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        171,
+        559,
+        262,
+        577
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        93,
+        696,
+        132,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        138.859375,
+        695,
+        151.859375,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lille,",
+      "bbox": [
+        159.34375,
+        696,
+        210.34375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        217.453125,
+        696,
+        237.453125,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "01/02/2022",
+      "bbox": [
+        244.09375,
+        697,
+        371.09375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        647,
+        754,
+        744,
+        773
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        749.859375,
+        753,
+        843.859375,
+        769
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: doctors_service
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: .
+    ports:
+      - "8083:8083"
+    env_file:
+      - .env
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    depends_on:
+      - db

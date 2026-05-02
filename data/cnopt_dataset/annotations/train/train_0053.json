@@ -1,0 +1,514 @@
+{
+  "id": "train_0053",
+  "image": "images/train/train_0053.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Marie Chevalier",
+    "registration_number": "RP-2022-743092",
+    "issue_date": "23 mai 2022"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        107,
+        86,
+        163,
+        99
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        200,
+        71,
+        290,
+        92
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        300.203125,
+        71,
+        356.203125,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        365.65625,
+        71,
+        568.65625,
+        92
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        200,
+        108,
+        276,
+        124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        283.0,
+        108,
+        371.0,
+        124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        200,
+        137,
+        270,
+        152
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        95,
+        243,
+        273,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        282.9375,
+        243,
+        520.9375,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        95,
+        314,
+        155,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        162.984375,
+        315,
+        275.984375,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        283.203125,
+        319,
+        328.203125,
+        337
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        336.046875,
+        320,
+        344.046875,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        95,
+        362,
+        151,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        158.640625,
+        363,
+        182.640625,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        190.4375,
+        361,
+        283.4375,
+        385
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        290.6875,
+        368,
+        298.6875,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marie",
+      "bbox": [
+        306,
+        362,
+        382,
+        380
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Chevalier",
+      "bbox": [
+        390.8125,
+        362,
+        518.8125,
+        380
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        95,
+        409,
+        190,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        197.96875,
+        410,
+        345.96875,
+        433
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        353.8125,
+        416,
+        361.8125,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2022-743092",
+      "bbox": [
+        369,
+        410,
+        592,
+        428
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        95,
+        458,
+        219,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        226.984375,
+        457,
+        308.984375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        316.265625,
+        457,
+        331.265625,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        338.59375,
+        458,
+        388.59375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        395.8125,
+        458,
+        425.8125,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        433.4375,
+        463,
+        517.4375,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        524.59375,
+        458,
+        672.59375,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        680.4375,
+        463,
+        710.4375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        716.984375,
+        458,
+        817.984375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        95,
+        506,
+        152,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        159.984375,
+        506,
+        307.984375,
+        529
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        315.828125,
+        512,
+        323.828125,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": "23",
+      "bbox": [
+        331,
+        506,
+        364,
+        524
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "mai",
+      "bbox": [
+        372.765625,
+        506,
+        421.765625,
+        524
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2022",
+      "bbox": [
+        430.578125,
+        506,
+        497.578125,
+        524
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        95,
+        554,
+        150,
+        577
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        157.421875,
+        560,
+        165.421875,
+        572
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        173,
+        554,
+        264,
+        572
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        95,
+        691,
+        134,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        140.859375,
+        690,
+        153.859375,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Toulouse,",
+      "bbox": [
+        160.34375,
+        691,
+        264.34375,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        270.9375,
+        691,
+        290.9375,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "23",
+      "bbox": [
+        297.578125,
+        692,
+        325.578125,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mai",
+      "bbox": [
+        332.578125,
+        691,
+        373.578125,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2022",
+      "bbox": [
+        380.609375,
+        692,
+        436.609375,
+        708
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        645,
+        749,
+        742,
+        768
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        747.859375,
+        748,
+        841.859375,
+        764
+      ],
+      "label": "O"
+    }
+  ]
+}

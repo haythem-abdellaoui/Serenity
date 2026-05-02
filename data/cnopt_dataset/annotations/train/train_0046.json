@@ -1,0 +1,534 @@
+{
+  "id": "train_0046",
+  "image": "images/train/train_0046.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Maroc",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Sophie Gharbi",
+    "registration_number": "ORD-56-2025-3746",
+    "issue_date": "10 décembre 2023"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        87,
+        79,
+        143,
+        92
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        180,
+        64,
+        295,
+        85
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        304.3125,
+        64,
+        437.3125,
+        85
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        447.03125,
+        64,
+        486.03125,
+        85
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        495.8125,
+        64,
+        604.8125,
+        85
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        614.1875,
+        64,
+        670.1875,
+        85
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        679.640625,
+        64,
+        882.640625,
+        85
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        180,
+        101,
+        256,
+        117
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        263.0,
+        101,
+        351.0,
+        117
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maroc",
+      "bbox": [
+        180,
+        130,
+        244,
+        145
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        75,
+        236,
+        286,
+        256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        295.546875,
+        236,
+        533.546875,
+        256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        75,
+        307,
+        135,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        142.984375,
+        308,
+        255.984375,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        263.203125,
+        312,
+        308.203125,
+        330
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        316.046875,
+        313,
+        324.046875,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        75,
+        355,
+        131,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        138.640625,
+        356,
+        162.640625,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        170.4375,
+        354,
+        263.4375,
+        378
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        270.6875,
+        361,
+        278.6875,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sophie",
+      "bbox": [
+        286,
+        355,
+        379,
+        378
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Gharbi",
+      "bbox": [
+        386.921875,
+        355,
+        476.921875,
+        373
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        75,
+        402,
+        170,
+        421
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        177.96875,
+        403,
+        325.96875,
+        426
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        333.8125,
+        409,
+        341.8125,
+        421
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-56-2025-3746",
+      "bbox": [
+        349,
+        403,
+        605,
+        421
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        75,
+        451,
+        112,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        119.703125,
+        451,
+        226.703125,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        234.359375,
+        456,
+        264.359375,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        270.90625,
+        451,
+        363.90625,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        371.515625,
+        451,
+        401.515625,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        409.140625,
+        451,
+        491.140625,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        498.75,
+        451,
+        541.75,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        548.875,
+        451,
+        711.875,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        75,
+        499,
+        132,
+        517
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        139.984375,
+        499,
+        287.984375,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        295.828125,
+        505,
+        303.828125,
+        517
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10",
+      "bbox": [
+        311,
+        499,
+        344,
+        517
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "décembre",
+      "bbox": [
+        352.765625,
+        498,
+        486.765625,
+        517
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2023",
+      "bbox": [
+        495.4375,
+        499,
+        562.4375,
+        517
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        75,
+        547,
+        130,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        137.421875,
+        553,
+        145.421875,
+        565
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maroc",
+      "bbox": [
+        153,
+        547,
+        236,
+        565
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        75,
+        684,
+        114,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        120.859375,
+        683,
+        133.859375,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Strasbourg,",
+      "bbox": [
+        141.34375,
+        684,
+        269.34375,
+        706
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        275.921875,
+        684,
+        295.921875,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10",
+      "bbox": [
+        302.5625,
+        685,
+        330.5625,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "décembre",
+      "bbox": [
+        337.5625,
+        683,
+        448.5625,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023",
+      "bbox": [
+        455.1875,
+        685,
+        511.1875,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        665,
+        742,
+        762,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        767.859375,
+        741,
+        861.859375,
+        757
+      ],
+      "label": "O"
+    }
+  ]
+}

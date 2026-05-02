@@ -1,0 +1,162 @@
+<div class="pending-page">
+  <header class="pending-topbar">
+    <a class="pending-brand" routerLink="/">
+      <img src="assets/logo.png" alt="Serenity" class="pending-brand-logo" />
+      <span>Serenity</span>
+    </a>
+  </header>
+
+  <div class="pending-container">
+    <div class="pending-card card">
+      <div class="pending-header">
+        <div class="pending-icon">
+          <span class="material-icons">hourglass_empty</span>
+        </div>
+        <h1>Verification pending</h1>
+        <p class="pending-lead">{{ pendingMessage }}</p>
+        <p *ngIf="verification?.status" class="status-row">
+          Status:
+          <span class="badge" [class.badge-pending]="verification?.status === 'PENDING'" [class.badge-rejected]="verification?.status === 'REJECTED'" [class.badge-verified]="verification?.status === 'VERIFIED'">
+            {{ verification?.status }}
+          </span>
+        </p>
+      </div>
+
+      <div *ngIf="errorMessage && !loadingVerification" class="alert alert-error">
+        <span class="material-icons">error</span>
+        {{ errorMessage }}
+      </div>
+
+      <div *ngIf="successMessage" class="alert alert-success">
+        <span class="material-icons">check_circle</span>
+        {{ successMessage }}
+      </div>
+
+      <div *ngIf="loadingVerification" class="loading-state">
+        <span class="spinner"></span>
+        <p>Loading your verification…</p>
+      </div>
+
+      <form *ngIf="!loadingVerification && verification" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-section">
+          <h2>Your submission</h2>
+          <p class="section-hint">Update your license or national ID if you need to correct them.</p>
+
+          <div class="form-group">
+            <label for="pending-licenseNumber">License number <span class="required">*</span></label>
+            <input id="pending-licenseNumber" type="text" formControlName="licenseNumber" autocomplete="off" />
+            <div class="error-message" *ngIf="form.get('licenseNumber')?.touched && form.get('licenseNumber')?.hasError('required')">
+              License number is required
+            </div>
+            <div class="error-message" *ngIf="form.get('licenseNumber')?.touched && form.get('licenseNumber')?.hasError('minlength')">
+              At least 5 characters
+            </div>
+            <div class="error-message" *ngIf="form.get('licenseNumber')?.touched && form.get('licenseNumber')?.hasError('pattern')">
+              Only letters, numbers, and spaces
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="pending-nationalId">National ID <span class="required">*</span></label>
+            <input id="pending-nationalId" type="text" formControlName="nationalId" autocomplete="off" />
+            <div class="error-message" *ngIf="form.get('nationalId')?.touched && form.get('nationalId')?.hasError('required')">
+              National ID is required
+            </div>
+            <div class="error-message" *ngIf="form.get('nationalId')?.touched && form.get('nationalId')?.hasError('minlength')">
+              National ID must be 8 characters
+            </div>
+            <div class="error-message" *ngIf="form.get('nationalId')?.touched && form.get('nationalId')?.hasError('maxlength')">
+              National ID must be 8 characters
+            </div>
+            <div class="error-message" *ngIf="form.get('nationalId')?.touched && form.get('nationalId')?.hasError('pattern')">
+              Digits only (spaces allowed while typing)
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section documents-section">
+          <h2>Documents on file</h2>
+          <p class="section-hint">You can replace your CV or diploma by selecting a new image from your computer.</p>
+          <div class="doc-grid">
+
+            <!-- CV -->
+            <div class="doc-box">
+              <span class="doc-label">CV</span>
+
+              <!-- New file selected: show local preview -->
+              <div *ngIf="newCvPreview" class="doc-preview new-file-preview">
+                <img [src]="newCvPreview" alt="New CV preview" />
+                <div class="new-file-info">
+                  <span class="file-name">{{ getFileName(cvFile) }}</span>
+                  <span class="file-size">{{ getFileSize(cvFile) }}</span>
+                </div>
+                <button type="button" class="btn-remove" (click)="removeCv()" title="Remove selected file">
+                  <span class="material-icons">close</span>
+                </button>
+              </div>
+
+              <!-- No new file: show server preview -->
+              <div *ngIf="!newCvPreview && cvPreviewUrl" class="doc-preview">
+                <img [src]="cvPreviewUrl" alt="CV preview" />
+              </div>
+
+              <p *ngIf="!newCvPreview && !cvPreviewUrl && verification.cv" class="doc-fallback">Preview unavailable. Your file is still on record.</p>
+              <p *ngIf="!verification.cv && !newCvPreview" class="doc-missing">No CV path on record.</p>
+
+              <!-- Change button -->
+              <div class="doc-actions" *ngIf="!newCvPreview">
+                <button type="button" class="btn-change-doc" (click)="cvInput.click()">
+                  <span class="material-icons">cloud_upload</span>
+                  Change CV
+                </button>
+              </div>
+              <input #cvInput type="file" accept=".png,.jpg,.jpeg" (change)="onCvSelected($event)" style="display: none" />
+            </div>
+
+            <!-- Diploma -->
+            <div class="doc-box">
+              <span class="doc-label">Diploma</span>
+
+              <!-- New file selected: show local preview -->
+              <div *ngIf="newDiplomaPreview" class="doc-preview new-file-preview">
+                <img [src]="newDiplomaPreview" alt="New Diploma preview" />
+                <div class="new-file-info">
+                  <span class="file-name">{{ getFileName(diplomaFile) }}</span>
+                  <span class="file-size">{{ getFileSize(diplomaFile) }}</span>
+                </div>
+                <button type="button" class="btn-remove" (click)="removeDiploma()" title="Remove selected file">
+                  <span class="material-icons">close</span>
+                </button>
+              </div>
+
+              <!-- No new file: show server preview -->
+              <div *ngIf="!newDiplomaPreview && diplomaPreviewUrl" class="doc-preview">
+                <img [src]="diplomaPreviewUrl" alt="Diploma preview" />
+              </div>
+
+              <p *ngIf="!newDiplomaPreview && !diplomaPreviewUrl && verification.diploma" class="doc-fallback">Preview unavailable. Your file is still on record.</p>
+              <p *ngIf="!verification.diploma && !newDiplomaPreview" class="doc-missing">No diploma path on record.</p>
+
+              <!-- Change button -->
+              <div class="doc-actions" *ngIf="!newDiplomaPreview">
+                <button type="button" class="btn-change-doc" (click)="diplomaInput.click()">
+                  <span class="material-icons">cloud_upload</span>
+                  Change Diploma
+                </button>
+              </div>
+              <input #diplomaInput type="file" accept=".png,.jpg,.jpeg" (change)="onDiplomaSelected($event)" style="display: none" />
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid || saving">
+            <span *ngIf="saving" class="spinner spinner-sm"></span>
+            <span *ngIf="!saving">Submit Update</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

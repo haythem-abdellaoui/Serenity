@@ -1,0 +1,165 @@
+<div class="container">
+  <div class="welcome-section">
+    <div class="welcome-icon">👋</div>
+    <div class="welcome-text">
+      <h1>Hello, {{ getDisplayName() }}!</h1>
+      <p>Here's your dashboard overview.</p>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div class="dashboard-loading" *ngIf="loading">
+    <span class="spinner"></span>
+    <span>Loading statistics…</span>
+  </div>
+
+  <!-- Stats cards -->
+  <div class="stats-grid" *ngIf="!loading && stats">
+    <div class="stat-card stat-patients">
+      <div class="stat-icon-wrapper icon-teal">
+        <span class="material-icons">people</span>
+      </div>
+      <div class="stat-content">
+        <span class="stat-number">{{ stats.totalPatients }}</span>
+        <span class="stat-label">Total Patients</span>
+      </div>
+    </div>
+
+    <div class="stat-card stat-records">
+      <div class="stat-icon-wrapper icon-green">
+        <span class="material-icons">folder_open</span>
+      </div>
+      <div class="stat-content">
+        <span class="stat-number">{{ stats.activeRecords }}</span>
+        <span class="stat-label">Active Records</span>
+      </div>
+    </div>
+
+    <div class="stat-card stat-prescriptions">
+      <div class="stat-icon-wrapper icon-orange">
+        <span class="material-icons">medication</span>
+      </div>
+      <div class="stat-content">
+        <span class="stat-number">{{ stats.activePrescriptions }}</span>
+        <span class="stat-label">Active Prescriptions</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart section -->
+  <div class="chart-section" *ngIf="!loading && stats">
+    <div class="chart-card">
+      <h2 class="chart-title">Records by Severity</h2>
+      <p class="chart-subtitle">Distribution of medical records severity levels</p>
+      <div class="chart-wrapper">
+        <canvas #severityChart></canvas>
+      </div>
+      <div class="severity-summary">
+        <div class="severity-item">
+          <span class="severity-dot dot-low"></span>
+          <span class="severity-label">Low</span>
+          <span class="severity-count">{{ stats.severityLow }}</span>
+        </div>
+        <div class="severity-item">
+          <span class="severity-dot dot-medium"></span>
+          <span class="severity-label">Medium</span>
+          <span class="severity-count">{{ stats.severityMedium }}</span>
+        </div>
+        <div class="severity-item">
+          <span class="severity-dot dot-high"></span>
+          <span class="severity-label">High</span>
+          <span class="severity-count">{{ stats.severityHigh }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick links -->
+    <div class="quick-links-card">
+      <h2 class="chart-title">Quick Actions</h2>
+      <p class="chart-subtitle">Navigate to common tasks</p>
+      <div class="quick-links">
+        <a routerLink="/patients" class="quick-link">
+          <span class="material-icons">person_add</span>
+          <span>Manage Patients</span>
+        </a>
+        <a routerLink="/profile" class="quick-link">
+          <span class="material-icons">account_circle</span>
+          <span>My Profile</span>
+        </a>
+        <a routerLink="/users" class="quick-link" *ngIf="authService.isAdmin()">
+          <span class="material-icons">admin_panel_settings</span>
+          <span>User Management</span>
+        </a>
+      </div>
+
+      <div class="card stat-card admin-card" *ngIf="authService.isAdmin()">
+        <div class="stat-icon icon-sage">
+          <span class="material-icons">verified_user</span>
+        </div>
+        <div class="stat-info">
+          <p class="stat-label-alt">Your Role</p>
+          <p class="stat-value-alt">{{ authService.getCurrentUser()?.role }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Recommendation Statistics -->
+  <div class="chart-section" *ngIf="!loading && stats" style="margin-top: 30px;">
+    <div class="chart-card" style="background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border: 1px solid #ddd6fe;">
+      <h2 class="chart-title" style="display: flex; align-items: center; gap: 10px;">
+        <span style="background: linear-gradient(135deg, #6b11ff, #8ec5fc); color: #fff; padding: 6px 12px; border-radius: 10px; font-size: 0.85rem;">🤖 AI</span>
+        AI Drug Recommendation Statistics
+      </h2>
+      <p class="chart-subtitle">Tracking how often doctors accept AI-suggested medications</p>
+
+      <div class="stats-grid" style="margin-top: 20px;">
+        <div class="stat-card" style="border-left: 4px solid #6b11ff;">
+          <div class="stat-icon-wrapper" style="background: linear-gradient(135deg, #6b11ff, #a78bfa);">
+            <span class="material-icons" style="color: #fff;">smart_toy</span>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ stats.aiRecommendedCount }}</span>
+            <span class="stat-label">AI-Recommended Items</span>
+          </div>
+        </div>
+
+        <div class="stat-card" style="border-left: 4px solid #3b82f6;">
+          <div class="stat-icon-wrapper" style="background: linear-gradient(135deg, #3b82f6, #60a5fa);">
+            <span class="material-icons" style="color: #fff;">medication</span>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ stats.totalPrescriptionItems }}</span>
+            <span class="stat-label">Total Prescription Items</span>
+          </div>
+        </div>
+
+        <div class="stat-card" style="border-left: 4px solid #10b981;">
+          <div class="stat-icon-wrapper" style="background: linear-gradient(135deg, #10b981, #34d399);">
+            <span class="material-icons" style="color: #fff;">trending_up</span>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ stats.aiAcceptanceRate }}%</span>
+            <span class="stat-label">AI Acceptance Rate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top AI Medicines -->
+    <div class="quick-links-card" style="background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border: 1px solid #ddd6fe;">
+      <h2 class="chart-title">🏆 Top AI-Recommended Medicines</h2>
+      <p class="chart-subtitle">Most frequently accepted AI suggestions by doctors</p>
+      <div style="margin-top: 15px;" *ngIf="stats.topAiMedicines?.length; else noAiData">
+        <div *ngFor="let med of stats.topAiMedicines; let i = index" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; background: #fff; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='translateX(5px)'" onmouseout="this.style.transform='translateX(0)'">
+          <span style="font-size: 1.4rem; font-weight: 800; color: #6b11ff; min-width: 35px;">#{{ i + 1 }}</span>
+          <span style="flex: 1; font-weight: 600; color: #1f2937;">{{ med.name }}</span>
+          <span style="background: linear-gradient(135deg, #6b11ff, #8ec5fc); color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">{{ med.count }}x</span>
+        </div>
+      </div>
+      <ng-template #noAiData>
+        <p style="color: #9ca3af; text-align: center; padding: 20px 0;">No AI recommendations yet. Create prescriptions using AI suggestions to see data here.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

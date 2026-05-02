@@ -1,0 +1,51 @@
+<section class="container checkout-page">
+  <h2>Checkout</h2>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <div class="success" *ngIf="successOrder as order">
+    <h3>Order placed successfully</h3>
+    <p>Reference: {{ order.paymentAttempt?.reference || 'N/A' }}</p>
+    <p>Total: {{ order.totalAmount | currency:'TND ' }}</p>
+    <button class="btn btn-primary" type="button" (click)="goToOrders()">View My Orders</button>
+  </div>
+
+  <div class="empty-cart" *ngIf="!successOrder && isCartEmpty">
+    <h3>Your cart is empty</h3>
+    <p>Pick at least one product to continue checkout.</p>
+    <div class="empty-cart-actions">
+      <button type="button" class="btn btn-primary" (click)="goToMarketplace()">Browse Products</button>
+      <button type="button" class="btn btn-outline" (click)="goToWishlist()">Go to Wishlist</button>
+    </div>
+  </div>
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="submit()" *ngIf="!successOrder && !isCartEmpty">
+    <label for="shippingAddress">Shipping Address</label>
+    <textarea id="shippingAddress" rows="4" formControlName="shippingAddress"></textarea>
+    <small class="error" *ngIf="shippingAddressControl.touched && shippingAddressControl.hasError('required')">
+      Shipping address is required.
+    </small>
+    <small class="error" *ngIf="shippingAddressControl.touched && shippingAddressControl.hasError('pattern')">
+      Shipping address cannot be empty spaces only.
+    </small>
+    <small class="error" *ngIf="shippingAddressControl.touched && shippingAddressControl.hasError('maxlength')">
+      Shipping address must be 500 characters or less.
+    </small>
+
+    <label for="customerNote">Note (optional)</label>
+    <textarea id="customerNote" rows="3" formControlName="customerNote"></textarea>
+    <small class="error" *ngIf="customerNoteControl.touched && customerNoteControl.hasError('maxlength')">
+      Note must be 1000 characters or less.
+    </small>
+
+    <div class="summary">
+      <div class="summary-row">
+        <span>Total:</span>
+        <strong>{{ cartTotal | currency:'TND ' }}</strong>
+      </div>
+      <button class="btn btn-primary" type="button" [disabled]="loading" (click)="onPayClicked()">
+        {{ loading ? 'Processing...' : 'Pay (Secure Mock)' }}
+      </button>
+    </div>
+  </form>
+</section>

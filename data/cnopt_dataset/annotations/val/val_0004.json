@@ -1,0 +1,544 @@
+{
+  "id": "val_0004",
+  "image": "images/val/val_0004.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Jean Moreau",
+    "registration_number": "FR-PHAR-244137",
+    "issue_date": "2024-12-23"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        103,
+        75,
+        159,
+        88
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        196,
+        60,
+        311,
+        81
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        320.3125,
+        60,
+        453.3125,
+        81
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        463.03125,
+        60,
+        502.03125,
+        81
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        511.8125,
+        60,
+        620.8125,
+        81
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        630.1875,
+        60,
+        686.1875,
+        81
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        695.640625,
+        60,
+        898.640625,
+        81
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        196,
+        97,
+        272,
+        113
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        279.0,
+        97,
+        367.0,
+        113
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        196,
+        126,
+        266,
+        141
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        91,
+        232,
+        302,
+        252
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        311.546875,
+        232,
+        549.546875,
+        252
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AU",
+      "bbox": [
+        559.015625,
+        232,
+        603.015625,
+        252
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TABLEAU",
+      "bbox": [
+        612.3125,
+        232,
+        752.3125,
+        252
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DE",
+      "bbox": [
+        762.515625,
+        232,
+        804.515625,
+        252
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L’ORDRE",
+      "bbox": [
+        814.640625,
+        232,
+        945.640625,
+        252
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        91,
+        303,
+        151,
+        321
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        158.984375,
+        304,
+        271.984375,
+        321
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        279.203125,
+        308,
+        324.203125,
+        326
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        332.046875,
+        309,
+        340.046875,
+        321
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        91,
+        351,
+        147,
+        369
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        154.640625,
+        352,
+        178.640625,
+        369
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        186.4375,
+        350,
+        279.4375,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        286.6875,
+        357,
+        294.6875,
+        369
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jean",
+      "bbox": [
+        300,
+        351,
+        361,
+        374
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Moreau",
+      "bbox": [
+        368.875,
+        351,
+        470.875,
+        369
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        91,
+        398,
+        186,
+        417
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        193.96875,
+        399,
+        341.96875,
+        422
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        349.8125,
+        405,
+        357.8125,
+        417
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-244137",
+      "bbox": [
+        365,
+        399,
+        595,
+        417
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        91,
+        447,
+        128,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        135.703125,
+        446,
+        305.703125,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        312.875,
+        447,
+        419.875,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        427.53125,
+        452,
+        457.53125,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        464.078125,
+        447,
+        557.078125,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        564.6875,
+        447,
+        594.6875,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        602.3125,
+        447,
+        684.3125,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        691.921875,
+        447,
+        734.921875,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        742.046875,
+        447,
+        905.046875,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        91,
+        495,
+        148,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        155.984375,
+        495,
+        303.984375,
+        518
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        311.828125,
+        501,
+        319.828125,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024-12-23",
+      "bbox": [
+        327,
+        495,
+        481,
+        513
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        91,
+        543,
+        146,
+        566
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        153.421875,
+        549,
+        161.421875,
+        561
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        169,
+        543,
+        260,
+        561
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        91,
+        680,
+        130,
+        697
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        136.859375,
+        679,
+        149.859375,
+        697
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marseille,",
+      "bbox": [
+        157.34375,
+        680,
+        262.34375,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        269.71875,
+        680,
+        289.71875,
+        697
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024-12-23",
+      "bbox": [
+        296.359375,
+        681,
+        424.359375,
+        697
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        649,
+        738,
+        746,
+        757
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        751.859375,
+        737,
+        845.859375,
+        753
+      ],
+      "label": "O"
+    }
+  ]
+}

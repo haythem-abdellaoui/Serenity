@@ -1,0 +1,210 @@
+<app-toast></app-toast>
+
+<nav class="navbar">
+  <div class="container navbar-inner">
+    <a routerLink="/" class="navbar-brand">
+      <img src="assets/logo.png" alt="Serenity" class="brand-logo" />
+      <span>Serenity</span>
+    </a>
+
+    <div class="navbar-links" *ngIf="authService.isLoggedIn()">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+      <a routerLink="/messagerie" routerLinkActive="active">Messagerie</a>
+      <a routerLink="/statistics" routerLinkActive="active" *ngIf="authService.isDoctor()">Statistics</a>
+      <a routerLink="/patients" routerLinkActive="active" *ngIf="authService.isDoctor()">Patients</a>
+      <a routerLink="/profile" routerLinkActive="active">Profile</a>
+      <a routerLink="/appointments" routerLinkActive="active">Appointments</a>
+      <a routerLink="/pharmacy" routerLinkActive="active" *ngIf="authService.hasRole('PHARMACIST')">Pharmacy</a>
+      <a routerLink="/pharmacy/patient" routerLinkActive="active" *ngIf="authService.hasRole('PATIENT')">Pharmacy</a>
+      <a routerLink="/monitoring" routerLinkActive="active" *ngIf="authService.isPatient() || authService.isDoctor()">Monitoring</a>
+      <a routerLink="/articles" routerLinkActive="active">Articles</a>
+      <a routerLink="/insurance" routerLinkActive="active" *ngIf="authService.isPatient()">Insurance</a>
+      <a routerLink="/users" routerLinkActive="active" *ngIf="authService.isAdmin()">Users</a>
+    </div>
+
+    <div class="navbar-actions" *ngIf="authService.isLoggedIn()">
+      <div class="notif-bell-wrap" *ngIf="authService.isDoctor()">
+        <button class="notif-bell-btn" (click)="toggleAlertPanel()" aria-label="Crisis alerts">
+          <span class="material-icons">notifications</span>
+          <span class="notif-badge" *ngIf="unreadCount > 0">{{ unreadCount }}</span>
+        </button>
+
+        <div class="notif-panel" *ngIf="notificationPanelOpen">
+          <div class="notif-header">
+            <span>Doctor Notifications</span>
+            <button (click)="clearAllAlerts()" *ngIf="alerts.length > 0">Clear all</button>
+          </div>
+
+          <div class="notif-list" *ngIf="alerts.length > 0; else emptyAlertsTpl">
+            <div class="notif-item" *ngFor="let alert of alerts">
+              <span class="notif-icon">{{ getAlertIcon(alert) }}</span>
+              <div class="notif-body">
+                <p class="notif-title">{{ getAlertTitle(alert) }}</p>
+                <p class="notif-message">{{ alert.message }}</p>
+                <span class="notif-meta" *ngIf="alert.type === 'WEEKLY_DIGEST'">{{ getDigestMeta(alert) }}</span>
+                <span class="notif-time">{{ alert.timestamp | date: 'MMM d, y, h:mm a' }}</span>
+              </div>
+              <span class="mood-badge crisis" *ngIf="hasMoodBadge(alert)">{{ getMoodBadgeText(alert) }}</span>
+            </div>
+          </div>
+
+          <ng-template #emptyAlertsTpl>
+            <div class="notif-empty">No alerts in this session</div>
+          </ng-template>
+        </div>
+      </div>
+
+      <!-- Insurance + appointment notifications -->
+      <div class="notification-menu">
+        <button
+          class="notification-btn"
+          type="button"
+          (click)="toggleNotifications($event)"
+          aria-label="Notifications"
+        >
+          <span class="bell">🛡️</span>
+          <span class="notification-badge" *ngIf="unreadNotificationCount > 0">
+            {{ unreadNotificationCount }}
+          </span>
+        </button>
+        <div
+          class="notification-dropdown"
+          *ngIf="notificationsOpen"
+          (click)="$event.stopPropagation()"
+          (keydown)="$event.stopPropagation()"
+        >
+          <div class="notification-header">
+            <strong>Notifications</strong>
+            <button
+              type="button"
+              class="mark-all-btn"
+              (click)="markAllAsRead($event)"
+              *ngIf="unreadNotificationCount > 0"
+            >
+              Mark all read
+            </button>
+          </div>
+
+          <div class="notification-state" *ngIf="notificationsLoading">
+            Loading...
+          </div>
+
+          <div class="notification-state" *ngIf="!notificationsLoading && notifications.length === 0">
+            No notifications yet.
+          </div>
+
+          <div class="notification-list" *ngIf="!notificationsLoading && notifications.length > 0">
+            <button
+              type="button"
+              class="notification-item"
+              *ngFor="let notification of notifications"
+              [class.unread]="!notification.isRead"
+              (click)="onNotificationClick(notification, $event)"
+            >
+              <div class="notification-title-row">
+                <span class="notification-title">
+                  {{ notification.title }}
+                </span>
+                <span class="dot" *ngIf="!notification.isRead"></span>
+              </div>
+              <p class="notification-message">
+                {{ notification.message }}
+              </p>
+              <small class="notification-date">
+                {{ formatNotificationDate(notification.createdAt) }}
+              </small>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <span class="user-greeting" *ngIf="user">Hi, {{ getDisplayName() }}</span>
+
+      <!-- 👇 Notification Bell -->
+      <div class="notif-wrapper">
+        <button class="notif-btn" (click)="toggleNotifDropdown(); $event.stopPropagation()">
+          🔔
+          <span class="notif-badge" *ngIf="unreadCount > 0">{{ unreadCount }}</span>
+        </button>
+
+        <div class="notif-dropdown" *ngIf="notifDropdownVisible" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()">
+          <div class="notif-header">
+            <span>Notifications</span>
+            <button class="clear-btn" (click)="clearNotifications()" *ngIf="notifications.length > 0">Clear all</button>
+          </div>
+
+          <div class="notif-empty" *ngIf="notifications.length === 0">
+            No new notifications
+          </div>
+
+          <div
+            class="notif-item"
+            *ngFor="let notif of messageNotifications"
+            [ngClass]="{ unread: !notif.read }"
+            (click)="goToConversation(notif)"
+            (keydown.enter)="goToConversation(notif)"
+            (keydown.space)="goToConversation(notif)"
+          >
+            <div class="notif-content">
+              <div class="notif-sender">💬 {{ notif.senderName }}</div>
+              <div class="notif-text">{{ notif.text | slice:0:40 }}{{ notif.text.length > 40 ? '...' : '' }}</div>
+            </div>
+            <div class="notif-time">{{ notif.time | date:'HH:mm' }}</div>
+          </div>
+        </div>
+      </div>
+      <!-- 👆 End Bell -->
+
+      <button class="btn btn-secondary btn-sm" (click)="logout()">Sign Out</button>
+    </div>
+
+    <div class="peek-character" *ngIf="authService.isLoggedIn() && characterVisible">
+      <span class="peek-emoji">{{ getCharacterEmoji() }}</span>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer" *ngIf="authService.isLoggedIn()">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Serenity" class="footer-logo" />
+      <span class="footer-name">Serenity</span>
+    </div>
+    <p class="footer-tagline">Wellness &amp; Balance</p>
+    <div class="footer-links">
+      <a routerLink="/">Dashboard</a>
+      <a routerLink="/profile">Profile</a>
+      <a routerLink="/appointments">Appointments</a>
+      <a routerLink="/monitoring" *ngIf="authService.isPatient() || authService.isDoctor()">Monitoring</a>
+      <a routerLink="/articles">Articles</a>
+      <a routerLink="/pharmacy" *ngIf="authService.hasRole('PHARMACIST')">Pharmacy</a>
+      <a routerLink="/pharmacy/patient" *ngIf="authService.hasRole('PATIENT')">Pharmacy</a>
+      <a routerLink="/patients" *ngIf="authService.isDoctor()">Patients</a>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">&copy; {{ currentYear }} Serenity. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Pinned sticky note (floating across navigation) -->
+<div
+  class="pinned-sticky"
+  *ngIf="pinnedSticky?.open"
+  [ngStyle]="pinnedStyle"
+>
+  <div class="pinned-pin" (mousedown)="onPinnedMouseDown($event)" title="Drag to move"></div>
+  <button type="button" class="pinned-close" (click)="unpinSticky()" title="Unpin">
+    <span class="material-icons" aria-hidden="true">close</span>
+  </button>
+  <textarea
+    class="pinned-sticky-text"
+    [attr.data-color]="pinnedColor"
+    [value]="pinnedText"
+    (input)="onPinnedTextChange(($any($event.target)).value)"
+    rows="7"
+  ></textarea>
+</div>

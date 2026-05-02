@@ -1,0 +1,524 @@
+{
+  "id": "train_0120",
+  "image": "images/train/train_0120.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Antoine Moreau",
+    "registration_number": "FR-PHAR-824458",
+    "issue_date": "16 août 2022"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        89,
+        72,
+        145,
+        85
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        182,
+        57,
+        272,
+        78
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        282.203125,
+        57,
+        415.203125,
+        78
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        424.921875,
+        57,
+        480.921875,
+        78
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        490.375,
+        57,
+        693.375,
+        78
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        182,
+        94,
+        258,
+        110
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        265.0,
+        94,
+        353.0,
+        110
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        182,
+        123,
+        252,
+        138
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        77,
+        229,
+        288,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        297.546875,
+        229,
+        535.546875,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        77,
+        300,
+        137,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        144.984375,
+        301,
+        257.984375,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        265.203125,
+        305,
+        310.203125,
+        323
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        318.046875,
+        306,
+        326.046875,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        77,
+        348,
+        133,
+        366
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        140.640625,
+        349,
+        164.640625,
+        366
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        172.4375,
+        347,
+        265.4375,
+        371
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        272.6875,
+        354,
+        280.6875,
+        366
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Antoine",
+      "bbox": [
+        288,
+        348,
+        393,
+        366
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Moreau",
+      "bbox": [
+        401.59375,
+        348,
+        503.59375,
+        366
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        77,
+        395,
+        172,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        179.96875,
+        396,
+        327.96875,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        335.8125,
+        402,
+        343.8125,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-824458",
+      "bbox": [
+        351,
+        396,
+        581,
+        414
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        77,
+        444,
+        114,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        121.703125,
+        443,
+        291.703125,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        298.875,
+        444,
+        405.875,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        413.53125,
+        449,
+        443.53125,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        450.078125,
+        444,
+        543.078125,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        550.6875,
+        444,
+        580.6875,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        588.3125,
+        444,
+        670.3125,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        677.921875,
+        444,
+        720.921875,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        728.046875,
+        444,
+        891.046875,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        77,
+        492,
+        134,
+        510
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        141.984375,
+        492,
+        289.984375,
+        515
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        297.828125,
+        498,
+        305.828125,
+        510
+      ],
+      "label": "O"
+    },
+    {
+      "text": "16",
+      "bbox": [
+        313,
+        492,
+        346,
+        510
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "août",
+      "bbox": [
+        354.765625,
+        491,
+        415.765625,
+        510
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2022",
+      "bbox": [
+        424.375,
+        492,
+        491.375,
+        510
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        77,
+        540,
+        132,
+        563
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        139.421875,
+        546,
+        147.421875,
+        558
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        155,
+        540,
+        246,
+        558
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        77,
+        677,
+        116,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        122.859375,
+        676,
+        135.859375,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nantes,",
+      "bbox": [
+        143.34375,
+        678,
+        228.34375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        234.84375,
+        677,
+        254.84375,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "16",
+      "bbox": [
+        261.484375,
+        678,
+        289.484375,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "août",
+      "bbox": [
+        296.484375,
+        676,
+        346.484375,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2022",
+      "bbox": [
+        352.984375,
+        678,
+        408.984375,
+        694
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        663,
+        735,
+        760,
+        754
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        765.859375,
+        734,
+        859.859375,
+        750
+      ],
+      "label": "O"
+    }
+  ]
+}

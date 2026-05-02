@@ -1,0 +1,504 @@
+{
+  "id": "train_0102",
+  "image": "images/train/train_0102.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Antoine Garcia",
+    "registration_number": "FR-PHAR-550864",
+    "issue_date": "24 janvier 2024"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        87,
+        80,
+        143,
+        93
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        180,
+        65,
+        270,
+        86
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        280.203125,
+        65,
+        336.203125,
+        86
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        345.65625,
+        65,
+        548.65625,
+        86
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        180,
+        102,
+        256,
+        118
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        263.0,
+        102,
+        351.0,
+        118
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        180,
+        131,
+        250,
+        146
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        75,
+        237,
+        286,
+        257
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        295.546875,
+        237,
+        533.546875,
+        257
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        75,
+        308,
+        135,
+        326
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        142.984375,
+        309,
+        255.984375,
+        326
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        263.203125,
+        313,
+        308.203125,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        316.046875,
+        314,
+        324.046875,
+        326
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        75,
+        356,
+        131,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        138.640625,
+        357,
+        162.640625,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        170.4375,
+        355,
+        263.4375,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        270.6875,
+        362,
+        278.6875,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Antoine",
+      "bbox": [
+        286,
+        356,
+        391,
+        374
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Garcia",
+      "bbox": [
+        399.59375,
+        356,
+        485.59375,
+        374
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        75,
+        403,
+        170,
+        422
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        177.96875,
+        404,
+        325.96875,
+        427
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        333.8125,
+        410,
+        341.8125,
+        422
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-550864",
+      "bbox": [
+        349,
+        404,
+        579,
+        422
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        75,
+        452,
+        112,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        119.703125,
+        452,
+        226.703125,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        234.359375,
+        457,
+        264.359375,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        270.90625,
+        452,
+        363.90625,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        371.515625,
+        452,
+        401.515625,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        409.140625,
+        452,
+        491.140625,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        498.75,
+        452,
+        541.75,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        548.875,
+        452,
+        711.875,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        75,
+        500,
+        132,
+        518
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        139.984375,
+        500,
+        287.984375,
+        523
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        295.828125,
+        506,
+        303.828125,
+        518
+      ],
+      "label": "O"
+    },
+    {
+      "text": "24",
+      "bbox": [
+        311,
+        500,
+        344,
+        518
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "janvier",
+      "bbox": [
+        351.765625,
+        500,
+        446.765625,
+        523
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2024",
+      "bbox": [
+        454.65625,
+        500,
+        521.65625,
+        518
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        75,
+        548,
+        130,
+        571
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        137.421875,
+        554,
+        145.421875,
+        566
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        153,
+        548,
+        244,
+        566
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        75,
+        685,
+        114,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        120.859375,
+        684,
+        133.859375,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nice,",
+      "bbox": [
+        141.34375,
+        685,
+        196.34375,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        203.53125,
+        685,
+        223.53125,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "24",
+      "bbox": [
+        230.171875,
+        686,
+        258.171875,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "janvier",
+      "bbox": [
+        264.171875,
+        685,
+        341.171875,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024",
+      "bbox": [
+        347.40625,
+        686,
+        403.40625,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        665,
+        743,
+        762,
+        762
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        767.859375,
+        742,
+        861.859375,
+        758
+      ],
+      "label": "O"
+    }
+  ]
+}

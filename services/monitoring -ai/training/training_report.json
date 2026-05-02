@@ -1,0 +1,141 @@
+{
+  "numeric_model": {
+    "dataset_rows": 3200,
+    "accuracy": 0.9656,
+    "classification_report": {
+      "HIGH_RISK": {
+        "precision": 0.9764150943396226,
+        "recall": 0.9764150943396226,
+        "f1-score": 0.9764150943396226,
+        "support": 212.0
+      },
+      "LOW_RISK": {
+        "precision": 0.9627906976744186,
+        "recall": 0.981042654028436,
+        "f1-score": 0.971830985915493,
+        "support": 211.0
+      },
+      "MEDIUM_RISK": {
+        "precision": 0.9577464788732394,
+        "recall": 0.9400921658986175,
+        "f1-score": 0.9488372093023255,
+        "support": 217.0
+      },
+      "accuracy": 0.965625,
+      "macro avg": {
+        "precision": 0.965650756962427,
+        "recall": 0.9658499714222254,
+        "f1-score": 0.9656944298524803,
+        "support": 640.0
+      },
+      "weighted avg": {
+        "precision": 0.9655934736324927,
+        "recall": 0.965625,
+        "f1-score": 0.9655531444480838,
+        "support": 640.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        207,
+        0,
+        5
+      ],
+      [
+        0,
+        207,
+        4
+      ],
+      [
+        5,
+        8,
+        204
+      ]
+    ]
+  },
+  "text_model": {
+    "dataset_rows": 52649,
+    "oversampling": true,
+    "raw_status_distribution": {
+      "Normal": 16351,
+      "Depression": 15404,
+      "Suicidal": 10653,
+      "Anxiety": 3888,
+      "Bipolar": 2877,
+      "Stress": 2669,
+      "Personality disorder": 1201
+    },
+    "risk_distribution": {
+      "MEDIUM_RISK": 22908,
+      "LOW_RISK": 16313,
+      "HIGH_RISK": 13428
+    },
+    "accuracy": 0.8131,
+    "classification_report": {
+      "HIGH_RISK": {
+        "precision": 0.7052087181381603,
+        "recall": 0.7109869646182495,
+        "f1-score": 0.708086053412463,
+        "support": 2685.0
+      },
+      "MEDIUM_RISK": {
+        "precision": 0.8196042337781868,
+        "recall": 0.7773897861195984,
+        "f1-score": 0.7979390681003584,
+        "support": 4582.0
+      },
+      "LOW_RISK": {
+        "precision": 0.8889847569744033,
+        "recall": 0.9472877719889672,
+        "f1-score": 0.9172106824925815,
+        "support": 3263.0
+      },
+      "accuracy": 0.8131054131054131,
+      "macro avg": {
+        "precision": 0.8045992362969168,
+        "recall": 0.8118881742422718,
+        "f1-score": 0.8077452680018009,
+        "support": 10530.0
+      },
+      "weighted avg": {
+        "precision": 0.8119344035498661,
+        "recall": 0.8131054131054131,
+        "f1-score": 0.8119873048833428,
+        "support": 10530.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1909,
+        648,
+        128
+      ],
+      [
+        762,
+        3562,
+        258
+      ],
+      [
+        36,
+        136,
+        3091
+      ]
+    ],
+    "medium_subtype_accuracy": 0.8651,
+    "medium_subtypes": [
+      "ANXIETY_DISTRESS",
+      "DEPRESSIVE_MOOD",
+      "PERSONALITY_DYSREGULATION",
+      "STRESS_OVERLOAD"
+    ],
+    "high_subtype_accuracy": 0.9747,
+    "high_subtypes": [
+      "BIPOLAR_EPISODE",
+      "SUICIDAL_CRISIS"
+    ],
+    "notebook_reference": {
+      "exists": true,
+      "used_for_reference": "TF-IDF and label conventions from the attached notebook"
+    }
+  }
+}

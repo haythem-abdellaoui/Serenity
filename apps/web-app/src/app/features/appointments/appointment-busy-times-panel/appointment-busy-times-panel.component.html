@@ -1,0 +1,13 @@
+<div class="busy-panel" *ngIf="selectedDate">
+  <h3 class="busy-title">{{ heading }}</h3>
+  <p class="busy-sub">{{ subheading }}</p>
+  <p class="busy-date">{{ selectedDate }}</p>
+
+  <ul class="busy-list" *ngIf="rows.length">
+    <li *ngFor="let s of rows" [class.doc]="s.source === 'DOCTOR'" [class.pat]="s.source === 'PATIENT'">
+      <span class="range">{{ rangeLabel(s) }}</span>
+      <span class="src">{{ sourceLabel(s) }}</span>
+    </li>
+  </ul>
+  <p class="busy-empty" *ngIf="!rows.length">No other visits on this day — any allowed time in working hours is free of conflicts shown here.</p>
+</div>

@@ -1,0 +1,57 @@
+<section class="container cart-page">
+  <div class="cart-hero">
+    <h2>Your Cart</h2>
+    <p>Review your picks, adjust quantities, and move smoothly to checkout.</p>
+  </div>
+
+  <div class="notice" *ngIf="emptyCartNotice">
+    <span>{{ emptyCartNotice }}</span>
+    <button type="button" class="notice-close" (click)="dismissNotice()">Dismiss</button>
+  </div>
+
+  <ng-container *ngIf="cart$ | async as cart">
+    <div class="empty-state" *ngIf="cart.length === 0">
+      <h3>Your cart is currently empty</h3>
+      <p>Pick an item from the marketplace or revisit your wishlist to continue.</p>
+      <div class="empty-actions">
+        <button class="btn btn-primary" type="button" routerLink="/marketplace">Explore Products</button>
+        <button class="btn btn-outline" type="button" routerLink="/marketplace/wishlist">Open Wishlist</button>
+      </div>
+    </div>
+
+    <div class="cart-table" *ngIf="cart.length > 0">
+      <article class="row" *ngFor="let item of cart">
+        <div class="product">
+          <img
+            class="product-thumb"
+            [src]="item.product.imageUrl || 'assets/logo.png'"
+            [alt]="item.product.name" />
+          <div>
+            <strong>{{ item.product.name }}</strong>
+            <small>{{ item.product.type }}</small>
+          </div>
+        </div>
+
+        <input
+          type="number"
+          min="1"
+          [value]="item.quantity"
+          (change)="updateQuantity(item.product.id, $any($event.target).value)" />
+
+        <div class="price">{{ item.product.price * item.quantity | currency:'TND ' }}</div>
+        <button class="btn btn-danger" type="button" (click)="removeItem(item.product.id)">Remove</button>
+      </article>
+
+      <div class="summary">
+        <div>
+          <small>Order Total</small>
+          <strong>{{ getTotal() | currency:'TND ' }}</strong>
+        </div>
+        <div class="summary-actions">
+          <button class="btn btn-outline" type="button" routerLink="/marketplace">Add More</button>
+          <button class="btn btn-primary" type="button" (click)="checkout()">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</section>

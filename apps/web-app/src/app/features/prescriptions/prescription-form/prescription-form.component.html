@@ -1,0 +1,169 @@
+<div class="container medical-page">
+  <div class="page-head">
+    <h1>{{ isEdit ? 'Edit prescription' : 'New prescription' }}</h1>
+  </div>
+
+  <p class="breadcrumb" *ngIf="patientId && recordId">
+    <a routerLink="/patients">Patients</a>
+    <span class="sep">/</span>
+    <a [routerLink]="['/patients', patientId]">Patient</a>
+    <span class="sep">/</span>
+    <a [routerLink]="['/patients', patientId, 'records']">Records</a>
+    <span class="sep">/</span>
+    <a [routerLink]="['/patients', patientId, 'records', recordId, 'prescriptions']">Prescriptions</a>
+  </p>
+
+  <div *ngIf="loading" class="state-muted">Loading…</div>
+
+  <!-- AI Recommendations Banner -->
+  <div *ngIf="!loading && aiRecommendations.length > 0" class="ai-banner" style="background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); padding: 15px 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #6b11ff;">
+    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+      <span style="font-size: 1.5rem; margin-right: 10px;">✨</span>
+      <strong style="color: #4a2377;">Smart AI Recommendation</strong>
+    </div>
+    <p style="margin: 0 0 10px 0; font-size: 0.95rem; color: #333;">
+      Based on the patient's diagnosis <strong>"{{ recordDiagnosis }}"</strong>, the Artificial Intelligence recommends these psychotropic medications:
+    </p>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+      <button *ngFor="let drug of aiRecommendations" 
+              type="button"
+              class="btn btn-primary"
+              style="border-radius: 20px; padding: 5px 15px; font-size: 0.9rem; background-color: #6b11ff; border: none; cursor: pointer; transition: transform 0.2s; box-shadow: 0 2px 5px rgba(107,17,255,0.3);"
+              onmouseover="this.style.transform='scale(1.05)'"
+              onmouseout="this.style.transform='scale(1)'"
+              (click)="applyAiRecommendation(0, drug)">
+        + {{ drug }}
+      </button>
+      <span style="font-size: 0.8rem; color: #666; align-self: flex-end; margin-left: auto;">
+        *Click a drug to auto-fill Item 1
+      </span>
+    </div>
+  </div>
+
+  <!-- Hidden Beautiful Ticket for Cloudinary Capture -->
+  <div id="capture-ticket" style="position: fixed; top: 0; left: -9999px; width: 750px; background: #ffffff; padding: 40px; border-radius: 12px; font-family: 'Inter', sans-serif; box-sizing: border-box; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+    <div style="border-bottom: 2px solid #6b11ff; padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end;">
+      <div>
+        <h2 style="color: #333; margin: 0; font-size: 1.8rem; letter-spacing: -0.5px;">Medical Prescription</h2>
+        <p style="color: #666; margin: 5px 0 0 0; font-size: 0.95rem;">Issued automatically via Smart AI System</p>
+      </div>
+      <div style="text-align: right; color: #888; font-size: 0.9rem;">
+        <strong style="color: #6b11ff;">Status:</strong> {{ form.value.status }}<br>
+        <strong>Items:</strong> {{ form.value.items?.length }}
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;">
+        <span *ngFor="let item of form.value.items" style="background: #eef2ff; color: #4338ca; padding: 8px 16px; border-radius: 30px; font-size: 0.95rem; font-weight: 500; border: 1px solid #c7d2fe;">
+          💊 {{ item.medicineNameSearch || 'Unknown Medicine' }}
+        </span>
+      </div>
+
+      <div *ngFor="let item of form.value.items" style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0;">
+        <h3 style="margin: 0 0 8px 0; color: #1f2937; font-size: 1.25rem;">{{ item.medicineNameSearch || 'Unknown Medicine' }}</h3>
+        
+        <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; background: #f9fafb; padding: 10px; border-radius: 6px;">
+          <span>Freq: <span style="color: #111827;">{{ item.frequency }}</span></span>
+          <span>Qty: <span style="color: #111827;">{{ item.quantity }}</span></span>
+          <span>Start: <span style="color: #111827;">{{ item.startDate }}</span></span>
+          <span>End: <span style="color: #111827;">{{ item.endDate || '—' }}</span></span>
+        </div>
+        
+        <div *ngIf="item.instructions" style="font-size: 0.95rem; color: #4b5563; line-height: 1.5; background: #fffbeb; padding: 12px; border-left: 4px solid #f59e0b; border-radius: 4px;">
+          <strong style="color: #b45309; text-transform: uppercase; font-size: 0.8rem;">Instructions</strong><br>
+          {{ item.instructions }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="card-form" *ngIf="!loading">
+    <div class="form-grid">
+      <label class="field">
+        <span>Prescription Status *</span>
+        <select formControlName="status">
+          <option value="ACTIVE">ACTIVE</option>
+          <option value="COMPLETED">COMPLETED</option>
+          <option value="CANCELLED">CANCELLED</option>
+        </select>
+        <small class="err" *ngIf="form.get('status')?.invalid && form.get('status')?.touched">Status is required</small>
+      </label>
+
+      <div class="field full">
+        <div class="medication-header">
+          <span>Medications</span>
+          <button type="button" class="btn btn-secondary" (click)="addItem()">+ Add medication</button>
+        </div>
+        <div formArrayName="items">
+          <div class="medication-block" *ngFor="let item of itemsArray.controls; let i = index" [formGroupName]="i">
+            <div class="medication-block-title">
+              <strong>Item {{ i + 1 }}</strong>
+              <button type="button" class="btn btn-secondary" (click)="removeItem(i)"
+                [disabled]="itemsArray.length === 1">Remove</button>
+            </div>
+            <div class="form-grid">
+              <label class="field full">
+                <span>Medicine (Search OpenFDA) *</span>
+                <div class="autocomplete-wrapper" style="position: relative;">
+                  <input type="text" formControlName="medicineNameSearch" (input)="onSearchInput(i, $event)" placeholder="Type to search FDA (e.g. Aspirin)..." autocomplete="off">
+                  <div class="autocomplete-dropdown" *ngIf="searchResults[i]?.length" style="position: absolute; width: 100%; border: 1px solid #ccc; background: #fff; z-index: 10; max-height: 200px; overflow-y: auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div class="autocomplete-item" *ngFor="let m of searchResults[i]" (click)="selectMedicine(i, m)" (keydown.enter)="selectMedicine(i, m)" style="padding: 10px; cursor: pointer; border-bottom: 1px solid #eee;">
+                      <strong>{{ m.name }}</strong>
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" formControlName="medicineId">
+                <small class="err" *ngIf="item.get('medicineId')?.invalid && item.get('medicineId')?.touched">Medicine is required. Please select from search.</small>
+                
+                <div class="alert alert-warning" *ngIf="medicineWarnings[i]" style="margin-top: 10px; padding: 10px; background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; border-radius: 4px;">
+                  <strong>⚠️ Avertissement (Effets secondaires) :</strong><br>
+                  {{ medicineWarnings[i] }}
+                </div>
+              </label>
+              <label class="field">
+                <span>Dosage *</span>
+                <input type="text" formControlName="dosage" maxlength="50" />
+                <small class="err" *ngIf="item.get('dosage')?.invalid && item.get('dosage')?.touched">Dosage is required
+                  (max 50)</small>
+              </label>
+              <label class="field">
+                <span>Frequency *</span>
+                <input type="text" formControlName="frequency" maxlength="50" />
+                <small class="err" *ngIf="item.get('frequency')?.invalid && item.get('frequency')?.touched">Frequency is
+                  required (max 50)</small>
+              </label>
+              <label class="field">
+                <span>Quantity *</span>
+                <input type="number" formControlName="quantity" min="1" />
+                <small class="err" *ngIf="item.get('quantity')?.invalid && item.get('quantity')?.touched">Quantity is
+                  required (min 1)</small>
+              </label>
+              <label class="field">
+                <span>Start date *</span>
+                <input type="date" formControlName="startDate" />
+                <small class="err" *ngIf="item.get('startDate')?.invalid && item.get('startDate')?.touched">Start date
+                  is required</small>
+              </label>
+              <label class="field">
+                <span>End date</span>
+                <input type="date" formControlName="endDate" />
+              </label>
+              <label class="field full">
+                <span>Instructions</span>
+                <textarea formControlName="instructions" rows="3" maxlength="500"></textarea>
+                <small class="err" *ngIf="item.get('instructions')?.invalid && item.get('instructions')?.touched">Max
+                  500 characters</small>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+      <button type="submit" class="btn btn-primary" [disabled]="saving">Save</button>
+    </div>
+  </form>
+</div>

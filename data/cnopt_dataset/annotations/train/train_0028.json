@@ -1,0 +1,524 @@
+{
+  "id": "train_0028",
+  "image": "images/train/train_0028.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Louis Petit",
+    "registration_number": "ORD-57-2023-9661",
+    "issue_date": "16 octobre 2024"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        104,
+        94,
+        160,
+        107
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        197,
+        79,
+        287,
+        100
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        297.203125,
+        79,
+        430.203125,
+        100
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        439.921875,
+        79,
+        495.921875,
+        100
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        505.375,
+        79,
+        708.375,
+        100
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        197,
+        116,
+        273,
+        132
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        280.0,
+        116,
+        368.0,
+        132
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        197,
+        145,
+        267,
+        160
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        92,
+        251,
+        270,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        279.9375,
+        251,
+        517.9375,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        92,
+        322,
+        152,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        159.984375,
+        323,
+        272.984375,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        280.203125,
+        327,
+        325.203125,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        333.046875,
+        328,
+        341.046875,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        92,
+        370,
+        148,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        155.640625,
+        371,
+        179.640625,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        187.4375,
+        369,
+        280.4375,
+        393
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        287.6875,
+        376,
+        295.6875,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Louis",
+      "bbox": [
+        303,
+        370,
+        374,
+        388
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Petit",
+      "bbox": [
+        382.75,
+        370,
+        447.75,
+        388
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        92,
+        417,
+        187,
+        436
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        194.96875,
+        418,
+        342.96875,
+        441
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        350.8125,
+        424,
+        358.8125,
+        436
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-57-2023-9661",
+      "bbox": [
+        366,
+        418,
+        622,
+        436
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        92,
+        466,
+        216,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        223.984375,
+        465,
+        305.984375,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        313.265625,
+        465,
+        328.265625,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        335.59375,
+        466,
+        385.59375,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        392.8125,
+        466,
+        422.8125,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        430.4375,
+        471,
+        514.4375,
+        489
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        521.59375,
+        466,
+        669.59375,
+        489
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        677.4375,
+        471,
+        707.4375,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        713.984375,
+        466,
+        814.984375,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        92,
+        514,
+        149,
+        532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        156.984375,
+        514,
+        304.984375,
+        537
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        312.828125,
+        520,
+        320.828125,
+        532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "16",
+      "bbox": [
+        328,
+        514,
+        361,
+        532
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "octobre",
+      "bbox": [
+        369.765625,
+        514,
+        473.765625,
+        532
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2024",
+      "bbox": [
+        482.109375,
+        514,
+        549.109375,
+        532
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        92,
+        562,
+        147,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        154.421875,
+        568,
+        162.421875,
+        580
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        170,
+        562,
+        261,
+        580
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        92,
+        699,
+        131,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        137.859375,
+        698,
+        150.859375,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nice,",
+      "bbox": [
+        158.34375,
+        699,
+        213.34375,
+        718
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        220.53125,
+        699,
+        240.53125,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "16",
+      "bbox": [
+        247.171875,
+        700,
+        275.171875,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "octobre",
+      "bbox": [
+        282.171875,
+        699,
+        366.171875,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024",
+      "bbox": [
+        372.859375,
+        700,
+        428.859375,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        648,
+        757,
+        745,
+        776
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        750.859375,
+        756,
+        844.859375,
+        772
+      ],
+      "label": "O"
+    }
+  ]
+}

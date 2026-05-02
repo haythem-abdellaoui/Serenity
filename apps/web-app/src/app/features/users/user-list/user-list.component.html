@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="page-header">
+    <h1>User Management</h1>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-error">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="loading" class="loading-container">
+    <span class="spinner"></span>
+    <p>Loading users...</p>
+  </div>
+
+  <div *ngIf="!loading && users.length === 0" class="empty-state card">
+    <p>No users found.</p>
+  </div>
+
+  <div *ngIf="!loading && users.length > 0" class="card table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Created</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.firstName }} {{ user.lastName }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <span class="badge badge-primary">{{ user.role }}</span>
+          </td>
+          <td>
+            <span [class]="isCurrentlyBanned(user) ? 'badge badge-danger' : (user.isActive ? 'badge badge-success' : 'badge badge-warning')">
+              {{ getBanStatusText(user) }}
+            </span>
+          </td>
+          <td>{{ user.createdAt | date:'mediumDate' }}</td>
+          <td class="actions">
+            <a [routerLink]="['edit', user.id]" class="btn btn-secondary btn-sm">Edit</a>
+            <button *ngIf="user.isActive" class="btn btn-secondary btn-sm" (click)="deactivateUser(user.id)">
+              Deactivate
+            </button>
+            <button *ngIf="!user.isActive" class="btn btn-primary btn-sm" (click)="activateUser(user.id)">
+              Activate
+            </button>
+            <button *ngIf="!isCurrentlyBanned(user)" class="btn btn-danger btn-sm" (click)="openBanModal(user)">
+              Ban
+            </button>
+            <button *ngIf="isCurrentlyBanned(user)" class="btn btn-secondary btn-sm" (click)="unbanUser(user.id)">
+              Unban
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal-backdrop" *ngIf="showBanModal" tabindex="0" role="button" aria-label="Close ban modal backdrop" (click)="closeBanModal()" (keydown)="onModalBackdropKeydown($event)">
+    <div class="ban-modal card" role="dialog" aria-modal="true" tabindex="0" (click)="$event.stopPropagation()" (keydown)="onBanModalKeydown($event)">
+      <h3>Ban User</h3>
+      <p *ngIf="banTargetUser">
+        Choose ban period for <strong>{{ banTargetUser.firstName }} {{ banTargetUser.lastName }}</strong>.
+      </p>
+      <label class="ban-label" for="banDuration">Ban duration</label>
+      <div class="ban-select-wrap">
+        <button
+          id="banDuration"
+          type="button"
+          class="ban-select-button"
+          [attr.aria-expanded]="showBanDurationMenu"
+          (click)="toggleBanDurationMenu()">
+          <span>{{ getSelectedBanDurationLabel() }}</span>
+          <span class="ban-select-icon" [class.open]="showBanDurationMenu"></span>
+        </button>
+        <div class="ban-options" *ngIf="showBanDurationMenu">
+          <button
+            *ngFor="let option of banOptions"
+            type="button"
+            class="ban-option"
+            [class.active]="option.value === selectedBanDuration"
+            (click)="selectBanDuration(option.value)">
+            {{ option.label }}
+          </button>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" type="button" (click)="closeBanModal()">Cancel</button>
+        <button class="btn btn-danger" type="button" (click)="confirmBan()">Confirm ban</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+.location-picker {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.map-canvas {
+  width: 100%;
+  min-height: 320px;
+  border-radius: 14px;
+  border: 1px solid #c4dbda;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(42, 71, 69, 0.04);
+}
+
+.helper {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #557573;
+}
+
+.coordinates {
+  margin: 0;
+  font-weight: 700;
+  color: #1f5f5b;
+  font-size: 0.9rem;
+}
+
+.coordinates.pending {
+  color: #a53d3d;
+}
+
+:host ::ng-deep .pharmacy-pin {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(23, 148, 148, 0.2);
+  border: 1px solid rgba(12, 96, 96, 0.4);
+}
+
+:host ::ng-deep .pharmacy-pin span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #158b8b;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.85);
+}
+
+:host ::ng-deep .pharmacy-pin-primary {
+  background: rgba(48, 168, 108, 0.28);
+  border-color: rgba(25, 115, 70, 0.55);
+}
+
+:host ::ng-deep .pharmacy-pin-primary span {
+  background: #238a58;
+}
+
+@media (max-width: 640px) {
+  .map-canvas {
+    min-height: 260px;
+  }
+}

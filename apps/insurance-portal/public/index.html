@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance Portal</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      min-height: 100vh;
+    }
+
+    .topbar {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .topbar h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .topbar .badge {
+      background: rgba(255,255,255,0.12);
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: #fff;
+      padding: 1.25rem;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .stat-card .label {
+      font-size: 0.75rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+
+    .stat-card .value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-top: 0.25rem;
+    }
+
+    .stat-card .value.pending { color: #3b82f6; }
+    .stat-card .value.approved { color: #10b981; }
+    .stat-card .value.rejected { color: #ef4444; }
+    .stat-card .value.total { color: #1a1a2e; }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-header h2 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .refresh-hint {
+      font-size: 0.72rem;
+      color: #9ca3af;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      font-weight: 600;
+      background: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      border-bottom: 1px solid #f3f4f6;
+      vertical-align: middle;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .badge-status {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .badge-PENDING { background: #dbeafe; color: #1d4ed8; }
+    .badge-SUBMITTED { background: #e0e7ff; color: #3730a3; }
+    .badge-UNDER_REVIEW { background: #cffafe; color: #155e75; }
+    .badge-NEEDS_INFO { background: #fef3c7; color: #92400e; }
+    .badge-APPROVED { background: #d1fae5; color: #065f46; }
+    .badge-PARTIALLY_APPROVED { background: #dbeafe; color: #1e40af; }
+    .badge-PAID { background: #dcfce7; color: #166534; }
+    .badge-REJECTED { background: #fee2e2; color: #991b1b; }
+
+    .amount {
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ref-code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .actions input {
+      width: 85px;
+      padding: 0.35rem 0.5rem;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-family: inherit;
+    }
+
+    .actions .reason-input {
+      width: 190px;
+    }
+
+    .btn {
+      padding: 0.35rem 0.75rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .btn:hover { opacity: 0.85; }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .btn-approve { background: #10b981; color: #fff; }
+    .btn-reject { background: #ef4444; color: #fff; }
+
+    .empty {
+      text-align: center;
+      padding: 3rem;
+      color: #9ca3af;
+    }
+
+    .processed {
+      font-size: 0.72rem;
+      color: #9ca3af;
+    }
+
+    .attachments-cell {
+      min-width: 180px;
+    }
+
+    .attachment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .attachment-link {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 0.75rem;
+      line-height: 1.2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 260px;
+      display: inline-block;
+    }
+
+    .attachment-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <h1>Insurance Company Portal</h1>
+    <span class="badge">External System</span>
+  </div>
+
+  <div class="container">
+    <div class="stats">
+      <div class="stat-card">
+        <div class="label">Total Claims</div>
+        <div class="value total" id="statTotal">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">In Progress</div>
+        <div class="value pending" id="statPending">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Approved</div>
+        <div class="value approved" id="statApproved">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Rejected</div>
+        <div class="value rejected" id="statRejected">0</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>Incoming Claims</h2>
+        <span class="refresh-hint">Auto-refreshes every 5s</span>
+      </div>
+      <div id="claimsContainer">
+        <div class="empty">No claims received yet. Waiting for submissions from healthcare system...</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // External insurance provider (this Node server keeps claims in-memory under /api/claims).
+    // Keep API relative so it works on http://localhost:3000
+    const API = '';
+
+    async function loadClaims() {
+      try {
+        const res = await fetch(`${API}/api/claims`);
+        const claims = await res.json();
+        render(claims);
+      } catch (e) {
+        console.error('Failed to load claims', e);
+      }
+    }
+
+    function render(claims) {
+      document.getElementById('statTotal').textContent = claims.length;
+      document.getElementById('statPending').textContent = claims.filter(c =>
+        c.status === 'PENDING' || c.status === 'SUBMITTED' || c.status === 'UNDER_REVIEW' || c.status === 'NEEDS_INFO'
+      ).length;
+      document.getElementById('statApproved').textContent = claims.filter(c => c.status === 'APPROVED').length;
+      document.getElementById('statRejected').textContent = claims.filter(c => c.status === 'REJECTED').length;
+
+      const container = document.getElementById('claimsContainer');
+
+      if (claims.length === 0) {
+        container.innerHTML = '<div class="empty">No claims received yet. Waiting for submissions from healthcare system...</div>';
+        return;
+      }
+
+      const sorted = [...claims].reverse();
+
+      container.innerHTML = `
+        <table>
+          <thead>
+            <tr>
+              <th>Reference</th>
+              <th>Patient</th>
+              <th>Company</th>
+              <th>Grade</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Attachments</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${sorted.map(c => `
+              <tr>
+                <td><span class="ref-code">${c.ref.substring(0, 8)}...</span></td>
+                <td>${esc(c.patientName)}</td>
+                <td>${esc(c.insuranceCompany)}</td>
+                <td>Grade ${c.insuranceGrade}</td>
+                <td>${esc(c.description)}</td>
+                <td class="amount">${Number(c.amount).toFixed(2)} TND</td>
+                <td class="attachments-cell">
+                  ${Array.isArray(c.attachmentUrls) && c.attachmentUrls.length > 0
+                    ? `<div class="attachment-list">
+                        ${c.attachmentUrls.map((url, idx) => `
+                          <a class="attachment-link" href="${esc(url)}" target="_blank" rel="noopener noreferrer">
+                            Attachment ${idx + 1}
+                          </a>
+                        `).join('')}
+                      </div>`
+                    : '<span class="processed">No attachments</span>'
+                  }
+                </td>
+                <td><span class="badge-status badge-${c.status}">${c.status}</span></td>
+                <td style="font-size:0.78rem; color:#6b7280;">${new Date(c.receivedAt).toLocaleDateString()}</td>
+                <td>
+                  ${['PENDING', 'SUBMITTED', 'UNDER_REVIEW', 'NEEDS_INFO'].includes(c.status) ? `
+                    <div class="actions">
+                      <a class="btn btn-approve" href="/claim.html?ref=${encodeURIComponent(c.ref)}" style="text-decoration:none; display:inline-flex; align-items:center;">
+                        Open to Process
+                      </a>
+                    </div>
+                  ` : `
+                    <span class="processed">
+                      ${c.status === 'APPROVED'
+                        ? `Reimbursed ${Number(c.reimbursementAmount || 0).toFixed(2)} TND${c.adjustmentReason ? ` - ${esc(c.adjustmentReason)}` : ''}`
+                        : `Declined${c.rejectReason ? ` - ${esc(c.rejectReason)}` : ''}`
+                      }
+                    </span>
+                  `}
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+
+    function esc(str) {
+      const d = document.createElement('div');
+      d.textContent = str || '';
+      return d.innerHTML;
+    }
+
+    loadClaims();
+    setInterval(loadClaims, 5000);
+  </script>
+</body>
+</html>

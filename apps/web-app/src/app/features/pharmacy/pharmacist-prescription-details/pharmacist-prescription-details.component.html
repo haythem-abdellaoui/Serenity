@@ -1,0 +1,199 @@
+<div class="container">
+  <section class="rx-page">
+    <header class="rx-header">
+      <div class="title-block">
+        <h1>Prescription Details</h1>
+        <p>Review prescription lines, update status, and handle insurance upload in one clean workflow.</p>
+      </div>
+      <button type="button" class="btn btn-secondary" (click)="goBack()">Back to Inbox</button>
+    </header>
+
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <article class="workspace" *ngIf="!loading && prescription as selected">
+      <section class="card overview-card">
+        <div class="overview-head">
+          <h2>Prescription Overview</h2>
+          <span [class]="statusClass(selected.status)">{{ statusLabel(selected.status) }}</span>
+        </div>
+
+        <div class="overview-grid">
+          <div>
+            <p class="label">Patient</p>
+            <p class="value">{{ selected.patientName }}</p>
+          </div>
+          <div>
+            <p class="label">Primary Physician</p>
+            <p class="value">{{ selected.doctorName }}</p>
+          </div>
+          <div>
+            <p class="label">Current Pharmacy</p>
+            <p class="value">{{ selected.pharmacyName || 'Not assigned yet' }}</p>
+          </div>
+          <div>
+            <p class="label">Created</p>
+            <p class="value">{{ selected.createdAt | date:'medium' }}</p>
+          </div>
+          <div *ngIf="selected.readyAt">
+            <p class="label">Ready At</p>
+            <p class="value">{{ selected.readyAt | date:'medium' }}</p>
+          </div>
+          <div *ngIf="selected.insuranceDocumentAvailable">
+            <p class="label">Insurance Copy</p>
+            <p class="value">Uploaded {{ selected.insuranceDocumentUploadedAt | date:'medium' }}</p>
+          </div>
+        </div>
+
+        <p class="rejection-note" *ngIf="selected.rejectionReason">
+          Rejection reason: {{ selected.rejectionReason }}
+        </p>
+
+        <div class="action-strip">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="updateStatus('ACCEPTED')"
+            [disabled]="!canProcess(selected.status) || statusUpdating">
+            Accept
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="updateStatus('REJECTED')"
+            [disabled]="!canProcess(selected.status) || statusUpdating">
+            Reject
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="updateStatus('READY_FOR_PICKUP')"
+            [disabled]="selected.status !== 'ACCEPTED' || statusUpdating">
+            Ready
+          </button>
+          <button
+            *ngIf="selected.insuranceDocumentAvailable"
+            type="button"
+            class="btn btn-secondary"
+            (click)="downloadInsuranceDocument()"
+            [disabled]="downloadingInsuranceDocument">
+            {{ downloadingInsuranceDocument ? 'Downloading...' : 'Download Insurance Copy' }}
+          </button>
+        </div>
+
+        <section class="reject-panel" *ngIf="showRejectPanel && canProcess(selected.status)">
+          <h3>Reject Prescription</h3>
+          <p>Add a clear reason to help the patient and doctor understand why this prescription is rejected.</p>
+          <label for="rejectReasonInput">Rejection reason</label>
+          <textarea
+            id="rejectReasonInput"
+            [(ngModel)]="rejectReason"
+            rows="4"
+            placeholder="Example: dosage not readable, missing doctor stamp..."></textarea>
+          <div class="reject-actions">
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="confirmReject()"
+              [disabled]="statusUpdating || !rejectReason.trim()">
+              Confirm Reject
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="cancelRejectPanel()" [disabled]="statusUpdating">
+              Cancel
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <section class="card insurance-upload" *ngIf="canShowInsuranceUpload()">
+        <div class="insurance-upload-head">
+          <h3>Insurance Upload</h3>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="openInsuranceUploadPanel()"
+            *ngIf="!showInsuranceUploadPanel">
+            Upload Prescription For Insurance
+          </button>
+        </div>
+
+        <div class="insurance-panel" *ngIf="showInsuranceUploadPanel">
+          <div class="mode-buttons">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              [class.active]="selectedInsuranceUploadMode === 'mobile'"
+              (click)="chooseInsuranceUploadMode('mobile')"
+              [disabled]="uploadingInsuranceDocument">
+              Use Mobile App
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              [class.active]="selectedInsuranceUploadMode === 'pc'"
+              (click)="chooseInsuranceUploadMode('pc')"
+              [disabled]="uploadingInsuranceDocument">
+              Upload From This Computer
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="closeInsuranceUploadPanel()" [disabled]="uploadingInsuranceDocument">
+              Close
+            </button>
+          </div>
+
+          <div *ngIf="selectedInsuranceUploadMode === 'mobile'" class="mode-card">
+            <p>Prescription ID: <strong>{{ selected.id }}</strong></p>
+            <p>Open the mobile app, login, pick this prescription, capture photo, and upload.</p>
+            <p class="hint" *ngIf="watchingMobileUpload">Waiting for mobile upload...</p>
+          </div>
+
+          <div *ngIf="selectedInsuranceUploadMode === 'pc'" class="mode-card">
+            <input class="insurance-file-input" type="file" accept=".jpg,.jpeg,.png,image/*" (change)="onInsuranceFileSelected($event)" />
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="uploadInsuranceDocumentFromComputer()"
+              [disabled]="uploadingInsuranceDocument || !insuranceUploadFile">
+              {{ uploadingInsuranceDocument ? 'Uploading...' : 'Upload Now' }}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card meds-card">
+        <div class="section-head">
+          <h3>Prescription Medications</h3>
+          <p class="hint">Stock comparison is shown for each medicine line.</p>
+        </div>
+        <div class="medicine-list">
+          <article *ngFor="let line of medicineLines()" class="medicine-item">
+            <div class="medicine-top">
+              <p class="line-name">{{ line.medicationName }}</p>
+              <span class="qty-pill">Qty: {{ line.quantity }}</span>
+            </div>
+            <p class="line-meta">
+              Dosage: {{ line.dosage || '-' }}
+              <span *ngIf="line.frequency"> | Frequency: {{ line.frequency }}</span>
+              <span *ngIf="line.startDate"> | Start: {{ line.startDate | date:'mediumDate' }}</span>
+              <span *ngIf="line.endDate"> | End: {{ line.endDate | date:'mediumDate' }}</span>
+            </p>
+            <p class="line-instructions" *ngIf="line.instructions">Instructions: {{ line.instructions }}</p>
+            <div class="stock-note">Stock comparison: {{ stockMessageForLine(line) }}</div>
+          </article>
+        </div>
+      </section>
+    </article>
+
+    <p class="hint" *ngIf="loading">Loading prescription...</p>
+  </section>
+</div>
+
+<app-confirm-dialog
+  [open]="confirmDialogOpen"
+  [title]="confirmDialogTitle"
+  [message]="confirmDialogMessage"
+  [danger]="false"
+  confirmLabel="Confirm"
+  cancelLabel="Cancel"
+  (confirm)="confirmStatusUpdate()"
+  (cancel)="cancelStatusConfirmation()">
+</app-confirm-dialog>

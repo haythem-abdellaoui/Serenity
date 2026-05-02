@@ -1,0 +1,514 @@
+{
+  "id": "train_0113",
+  "image": "images/train/train_0113.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Canada",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Pierre Chevalier",
+    "registration_number": "RP-2025-301506",
+    "issue_date": "2023-08-19"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        84,
+        73,
+        140,
+        86
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        177,
+        58,
+        267,
+        79
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        277.203125,
+        58,
+        410.203125,
+        79
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        419.921875,
+        58,
+        475.921875,
+        79
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        485.375,
+        58,
+        688.375,
+        79
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        177,
+        95,
+        253,
+        111
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        260.0,
+        95,
+        348.0,
+        111
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Canada",
+      "bbox": [
+        177,
+        123,
+        257,
+        139
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        72,
+        230,
+        283,
+        250
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        292.546875,
+        230,
+        530.546875,
+        250
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AU",
+      "bbox": [
+        540.015625,
+        230,
+        584.015625,
+        250
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TABLEAU",
+      "bbox": [
+        593.3125,
+        230,
+        733.3125,
+        250
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DE",
+      "bbox": [
+        743.515625,
+        230,
+        785.515625,
+        250
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L’ORDRE",
+      "bbox": [
+        795.640625,
+        230,
+        926.640625,
+        250
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        72,
+        301,
+        132,
+        319
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        139.984375,
+        302,
+        252.984375,
+        319
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        260.203125,
+        306,
+        305.203125,
+        324
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        313.046875,
+        307,
+        321.046875,
+        319
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        72,
+        349,
+        128,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        135.640625,
+        350,
+        159.640625,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        167.4375,
+        348,
+        260.4375,
+        372
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        267.6875,
+        355,
+        275.6875,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pierre",
+      "bbox": [
+        283,
+        349,
+        365,
+        367
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Chevalier",
+      "bbox": [
+        373.4375,
+        349,
+        501.4375,
+        367
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        72,
+        396,
+        167,
+        415
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        174.96875,
+        397,
+        322.96875,
+        420
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        330.8125,
+        403,
+        338.8125,
+        415
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2025-301506",
+      "bbox": [
+        346,
+        397,
+        569,
+        415
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        72,
+        445,
+        109,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        116.703125,
+        445,
+        223.703125,
+        466
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        231.359375,
+        450,
+        261.359375,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        267.90625,
+        445,
+        360.90625,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        368.515625,
+        445,
+        398.515625,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        406.140625,
+        445,
+        488.140625,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        495.75,
+        445,
+        538.75,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        545.875,
+        445,
+        708.875,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        72,
+        493,
+        129,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        136.984375,
+        493,
+        284.984375,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        292.828125,
+        499,
+        300.828125,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-08-19",
+      "bbox": [
+        308,
+        493,
+        462,
+        511
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        72,
+        541,
+        127,
+        564
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        134.421875,
+        547,
+        142.421875,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Canada",
+      "bbox": [
+        150,
+        541,
+        251,
+        559
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        72,
+        678,
+        111,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        117.859375,
+        677,
+        130.859375,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nice,",
+      "bbox": [
+        138.34375,
+        678,
+        193.34375,
+        697
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        200.53125,
+        678,
+        220.53125,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-08-19",
+      "bbox": [
+        227.171875,
+        679,
+        355.171875,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        668,
+        736,
+        765,
+        755
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        770.859375,
+        735,
+        864.859375,
+        751
+      ],
+      "label": "O"
+    }
+  ]
+}

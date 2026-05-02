@@ -1,0 +1,270 @@
+<div class="container claim-list-page" [class.user-mode]="!isAdmin" [class.admin-mode]="isAdmin">
+  <div class="page-header">
+    <div class="page-title-group">
+      <h1>{{ isAdmin ? 'Insurance Workbench' : 'My Insurance Claims' }}</h1>
+      <p *ngIf="isAdmin" class="page-subtitle">Browse all claims or switch to analytics.</p>
+    </div>
+    <a *ngIf="!isAdmin" routerLink="new" class="btn btn-primary">Submit New Claim</a>
+  </div>
+
+  <!-- Admin-only sub navigation between Claims and Statistics -->
+  <nav *ngIf="isAdmin" class="sub-tabs">
+    <a
+      routerLink="/admin/insurance"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Claims
+    </a>
+    <a
+      routerLink="/admin/insurance/statistics"
+      routerLinkActive="active"
+    >
+      Statistics
+    </a>
+    <a
+      routerLink="/admin/insurance/ocr-notifications"
+      routerLinkActive="active"
+    >
+      Notifications
+    </a>
+  </nav>
+
+  <div *ngIf="errorMessage" class="alert alert-error">{{ errorMessage }}</div>
+
+  <div *ngIf="loading" class="loading-container">
+    <span class="spinner"></span>
+    <p>Loading claims...</p>
+  </div>
+
+  <div *ngIf="!loading && totalElements > 0" class="filters card">
+    <div class="filter-grid">
+      <div class="filter-item">
+        <label>Status</label>
+        <div class="custom-select">
+          <button type="button" class="select-trigger" (click)="toggleDropdown('status', $event)">
+            <span>{{ statusFilterLabel }}</span>
+            <span class="chevron">▾</span>
+          </button>
+          <div class="select-menu" *ngIf="openDropdown === 'status'">
+            <button type="button" (click)="selectStatus('ALL')">All</button>
+            <button type="button" (click)="selectStatus('PENDING')">Pending</button>
+            <button type="button" (click)="selectStatus('SUBMITTED')">Submitted</button>
+            <button type="button" (click)="selectStatus('UNDER_REVIEW')">Under review</button>
+            <button type="button" (click)="selectStatus('NEEDS_INFO')">Needs info</button>
+            <button type="button" (click)="selectStatus('APPROVED')">Approved</button>
+            <button type="button" (click)="selectStatus('PARTIALLY_APPROVED')">Partially approved</button>
+            <button type="button" (click)="selectStatus('PAID')">Paid</button>
+            <button type="button" (click)="selectStatus('REJECTED')">Rejected</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-item" *ngIf="isAdmin">
+        <label>User</label>
+        <div class="custom-select">
+          <button type="button" class="select-trigger" (click)="toggleDropdown('user', $event)">
+            <span>{{ selectedUserLabel }}</span>
+            <span class="chevron">▾</span>
+          </button>
+          <div class="select-menu" *ngIf="openDropdown === 'user'">
+            <button type="button" (click)="selectUser('ALL')">All users</button>
+            <button type="button" *ngFor="let user of availableUsers" (click)="selectUser(user.key)">{{ user.label }}</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-item">
+        <label>From date</label>
+        <input type="date" [(ngModel)]="fromDate" [max]="toDate || null" (ngModelChange)="onFromDateChange()" />
+      </div>
+
+      <div class="filter-item">
+        <label>To date</label>
+        <input type="date" [(ngModel)]="toDate" [min]="fromDate || null" (ngModelChange)="onToDateChange()" />
+      </div>
+
+      <div class="filter-item">
+        <label>Sort by</label>
+        <div class="custom-select">
+          <button type="button" class="select-trigger" (click)="toggleDropdown('sortBy', $event)">
+            <span>{{ sortByLabel }}</span>
+            <span class="chevron">▾</span>
+          </button>
+          <div class="select-menu" *ngIf="openDropdown === 'sortBy'">
+            <button type="button" (click)="selectSortBy('DATE')">Date</button>
+            <button type="button" (click)="selectSortBy('REIMBURSEMENT')">Reimbursement amount</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-item">
+        <label>Direction</label>
+        <div class="custom-select">
+          <button type="button" class="select-trigger" (click)="toggleDropdown('sortDirection', $event)">
+            <span>{{ sortDirectionLabel }}</span>
+            <span class="chevron">▾</span>
+          </button>
+          <div class="select-menu" *ngIf="openDropdown === 'sortDirection'">
+            <button type="button" (click)="selectSortDirection('DESC')">Descending</button>
+            <button type="button" (click)="selectSortDirection('ASC')">Ascending</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="filter-actions">
+      <span class="result-count">{{ totalElements }} result(s)</span>
+      <button class="btn btn-secondary btn-sm" (click)="clearFilters()">Reset filters</button>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && totalElements === 0" class="empty-state card">
+    <p *ngIf="!isAdmin">You haven't submitted any claims yet.</p>
+    <p *ngIf="isAdmin">No insurance claims have been submitted yet.</p>
+    <a *ngIf="!isAdmin" routerLink="new" class="btn btn-primary" style="margin-top: 1rem;">Submit your first claim</a>
+  </div>
+
+  <div *ngIf="!loading && totalElements > 0 && filteredClaims.length === 0" class="empty-state card">
+    <p>No claims match the selected filters.</p>
+  </div>
+
+  <div *ngIf="!loading && filteredClaims.length > 0" class="claims-grid">
+    <div *ngFor="let claim of filteredClaims" class="card claim-card">
+      <div class="claim-header">
+        <span [class]="getStatusClass(claim.status)">{{ claim.status }}</span>
+        <span class="claim-date">{{ claim.claimDate | date:'mediumDate' }}</span>
+      </div>
+      <p class="claim-patient" *ngIf="isAdmin">{{ claim.userFullName || ('User #' + claim.userId) }}</p>
+      <h3 class="claim-title">{{ claim.description }}</h3>
+      <div class="claim-details">
+        <div class="detail">
+          <span class="detail-label">Insurance</span>
+          <span class="detail-value">{{ claim.insuranceCompany }} — Grade {{ claim.insuranceGrade }}</span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Amount Paid</span>
+          <span class="detail-value">{{ claim.amount | currency:'TND':'symbol':'1.2-2' }}</span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Reimbursement</span>
+          <span class="detail-value reimbursed">{{ claim.reimbursementAmount | currency:'TND':'symbol':'1.2-2' }}</span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Files</span>
+          <span class="detail-value">{{ claim.filePaths.length || 0 }} prescription(s)</span>
+        </div>
+        <div class="detail" *ngIf="claim.reason">
+          <span class="detail-label">Reason</span>
+          <span class="detail-value">{{ claim.reason }}</span>
+        </div>
+      </div>
+      <div class="claim-actions">
+        <a [routerLink]="[claim.id]" class="btn btn-secondary btn-sm">View Details</a>
+        <button
+          *ngIf="isAdmin && claim.status === 'UNDER_REVIEW'"
+          type="button"
+          class="btn btn-primary btn-sm"
+          (click)="sendHeldToPortal(claim, $event)"
+          [disabled]="isHoldActionLoading(claim.id)"
+        >
+          Send to portal
+        </button>
+        <button
+          *ngIf="isAdmin && claim.status === 'UNDER_REVIEW'"
+          type="button"
+          class="btn btn-danger btn-sm"
+          (click)="rejectHeld(claim, $event)"
+          [disabled]="isHoldActionLoading(claim.id)"
+        >
+          Reject
+        </button>
+        <button
+          *ngIf="isAdmin"
+          type="button"
+          class="btn btn-primary btn-sm"
+          (click)="openRiskModal(claim, $event)"
+        >
+          Risk score
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && totalPages > 1" class="pagination-bar card">
+    <button class="btn btn-secondary btn-sm" (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 0">
+      Previous
+    </button>
+
+    <div class="page-buttons">
+      <button
+        *ngFor="let page of pageNumbers"
+        type="button"
+        class="page-btn"
+        [class.active]="page === currentPage"
+        (click)="goToPage(page)"
+      >
+        {{ page + 1 }}
+      </button>
+    </div>
+
+    <button class="btn btn-secondary btn-sm" (click)="goToPage(currentPage + 1)" [disabled]="currentPage >= totalPages - 1">
+      Next
+    </button>
+  </div>
+</div>
+
+<!-- Admin-only Risk Score Modal -->
+<div
+  class="modal-backdrop"
+  *ngIf="showRiskModal"
+  role="button"
+  tabindex="0"
+  aria-label="Close risk score modal backdrop"
+  (click)="closeRiskModal()"
+  (keydown.enter)="closeRiskModal()"
+  (keydown.space)="closeRiskModal()"
+>
+  <div
+    class="risk-modal card"
+    role="dialog"
+    aria-modal="true"
+    tabindex="0"
+    (click)="$event.stopPropagation()"
+    (keydown.escape)="closeRiskModal()"
+  >
+    <div class="risk-modal-header">
+      <div>
+        <h3>Claim risk score</h3>
+        <p *ngIf="riskTargetClaim" class="risk-subtitle">
+          Claim #{{ riskTargetClaim.id }} · {{ riskTargetClaim.insuranceCompany }} · {{ riskTargetClaim.amount | currency:'TND':'symbol':'1.2-2' }}
+        </p>
+      </div>
+      <button type="button" class="risk-close" (click)="closeRiskModal()" aria-label="Close risk modal">×</button>
+    </div>
+
+    <div *ngIf="riskLoading" class="risk-loading">
+      <span class="spinner"></span>
+      <p>Scoring claim…</p>
+    </div>
+
+    <div *ngIf="!riskLoading && riskError" class="alert alert-error">{{ riskError }}</div>
+
+    <div *ngIf="!riskLoading && riskResult" class="risk-body">
+      <div class="risk-summary">
+        <span class="risk-score">{{ riskResult.riskScore | number:'1.0-1' }}</span>
+        <span [class]="getRiskBandClass(riskResult.riskBand)">{{ riskResult.riskBand }}</span>
+      </div>
+
+      <div class="risk-reasons">
+        <h4>Top reasons</h4>
+        <ul>
+          <li *ngFor="let reason of riskResult.topReasons">{{ reason }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="risk-actions">
+      <button type="button" class="btn btn-secondary" (click)="closeRiskModal()">Close</button>
+    </div>
+  </div>
+</div>

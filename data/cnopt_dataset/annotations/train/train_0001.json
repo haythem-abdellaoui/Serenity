@@ -1,0 +1,484 @@
+{
+  "id": "train_0001",
+  "image": "images/train/train_0001.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Lina Dupont",
+    "registration_number": "ORD-24-2026-2939",
+    "issue_date": "11/12/2025"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        102,
+        81,
+        158,
+        94
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        195,
+        66,
+        285,
+        87
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        295.203125,
+        66,
+        428.203125,
+        87
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        437.921875,
+        66,
+        493.921875,
+        87
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        503.375,
+        66,
+        706.375,
+        87
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        195,
+        103,
+        271,
+        119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        278.0,
+        103,
+        366.0,
+        119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        195,
+        132,
+        265,
+        147
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        90,
+        238,
+        301,
+        258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        310.546875,
+        238,
+        548.546875,
+        258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        90,
+        309,
+        150,
+        327
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        157.984375,
+        310,
+        270.984375,
+        327
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        278.203125,
+        314,
+        323.203125,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        331.046875,
+        315,
+        339.046875,
+        327
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        90,
+        357,
+        146,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        153.640625,
+        358,
+        177.640625,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        185.4375,
+        356,
+        278.4375,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        285.6875,
+        363,
+        293.6875,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lina",
+      "bbox": [
+        301,
+        357,
+        358,
+        375
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Dupont",
+      "bbox": [
+        366.1875,
+        357,
+        465.1875,
+        380
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        90,
+        404,
+        185,
+        423
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        192.96875,
+        405,
+        340.96875,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        348.8125,
+        411,
+        356.8125,
+        423
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-24-2026-2939",
+      "bbox": [
+        364,
+        405,
+        620,
+        423
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        90,
+        453,
+        214,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        221.984375,
+        452,
+        303.984375,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        311.265625,
+        452,
+        326.265625,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        333.59375,
+        453,
+        383.59375,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        390.8125,
+        453,
+        420.8125,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        428.4375,
+        458,
+        512.4375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        519.59375,
+        453,
+        667.59375,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        675.4375,
+        458,
+        705.4375,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        711.984375,
+        453,
+        812.984375,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        90,
+        501,
+        147,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        154.984375,
+        501,
+        302.984375,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        310.828125,
+        507,
+        318.828125,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "11/12/2025",
+      "bbox": [
+        326,
+        501,
+        477,
+        521
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        90,
+        549,
+        145,
+        572
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        152.421875,
+        555,
+        160.421875,
+        567
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        168,
+        549,
+        259,
+        567
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        90,
+        686,
+        129,
+        703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        135.859375,
+        685,
+        148.859375,
+        703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rennes,",
+      "bbox": [
+        156.34375,
+        687,
+        244.34375,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        251.046875,
+        686,
+        271.046875,
+        703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "11/12/2025",
+      "bbox": [
+        277.6875,
+        687,
+        404.6875,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        650,
+        744,
+        747,
+        763
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        752.859375,
+        743,
+        846.859375,
+        759
+      ],
+      "label": "O"
+    }
+  ]
+}

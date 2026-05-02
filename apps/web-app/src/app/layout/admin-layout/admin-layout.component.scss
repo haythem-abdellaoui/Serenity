@@ -1,0 +1,465 @@
+$sidebar-width: 250px;
+$sidebar-collapsed: 68px;
+$topbar-height: 60px;
+
+$dark-bg: #0f1119;
+$dark-surface: #181b2a;
+$dark-card: #1e2235;
+$dark-border: #272b3f;
+$dark-hover: #252940;
+$dark-text: #8b90a7;
+$dark-text-bright: #e2e5f0;
+$accent: #3BA4A0;
+$accent-dark: #2D8E8A;
+$accent-glow: rgba(59, 164, 160, 0.12);
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: $dark-bg;
+  color: $dark-text-bright;
+}
+
+.admin-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+// ─── Sidebar ──────────────────────────────
+.sidebar {
+  width: $sidebar-width;
+  background: $dark-surface;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 200;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  border-right: 1px solid $dark-border;
+}
+
+.sidebar-header {
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $dark-border;
+  min-height: 60px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+}
+
+.brand-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: $dark-text-bright;
+  letter-spacing: -0.01em;
+}
+
+.brand-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $accent;
+  background: $accent-glow;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+// ─── Navigation ───────────────────────────
+.sidebar-nav {
+  flex: 1;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $dark-text;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  font-family: inherit;
+  white-space: nowrap;
+
+  &:hover {
+    background: $dark-hover;
+    color: $dark-text-bright;
+    text-decoration: none;
+  }
+
+  &.active {
+    background: $accent-glow;
+    color: $accent;
+
+    .nav-icon {
+      color: $accent;
+    }
+  }
+
+  &.logout:hover {
+    color: #e05d5d;
+
+    .nav-icon {
+      color: #e05d5d;
+    }
+  }
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: $dark-text;
+  transition: color 0.2s ease;
+}
+
+.nav-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-footer {
+  padding: 0.75rem;
+  border-top: 1px solid $dark-border;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+// ─── Main content wrapper ─────────────────
+.main-wrapper {
+  margin-left: $sidebar-width;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// ─── Top bar ──────────────────────────────
+.topbar {
+  height: $topbar-height;
+  background: $dark-surface;
+  border-bottom: 1px solid $dark-border;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.toggle-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  transition: background 0.2s;
+
+  &:hover {
+    background: $dark-hover;
+  }
+}
+
+.toggle-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: $dark-text;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.admin-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, $accent, $accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.admin-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.admin-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: $dark-text-bright;
+}
+
+.admin-role {
+  font-size: 0.72rem;
+  color: $dark-text;
+  font-weight: 500;
+}
+
+// ─── Content area ─────────────────────────
+.admin-content {
+  flex: 1;
+  padding: 1.75rem 2rem;
+
+  // Override global styles for dark theme inside admin
+  ::ng-deep {
+    .container {
+      max-width: 1200px;
+    }
+
+    .page-header {
+      h1 {
+        color: $dark-text-bright;
+      }
+    }
+
+    .card, .form-card {
+      background: $dark-card;
+      border-color: $dark-border;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      color: $dark-text-bright;
+    }
+
+    .alert-error {
+      background: rgba(224, 93, 93, 0.12);
+      border-color: rgba(224, 93, 93, 0.25);
+      color: #f5a3a3;
+    }
+
+    .alert-success {
+      background: rgba(59, 164, 160, 0.2);
+      border-color: rgba(59, 164, 160, 0.3);
+      color: #5ec4c0;
+    }
+
+    table {
+      th {
+        background: $dark-surface;
+        color: $dark-text;
+        border-bottom-color: $dark-border;
+      }
+
+      td {
+        color: $dark-text-bright;
+        border-bottom-color: $dark-border;
+      }
+
+      tbody tr:hover {
+        background: $dark-hover;
+      }
+    }
+
+    .badge {
+      &-primary {
+        background: $accent-glow;
+        color: $accent;
+      }
+      &-success {
+        background: rgba(93, 175, 106, 0.2);
+        color: #86efce;
+      }
+      &-danger {
+        background: rgba(224, 93, 93, 0.2);
+        color: #f5a3a3;
+      }
+    }
+
+    .btn-secondary {
+      background: $dark-card;
+      color: $dark-text-bright;
+      border-color: $dark-border;
+
+      &:hover:not(:disabled) {
+        background: $dark-hover;
+        border-color: $accent;
+        color: $dark-text-bright;
+      }
+    }
+
+    .btn-primary {
+      background: $accent;
+      color: #fff;
+
+      &:hover:not(:disabled) {
+        background: $accent-dark;
+        box-shadow: 0 4px 16px rgba(59, 164, 160, 0.3);
+      }
+    }
+
+    .btn-danger {
+      background: rgba(224, 93, 93, 0.15);
+      color: #f08080;
+      border: 1px solid rgba(224, 93, 93, 0.25);
+
+      &:hover:not(:disabled) {
+        background: rgba(224, 93, 93, 0.25);
+      }
+    }
+
+    .form-group {
+      label {
+        color: $dark-text;
+      }
+
+      input, select, textarea {
+        background: $dark-surface;
+        border-color: $dark-border;
+        color: $dark-text-bright;
+
+        &:focus {
+          border-color: $accent;
+          box-shadow: 0 0 0 3px $accent-glow;
+        }
+
+        &:disabled, &[disabled] {
+          background: $dark-bg;
+          color: $dark-text;
+          opacity: 0.7;
+        }
+
+        &::placeholder {
+          color: darken($dark-text, 15%);
+        }
+      }
+
+      .error-message {
+        color: #f08080;
+      }
+    }
+
+    .loading-container, .empty-state {
+      color: $dark-text;
+    }
+
+    .spinner {
+      border-color: $dark-border;
+      border-top-color: $accent;
+    }
+  }
+}
+
+// ─── Footer ───────────────────────────────
+.admin-footer {
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: $dark-text;
+  border-top: 1px solid $dark-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer-dot {
+  color: $dark-border;
+}
+
+// ─── Collapsed state ──────────────────────
+.collapsed {
+  .sidebar {
+    width: $sidebar-collapsed;
+  }
+
+  .brand-text,
+  .brand-badge,
+  .nav-label {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+  .sidebar-header {
+    justify-content: center;
+    padding: 1.25rem 0.5rem;
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 0.65rem;
+  }
+
+  .main-wrapper {
+    margin-left: $sidebar-collapsed;
+  }
+}
+
+// ─── Responsive ───────────────────────────
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: $sidebar-width !important;
+  }
+
+  .admin-shell:not(.collapsed) .sidebar {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .main-wrapper {
+    margin-left: 0 !important;
+  }
+
+  .admin-info {
+    display: none;
+  }
+
+  .admin-content {
+    padding: 1.25rem 1rem;
+  }
+}

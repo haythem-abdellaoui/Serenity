@@ -1,0 +1,10 @@
+*
+
+# Track these only
+!.gitignore
+!data/
+!data/claims_risk_raw.csv
+!data/generate_dataset.py
+!notebooks/
+!notebooks/insurance_claim_risk_model.ipynb
+!requirements.txt

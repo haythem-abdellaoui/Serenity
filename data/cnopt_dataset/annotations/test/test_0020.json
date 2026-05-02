@@ -1,0 +1,464 @@
+{
+  "id": "test_0020",
+  "image": "images/test/test_0020.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Emma Lefevre",
+    "registration_number": "RP-2026-553554",
+    "issue_date": "2023-05-14"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        100,
+        71,
+        156,
+        84
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        193,
+        56,
+        283,
+        77
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        293.203125,
+        56,
+        349.203125,
+        77
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        358.65625,
+        56,
+        561.65625,
+        77
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        193,
+        93,
+        269,
+        109
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        276.0,
+        93,
+        364.0,
+        109
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        193,
+        122,
+        263,
+        137
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        88,
+        228,
+        266,
+        248
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        275.9375,
+        228,
+        513.9375,
+        248
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        88,
+        299,
+        148,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        155.984375,
+        300,
+        268.984375,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        276.203125,
+        304,
+        321.203125,
+        322
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        329.046875,
+        305,
+        337.046875,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        88,
+        347,
+        144,
+        365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        151.640625,
+        348,
+        175.640625,
+        365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        183.4375,
+        346,
+        276.4375,
+        370
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        283.6875,
+        353,
+        291.6875,
+        365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Emma",
+      "bbox": [
+        299,
+        347,
+        382,
+        365
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Lefevre",
+      "bbox": [
+        389.984375,
+        347,
+        491.984375,
+        365
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        88,
+        394,
+        183,
+        413
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        190.96875,
+        395,
+        338.96875,
+        418
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        346.8125,
+        401,
+        354.8125,
+        413
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2026-553554",
+      "bbox": [
+        362,
+        395,
+        585,
+        413
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        88,
+        443,
+        125,
+        461
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        132.703125,
+        443,
+        239.703125,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        247.359375,
+        448,
+        277.359375,
+        461
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        283.90625,
+        443,
+        376.90625,
+        461
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        384.515625,
+        443,
+        414.515625,
+        461
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        422.140625,
+        443,
+        504.140625,
+        461
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        511.75,
+        443,
+        554.75,
+        461
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        561.875,
+        443,
+        724.875,
+        466
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        88,
+        491,
+        145,
+        509
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        152.984375,
+        491,
+        300.984375,
+        514
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        308.828125,
+        497,
+        316.828125,
+        509
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-05-14",
+      "bbox": [
+        324,
+        491,
+        478,
+        509
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        88,
+        539,
+        143,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        150.421875,
+        545,
+        158.421875,
+        557
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        166,
+        539,
+        257,
+        557
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        88,
+        676,
+        127,
+        693
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        133.859375,
+        675,
+        146.859375,
+        693
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Strasbourg,",
+      "bbox": [
+        154.34375,
+        676,
+        282.34375,
+        698
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        288.921875,
+        676,
+        308.921875,
+        693
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-05-14",
+      "bbox": [
+        315.5625,
+        677,
+        443.5625,
+        693
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        652,
+        734,
+        749,
+        753
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        754.859375,
+        733,
+        848.859375,
+        749
+      ],
+      "label": "O"
+    }
+  ]
+}

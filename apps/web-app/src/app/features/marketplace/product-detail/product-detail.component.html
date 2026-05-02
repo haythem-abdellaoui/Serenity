@@ -1,0 +1,147 @@
+<section class="container detail-page" *ngIf="!loading && product as p">
+  <button class="btn btn-link" type="button" routerLink="/marketplace">Back to discovery</button>
+
+  <div class="detail-card">
+    <img [src]="p.imageUrl || 'assets/logo.png'" [alt]="p.name" />
+
+    <div class="info">
+      <div class="header-row">
+        <h2>{{ p.name }}</h2>
+        <button 
+          class="btn btn-outline-heart"
+          [class.in-wishlist]="inWishlist"
+          (click)="toggleWishlist()"
+          title="Add to wishlist"
+        >
+          {{ inWishlist ? '❤️' : '🤍' }}
+        </button>
+      </div>
+      <p>{{ p.description }}</p>
+      <div class="chips">
+        <span>{{ p.category }}</span>
+        <span>{{ p.type }}</span>
+        <span *ngIf="usesPreviewFlow">Freemium Preview</span>
+      </div>
+      <strong>{{ p.price | currency:'TND ' }}</strong>
+
+      <div class="supportive-msg" *ngIf="usesPreviewFlow && !isUnlocked">
+        You can preview gently before deciding. Full access unlocks when you feel ready.
+      </div>
+
+      <div class="order-row" *ngIf="usesPreviewFlow">
+        <button class="btn btn-primary" type="button" (click)="openPreview()">Start Preview</button>
+        <button class="btn btn-secondary" type="button" [disabled]="unlocking" (click)="requestUnlock()">
+          {{ unlocking ? 'Unlocking...' : ('Unlock for ' + (p.price | currency:'TND ')) }}
+        </button>
+        <button class="btn btn-outline" type="button" (click)="restartPreview()">Restart</button>
+      </div>
+
+      <div class="order-row" *ngIf="!usesPreviewFlow">
+        <input type="number" min="1" [(ngModel)]="quantity" />
+        <button class="btn btn-primary" type="button" (click)="addToCart()">Add to Cart</button>
+      </div>
+
+      <div class="unlock-state" *ngIf="isUnlocked">
+        Full content unlocked. You can continue at your own pace.
+      </div>
+
+      <div class="unlock-error" *ngIf="unlockError">{{ unlockError }}</div>
+      <div class="unlock-error" *ngIf="mediaError">{{ mediaError }}</div>
+
+      <section class="preview-card" *ngIf="usesPreviewFlow && experienceType === 'PODCAST'">
+        <h3>Podcast Preview</h3>
+        <p>Free preview is limited to {{ previewLimitSeconds }} seconds. Seeking beyond the cap is disabled.</p>
+        <audio
+          #previewAudio
+          [src]="getPodcastPreviewUrl(p.id)"
+          controls
+          (play)="onAudioPlay()"
+          (timeupdate)="onAudioTimeUpdate()"
+          (seeking)="onAudioSeeking()"
+          (ended)="onAudioEnded()"
+          (error)="onAudioError()"></audio>
+        <div class="progress">
+          <span [style.width.%]="previewProgressPercent"></span>
+        </div>
+      </section>
+
+      <section class="preview-card" *ngIf="usesPreviewFlow && experienceType === 'VIDEO'">
+        <h3>Video Preview</h3>
+        <p>Free preview is limited to {{ previewLimitSeconds }} seconds. Unlock to continue.</p>
+        <video
+          #previewVideo
+          [src]="getVideoPreviewUrl(p.id)"
+          controls
+          playsinline
+          (timeupdate)="onVideoTimeUpdate()"
+          (seeking)="onVideoSeeking()"
+          (ended)="onVideoEnded()"
+          (error)="onVideoError()"></video>
+        <div class="progress">
+          <span [style.width.%]="previewProgressPercent"></span>
+        </div>
+      </section>
+
+      <section class="preview-card" *ngIf="usesPreviewFlow && experienceType === 'BOOK'">
+        <h3>Book Preview</h3>
+        <p class="preview-text">{{ currentBookPreviewText }}</p>
+        <div class="preview-actions">
+          <button class="btn btn-outline" type="button" [disabled]="currentBookPage === 0" (click)="previousBookPage()">Previous</button>
+          <button class="btn btn-primary" type="button" (click)="nextBookPage()">
+            {{ hasNextBookPage || isUnlocked ? 'Next page' : 'Continue reading' }}
+          </button>
+        </div>
+      </section>
+
+      <section class="preview-card" *ngIf="usesPreviewFlow && experienceType === 'EXERCISE'">
+        <h3>Guided Exercise Preview</h3>
+        <ul class="exercise-list">
+          <li *ngFor="let step of exerciseSteps; let i = index">
+            <button
+              type="button"
+              class="exercise-step"
+              [class.locked]="!isUnlocked && i >= unlockedExerciseSteps"
+              [class.done]="completedSteps[i]"
+              (click)="toggleExerciseStep(i)">
+              <span>{{ completedSteps[i] ? '✓' : i + 1 }}</span>
+              {{ step }}
+            </button>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <!-- Reviews Section -->
+  <div class="reviews-section">
+    <app-reviews [productId]="p.id"></app-reviews>
+  </div>
+
+  <div class="paywall" *ngIf="showPaywall">
+    <div class="paywall-dialog">
+      <h3>Continue With Full Access</h3>
+      <p>{{ paywallReason }}</p>
+      <p class="sub">You have seen the free preview. Unlocking gives complete access without interruptions.</p>
+      <div class="paywall-actions">
+        <button class="btn btn-secondary" type="button" (click)="closePaywall()">Maybe later</button>
+        <button class="btn btn-primary" type="button" [disabled]="unlocking" (click)="requestUnlock()">
+          {{ unlocking ? 'Unlocking...' : ('Unlock now for ' + (p.price | currency:'TND ')) }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="paywall" *ngIf="showMockPayment">
+    <div class="paywall-dialog">
+      <h3>Mock Payment Confirmation</h3>
+      <p>You are about to unlock full access for {{ p.price | currency:'TND ' }}.</p>
+      <p class="sub">This is a simulated checkout flow for now. Stripe integration is planned next.</p>
+      <div class="paywall-actions">
+        <button class="btn btn-secondary" type="button" [disabled]="mockPaymentProcessing" (click)="closeMockPayment()">Cancel</button>
+        <button class="btn btn-primary" type="button" [disabled]="mockPaymentProcessing || unlocking" (click)="confirmMockPayment()">
+          {{ mockPaymentProcessing ? 'Processing...' : 'Confirm payment' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

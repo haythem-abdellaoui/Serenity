@@ -1,0 +1,89 @@
+<div class="container claim-list-page">
+  <div class="page-header">
+    <h1>Book appointment</h1>
+    <button type="button" class="btn btn-secondary" (click)="cancel()">Back</button>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-error">{{ errorMessage }}</div>
+
+  <div *ngIf="loadingDoctors" class="loading-container">
+    <span class="spinner"></span>
+    <p>Loading doctors…</p>
+  </div>
+
+  <div class="book-layout" *ngIf="!loadingDoctors">
+    <div class="card form-card book-form">
+      <label for="doctor">Doctor</label>
+      <select
+        id="doctor"
+        name="doctor"
+        [(ngModel)]="selectedDoctorId"
+        (ngModelChange)="onDoctorChange()">
+        <option [ngValue]="null">— Select a doctor —</option>
+        <option *ngFor="let d of doctors" [ngValue]="d.id">{{ doctorLabel(d) }}</option>
+      </select>
+      <p class="hint" *ngIf="doctors.length === 0">No doctors are registered yet.</p>
+
+      <label>Date</label>
+      <input
+        type="date"
+        [(ngModel)]="appointmentDate"
+        name="appointmentDate"
+        [min]="minDateStr"
+        (ngModelChange)="onAppointmentDateChange($event)" />
+
+      <label>Time (24h, e.g. 14:30)</label>
+      <input type="text" [(ngModel)]="timeSlot" name="timeSlot" placeholder="14:30" autocomplete="off" />
+      <p class="hint rules-hint">
+        Working hours <strong>08:00–20:00</strong> (visit ~1h30, so latest start <strong>18:30</strong>).
+        <span *ngIf="appointmentDate === minDateStr"> On today, pick a time <strong>after</strong> now.</span>
+      </p>
+
+      <p class="hint warn" *ngIf="schedulingWindowError">{{ schedulingWindowError }}</p>
+
+      <p class="hint warn" *ngIf="hasSlotConflict() && !schedulingWindowError">
+        This time overlaps an existing visit (~1h30 blocks — see taken times on the right).
+      </p>
+
+      <label>Type</label>
+      <select [(ngModel)]="type" name="type">
+        <option value="IN_PERSON">In person</option>
+        <option value="TELECONSULTATION">Teleconsultation (video)</option>
+      </select>
+
+      <label>Notes (optional)</label>
+      <textarea rows="3" [(ngModel)]="notes" name="notes"></textarea>
+
+      <button type="button" class="btn btn-primary" [disabled]="submitting || doctors.length === 0" (click)="submit()">
+        {{ submitting ? 'Submitting…' : 'Request appointment' }}
+      </button>
+    </div>
+
+    <div class="book-side" *ngIf="selectedDoctorId">
+      <div class="cal-block">
+        <p class="cal-caption">Pick a day</p>
+        <p class="hint warn" *ngIf="calendarLoadError">{{ calendarLoadError }}</p>
+        <p class="hint cal-hint" *ngIf="loadingCalendar">Loading calendar…</p>
+        <app-appointment-calendar
+          [busySlots]="busySlots"
+          [selectedDate]="appointmentDate"
+          (selectedDateChange)="onAppointmentDateChange($event)"
+          [viewMonth]="calMonth"
+          [viewYear]="calYear"
+          (viewMonthChange)="onCalMonthChange($event)"
+          [showTimeChipsInCells]="false"
+        />
+      </div>
+      <app-appointment-busy-times-panel
+        class="busy-wrap"
+        *ngIf="appointmentDate"
+        [busySlots]="busySlots"
+        [selectedDate]="appointmentDate"
+        [legendDoctor]="'Doctor (already booked)'"
+        [legendPatient]="'Your other visits'"
+        heading="Taken times on this day"
+        subheading="Do not reuse the same start time (HH:mm) as these rows."
+      />
+    </div>
+  </div>
+</div>

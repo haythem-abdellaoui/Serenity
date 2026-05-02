@@ -1,0 +1,484 @@
+{
+  "id": "test_0019",
+  "image": "images/test/test_0019.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Sophie Garcia",
+    "registration_number": "ORD-96-2026-3467",
+    "issue_date": "18/09/2023"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        105,
+        85,
+        161,
+        98
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        198,
+        70,
+        288,
+        91
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        298.203125,
+        70,
+        431.203125,
+        91
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        440.921875,
+        70,
+        496.921875,
+        91
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        506.375,
+        70,
+        709.375,
+        91
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        198,
+        107,
+        274,
+        123
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        281.0,
+        107,
+        369.0,
+        123
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        198,
+        136,
+        268,
+        151
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        93,
+        242,
+        304,
+        262
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        313.546875,
+        242,
+        551.546875,
+        262
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        93,
+        313,
+        153,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        160.984375,
+        314,
+        273.984375,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        281.203125,
+        318,
+        326.203125,
+        336
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        334.046875,
+        319,
+        342.046875,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        93,
+        361,
+        149,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        156.640625,
+        362,
+        180.640625,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        188.4375,
+        360,
+        281.4375,
+        384
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        288.6875,
+        367,
+        296.6875,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sophie",
+      "bbox": [
+        304,
+        361,
+        397,
+        384
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Garcia",
+      "bbox": [
+        404.921875,
+        361,
+        490.921875,
+        379
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        93,
+        408,
+        188,
+        427
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        195.96875,
+        409,
+        343.96875,
+        432
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        351.8125,
+        415,
+        359.8125,
+        427
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-96-2026-3467",
+      "bbox": [
+        367,
+        409,
+        623,
+        427
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        93,
+        457,
+        217,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        224.984375,
+        456,
+        306.984375,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        314.265625,
+        456,
+        329.265625,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        336.59375,
+        457,
+        386.59375,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        393.8125,
+        457,
+        423.8125,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        431.4375,
+        462,
+        515.4375,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        522.59375,
+        457,
+        670.59375,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        678.4375,
+        462,
+        708.4375,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        714.984375,
+        457,
+        815.984375,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        93,
+        505,
+        150,
+        523
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        157.984375,
+        505,
+        305.984375,
+        528
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        313.828125,
+        511,
+        321.828125,
+        523
+      ],
+      "label": "O"
+    },
+    {
+      "text": "18/09/2023",
+      "bbox": [
+        329,
+        505,
+        480,
+        525
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        93,
+        553,
+        148,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        155.421875,
+        559,
+        163.421875,
+        571
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        171,
+        553,
+        262,
+        571
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        93,
+        690,
+        132,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        138.859375,
+        689,
+        151.859375,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lille,",
+      "bbox": [
+        159.34375,
+        690,
+        210.34375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        217.453125,
+        690,
+        237.453125,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "18/09/2023",
+      "bbox": [
+        244.09375,
+        691,
+        371.09375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        647,
+        748,
+        744,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        749.859375,
+        747,
+        843.859375,
+        763
+      ],
+      "label": "O"
+    }
+  ]
+}

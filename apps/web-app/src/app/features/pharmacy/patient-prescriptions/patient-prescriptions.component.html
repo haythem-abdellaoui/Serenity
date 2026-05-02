@@ -1,0 +1,46 @@
+<div class="container">
+  <section class="page">
+    <header class="page-header">
+      <div>
+        <h1>My Prescriptions</h1>
+        <p>Track your prescription statuses and pickup readiness.</p>
+      </div>
+      <a class="btn btn-secondary" routerLink="/pharmacy/patient">Change Default Pharmacy</a>
+    </header>
+
+    <article class="card default-card" *ngIf="defaultPharmacy as selected; else missingDefault">
+      <h3>Default Pharmacy</h3>
+      <p class="name">{{ selected.pharmacyName }}</p>
+      <p class="meta" *ngIf="selected.openingHours">Hours: {{ selected.openingHours }}</p>
+      <p class="meta" *ngIf="selected.phone">Phone: {{ selected.phone }}</p>
+    </article>
+
+    <ng-template #missingDefault>
+      <article class="card default-card empty">
+        <h3>Default pharmacy is not selected</h3>
+        <p>Please choose one so pharmacists can process your prescriptions for pickup.</p>
+      </article>
+    </ng-template>
+
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div class="grid" *ngIf="!loading && prescriptions.length > 0">
+      <article class="card prescription-card" *ngFor="let item of prescriptions">
+        <div class="top-row">
+          <h3>
+            {{ primaryMedication(item) }}
+            <small *ngIf="additionalLinesCount(item) > 0">+{{ additionalLinesCount(item) }} more</small>
+          </h3>
+          <span [class]="statusClass(item.status)">{{ item.status }}</span>
+        </div>
+        <p class="meta">Pharmacy: {{ item.pharmacyName }}</p>
+        <p class="meta">Doctor: {{ item.doctorName }}</p>
+        <p class="meta">Dosage: {{ primaryDosage(item) }} | Quantity: {{ primaryQuantity(item) }}</p>
+        <p class="meta" *ngIf="item.instructions">Instructions: {{ item.instructions }}</p>
+        <p class="pickup" *ngIf="isReadyForPickup(item.status)">Go collect it.</p>
+      </article>
+    </div>
+
+    <p class="hint" *ngIf="!loading && prescriptions.length === 0">No prescriptions yet.</p>
+  </section>
+</div>

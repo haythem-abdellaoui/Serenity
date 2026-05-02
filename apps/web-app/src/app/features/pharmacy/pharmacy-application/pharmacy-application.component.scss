@@ -1,0 +1,289 @@
+:host {
+  --apply-bg: linear-gradient(180deg, #edf7f7 0%, #f7fcfc 100%);
+  --apply-card: #ffffffd9;
+  --apply-border: #cfe4e6;
+  --apply-border-strong: #b8d8dd;
+  --apply-text: #18424d;
+  --apply-muted: #4d6f79;
+  --apply-heading: #0d2d44;
+  --apply-accent: #18a4a3;
+}
+
+.application-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0 2rem;
+  background: var(--apply-bg);
+  border-radius: 1.1rem;
+  border: 1px solid #d8eaec;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 0 1rem;
+}
+
+.title-block h1 {
+  margin: 0 0 0.35rem;
+  color: var(--apply-heading);
+}
+
+.title-block p {
+  margin: 0;
+  max-width: 880px;
+  color: var(--apply-muted);
+}
+
+.card,
+.status-card {
+  background: var(--apply-card);
+  border: 1px solid var(--apply-border);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 14px 28px -24px rgba(18, 73, 87, 0.6);
+}
+
+.status-card {
+  margin: 0 1rem;
+}
+
+.status-card h2 {
+  margin: 0 0 0.5rem;
+  color: #16364e;
+}
+
+.status-card p {
+  margin: 0.35rem 0 0;
+  color: var(--apply-muted);
+}
+
+.status-line {
+  margin: 0 0 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badge.submitted {
+  background: #fff3d6;
+  color: #8a6200;
+}
+
+.badge.rejected {
+  background: #fde8e8;
+  color: #9d1c1c;
+}
+
+.badge.approved {
+  background: #e3f7eb;
+  color: #0d6a36;
+}
+
+.review-comment {
+  margin: 0.4rem 0 0;
+  color: #9d1c1c;
+}
+
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 1rem;
+}
+
+.form-section {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form-section h3 {
+  margin: 0.2rem 0 0;
+  color: #13344d;
+  font-size: 1.2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.8rem;
+}
+
+.grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: #294956;
+  font-weight: 600;
+}
+
+.grid input {
+  border: 1px solid var(--apply-border-strong);
+  border-radius: 10px;
+  padding: 0.58rem 0.7rem;
+  font: inherit;
+  background: #fff;
+  color: var(--apply-text);
+}
+
+.grid input:focus-visible {
+  outline: none;
+  border-color: #65b8c4;
+  box-shadow: 0 0 0 3px rgba(101, 184, 196, 0.2);
+}
+
+.grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.hours-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field-title {
+  color: #284956;
+  font-weight: 700;
+}
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.mini-field {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.mini-field span {
+  font-size: 0.88rem;
+}
+
+.hours-field small {
+  color: #5f7881;
+  font-weight: 500;
+}
+
+.location-hint {
+  margin: 0;
+  color: #3f6370;
+  font-weight: 500;
+}
+
+.location-hint.loading {
+  color: #2f8392;
+}
+
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.8rem;
+}
+
+.document-card {
+  border: 1px solid var(--apply-border);
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: #ffffff;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.document-card.has-existing {
+  border-color: #b6d5db;
+}
+
+.document-card.has-new {
+  border-color: #69b6c3;
+  box-shadow: 0 0 0 2px rgba(105, 182, 195, 0.16);
+}
+
+.document-title {
+  margin: 0;
+  color: #1d4253;
+  font-weight: 700;
+}
+
+.upload-control {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.btn-upload {
+  justify-self: start;
+}
+
+.btn-upload:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(101, 184, 196, 0.22);
+}
+
+.file-name {
+  margin: 0;
+  color: #355d69;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.document-hint {
+  margin: 0;
+  color: #5f7881;
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.sr-only-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.success {
+  margin: 0;
+  color: #0f7a46;
+  padding: 0 1rem;
+}
+
+.error {
+  margin: 0;
+  color: #b72020;
+  padding: 0 1rem;
+}
+
+@media (max-width: 780px) {
+  .application-page {
+    padding-bottom: 1rem;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hours-grid {
+    grid-template-columns: 1fr;
+  }
+}

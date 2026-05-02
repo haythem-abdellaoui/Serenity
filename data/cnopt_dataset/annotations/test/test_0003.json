@@ -1,0 +1,564 @@
+{
+  "id": "test_0003",
+  "image": "images/test/test_0003.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Belgique",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Luc Lefevre",
+    "registration_number": "RP-2024-284610",
+    "issue_date": "17 février 2026"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        86,
+        91,
+        142,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        179,
+        76,
+        269,
+        97
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        279.203125,
+        76,
+        412.203125,
+        97
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        421.921875,
+        76,
+        477.921875,
+        97
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        487.375,
+        76,
+        690.375,
+        97
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        179,
+        113,
+        255,
+        129
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        262.0,
+        113,
+        350.0,
+        129
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Belgique",
+      "bbox": [
+        179,
+        141,
+        271,
+        161
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        74,
+        248,
+        285,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        294.546875,
+        248,
+        532.546875,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AU",
+      "bbox": [
+        542.015625,
+        248,
+        586.015625,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TABLEAU",
+      "bbox": [
+        595.3125,
+        248,
+        735.3125,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DE",
+      "bbox": [
+        745.515625,
+        248,
+        787.515625,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L’ORDRE",
+      "bbox": [
+        797.640625,
+        248,
+        928.640625,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        74,
+        319,
+        134,
+        337
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        141.984375,
+        320,
+        254.984375,
+        337
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        262.203125,
+        324,
+        307.203125,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        315.046875,
+        325,
+        323.046875,
+        337
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        74,
+        367,
+        130,
+        385
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        137.640625,
+        368,
+        161.640625,
+        385
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        169.4375,
+        366,
+        262.4375,
+        390
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        269.6875,
+        373,
+        277.6875,
+        385
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Luc",
+      "bbox": [
+        285,
+        367,
+        332,
+        385
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Lefevre",
+      "bbox": [
+        339.984375,
+        367,
+        441.984375,
+        385
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        74,
+        414,
+        169,
+        433
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        176.96875,
+        415,
+        324.96875,
+        438
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        332.8125,
+        421,
+        340.8125,
+        433
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2024-284610",
+      "bbox": [
+        348,
+        415,
+        571,
+        433
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        74,
+        463,
+        111,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        118.703125,
+        462,
+        288.703125,
+        486
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        295.875,
+        463,
+        402.875,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        410.53125,
+        468,
+        440.53125,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        447.078125,
+        463,
+        540.078125,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        547.6875,
+        463,
+        577.6875,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        585.3125,
+        463,
+        667.3125,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        674.921875,
+        463,
+        717.921875,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        725.046875,
+        463,
+        888.046875,
+        486
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        74,
+        511,
+        131,
+        529
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        138.984375,
+        511,
+        286.984375,
+        534
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        294.828125,
+        517,
+        302.828125,
+        529
+      ],
+      "label": "O"
+    },
+    {
+      "text": "17",
+      "bbox": [
+        310,
+        511,
+        343,
+        529
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "février",
+      "bbox": [
+        351.765625,
+        510,
+        442.765625,
+        529
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2026",
+      "bbox": [
+        450.6875,
+        511,
+        517.6875,
+        529
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        74,
+        559,
+        129,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        136.421875,
+        565,
+        144.421875,
+        577
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Belgique",
+      "bbox": [
+        152,
+        559,
+        271,
+        582
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        74,
+        696,
+        113,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        119.859375,
+        695,
+        132.859375,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lille,",
+      "bbox": [
+        140.34375,
+        696,
+        191.34375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        198.453125,
+        696,
+        218.453125,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "17",
+      "bbox": [
+        225.09375,
+        697,
+        253.09375,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "février",
+      "bbox": [
+        260.09375,
+        695,
+        333.09375,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2026",
+      "bbox": [
+        339.125,
+        697,
+        395.125,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        666,
+        754,
+        763,
+        773
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        768.859375,
+        753,
+        862.859375,
+        769
+      ],
+      "label": "O"
+    }
+  ]
+}

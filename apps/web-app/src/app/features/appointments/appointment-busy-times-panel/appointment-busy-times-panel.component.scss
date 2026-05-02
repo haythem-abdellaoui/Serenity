@@ -1,0 +1,73 @@
+.busy-panel {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1rem;
+  background: var(--card-bg, #fafafa);
+  min-height: 12rem;
+}
+
+.busy-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.busy-sub {
+  margin: 0 0 0.5rem;
+  font-size: 0.72rem;
+  color: #666;
+  line-height: 1.35;
+}
+
+.busy-date {
+  margin: 0 0 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.busy-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.busy-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.45rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.busy-list li.doc {
+  border-left: 3px solid #0d9488;
+}
+
+.busy-list li.pat {
+  border-left: 3px solid #ea580c;
+}
+
+.range {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.src {
+  font-size: 0.72rem;
+  color: #555;
+}
+
+.busy-empty {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.4;
+}

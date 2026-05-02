@@ -1,0 +1,312 @@
+<div class="appointments-hub container">
+  <div class="page-header">
+    <div class="title-block">
+      <h1>{{ adminAppointmentsShell ? 'Appointments' : scopeAll ? 'All appointments' : 'My appointments' }}</h1>
+      <p class="subtitle" *ngIf="!isAdmin && !adminAppointmentsShell">Your schedule, calendar, and reminders in one place.</p>
+      <p class="subtitle" *ngIf="isAdmin && !adminAppointmentsShell">Switch between your own visits and every appointment in the system.</p>
+      <p class="subtitle" *ngIf="adminAppointmentsShell">All visits in the system — search and open a row for details.</p>
+    </div>
+    <div class="header-actions">
+      <button
+        *ngIf="showGcalMainButton && !adminAppointmentsShell"
+        type="button"
+        class="btn btn-calendar-sync"
+        (click)="onGoogleCalendarSync()"
+        [disabled]="googleCalendarSyncing">
+        {{ googleCalendarSyncing ? 'Please wait…' : 'Synchronize with Google Calendar' }}
+      </button>
+      <button
+        *ngIf="showGcalResyncLink && !adminAppointmentsShell"
+        type="button"
+        class="btn gcal-resync"
+        (click)="onGoogleCalendarSync()"
+        [disabled]="googleCalendarSyncing">
+        {{ googleCalendarSyncing ? 'Please wait…' : 'Update Google Calendar' }}
+      </button>
+      <div class="scope-toggle" *ngIf="isAdmin && !adminAppointmentsShell">
+        <button
+          type="button"
+          class="scope-btn"
+          [class.active]="!scopeAll"
+          (click)="setScope(false)">
+          My appointments
+        </button>
+        <button
+          type="button"
+          class="scope-btn"
+          [class.active]="scopeAll"
+          (click)="setScope(true)">
+          All appointments
+        </button>
+      </div>
+      <a *ngIf="authService.hasRole('PATIENT') && !adminAppointmentsShell" routerLink="book" class="btn btn-primary">Book appointment</a>
+      <a *ngIf="authService.hasRole('DOCTOR') && !adminAppointmentsShell" routerLink="schedule" class="btn btn-primary">Schedule for patient</a>
+    </div>
+  </div>
+
+  <div *ngIf="infoMessage" class="alert alert-success">{{ infoMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-error">{{ errorMessage }}</div>
+
+  <div *ngIf="loading" class="loading-container">
+    <span class="spinner"></span>
+    <p>Loading appointments...</p>
+  </div>
+
+  <ng-container *ngIf="!loading">
+    <section *ngIf="adminAppointmentsShell && adminStats as s" class="admin-appt-stats" aria-label="Appointment statistics">
+      <article class="stat-card">
+        <span class="stat-label">Total</span>
+        <strong class="stat-value">{{ s.total }}</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Pending</span>
+        <strong class="stat-value">{{ s.pending }}</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Confirmed</span>
+        <strong class="stat-value">{{ s.confirmed }}</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Completed</span>
+        <strong class="stat-value">{{ s.completed }}</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Cancelled</span>
+        <strong class="stat-value">{{ s.cancelled }}</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Video</span>
+        <strong class="stat-value">{{ s.tele }}</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">In person</span>
+        <strong class="stat-value">{{ s.inPerson }}</strong>
+      </article>
+    </section>
+
+    <section class="hub-grid" aria-label="Overview" *ngIf="!adminAppointmentsShell">
+      <article class="next-card card-elevated">
+        <div class="next-card-inner">
+          <span class="eyebrow">Next visit</span>
+          <ng-container *ngIf="nextAppointment as na; else noNext">
+            <h2 class="next-title">{{ nextAppointmentStartsAt() }}</h2>
+            <p class="next-meta">
+              <span [ngClass]="statusClass(na.status)">{{ na.status }}</span>
+              · {{ na.type === 'TELECONSULTATION' ? 'Video' : 'In person' }}
+            </p>
+            <p class="next-with" *ngIf="scopeAll">
+              {{ patientName(na) }} · {{ doctorName(na) }}
+            </p>
+            <p class="next-with" *ngIf="!scopeAll && authService.hasRole('PATIENT')">
+              with {{ doctorName(na) }}
+            </p>
+            <p class="next-with" *ngIf="!scopeAll && authService.hasRole('DOCTOR')">
+              Patient: {{ patientName(na) }}
+            </p>
+            <p class="next-with" *ngIf="!scopeAll && authService.isAdmin() && !authService.hasRole('PATIENT') && !authService.hasRole('DOCTOR')">
+              {{ patientName(na) }} · {{ doctorName(na) }}
+            </p>
+            <!-- Patient: round analog (visit time) + countdown -->
+            <div
+              class="countdown-clock countdown-clock--patient"
+              *ngIf="authService.hasRole('PATIENT') && nextAppointment && (countdownParts || nextVisitInProgress)"
+              role="timer"
+              aria-live="polite">
+              <span class="clock-caption">{{
+                nextVisitInProgress ? 'Your visit' : 'Time until start'
+              }}</span>
+              <div class="round-clock-wrap">
+                <svg class="analog-clock-svg" viewBox="0 0 100 100" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="apptNextClockFaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#f8fafc" />
+                      <stop offset="100%" stop-color="#e2e8f0" />
+                    </linearGradient>
+                  </defs>
+                  <circle class="clock-face" cx="50" cy="50" r="46" fill="url(#apptNextClockFaceGrad)" />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="46"
+                    fill="none"
+                    stroke="rgba(13, 148, 136, 0.35)"
+                    stroke-width="1.5" />
+                  <g *ngFor="let i of clockTickIndexes">
+                    <line
+                      x1="50"
+                      y1="7"
+                      x2="50"
+                      y2="13"
+                      stroke="#64748b"
+                      stroke-linecap="round"
+                      [attr.stroke-width]="i % 3 === 0 ? 1.8 : 1"
+                      [attr.transform]="'rotate(' + i * 30 + ' 50 50)'" />
+                  </g>
+                  <!-- Hands: translate to center then rotate so SVG rotate() matches clock face (12 = up). -->
+                  <g transform="translate(50 50)">
+                    <g [attr.transform]="'rotate(' + appointmentHourAngle() + ')'">
+                      <line x1="0" y1="0" x2="0" y2="-19" class="clock-hand clock-hand-hour" />
+                    </g>
+                    <g [attr.transform]="'rotate(' + appointmentMinuteAngle() + ')'">
+                      <line x1="0" y1="0" x2="0" y2="-25" class="clock-hand clock-hand-minute" />
+                    </g>
+                  </g>
+                  <circle cx="50" cy="50" r="3.2" fill="#0f172a" />
+                  <circle cx="50" cy="50" r="1.6" fill="#0d9488" />
+                </svg>
+                <p class="clock-at-label">Visit at {{ nextAppointmentVisitTimeLabel() }}</p>
+              </div>
+              <div class="countdown countdown-live patient-live" *ngIf="nextVisitInProgress">
+                <span class="pulse"></span>
+                <span>In progress now</span>
+              </div>
+              <div class="digital-readout" *ngIf="countdownParts && !nextVisitInProgress">
+                <ng-container *ngIf="countdownParts!.d > 0">
+                  <span class="dig"><strong>{{ countdownParts!.d }}</strong><small>d</small></span>
+                  <span class="dig-sep">:</span>
+                </ng-container>
+                <span class="dig"><strong>{{ pad2(countdownParts!.h) }}</strong><small>h</small></span>
+                <span class="dig-sep">:</span>
+                <span class="dig"><strong>{{ pad2(countdownParts!.m) }}</strong><small>m</small></span>
+                <span class="dig-sep">:</span>
+                <span class="dig dig-sec"><strong>{{ pad2(countdownParts!.sec) }}</strong><small>s</small></span>
+              </div>
+            </div>
+
+            <!-- Doctor / admin: in progress strip -->
+            <div
+              class="countdown countdown-live"
+              *ngIf="nextVisitInProgress && !authService.hasRole('PATIENT')"
+              role="status">
+              <span class="pulse"></span>
+              <span>In progress now</span>
+            </div>
+            <!-- Doctor / admin: digital countdown -->
+            <div
+              class="countdown-clock"
+              *ngIf="countdownParts && !authService.hasRole('PATIENT')"
+              role="timer"
+              aria-live="polite">
+              <span class="clock-caption">Time until start</span>
+              <div class="digital-readout">
+                <ng-container *ngIf="countdownParts!.d > 0">
+                  <span class="dig"><strong>{{ countdownParts!.d }}</strong><small>d</small></span>
+                  <span class="dig-sep">:</span>
+                </ng-container>
+                <span class="dig"><strong>{{ pad2(countdownParts!.h) }}</strong><small>h</small></span>
+                <span class="dig-sep">:</span>
+                <span class="dig"><strong>{{ pad2(countdownParts!.m) }}</strong><small>m</small></span>
+                <span class="dig-sep">:</span>
+                <span class="dig dig-sec"><strong>{{ pad2(countdownParts!.sec) }}</strong><small>s</small></span>
+              </div>
+            </div>
+          </ng-container>
+          <ng-template #noNext>
+            <h2 class="next-title muted">No upcoming visits</h2>
+            <p class="hint" *ngIf="authService.hasRole('PATIENT')">Book a time with your doctor when you are ready.</p>
+            <p class="hint" *ngIf="authService.hasRole('DOCTOR')">New requests will appear here.</p>
+          </ng-template>
+        </div>
+      </article>
+
+      <article class="calendar-wrap card-elevated">
+        <div class="calendar-section-head">
+          <h2 class="section-title">Calendar</h2>
+          <p class="section-hint">Days with a tint have at least one appointment. Tap a day to filter the list below.</p>
+        </div>
+        <app-appointment-calendar
+          [busySlots]="calendarBusySlots"
+          [viewMonth]="viewMonth"
+          [viewYear]="viewYear"
+          [selectedDate]="selectedFilterDate || ''"
+          [showTimeChipsInCells]="true"
+          [maxSlotLinesInCell]="2"
+          [slotDurationMinutes]="slotDurationMin"
+          [legendDoctor]="'Days with appointments'"
+          [legendPatient]="''"
+          [showDurationNote]="true"
+          (viewMonthChange)="onCalendarMonthChange($event)"
+          (selectedDateChange)="onCalendarDaySelect($event)">
+        </app-appointment-calendar>
+      </article>
+    </section>
+
+    <section id="appointments-list" class="list-section">
+      <div class="list-head">
+        <h2 class="section-title">
+          {{
+            adminAppointmentsShell
+              ? 'All appointments'
+              : selectedFilterDate
+                ? ('Appointments on ' + selectedFilterDate)
+                : 'All appointments'
+          }}
+        </h2>
+        <button *ngIf="selectedFilterDate && !adminAppointmentsShell" type="button" class="btn btn-ghost btn-sm" (click)="clearDateFilter()">
+          Clear day filter
+        </button>
+      </div>
+
+      <div *ngIf="appointments.length === 0" class="card empty-card">
+        <p>No appointments yet.</p>
+      </div>
+
+      <div *ngIf="appointments.length > 0 && displayedAppointments.length === 0" class="card empty-card">
+        <p *ngIf="!adminAppointmentsShell">
+          No appointments on this day. Pick another date on the calendar or clear the filter.
+        </p>
+        <p *ngIf="adminAppointmentsShell">No rows to display.</p>
+        <button *ngIf="!adminAppointmentsShell" type="button" class="btn btn-secondary btn-sm" (click)="clearDateFilter()">Show all dates</button>
+      </div>
+
+      <div *ngIf="displayedAppointments.length > 0" class="card table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th *ngIf="scopeAll">Patient</th>
+              <th *ngIf="scopeAll">Doctor</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let a of displayedAppointments"
+              class="click-row"
+              role="button"
+              tabindex="0"
+              (click)="openRow(a)"
+              (keydown.enter)="openRow(a)"
+              (keydown.space)="$event.preventDefault(); openRow(a)">
+              <td>{{ a.appointmentDate }}</td>
+              <td>{{ a.timeSlot }}</td>
+              <td>{{ a.type === 'TELECONSULTATION' ? 'Video' : 'In person' }}</td>
+              <td><span [ngClass]="statusClass(a.status)">{{ a.status }}</span></td>
+              <td *ngIf="scopeAll">{{ patientName(a) }}</td>
+              <td *ngIf="scopeAll">{{ doctorName(a) }}</td>
+              <td class="actions" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()">
+                <button
+                  *ngIf="authService.hasRole('DOCTOR') && isDoctorFor(a) && a.status === 'PENDING'"
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  (click)="confirm(a, $event)">
+                  Confirm
+                </button>
+                <button
+                  *ngIf="(isPatientFor(a) || isDoctorFor(a)) && (a.status === 'PENDING' || a.status === 'CONFIRMED')"
+                  type="button"
+                  class="btn btn-sm btn-secondary"
+                  (click)="cancel(a, $event)">
+                  Cancel
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </ng-container>
+</div>

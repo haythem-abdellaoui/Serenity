@@ -1,0 +1,494 @@
+{
+  "id": "val_0006",
+  "image": "images/val/val_0006.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Leila Khelifi",
+    "registration_number": "RP-2023-144857",
+    "issue_date": "05/10/2024"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        87,
+        94,
+        143,
+        107
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        180,
+        79,
+        295,
+        100
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        304.3125,
+        79,
+        437.3125,
+        100
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        447.03125,
+        79,
+        486.03125,
+        100
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        495.8125,
+        79,
+        604.8125,
+        100
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        614.1875,
+        79,
+        670.1875,
+        100
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        679.640625,
+        79,
+        882.640625,
+        100
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        180,
+        116,
+        256,
+        132
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        263.0,
+        116,
+        351.0,
+        132
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        180,
+        145,
+        250,
+        160
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        75,
+        251,
+        253,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        262.9375,
+        251,
+        500.9375,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        75,
+        322,
+        135,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        142.984375,
+        323,
+        255.984375,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        263.203125,
+        327,
+        308.203125,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        316.046875,
+        328,
+        324.046875,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        75,
+        370,
+        131,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        138.640625,
+        371,
+        162.640625,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        170.4375,
+        369,
+        263.4375,
+        393
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        270.6875,
+        376,
+        278.6875,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Leila",
+      "bbox": [
+        286,
+        370,
+        350,
+        388
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Khelifi",
+      "bbox": [
+        358.609375,
+        370,
+        444.609375,
+        388
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        75,
+        417,
+        170,
+        436
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        177.96875,
+        418,
+        325.96875,
+        441
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        333.8125,
+        424,
+        341.8125,
+        436
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2023-144857",
+      "bbox": [
+        349,
+        418,
+        572,
+        436
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        75,
+        466,
+        112,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        119.703125,
+        466,
+        226.703125,
+        487
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        234.359375,
+        471,
+        264.359375,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        270.90625,
+        466,
+        363.90625,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        371.515625,
+        466,
+        401.515625,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        409.140625,
+        466,
+        491.140625,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        498.75,
+        466,
+        541.75,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        548.875,
+        466,
+        711.875,
+        489
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        75,
+        514,
+        132,
+        532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        139.984375,
+        514,
+        287.984375,
+        537
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        295.828125,
+        520,
+        303.828125,
+        532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "05/10/2024",
+      "bbox": [
+        311,
+        514,
+        462,
+        534
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        75,
+        562,
+        130,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        137.421875,
+        568,
+        145.421875,
+        580
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        153,
+        562,
+        244,
+        580
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        75,
+        699,
+        114,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        120.859375,
+        698,
+        133.859375,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marseille,",
+      "bbox": [
+        141.34375,
+        699,
+        246.34375,
+        718
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        253.71875,
+        699,
+        273.71875,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "05/10/2024",
+      "bbox": [
+        280.359375,
+        700,
+        407.359375,
+        718
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        665,
+        757,
+        762,
+        776
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        767.859375,
+        756,
+        861.859375,
+        772
+      ],
+      "label": "O"
+    }
+  ]
+}

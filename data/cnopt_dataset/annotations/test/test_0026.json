@@ -1,0 +1,504 @@
+{
+  "id": "test_0026",
+  "image": "images/test/test_0026.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Claire Chevalier",
+    "registration_number": "RP-2024-710900",
+    "issue_date": "23/12/2024"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        99,
+        83,
+        155,
+        96
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        192,
+        68,
+        307,
+        89
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        316.3125,
+        68,
+        449.3125,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        459.03125,
+        68,
+        498.03125,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        507.8125,
+        68,
+        616.8125,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        626.1875,
+        68,
+        682.1875,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        691.640625,
+        68,
+        894.640625,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        192,
+        105,
+        268,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        275.0,
+        105,
+        363.0,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        192,
+        134,
+        262,
+        149
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        87,
+        240,
+        265,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        274.9375,
+        240,
+        512.9375,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        87,
+        311,
+        147,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        154.984375,
+        312,
+        267.984375,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        275.203125,
+        316,
+        320.203125,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        328.046875,
+        317,
+        336.046875,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        87,
+        359,
+        143,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        150.640625,
+        360,
+        174.640625,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        182.4375,
+        358,
+        275.4375,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        282.6875,
+        365,
+        290.6875,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Claire",
+      "bbox": [
+        298,
+        359,
+        376,
+        377
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Chevalier",
+      "bbox": [
+        384.765625,
+        359,
+        512.765625,
+        377
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        87,
+        406,
+        182,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        189.96875,
+        407,
+        337.96875,
+        430
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        345.8125,
+        413,
+        353.8125,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2024-710900",
+      "bbox": [
+        361,
+        407,
+        584,
+        425
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        87,
+        455,
+        124,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        131.703125,
+        454,
+        301.703125,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        308.875,
+        455,
+        415.875,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        423.53125,
+        460,
+        453.53125,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        460.078125,
+        455,
+        553.078125,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        560.6875,
+        455,
+        590.6875,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        598.3125,
+        455,
+        680.3125,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        687.921875,
+        455,
+        730.921875,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        738.046875,
+        455,
+        901.046875,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        87,
+        503,
+        144,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        151.984375,
+        503,
+        299.984375,
+        526
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        307.828125,
+        509,
+        315.828125,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "23/12/2024",
+      "bbox": [
+        323,
+        503,
+        474,
+        523
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        87,
+        551,
+        142,
+        574
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        149.421875,
+        557,
+        157.421875,
+        569
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        165,
+        551,
+        256,
+        569
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        87,
+        688,
+        126,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        132.859375,
+        687,
+        145.859375,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Strasbourg,",
+      "bbox": [
+        153.34375,
+        688,
+        281.34375,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        287.921875,
+        688,
+        307.921875,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "23/12/2024",
+      "bbox": [
+        314.5625,
+        689,
+        441.5625,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        653,
+        746,
+        750,
+        765
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        755.859375,
+        745,
+        849.859375,
+        761
+      ],
+      "label": "O"
+    }
+  ]
+}

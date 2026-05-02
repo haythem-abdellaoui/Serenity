@@ -1,0 +1,14 @@
+<section class="location-picker">
+  <div #mapElement class="map-canvas"></div>
+
+  <p class="helper" *ngIf="!readonly">
+    Choose your pharmacy exact location by clicking the map or dragging the marker.
+  </p>
+
+  <p class="coordinates" *ngIf="!readonly && selectedLocation as selected">
+    Selected: {{ selected.latitude }}, {{ selected.longitude }}
+  </p>
+  <p class="coordinates pending" *ngIf="!readonly && !selectedLocation">
+    No location selected yet.
+  </p>
+</section>

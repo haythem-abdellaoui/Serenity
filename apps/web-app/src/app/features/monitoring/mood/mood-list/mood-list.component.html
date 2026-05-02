@@ -1,0 +1,288 @@
+<div class="monitoring-page" [class.doctor-view]="isDoctorView">
+  <div *ngIf="isDoctorView && toastAlert" class="crisis-toast">
+    <span class="toast-icon">🚨</span>
+    <div class="toast-body">
+      <p class="toast-title">Crisis Alert</p>
+      <p class="toast-message">{{ toastAlert.message }}</p>
+      <span class="toast-time">{{ formatDate(toastAlert.timestamp) }}</span>
+    </div>
+    <span class="toast-mood">{{ toastAlert.moodLevel }}/10</span>
+    <button class="toast-close" (click)="dismissToast()" aria-label="Close alert">✕</button>
+  </div>
+
+  <div class="page-shell" [class.doctor-shell]="isDoctorView">
+
+    <header class="page-header">
+      <div>
+        <h1>Monitoring Dashboard</h1>
+        <p>{{ getHeaderSubtitle() }}</p>
+      </div>
+      <button *ngIf="!isDoctorView" class="btn-primary-main" (click)="createNewEntry()">
+        <span class="material-icons">add</span>
+        New Entry
+      </button>
+    </header>
+
+    <div *ngIf="loading" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading mood entries...</p>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-banner">
+      <span class="material-icons">error</span>
+      <span>{{ errorMessage }}</span>
+    </div>
+
+    <div *ngIf="emptyState && !loading" class="empty-state">
+      <div class="empty-icon">🧠</div>
+      <h2>No mood entries yet</h2>
+      <p>Patients will appear here once they log their first entry</p>
+      <button *ngIf="!isDoctorView" class="btn-primary-main" (click)="createNewEntry()">
+        <span class="material-icons">add</span>
+        Create First Entry
+      </button>
+    </div>
+
+    <!-- Doctor: sidebar + detail -->
+    <div *ngIf="isDoctorView && !loading && !emptyState" class="doctor-monitoring-layout">
+      <aside class="patients-sidebar">
+        <div class="sidebar-header">
+          <h3>My Patients</h3>
+          <span class="patient-count">{{ patients.length }} patients</span>
+        </div>
+
+        <div class="patient-search">
+          <input
+            type="text"
+            placeholder="Search patient..."
+            [(ngModel)]="searchQuery"
+            [ngModelOptions]="{standalone: true}" />
+        </div>
+
+        <div class="patient-list">
+          <div
+            class="patient-item"
+            *ngFor="let patient of filteredPatients"
+            [class.active]="selectedPatient?.id === patient.id"
+            role="button"
+            tabindex="0"
+            (click)="selectPatient(patient)"
+            (keydown.enter)="selectPatient(patient)"
+            (keydown.space)="$event.preventDefault(); selectPatient(patient)">
+            <div class="patient-avatar">
+              <img
+                *ngIf="patient.avatarUrl"
+                class="patient-avatar-img"
+                [src]="patient.avatarUrl"
+                [alt]="patient.firstName + ' ' + patient.lastName"
+                referrerpolicy="no-referrer" />
+              <span *ngIf="!patient.avatarUrl" class="patient-avatar-initials">
+                {{ patient.firstName.charAt(0) | uppercase }}{{ (patient.lastName.charAt(0) || patient.firstName.charAt(1) || '') | uppercase }}
+              </span>
+            </div>
+
+            <div class="patient-info">
+              <span class="patient-name">
+                {{ patient.firstName }} {{ patient.lastName }}
+              </span>
+              <span class="entry-count"> {{ patient.entryCount }} entries </span>
+            </div>
+
+            <div class="crisis-dot" *ngIf="patient.hasCrisis"></div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="patient-detail-panel">
+        <div class="empty-state detail-empty" *ngIf="!selectedPatient">
+          <div class="empty-icon">🧠</div>
+          <h3>Select a patient</h3>
+          <p>Choose a patient from the sidebar to view their mood history</p>
+        </div>
+
+        <div class="patient-detail" *ngIf="selectedPatient">
+          <div class="detail-header">
+            <div class="detail-avatar">
+              <img
+                *ngIf="selectedPatient.avatarUrl"
+                class="detail-avatar-img"
+                [src]="selectedPatient.avatarUrl"
+                [alt]="selectedPatient.firstName + ' ' + selectedPatient.lastName"
+                referrerpolicy="no-referrer" />
+              <span *ngIf="!selectedPatient.avatarUrl" class="detail-avatar-initials">
+                {{ selectedPatient.firstName.charAt(0) | uppercase }}{{ (selectedPatient.lastName.charAt(0) || selectedPatient.firstName.charAt(1) || '') | uppercase }}
+              </span>
+            </div>
+
+            <div class="detail-info">
+              <h2>{{ selectedPatient.firstName }} {{ selectedPatient.lastName }}</h2>
+              <span>{{ selectedPatientEntries.length }} mood entries recorded</span>
+            </div>
+
+            <div class="avg-mood-badge">
+              <span class="avg-label">AVG MOOD</span>
+              <span class="avg-value">{{ averageMood }}/10</span>
+            </div>
+
+            <div class="detail-actions">
+              <button class="btn-dashboard" (click)="openDoctorDashboard()">Dashboard</button>
+              <button class="btn-export-record" (click)="exportSelectedPatientRecord()" [disabled]="exportingRecord">
+                {{ exportingRecord ? 'Exporting...' : 'Export Patient PDF' }}
+              </button>
+            </div>
+          </div>
+
+          <div class="entries-grid">
+            <ng-container *ngFor="let entry of selectedPatientEntries; let i = index">
+              <ng-container *ngTemplateOutlet="moodCardTpl; context: { entry: entry, i: i }"></ng-container>
+            </ng-container>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Patient: full grid -->
+    <section *ngIf="!isDoctorView && !loading && !emptyState" class="mood-grid">
+      <ng-container *ngFor="let entry of moodEntries; let i = index">
+        <ng-container *ngTemplateOutlet="moodCardTpl; context: { entry: entry, i: i }"></ng-container>
+      </ng-container>
+    </section>
+
+    <ng-template #moodCardTpl let-entry="entry" let-i="i">
+  <article class="mood-card" [style.--i]="i">
+    <div class="card-main">
+      <div class="card-header">
+        <div class="score-block">
+          <div class="score-badge" [style.color]="getMoodColor(entry.moodScore)" [style.backgroundColor]="getMoodColor(entry.moodScore) + '26'">
+            {{ entry.moodScore }}/10
+          </div>
+          <div class="score-text">
+            <span class="score-label" [style.color]="getMoodColor(entry.moodScore)">{{ getMoodLabel(entry.moodScore) }}</span>
+          </div>
+        </div>
+        <div class="header-meta">
+          <div class="risk-chip" *ngIf="isDoctorView" [ngClass]="getEntryRiskClass(entry)">
+            <span class="risk-chip__label">
+              {{ getEntryRiskLabel(entry) }}<ng-container *ngIf="getEntryRiskTypeLabel(entry) as riskType">: {{ riskType }}</ng-container>
+            </span>
+          </div>
+
+          <div class="entry-date">
+            <span class="material-icons">schedule</span>
+            {{ formatDate(entry.createdAt) }}
+          </div>
+        </div>
+      </div>
+
+      <div class="notes-section">
+        <p>{{ entry.moodDescription }}</p>
+      </div>
+
+      <div class="preview-triggers">
+        <div class="section-label">EMOTIONAL TRIGGERS</div>
+        <div class="chip-list" *ngIf="entry.triggers">
+          <span class="chip">{{ entry.triggers }}</span>
+        </div>
+        <div *ngIf="!entry.triggers" class="no-trigger-text">No triggers recorded</div>
+      </div>
+
+      <div class="card-footer">
+        <div class="person-line" *ngIf="isDoctorView">
+          <div class="avatar avatar--patient-photo">
+            <img
+              *ngIf="entry.patientAvatarUrl"
+              class="avatar-img"
+              [src]="entry.patientAvatarUrl"
+              [alt]="getPatientDisplayName(entry)"
+              referrerpolicy="no-referrer" />
+            <span *ngIf="!entry.patientAvatarUrl">{{ (getPatientDisplayName(entry) || 'U').slice(0, 1).toUpperCase() }}</span>
+          </div>
+          <span class="person-name">{{ getPatientDisplayName(entry) }}</span>
+        </div>
+        <div class="person-line person-line--patient-doctor" *ngIf="!isDoctorView">
+          <span class="responsible-doctor-label">🩺 Responsible Doctor:</span>
+          <div class="avatar doctor">{{ (getDoctorDisplayName(entry) || 'D').slice(0, 1).toUpperCase() }}</div>
+          <span class="person-name">{{ getDoctorDisplayName(entry) }}</span>
+        </div>
+
+        <button *ngIf="isDoctorView" class="btn-clinical" (click)="toggleTriggerPanel(entry.id)">
+          Clinical Triggers {{ triggerPanelOpen[entry.id] ? '▴' : '▾' }}
+        </button>
+      </div>
+    </div>
+
+    <div class="card-actions" *ngIf="!isDoctorView">
+      <button class="icon-btn edit" (click)="editEntry(entry.id)" title="Edit entry">
+        <span class="material-icons">edit</span>
+      </button>
+      <button class="icon-btn delete" (click)="deleteEntry(entry.id)" title="Delete entry">
+        <span class="material-icons">delete</span>
+      </button>
+    </div>
+
+    <section *ngIf="isDoctorView" class="clinical-panel-wrap" [class.open]="triggerPanelOpen[entry.id]">
+      <div *ngIf="triggerPanelOpen[entry.id]" class="clinical-panel">
+        <div class="panel-header">
+          <h3>Clinical Triggers</h3>
+        </div>
+
+        <div *ngIf="triggerLoading[entry.id]" class="trigger-loading">Loading triggers...</div>
+        <div *ngIf="triggerError[entry.id]" class="trigger-error">{{ triggerError[entry.id] }}</div>
+
+        <div *ngIf="!triggerLoading[entry.id] && (!triggerMap[entry.id] || triggerMap[entry.id].length === 0)" class="trigger-empty">
+          No clinical triggers recorded yet.
+        </div>
+
+        <div *ngIf="!triggerLoading[entry.id] && triggerMap[entry.id] && triggerMap[entry.id].length > 0" class="trigger-list">
+          <div *ngFor="let trigger of triggerMap[entry.id]" class="trigger-item">
+            <div class="trigger-row-top">
+              <span class="trigger-type">{{ trigger.triggerType }}</span>
+              <span class="intensity-dot">{{ trigger.intensity }}</span>
+            </div>
+            <p class="trigger-description">{{ trigger.description }}</p>
+            <div class="trigger-row-bottom">
+              <span class="trigger-date">{{ formatDate(trigger.recordedAt) }}</span>
+              <div class="trigger-actions">
+                <button class="icon-inline edit" (click)="startEditTrigger(entry.id, trigger)" title="Edit Trigger">
+                  ✏️
+                </button>
+                <button class="icon-inline delete" (click)="deleteTrigger(entry.id, trigger.id)" title="Delete Trigger">
+                  🗑️
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trigger-form">
+          <h4>{{ editTriggerId[entry.id] ? 'Update Clinical Trigger' : '+ Record Clinical Trigger' }}</h4>
+          <div class="trigger-form-row">
+            <div class="field-group">
+              <label>Trigger Type</label>
+              <select [(ngModel)]="triggerForm[entry.id].triggerType" [ngModelOptions]="{standalone: true}">
+                <option value="" disabled>Select type</option>
+                <option *ngFor="let type of triggerTypes" [value]="type">{{ type }}</option>
+              </select>
+            </div>
+            <div class="field-group intensity-group">
+              <label>Intensity</label>
+              <input type="number" min="1" max="10" [(ngModel)]="triggerForm[entry.id].intensity" [ngModelOptions]="{standalone: true}" />
+            </div>
+          </div>
+          <div class="field-group">
+            <label>Clinical Observation</label>
+            <textarea rows="3" [(ngModel)]="triggerForm[entry.id].description" [ngModelOptions]="{standalone: true}" placeholder="Describe the root cause..."></textarea>
+          </div>
+          <div class="trigger-form-actions">
+            <button *ngIf="editTriggerId[entry.id]" class="btn-cancel" (click)="cancelEditTrigger(entry.id)">Cancel</button>
+            <button class="btn-record" [disabled]="triggerSaving[entry.id]" (click)="submitTrigger(entry.id)">
+              {{ triggerSaving[entry.id] ? 'Saving...' : (editTriggerId[entry.id] ? 'Update Trigger' : 'Record Trigger') }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+    </ng-template>
+  </div>
+</div>

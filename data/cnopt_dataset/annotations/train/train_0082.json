@@ -1,0 +1,464 @@
+{
+  "id": "train_0082",
+  "image": "images/train/train_0082.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Pierre Dubois",
+    "registration_number": "FR-PHAR-809223",
+    "issue_date": "2023-01-06"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        96,
+        81,
+        152,
+        94
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        189,
+        66,
+        279,
+        87
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        289.203125,
+        66,
+        345.203125,
+        87
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        354.65625,
+        66,
+        557.65625,
+        87
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        189,
+        103,
+        265,
+        119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        272.0,
+        103,
+        360.0,
+        119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        189,
+        132,
+        259,
+        147
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        84,
+        238,
+        262,
+        258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        271.9375,
+        238,
+        509.9375,
+        258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        84,
+        309,
+        144,
+        327
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        151.984375,
+        310,
+        264.984375,
+        327
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        272.203125,
+        314,
+        317.203125,
+        332
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        325.046875,
+        315,
+        333.046875,
+        327
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        84,
+        357,
+        140,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        147.640625,
+        358,
+        171.640625,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        179.4375,
+        356,
+        272.4375,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        279.6875,
+        363,
+        287.6875,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pierre",
+      "bbox": [
+        295,
+        357,
+        377,
+        375
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Dubois",
+      "bbox": [
+        385.4375,
+        357,
+        478.4375,
+        375
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        84,
+        404,
+        179,
+        423
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        186.96875,
+        405,
+        334.96875,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        342.8125,
+        411,
+        350.8125,
+        423
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-809223",
+      "bbox": [
+        358,
+        405,
+        588,
+        423
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        84,
+        453,
+        121,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        128.703125,
+        453,
+        235.703125,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        243.359375,
+        458,
+        273.359375,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        279.90625,
+        453,
+        372.90625,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        380.515625,
+        453,
+        410.515625,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        418.140625,
+        453,
+        500.140625,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        507.75,
+        453,
+        550.75,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        557.875,
+        453,
+        720.875,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        84,
+        501,
+        141,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        148.984375,
+        501,
+        296.984375,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        304.828125,
+        507,
+        312.828125,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-01-06",
+      "bbox": [
+        320,
+        501,
+        474,
+        519
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        84,
+        549,
+        139,
+        572
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        146.421875,
+        555,
+        154.421875,
+        567
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        162,
+        549,
+        253,
+        567
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        84,
+        686,
+        123,
+        703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        129.859375,
+        685,
+        142.859375,
+        703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lille,",
+      "bbox": [
+        150.34375,
+        686,
+        201.34375,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        208.453125,
+        686,
+        228.453125,
+        703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-01-06",
+      "bbox": [
+        235.09375,
+        687,
+        363.09375,
+        703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        656,
+        744,
+        753,
+        763
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        758.859375,
+        743,
+        852.859375,
+        759
+      ],
+      "label": "O"
+    }
+  ]
+}

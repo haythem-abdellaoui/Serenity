@@ -1,0 +1,170 @@
+<div class="container mood-form-container">
+  <!-- Header -->
+  <div class="form-header">
+    <h1>{{ isEditMode ? 'Edit Mood Entry' : 'New Mood Entry' }}</h1>
+    <p>{{ isEditMode ? 'Update your mood information' : 'Track your current mood and emotions' }}</p>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="loading-state">
+    <div class="spinner"></div>
+    <p>Loading mood entry...</p>
+  </div>
+
+  <!-- Form -->
+  <form *ngIf="!loading" [formGroup]="moodForm" (ngSubmit)="onSubmit()" class="mood-form">
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-error">
+      <span class="material-icons">error</span>
+      {{ errorMessage }}
+    </div>
+
+    <!-- Mood Score Section -->
+    <div class="form-section">
+      <div class="section-header">
+        <label for="moodScore" class="form-label">
+          How are you feeling?
+          <span class="required">*</span>
+        </label>
+        <p class="section-hint">Select your current mood (1 = Very Bad, 10 = Perfect)</p>
+      </div>
+
+      <!-- Mood Preview -->
+      <div class="mood-preview" [style.backgroundColor]="getMoodColor()">
+        <div class="preview-label">{{ getMoodLabel() }}</div>
+      </div>
+
+      <!-- Mood Slider -->
+      <div class="mood-slider-container">
+        <input
+          type="range"
+          id="moodScore"
+          min="1"
+          max="10"
+          class="mood-slider"
+          formControlName="moodScore"
+          [style.--thumb-color]="getMoodColor()">
+        <div class="mood-scale-labels">
+          <span>😢</span>
+          <span>😞</span>
+          <span>😕</span>
+          <span>😐</span>
+          <span>😐</span>
+          <span>🙂</span>
+          <span>😊</span>
+          <span>😄</span>
+          <span>😃</span>
+          <span>😄</span>
+        </div>
+      </div>
+
+      <!-- Mood Buttons (Alternative) -->
+      <div class="mood-buttons">
+        <button
+          *ngFor="let scale of moodScales"
+          type="button"
+          class="mood-btn"
+          [class.active]="moodForm.get('moodScore')?.value === scale.value"
+          [style.backgroundColor]="scale.color"
+          (click)="moodForm.get('moodScore')?.setValue(scale.value)">
+          <span class="mood-number">{{ scale.value }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Condition Section -->
+    <div class="form-section">
+      <label for="moodDescription" class="form-label">
+        What's going on?
+        <span class="required">*</span>
+      </label>
+      <p class="section-hint">Describe how you're feeling (minimum 10 characters)</p>
+
+      <textarea
+        id="moodDescription"
+        class="form-input textarea"
+        formControlName="moodDescription"
+        placeholder="I'm feeling... Tell us more about your mood, thoughts, and feelings"
+        rows="4"></textarea>
+
+      <div class="char-count">
+        {{ getConditionChars() }}/500 characters
+        <span *ngIf="getConditionChars() < 10" class="char-warning">
+          (minimum 10 required)
+        </span>
+      </div>
+
+      <!-- Error Messages -->
+      <div *ngIf="moodForm.get('moodDescription')?.invalid && moodForm.get('moodDescription')?.touched" class="form-error">
+        <span *ngIf="moodForm.get('moodDescription')?.errors?.['required']">
+          <span class="material-icons">error</span>
+          Mood description is required
+        </span>
+        <span *ngIf="moodForm.get('moodDescription')?.errors?.['minlength']">
+          <span class="material-icons">error</span>
+          Must be at least 10 characters
+        </span>
+      </div>
+    </div>
+
+    <!-- Triggers Section (Optional) -->
+    <div class="form-section">
+      <label for="triggers" class="form-label">
+        What triggered this mood?
+        <span class="optional">(optional)</span>
+      </label>
+      <p class="section-hint">Identify what caused or contributed to your current mood (e.g., stress, social interaction, exercise)</p>
+
+      <textarea
+        id="triggers"
+        class="form-input textarea"
+        formControlName="triggers"
+        placeholder="Exercise, work stress, quality time with friends, good weather, etc."
+        rows="3"></textarea>
+
+      <div class="char-count">
+        {{ getTriggersChars() }}/500 characters
+      </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="!moodForm.valid || saving">
+        <span class="material-icons">{{ isEditMode ? 'edit' : 'add' }}</span>
+        {{ saving ? 'Saving...' : (isEditMode ? 'Update Entry' : 'Create Entry') }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="onCancel()" [disabled]="saving">
+        Cancel
+      </button>
+    </div>
+  </form>
+
+  <div *ngIf="showQuoteOverlay" class="quote-overlay">
+    <div class="overlay-success-icon">✅</div>
+    <p class="overlay-success-text">Mood entry saved successfully</p>
+
+    <div class="overlay-divider"></div>
+
+    <section class="overlay-quote-section">
+      <p class="overlay-quote-label">✨ A message for you</p>
+
+      <div *ngIf="quoteLoading || !currentQuote" class="overlay-quote-loading">
+        <span class="overlay-spinner"></span>
+      </div>
+
+      <ng-container *ngIf="!quoteLoading && currentQuote">
+        <p class="overlay-quote-text">"{{ currentQuote.text }}"</p>
+        <p class="overlay-quote-author">&mdash; {{ currentQuote.author }}</p>
+      </ng-container>
+    </section>
+
+    <div class="overlay-divider"></div>
+
+    <p class="overlay-redirect-text">Redirecting to your entries...</p>
+    <div class="overlay-dots" aria-hidden="true">
+      <span class="dot dot-1">●</span>
+      <span class="dot dot-2">●</span>
+      <span class="dot dot-3">●</span>
+    </div>
+  </div>
+</div>

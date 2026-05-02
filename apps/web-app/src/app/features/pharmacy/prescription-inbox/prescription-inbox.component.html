@@ -1,0 +1,76 @@
+<div class="container">
+  <section class="page">
+    <header class="page-header">
+      <button type="button" class="btn btn-secondary" (click)="backToWorkspace()">Back</button>
+      <div class="header-copy">
+        <h1>Prescription Inbox</h1>
+        <p>Review prescriptions sent to your pharmacy with patient and doctor details.</p>
+      </div>
+    </header>
+
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div class="table-wrap" *ngIf="!loading">
+      <table>
+        <thead>
+          <tr>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Medication</th>
+            <th>Dosage</th>
+            <th>Qty</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let row of prescriptions"
+            class="clickable"
+            tabindex="0"
+            (click)="openPrescription(row)"
+            (keydown.enter)="openPrescription(row)"
+            (keydown.space)="$event.preventDefault(); openPrescription(row)">
+            <td>{{ row.patientName }}</td>
+            <td>{{ row.doctorName }}</td>
+            <td>
+              {{ summaryMedication(row) }}
+              <span class="meta" *ngIf="extraLinesCount(row) > 0">+{{ extraLinesCount(row) }} more</span>
+            </td>
+            <td>{{ summaryDosage(row) }}</td>
+            <td>{{ summaryQuantity(row) }}</td>
+            <td>
+              <span class="status" [class]="'status ' + row.status.toLowerCase()">{{ row.status }}</span>
+            </td>
+            <td class="actions">
+              <button
+                type="button"
+                (click)="$event.stopPropagation(); openPrescription(row)">
+                Details
+              </button>
+              <button
+                type="button"
+                (click)="$event.stopPropagation(); updateStatus(row, 'ACCEPTED')"
+                [disabled]="!canProcess(row.status)">
+                Accept
+              </button>
+              <button
+                type="button"
+                (click)="$event.stopPropagation(); updateStatus(row, 'REJECTED')"
+                [disabled]="!canProcess(row.status)">
+                Reject
+              </button>
+              <button
+                type="button"
+                (click)="$event.stopPropagation(); updateStatus(row, 'READY_FOR_PICKUP')"
+                [disabled]="row.status !== 'ACCEPTED'">
+                Ready
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,474 @@
+{
+  "id": "train_0018",
+  "image": "images/train/train_0018.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Yasmine Durand",
+    "registration_number": "FR-PHAR-215741",
+    "issue_date": "2025-02-27"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        82,
+        90,
+        138,
+        103
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        175,
+        75,
+        265,
+        96
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        275.203125,
+        75,
+        331.203125,
+        96
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        340.65625,
+        75,
+        543.65625,
+        96
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        175,
+        112,
+        251,
+        128
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        258.0,
+        112,
+        346.0,
+        128
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        175,
+        141,
+        245,
+        156
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        70,
+        247,
+        281,
+        267
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        290.546875,
+        247,
+        528.546875,
+        267
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        70,
+        318,
+        130,
+        336
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        137.984375,
+        319,
+        250.984375,
+        336
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        258.203125,
+        323,
+        303.203125,
+        341
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        311.046875,
+        324,
+        319.046875,
+        336
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        70,
+        366,
+        126,
+        384
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        133.640625,
+        367,
+        157.640625,
+        384
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        165.4375,
+        365,
+        258.4375,
+        389
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        265.6875,
+        372,
+        273.6875,
+        384
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Yasmine",
+      "bbox": [
+        280,
+        366,
+        393,
+        384
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Durand",
+      "bbox": [
+        401.640625,
+        366,
+        500.640625,
+        384
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        70,
+        413,
+        165,
+        432
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        172.96875,
+        414,
+        320.96875,
+        437
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        328.8125,
+        420,
+        336.8125,
+        432
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-215741",
+      "bbox": [
+        344,
+        414,
+        574,
+        432
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        70,
+        462,
+        107,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        114.703125,
+        461,
+        284.703125,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        291.875,
+        462,
+        398.875,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        406.53125,
+        467,
+        436.53125,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        443.078125,
+        462,
+        536.078125,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        543.6875,
+        462,
+        573.6875,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        581.3125,
+        462,
+        663.3125,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        670.921875,
+        462,
+        713.921875,
+        480
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        721.046875,
+        462,
+        884.046875,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        70,
+        510,
+        127,
+        528
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        134.984375,
+        510,
+        282.984375,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        290.828125,
+        516,
+        298.828125,
+        528
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-02-27",
+      "bbox": [
+        306,
+        510,
+        460,
+        528
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        70,
+        558,
+        125,
+        581
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        132.421875,
+        564,
+        140.421875,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        148,
+        558,
+        239,
+        576
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        70,
+        695,
+        109,
+        712
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        115.859375,
+        694,
+        128.859375,
+        712
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Paris,",
+      "bbox": [
+        136.34375,
+        695,
+        195.34375,
+        714
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        202.734375,
+        695,
+        222.734375,
+        712
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-02-27",
+      "bbox": [
+        229.375,
+        696,
+        357.375,
+        712
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        670,
+        753,
+        767,
+        772
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        772.859375,
+        752,
+        866.859375,
+        768
+      ],
+      "label": "O"
+    }
+  ]
+}

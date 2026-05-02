@@ -1,0 +1,41 @@
+<div class="auth-page">
+  <main class="auth-container">
+    <section class="auth-card role-selection-card card">
+      <div class="mascot-section">
+        <img src="assets/serenity_mascot.png" alt="Serenity Assistant" class="mascot-img">
+        <div class="speech-bubble">
+          <h2>Welcome</h2>
+          <p>Tell us why you're visiting Serenity today.</p>
+        </div>
+      </div>
+
+      <div class="role-options">
+        <div
+          class="role-option card"
+          *ngFor="let role of roles"
+          [class.selected]="selectedRole === role.id"
+          (click)="selectRole(role.id)"
+          (keydown.enter)="selectRole(role.id)"
+          (keydown.space)="selectRole(role.id)">
+          <div class="role-icon">
+            <span class="material-icons">{{ role.icon }}</span>
+          </div>
+          <div class="role-text">
+            <h4>{{ role.title }}</h4>
+          </div>
+        </div>
+      </div>
+
+      <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      <button class="btn btn-primary continue-btn" [disabled]="!selectedRole || loading" (click)="continue()">
+        {{ loading ? 'Saving...' : 'Continue ->' }}
+      </button>
+    </section>
+  </main>
+
+  <footer class="auth-bottom">
+    <p class="auth-tagline">Wellness - Balance - Serenity</p>
+    <p class="auth-copy">2026 Serenity</p>
+  </footer>
+</div>

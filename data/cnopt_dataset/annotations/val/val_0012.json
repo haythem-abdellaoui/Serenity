@@ -1,0 +1,514 @@
+{
+  "id": "val_0012",
+  "image": "images/val/val_0012.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Pierre Lefevre",
+    "registration_number": "FR-PHAR-753614",
+    "issue_date": "10 mars 2023"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        90,
+        83,
+        146,
+        96
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        183,
+        68,
+        273,
+        89
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        283.203125,
+        68,
+        339.203125,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        348.65625,
+        68,
+        551.65625,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        183,
+        105,
+        259,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        266.0,
+        105,
+        354.0,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        183,
+        134,
+        253,
+        149
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        78,
+        240,
+        289,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        298.546875,
+        240,
+        536.546875,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        78,
+        311,
+        138,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        145.984375,
+        312,
+        258.984375,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        266.203125,
+        316,
+        311.203125,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        319.046875,
+        317,
+        327.046875,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        78,
+        359,
+        134,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        141.640625,
+        360,
+        165.640625,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        173.4375,
+        358,
+        266.4375,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        273.6875,
+        365,
+        281.6875,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pierre",
+      "bbox": [
+        289,
+        359,
+        371,
+        377
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Lefevre",
+      "bbox": [
+        379.4375,
+        359,
+        481.4375,
+        377
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        78,
+        406,
+        173,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        180.96875,
+        407,
+        328.96875,
+        430
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        336.8125,
+        413,
+        344.8125,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-753614",
+      "bbox": [
+        352,
+        407,
+        582,
+        425
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        78,
+        455,
+        115,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        122.703125,
+        454,
+        292.703125,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        299.875,
+        455,
+        406.875,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        414.53125,
+        460,
+        444.53125,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        451.078125,
+        455,
+        544.078125,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        551.6875,
+        455,
+        581.6875,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        589.3125,
+        455,
+        671.3125,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        678.921875,
+        455,
+        721.921875,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        729.046875,
+        455,
+        892.046875,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        78,
+        503,
+        135,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        142.984375,
+        503,
+        290.984375,
+        526
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        298.828125,
+        509,
+        306.828125,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10",
+      "bbox": [
+        314,
+        503,
+        347,
+        521
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "mars",
+      "bbox": [
+        355.765625,
+        508,
+        422.765625,
+        521
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2023",
+      "bbox": [
+        431.46875,
+        503,
+        498.46875,
+        521
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        78,
+        551,
+        133,
+        574
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        140.421875,
+        557,
+        148.421875,
+        569
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        156,
+        551,
+        247,
+        569
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        78,
+        688,
+        117,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        123.859375,
+        687,
+        136.859375,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nantes,",
+      "bbox": [
+        144.34375,
+        689,
+        229.34375,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        235.84375,
+        688,
+        255.84375,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10",
+      "bbox": [
+        262.484375,
+        689,
+        290.484375,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mars",
+      "bbox": [
+        297.484375,
+        693,
+        352.484375,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023",
+      "bbox": [
+        359.921875,
+        689,
+        415.921875,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        662,
+        746,
+        759,
+        765
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        764.859375,
+        745,
+        858.859375,
+        761
+      ],
+      "label": "O"
+    }
+  ]
+}

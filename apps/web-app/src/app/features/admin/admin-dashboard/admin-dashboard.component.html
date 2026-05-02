@@ -1,0 +1,165 @@
+<div class="admin-page">
+  <div class="page-title">
+    <h1>Dashboard</h1>
+    <p>System overview & analytics</p>
+  </div>
+
+  <!-- Loading State -->
+  <div *ngIf="loading" class="loading-state">
+    <span>Loading dashboard...</span>
+  </div>
+
+  <!-- System Overview -->
+  <ng-container *ngIf="!loading">
+    <!-- User Stats Section -->
+    <div class="section-header">
+      <h2>User Management</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon blue">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-value">{{ totalUsers }}</span>
+          <span class="stat-label">Total Users</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon green">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-value">{{ activeUsers }}</span>
+          <span class="stat-label">Active Users</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon teal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/>
+            <path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/>
+            <circle cx="20" cy="10" r="2"/>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-value">{{ doctorCount }}</span>
+          <span class="stat-label">Doctors</span>
+        </div>
+      </div>
+      
+
+      <div class="stat-card">
+        <div class="stat-icon purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-value">{{ patientCount }}</span>
+          <span class="stat-label">Patients</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Insurance Stats Section -->
+    <div class="section-header" style="margin-top: 2.5rem;">
+      <h2>Insurance Claims</h2>
+      <a class="link-manage" routerLink="/admin/insurance">Manage Claims →</a>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon teal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-value">{{ totalClaims }}</span>
+          <span class="stat-label">Total Claims</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon green">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-value">{{ approvedClaims }}</span>
+          <span class="stat-label">Approved</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon yellow">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="12 1 12 23"></polyline>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-value">{{ totalReimbursement | currency:'TND ' }}</span>
+          <span class="stat-label">Total Reimbursement</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon orange">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-value">{{ pendingClaims }}</span>
+          <span class="stat-label">Pending</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Users Table -->
+    <div class="recent-section" *ngIf="users.length">
+      <h2>Recent Users</h2>
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Joined</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users | slice:0:5">
+              <td class="user-cell">
+                <div class="user-avatar-sm">{{ (user.firstName || '?')[0] }}</div>
+                <span>{{ user.firstName }} {{ user.lastName }}</span>
+              </td>
+              <td>{{ user.email }}</td>
+              <td><span class="role-badge" [attr.data-role]="user.role">{{ user.role }}</span></td>
+              <td>
+                <span class="status-dot" [class.active]="user.isActive" [class.inactive]="!user.isActive"></span>
+                {{ user.isActive ? 'Active' : 'Inactive' }}
+              </td>
+              <td>{{ user.createdAt | date:'mediumDate' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+</div>

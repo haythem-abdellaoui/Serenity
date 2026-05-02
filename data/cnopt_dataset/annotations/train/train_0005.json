@@ -1,0 +1,524 @@
+{
+  "id": "train_0005",
+  "image": "images/train/train_0005.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Pierre Garcia",
+    "registration_number": "RP-2026-779720",
+    "issue_date": "2025-11-18"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        90,
+        74,
+        146,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        183,
+        59,
+        273,
+        80
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        283.203125,
+        59,
+        416.203125,
+        80
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        425.921875,
+        59,
+        481.921875,
+        80
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        491.375,
+        59,
+        694.375,
+        80
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        183,
+        96,
+        259,
+        112
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        266.0,
+        96,
+        354.0,
+        112
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        183,
+        125,
+        253,
+        140
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        78,
+        231,
+        289,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        298.546875,
+        231,
+        536.546875,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AU",
+      "bbox": [
+        546.015625,
+        231,
+        590.015625,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TABLEAU",
+      "bbox": [
+        599.3125,
+        231,
+        739.3125,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DE",
+      "bbox": [
+        749.515625,
+        231,
+        791.515625,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L’ORDRE",
+      "bbox": [
+        801.640625,
+        231,
+        932.640625,
+        251
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        78,
+        302,
+        138,
+        320
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        145.984375,
+        303,
+        258.984375,
+        320
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        266.203125,
+        307,
+        311.203125,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        319.046875,
+        308,
+        327.046875,
+        320
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        78,
+        350,
+        134,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        141.640625,
+        351,
+        165.640625,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        173.4375,
+        349,
+        266.4375,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        273.6875,
+        356,
+        281.6875,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pierre",
+      "bbox": [
+        289,
+        350,
+        371,
+        368
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Garcia",
+      "bbox": [
+        379.4375,
+        350,
+        465.4375,
+        368
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        78,
+        397,
+        173,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        180.96875,
+        398,
+        328.96875,
+        421
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        336.8125,
+        404,
+        344.8125,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2026-779720",
+      "bbox": [
+        352,
+        398,
+        575,
+        416
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        78,
+        446,
+        202,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        209.984375,
+        445,
+        291.984375,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        299.265625,
+        445,
+        314.265625,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        321.59375,
+        446,
+        371.59375,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        378.8125,
+        446,
+        408.8125,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        416.4375,
+        451,
+        500.4375,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        507.59375,
+        446,
+        655.59375,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        663.4375,
+        451,
+        693.4375,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        699.984375,
+        446,
+        800.984375,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        78,
+        494,
+        135,
+        512
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        142.984375,
+        494,
+        290.984375,
+        517
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        298.828125,
+        500,
+        306.828125,
+        512
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-11-18",
+      "bbox": [
+        314,
+        494,
+        468,
+        512
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        78,
+        542,
+        133,
+        565
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        140.421875,
+        548,
+        148.421875,
+        560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        156,
+        542,
+        247,
+        560
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        78,
+        679,
+        117,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        123.859375,
+        678,
+        136.859375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nantes,",
+      "bbox": [
+        144.34375,
+        680,
+        229.34375,
+        698
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        235.84375,
+        679,
+        255.84375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-11-18",
+      "bbox": [
+        262.484375,
+        680,
+        390.484375,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        662,
+        737,
+        759,
+        756
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        764.859375,
+        736,
+        858.859375,
+        752
+      ],
+      "label": "O"
+    }
+  ]
+}

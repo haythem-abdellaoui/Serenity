@@ -1,0 +1,45 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  config:
+    import: optional:file:./.env[.properties],optional:file:./services/pharmacy-service/.env[.properties]
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  servlet:
+    multipart:
+      enabled: ${SPRING_SERVLET_MULTIPART_ENABLED}
+      max-file-size: ${SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE}
+      max-request-size: ${SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE}
+
+app:
+  upload:
+    dir: ${UPLOAD_DIR}
+  jwt:
+    secret: ${JWT_SECRET}
+  derbel-db:
+    url: ${DERBEL_DB_URL}
+    username: ${DERBEL_DB_USERNAME}
+    password: ${DERBEL_DB_PASSWORD}
+  user-service:
+    base-url: ${USER_SERVICE_BASE_URL}
+    internal-api-key: ${USER_SERVICE_INTERNAL_API_KEY}
+    me-url: ${USER_SERVICE_ME_URL}
+    admin-email: ${USER_SERVICE_ADMIN_EMAIL}
+    admin-password: ${USER_SERVICE_ADMIN_PASSWORD}
+  ai-service:
+    base-url: ${AI_SERVICE_BASE_URL}
+    internal-api-key: ${AI_SERVICE_INTERNAL_API_KEY}
+    verify-cnopt-path: ${AI_SERVICE_VERIFY_CNOPT_PATH}
+    verify-timeout-ms: ${AI_SERVICE_VERIFY_TIMEOUT_MS}

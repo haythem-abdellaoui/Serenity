@@ -1,0 +1,534 @@
+{
+  "id": "train_0034",
+  "image": "images/train/train_0034.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Antoine Michel",
+    "registration_number": "ORD-53-2025-4615",
+    "issue_date": "26 février 2023"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        84,
+        83,
+        140,
+        96
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        177,
+        68,
+        292,
+        89
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        301.3125,
+        68,
+        434.3125,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        444.03125,
+        68,
+        483.03125,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        492.8125,
+        68,
+        601.8125,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        611.1875,
+        68,
+        667.1875,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        676.640625,
+        68,
+        879.640625,
+        89
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        177,
+        105,
+        253,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        260.0,
+        105,
+        348.0,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        177,
+        134,
+        247,
+        149
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        72,
+        240,
+        250,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        259.9375,
+        240,
+        497.9375,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        72,
+        311,
+        132,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        139.984375,
+        312,
+        252.984375,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        260.203125,
+        316,
+        305.203125,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        313.046875,
+        317,
+        321.046875,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        72,
+        359,
+        128,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        135.640625,
+        360,
+        159.640625,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        167.4375,
+        358,
+        260.4375,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        267.6875,
+        365,
+        275.6875,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Antoine",
+      "bbox": [
+        283,
+        359,
+        388,
+        377
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Michel",
+      "bbox": [
+        396.59375,
+        359,
+        484.59375,
+        377
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        72,
+        406,
+        167,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        174.96875,
+        407,
+        322.96875,
+        430
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        330.8125,
+        413,
+        338.8125,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-53-2025-4615",
+      "bbox": [
+        346,
+        407,
+        602,
+        425
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        72,
+        455,
+        109,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        116.703125,
+        455,
+        223.703125,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        231.359375,
+        460,
+        261.359375,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        267.90625,
+        455,
+        360.90625,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        368.515625,
+        455,
+        398.515625,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        406.140625,
+        455,
+        488.140625,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        495.75,
+        455,
+        538.75,
+        473
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        545.875,
+        455,
+        708.875,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        72,
+        503,
+        129,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        136.984375,
+        503,
+        284.984375,
+        526
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        292.828125,
+        509,
+        300.828125,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "26",
+      "bbox": [
+        308,
+        503,
+        341,
+        521
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "février",
+      "bbox": [
+        349.765625,
+        502,
+        440.765625,
+        521
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2023",
+      "bbox": [
+        448.6875,
+        503,
+        515.6875,
+        521
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        72,
+        551,
+        127,
+        574
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        134.421875,
+        557,
+        142.421875,
+        569
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        150,
+        551,
+        241,
+        569
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        72,
+        688,
+        111,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        117.859375,
+        687,
+        130.859375,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bordeaux,",
+      "bbox": [
+        138.34375,
+        688,
+        250.34375,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        257.484375,
+        688,
+        277.484375,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "26",
+      "bbox": [
+        284.125,
+        689,
+        312.125,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "février",
+      "bbox": [
+        319.125,
+        687,
+        392.125,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023",
+      "bbox": [
+        398.15625,
+        689,
+        454.15625,
+        705
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        668,
+        746,
+        765,
+        765
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        770.859375,
+        745,
+        864.859375,
+        761
+      ],
+      "label": "O"
+    }
+  ]
+}

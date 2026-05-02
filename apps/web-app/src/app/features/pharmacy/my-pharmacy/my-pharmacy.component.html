@@ -1,0 +1,115 @@
+<div class="container">
+  <section class="page">
+    <header class="page-header">
+      <button type="button" class="btn btn-secondary" (click)="backToWorkspace()">Back</button>
+      <div class="header-copy">
+        <h1>Manage Pharmacy</h1>
+        <p>Create or update your pharmacy profile and legal information.</p>
+      </div>
+    </header>
+
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form card" *ngIf="!loading">
+      <div class="form-grid">
+        <label class="field span-2">
+          <span class="field-title">Pharmacy Name</span>
+          <input formControlName="name" type="text" />
+          <span class="field-error" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+            Pharmacy name is required.
+          </span>
+        </label>
+
+        <label class="field">
+          <span class="field-title">License Number</span>
+          <input formControlName="licenseNumber" type="text" />
+          <span class="field-error" *ngIf="form.get('licenseNumber')?.touched && form.get('licenseNumber')?.invalid">
+            License number is required.
+          </span>
+        </label>
+
+        <label class="field">
+          <span class="field-title">Phone</span>
+          <input formControlName="phone" type="tel" maxlength="8" inputmode="numeric" pattern="[0-9]*" />
+          <span class="field-error" *ngIf="form.get('phone')?.touched && form.get('phone')?.invalid">
+            Phone must be exactly 8 digits.
+          </span>
+        </label>
+
+        <div class="field span-2">
+          <span class="field-title">Opening Hours</span>
+          <div class="hours-grid">
+            <label class="mini-field">
+              <span>Open</span>
+              <input formControlName="openingFrom" type="time" />
+            </label>
+            <label class="mini-field">
+              <span>Close</span>
+              <input formControlName="openingTo" type="time" />
+            </label>
+          </div>
+          <p class="field-hint">Times are saved as HH:MM-HH:MM.</p>
+        </div>
+
+        <label class="field span-2">
+          <span class="field-title">Address</span>
+          <input formControlName="addressLine" type="text" />
+          <span class="field-error" *ngIf="form.get('addressLine')?.touched && form.get('addressLine')?.invalid">
+            Address is required.
+          </span>
+        </label>
+
+        <label class="field">
+          <span class="field-title">City</span>
+          <input formControlName="city" type="text" />
+          <span class="field-error" *ngIf="form.get('city')?.touched && form.get('city')?.invalid">
+            City is required.
+          </span>
+        </label>
+
+        <label class="field">
+          <span class="field-title">Governorate</span>
+          <input formControlName="governorate" type="text" />
+          <span class="field-error" *ngIf="form.get('governorate')?.touched && form.get('governorate')?.invalid">
+            Governorate is required.
+          </span>
+        </label>
+      </div>
+
+      <div class="location-block">
+        <p class="location-title">Exact Pharmacy Location</p>
+        <app-location-picker
+          [latitude]="form.get('latitude')?.value"
+          [longitude]="form.get('longitude')?.value"
+          (locationSelected)="onLocationSelected($event)">
+        </app-location-picker>
+        <p
+          class="field-error"
+          *ngIf="(form.get('latitude')?.touched || form.get('longitude')?.touched) && (form.get('latitude')?.invalid || form.get('longitude')?.invalid)">
+          Exact location is required to save your pharmacy.
+        </p>
+      </div>
+
+      <label class="checkbox-row">
+        <input formControlName="supportsEmergency" type="checkbox" />
+        Supports emergency pickup
+      </label>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit" [disabled]="saving || form.invalid">
+          {{ saving ? 'Saving...' : 'Save Pharmacy' }}
+        </button>
+        <button
+          class="btn btn-danger"
+          type="button"
+          *ngIf="hasExistingPharmacy"
+          [disabled]="saving || deleting"
+          (click)="deletePharmacy()">
+          {{ deleting ? 'Deleting...' : 'Delete Pharmacy' }}
+        </button>
+        <button class="btn btn-secondary" type="button" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </section>
+</div>

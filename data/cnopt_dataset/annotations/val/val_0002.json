@@ -1,0 +1,474 @@
+{
+  "id": "val_0002",
+  "image": "images/val/val_0002.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Antoine Petit",
+    "registration_number": "FR-PHAR-388763",
+    "issue_date": "29/06/2025"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        83,
+        89,
+        139,
+        102
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        176,
+        74,
+        266,
+        95
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        276.203125,
+        74,
+        332.203125,
+        95
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        341.65625,
+        74,
+        544.65625,
+        95
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        176,
+        111,
+        252,
+        127
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        259.0,
+        111,
+        347.0,
+        127
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        176,
+        140,
+        246,
+        155
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        71,
+        246,
+        282,
+        266
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        291.546875,
+        246,
+        529.546875,
+        266
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        71,
+        317,
+        131,
+        335
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        138.984375,
+        318,
+        251.984375,
+        335
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        259.203125,
+        322,
+        304.203125,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        312.046875,
+        323,
+        320.046875,
+        335
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        71,
+        365,
+        127,
+        383
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        134.640625,
+        366,
+        158.640625,
+        383
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        166.4375,
+        364,
+        259.4375,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        266.6875,
+        371,
+        274.6875,
+        383
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Antoine",
+      "bbox": [
+        282,
+        365,
+        387,
+        383
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Petit",
+      "bbox": [
+        395.59375,
+        365,
+        460.59375,
+        383
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        71,
+        412,
+        166,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        173.96875,
+        413,
+        321.96875,
+        436
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        329.8125,
+        419,
+        337.8125,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-388763",
+      "bbox": [
+        345,
+        413,
+        575,
+        431
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        71,
+        461,
+        108,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        115.703125,
+        460,
+        285.703125,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        292.875,
+        461,
+        399.875,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        407.53125,
+        466,
+        437.53125,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        444.078125,
+        461,
+        537.078125,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        544.6875,
+        461,
+        574.6875,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        582.3125,
+        461,
+        664.3125,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        671.921875,
+        461,
+        714.921875,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        722.046875,
+        461,
+        885.046875,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        71,
+        509,
+        128,
+        527
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        135.984375,
+        509,
+        283.984375,
+        532
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        291.828125,
+        515,
+        299.828125,
+        527
+      ],
+      "label": "O"
+    },
+    {
+      "text": "29/06/2025",
+      "bbox": [
+        307,
+        509,
+        458,
+        529
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        71,
+        557,
+        126,
+        580
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        133.421875,
+        563,
+        141.421875,
+        575
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        149,
+        557,
+        240,
+        575
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        71,
+        694,
+        110,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        116.859375,
+        693,
+        129.859375,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bordeaux,",
+      "bbox": [
+        137.34375,
+        694,
+        249.34375,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        256.484375,
+        694,
+        276.484375,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "29/06/2025",
+      "bbox": [
+        283.125,
+        695,
+        410.125,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        669,
+        752,
+        766,
+        771
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        771.859375,
+        751,
+        865.859375,
+        767
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+<div class="container">
+  <section class="page">
+    <header class="page-header">
+      <div>
+        <h1>Patient Prescriptions</h1>
+        <p>Manage your default pharmacy and monitor your prescription flow in one place.</p>
+      </div>
+    </header>
+
+    <article class="card application-status-card" *ngIf="showApplicationCard">
+      <div class="application-status-head">
+        <h3>Pharmacist Application</h3>
+        <button type="button" class="btn btn-secondary" (click)="openApplyAsPharmacist()">
+          {{ pharmacyApplication ? 'Open Application' : 'Apply As Pharmacist' }}
+        </button>
+      </div>
+
+      <ng-container *ngIf="pharmacyApplication as application">
+        <p class="status-row">
+          Status:
+          <span
+            class="status-chip"
+            [class.submitted]="application.status === 'SUBMITTED'"
+            [class.rejected]="application.status === 'REJECTED'"
+            [class.approved]="application.status === 'APPROVED'">
+            {{ application.status }}
+          </span>
+        </p>
+        <p class="meta" *ngIf="application.submittedAt">Submitted: {{ application.submittedAt | date: 'medium' }}</p>
+        <p class="meta" *ngIf="application.reviewedAt">Reviewed: {{ application.reviewedAt | date: 'medium' }}</p>
+        <p class="application-comment" *ngIf="application.reviewComment">Admin comment: {{ application.reviewComment }}</p>
+      </ng-container>
+    </article>
+
+    <article class="card default-card" *ngIf="defaultPharmacy as selected; else noDefault">
+      <div class="default-head">
+        <h3>Current Default Pharmacy</h3>
+        <span class="default-chip">Active</span>
+      </div>
+      <p class="name">{{ selected.pharmacyName }}</p>
+      <p class="meta" *ngIf="selected.addressLine">{{ selected.addressLine }}</p>
+      <p class="meta" *ngIf="selected.city || selected.governorate">
+        {{ selected.city || 'Unknown city' }}{{ selected.city && selected.governorate ? ', ' : '' }}{{ selected.governorate || '' }}
+      </p>
+      <div class="default-meta" *ngIf="selected.openingHours || selected.phone">
+        <span *ngIf="selected.openingHours">Hours: {{ selected.openingHours }}</span>
+        <span *ngIf="selected.phone">Phone: {{ selected.phone }}</span>
+      </div>
+    </article>
+
+    <ng-template #noDefault>
+      <article class="card default-card empty">
+        <h3>No default pharmacy selected yet</h3>
+        <p>Select one now so your prescriptions can be processed and prepared for pickup.</p>
+      </article>
+    </ng-template>
+
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div class="page-columns">
+      <div class="left-column">
+        <article class="card search-panel-card">
+          <h3>Find a Pharmacy</h3>
+          <div class="search-panel-layout">
+            <div class="search-controls">
+              <label class="input-row">
+                <span class="input-icon location-icon" aria-hidden="true"></span>
+                <input type="text" [(ngModel)]="cityFilter" placeholder="City" />
+                <span class="input-icon search-icon end" aria-hidden="true"></span>
+              </label>
+
+              <label class="input-row">
+                <span class="input-icon search-icon" aria-hidden="true"></span>
+                <input type="text" [(ngModel)]="governorateFilter" placeholder="Governorate" />
+                <span class="input-icon search-icon end" aria-hidden="true"></span>
+              </label>
+
+              <button type="button" class="btn btn-primary btn-location" (click)="useMyLocation()" [disabled]="nearestLoading || saving">
+                {{ nearestLoading ? 'Checking location...' : 'Use My Location' }}
+              </button>
+
+              <button type="button" class="btn btn-search" (click)="loadPharmacies()" [disabled]="loading || saving">
+                {{ loading ? 'Loading...' : 'Search' }}
+              </button>
+
+              <p class="hint">Map updates only after search/location to keep requests light.</p>
+            </div>
+
+            <div class="search-results-pane">
+              <div class="results-scroll" *ngIf="!isCandidatesLoading() && candidateResults.length > 0">
+                <div class="candidate-results">
+                  <article class="candidate" *ngFor="let item of candidateResults; trackBy: trackByCandidateId">
+                    <div>
+                      <div class="candidate-head">
+                        <p class="candidate-name">{{ item.name }}</p>
+                        <span class="distance-pill" *ngIf="item.distanceKm != null">{{ formatDistanceKm(item.distanceKm) }}</span>
+                      </div>
+                      <p class="candidate-meta" *ngIf="item.addressLine || item.city">
+                        {{ item.addressLine || item.city }}
+                      </p>
+                      <p class="candidate-sub" *ngIf="item.city || item.governorate">
+                        {{ item.city || 'Unknown city' }}{{ item.city && item.governorate ? ', ' : '' }}{{ item.governorate || '' }}
+                      </p>
+                    </div>
+                    <button
+                      class="btn btn-secondary"
+                      type="button"
+                      (click)="setDefault(item.id)"
+                      [disabled]="saving || isDefault(item.id)">
+                      {{ isDefault(item.id) ? 'Default' : 'Set Default' }}
+                    </button>
+                  </article>
+                </div>
+              </div>
+
+              <p class="hint" *ngIf="hasSearchedCandidates && isCandidatesLoading()">Loading pharmacies...</p>
+              <p class="hint" *ngIf="hasSearchedCandidates && !isCandidatesLoading() && candidateResults.length === 0">No pharmacies found for your search.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="right-column">
+        <article class="card prescriptions-card">
+          <div class="prescriptions-head">
+            <h2>My Prescriptions</h2>
+            <p>Track statuses and open each prescription on a dedicated details page.</p>
+          </div>
+
+          <p class="error" *ngIf="prescriptionsErrorMessage">{{ prescriptionsErrorMessage }}</p>
+
+          <div class="prescriptions-list" *ngIf="!prescriptionsLoading && prescriptionCards.length > 0">
+            <article
+              class="prescription-row"
+              *ngFor="let card of prescriptionCards; trackBy: trackByPrescriptionId"
+              tabindex="0"
+              (click)="openPrescriptionDetails(card)"
+              (keyup.enter)="openPrescriptionDetails(card)">
+              <div class="row-main">
+                <h3>
+                  {{ card.primaryLine.medicationName }}
+                  <small *ngIf="card.extraLinesCount > 0">+{{ card.extraLinesCount }} more</small>
+                </h3>
+                <span class="status" [class]="'status ' + card.raw.status.toLowerCase()">{{ card.raw.status }}</span>
+              </div>
+              <p class="row-meta">Pharmacy: {{ card.raw.pharmacyName || 'Not assigned yet' }}</p>
+              <p class="detail-cta">View full details</p>
+            </article>
+          </div>
+
+          <p class="hint" *ngIf="!prescriptionsLoading && prescriptionCards.length === 0">No prescriptions yet.</p>
+          <p class="hint" *ngIf="prescriptionsLoading">Loading prescriptions...</p>
+        </article>
+      </div>
+    </div>
+
+    <article class="card map-card bottom-map" *ngIf="hasSearchedCandidates">
+      <h3>Pharmacy Map</h3>
+      <p class="map-message">{{ mapMessage }}</p>
+      <app-location-picker [readonly]="true" [markers]="mapMarkers"></app-location-picker>
+    </article>
+  </section>
+</div>

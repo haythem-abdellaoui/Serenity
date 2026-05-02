@@ -1,0 +1,524 @@
+{
+  "id": "train_0042",
+  "image": "images/train/train_0042.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Belgique",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Pierre Dupont",
+    "registration_number": "RP-2023-728841",
+    "issue_date": "13 janvier 2025"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        85,
+        73,
+        141,
+        86
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        178,
+        58,
+        268,
+        79
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        278.203125,
+        58,
+        411.203125,
+        79
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        420.921875,
+        58,
+        476.921875,
+        79
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        486.375,
+        58,
+        689.375,
+        79
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        178,
+        95,
+        254,
+        111
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        261.0,
+        95,
+        349.0,
+        111
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Belgique",
+      "bbox": [
+        178,
+        123,
+        270,
+        143
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        73,
+        230,
+        251,
+        250
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        260.9375,
+        230,
+        498.9375,
+        250
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        73,
+        301,
+        133,
+        319
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        140.984375,
+        302,
+        253.984375,
+        319
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        261.203125,
+        306,
+        306.203125,
+        324
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        314.046875,
+        307,
+        322.046875,
+        319
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        73,
+        349,
+        129,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        136.640625,
+        350,
+        160.640625,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        168.4375,
+        348,
+        261.4375,
+        372
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        268.6875,
+        355,
+        276.6875,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pierre",
+      "bbox": [
+        284,
+        349,
+        366,
+        367
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Dupont",
+      "bbox": [
+        374.4375,
+        349,
+        473.4375,
+        372
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        73,
+        396,
+        168,
+        415
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        175.96875,
+        397,
+        323.96875,
+        420
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        331.8125,
+        403,
+        339.8125,
+        415
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RP-2023-728841",
+      "bbox": [
+        347,
+        397,
+        570,
+        415
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        73,
+        445,
+        110,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        117.703125,
+        444,
+        287.703125,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        294.875,
+        445,
+        401.875,
+        466
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        409.53125,
+        450,
+        439.53125,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        446.078125,
+        445,
+        539.078125,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        546.6875,
+        445,
+        576.6875,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        584.3125,
+        445,
+        666.3125,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        673.921875,
+        445,
+        716.921875,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        724.046875,
+        445,
+        887.046875,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        73,
+        493,
+        130,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        137.984375,
+        493,
+        285.984375,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        293.828125,
+        499,
+        301.828125,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "13",
+      "bbox": [
+        309,
+        493,
+        342,
+        511
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "janvier",
+      "bbox": [
+        349.765625,
+        493,
+        444.765625,
+        516
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2025",
+      "bbox": [
+        452.65625,
+        493,
+        519.65625,
+        511
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        73,
+        541,
+        128,
+        564
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        135.421875,
+        547,
+        143.421875,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Belgique",
+      "bbox": [
+        151,
+        541,
+        270,
+        564
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        73,
+        678,
+        112,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        118.859375,
+        677,
+        131.859375,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Toulouse,",
+      "bbox": [
+        138.34375,
+        678,
+        242.34375,
+        697
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        248.9375,
+        678,
+        268.9375,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "13",
+      "bbox": [
+        275.578125,
+        679,
+        303.578125,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "janvier",
+      "bbox": [
+        309.578125,
+        678,
+        386.578125,
+        700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025",
+      "bbox": [
+        392.8125,
+        679,
+        448.8125,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        667,
+        736,
+        764,
+        755
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        769.859375,
+        735,
+        863.859375,
+        751
+      ],
+      "label": "O"
+    }
+  ]
+}

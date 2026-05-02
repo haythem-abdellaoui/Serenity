@@ -1,0 +1,147 @@
+<section class="saas-page">
+  <header class="saas-page-header">
+    <div class="saas-page-title">
+      <h1>Patients</h1>
+      <p class="saas-lead">Choose a patient to view and manage their medical records and prescriptions.</p>
+    </div>
+    <div class="patient-counter" *ngIf="!loading && patients.length">
+      <span class="counter-number">{{ patients.length }}</span>
+      <span class="counter-label">Total Patients</span>
+    </div>
+  </header>
+
+  <!-- Search bar -->
+  <div class="search-bar">
+    <div class="search-icon-wrap">
+      <span class="material-icons">search</span>
+    </div>
+    <div class="search-inputs">
+      <input
+        type="text"
+        [(ngModel)]="searchName"
+        placeholder="Search patients by name..."
+        class="search-input"
+        (keyup.enter)="search()" />
+    </div>
+    <div class="search-actions">
+      <button type="button" class="btn btn-primary" (click)="search()" [disabled]="searchLoading">
+        <span class="material-icons">search</span> Search
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="clearSearch()" *ngIf="isSearching">
+        <span class="material-icons">close</span> Clear
+      </button>
+    </div>
+  </div>
+
+  <!-- Search results -->
+  <ng-container *ngIf="isSearching">
+    <div class="saas-card" *ngIf="searchLoading">
+      <div class="saas-loading">
+        <span class="saas-spinner" aria-hidden="true"></span>
+        <span>Searching…</span>
+      </div>
+    </div>
+
+    <div class="empty-state" *ngIf="!searchLoading && !searchResults.length">
+      <div class="empty-icon">🔍</div>
+      <h2>No results found</h2>
+      <p>No patients match "<strong>{{ searchName }}</strong>". Try a different search.</p>
+    </div>
+
+    <div *ngIf="!searchLoading && searchResults.length">
+      <p class="search-count">
+        <span class="material-icons">check_circle</span>
+        {{ searchResults.length }} result(s) for "<strong>{{ searchName }}</strong>"
+      </p>
+      <div class="patient-grid">
+        <article class="patient-card" *ngFor="let p of searchResults" [routerLink]="[p.id, 'records']">
+          <div class="card-top">
+            <div class="avatar" [ngClass]="getAvatarClass(p)">
+              {{ getInitials(p) }}
+            </div>
+            <div class="card-identity">
+              <div class="patient-name">{{ p.firstName }} {{ p.lastName }}</div>
+              <div class="patient-gender" *ngIf="p.gender">{{ p.gender }}</div>
+            </div>
+          </div>
+          <div class="card-details">
+            <div class="detail-item" *ngIf="p.phone">
+              <span class="material-icons detail-icon">phone</span>
+              <span>{{ p.phone }}</span>
+            </div>
+            <div class="detail-item" *ngIf="p.dateOfBirth">
+              <span class="material-icons detail-icon">cake</span>
+              <span>{{ p.dateOfBirth | date:'mediumDate' }}</span>
+            </div>
+            <div class="detail-item" *ngIf="p.bloodType">
+              <span class="material-icons detail-icon">bloodtype</span>
+              <span class="blood-badge">{{ p.bloodType }}</span>
+            </div>
+            <div class="detail-item" *ngIf="p.allergies">
+              <span class="material-icons detail-icon warning">warning</span>
+              <span class="allergy-text">{{ p.allergies }}</span>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <a [routerLink]="[p.id, 'records']" class="btn-records">
+              <span class="material-icons">folder_open</span> View Records
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Normal list (hidden during search) -->
+  <ng-container *ngIf="!isSearching">
+    <div class="saas-card" *ngIf="loading">
+      <div class="saas-loading">
+        <span class="saas-spinner" aria-hidden="true"></span>
+        <span>Loading patients…</span>
+      </div>
+    </div>
+
+    <div class="empty-state" *ngIf="!loading && !patients.length">
+      <div class="empty-icon">👤</div>
+      <h2>No patients yet</h2>
+      <p>No patients are currently registered in the database.</p>
+    </div>
+
+    <div class="patient-grid" *ngIf="!loading && patients.length">
+      <article class="patient-card" *ngFor="let p of patients" [routerLink]="[p.id, 'records']">
+        <div class="card-top">
+          <div class="avatar" [ngClass]="getAvatarClass(p)">
+            {{ getInitials(p) }}
+          </div>
+          <div class="card-identity">
+            <div class="patient-name">{{ p.firstName }} {{ p.lastName }}</div>
+            <div class="patient-gender" *ngIf="p.gender">{{ p.gender }}</div>
+          </div>
+        </div>
+        <div class="card-details">
+          <div class="detail-item" *ngIf="p.phone">
+            <span class="material-icons detail-icon">phone</span>
+            <span>{{ p.phone }}</span>
+          </div>
+          <div class="detail-item" *ngIf="p.dateOfBirth">
+            <span class="material-icons detail-icon">cake</span>
+            <span>{{ p.dateOfBirth | date:'mediumDate' }}</span>
+          </div>
+          <div class="detail-item" *ngIf="p.bloodType">
+            <span class="material-icons detail-icon">bloodtype</span>
+            <span class="blood-badge">{{ p.bloodType }}</span>
+          </div>
+          <div class="detail-item" *ngIf="p.allergies">
+            <span class="material-icons detail-icon warning">warning</span>
+            <span class="allergy-text">{{ p.allergies }}</span>
+          </div>
+        </div>
+        <div class="card-bottom">
+          <a [routerLink]="[p.id, 'records']" class="btn-records">
+            <span class="material-icons">folder_open</span> View Records
+          </a>
+        </div>
+      </article>
+    </div>
+  </ng-container>
+</section>

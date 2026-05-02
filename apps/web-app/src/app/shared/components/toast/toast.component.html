@@ -1,0 +1,6 @@
+<div class="toast-wrap" *ngIf="message$ | async as n">
+  <div class="toast" [ngClass]="'toast-' + n.type" role="alert">
+    <span class="toast-text">{{ n.message }}</span>
+    <button type="button" class="toast-close" (click)="dismiss()" aria-label="Fermer">×</button>
+  </div>
+</div>

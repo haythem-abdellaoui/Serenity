@@ -1,0 +1,147 @@
+<section class="saas-page">
+  <header class="saas-page-header">
+    <div class="saas-page-title">
+      <h1>Prescriptions</h1>
+      <p class="saas-lead">Medications and instructions linked to this medical record.</p>
+    </div>
+    <div class="saas-toolbar" *ngIf="patientId && recordId">
+      <a [routerLink]="['/patients', patientId, 'records']" class="btn btn-secondary btn-lg">&larr; Records</a>
+      <a [routerLink]="['new']" class="btn btn-primary btn-lg">+ New prescription</a>
+    </div>
+  </header>
+
+  <nav class="saas-breadcrumb" *ngIf="patientId && recordId" aria-label="Breadcrumb">
+    <a routerLink="/patients">Patients</a>
+    <span class="sep">/</span>
+    <a [routerLink]="['/patients', patientId]">Patient</a>
+    <span class="sep">/</span>
+    <a [routerLink]="['/patients', patientId, 'records']">Records</a>
+    <span class="sep">/</span>
+    <span class="current">Prescriptions</span>
+  </nav>
+
+  <!-- ═══ Keywords Filter Toggle ═══ -->
+  <div class="filter-bar" *ngIf="patientId">
+    <button type="button" class="filter-toggle" [class.active]="filterCriticalOnly"
+      (click)="toggleCriticalPrescriptions()">
+      🔴 {{ filterCriticalOnly ? 'Show all prescriptions' : 'Show critical only (HIGH severity)' }}
+    </button>
+
+  </div>
+
+  <!-- ═══ SKELETON LOADING ═══ -->
+  <div class="rx-cards" *ngIf="loading">
+    <div class="rx-ticket skeleton-ticket" *ngFor="let s of [1,2]">
+      <div class="ticket-perforation"></div>
+      <div class="ticket-top">
+        <div class="skeleton-line skeleton-badge-line"></div>
+        <div class="skeleton-line skeleton-date-line"></div>
+      </div>
+      <div class="ticket-body">
+        <div class="skeleton-line skeleton-title-line"></div>
+        <div class="skeleton-pill-row">
+          <div class="skeleton-pill"></div>
+          <div class="skeleton-pill"></div>
+        </div>
+        <div class="skeleton-line skeleton-meta-line"></div>
+        <div class="skeleton-line skeleton-meta-line short"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ EMPTY STATE ═══ -->
+  <div class="saas-card saas-empty" *ngIf="!loading && !prescriptions.length">
+    <div class="saas-empty-icon" aria-hidden="true">&#x1F48A;</div>
+    <h2>No prescriptions</h2>
+    <p>Add medications, dosage and duration to complete this record.</p>
+    <div class="saas-empty-actions" *ngIf="patientId && recordId">
+      <a [routerLink]="['new']" class="btn btn-primary">Create prescription</a>
+    </div>
+  </div>
+
+  <!-- ═══ PRESCRIPTION TICKETS ═══ -->
+  <div class="rx-cards" *ngIf="!loading && prescriptions.length">
+    <article class="rx-ticket" *ngFor="let p of prescriptions">
+
+      <!-- Perforated separator -->
+      <div class="ticket-perforation"></div>
+
+      <!-- Top section: status + date -->
+      <div class="ticket-top">
+        <span class="badge-pill" [ngClass]="{
+          'badge-active': p.status === 'ACTIVE',
+          'badge-completed': p.status === 'COMPLETED',
+          'badge-cancelled': p.status === 'CANCELLED'
+        }">{{ p.status }}</span>
+        <span class="rx-date">{{ p.createdAt | date:'mediumDate' }}</span>
+      </div>
+
+      <!-- Body: medications as pill chips -->
+      <div class="ticket-body">
+        <div class="rx-section-label">💊 Medications ({{ p.items.length }})</div>
+
+        <div class="med-chips" *ngIf="p.items?.length">
+          <div class="med-chip" *ngFor="let item of p.items">
+            <span class="chip-icon">💊</span>
+            <div class="chip-info">
+              <span class="chip-name">{{ item.medicine.name }}
+                <span *ngIf="item.isAiRecommended"
+                  style="background: linear-gradient(135deg, #6b11ff, #8ec5fc); color: #fff; font-size: 0.65rem; padding: 2px 6px; border-radius: 8px; margin-left: 5px; font-weight: 600; vertical-align: middle;">🤖
+                  AI</span>
+              </span>
+              <span class="chip-dosage">{{ item.dosage }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details expandable per item -->
+        <div class="med-details" *ngFor="let item of p.items">
+          <div class="med-detail-name">{{ item.medicine.name }}</div>
+          <div class="rx-meta">
+            <span class="meta-item"><span class="meta-label">Frequency</span><span class="meta-value">{{ item.frequency
+                }}</span></span>
+            <span class="meta-sep" aria-hidden="true">&middot;</span>
+            <span class="meta-item"><span class="meta-label">Qty</span><span class="meta-value">{{ item.quantity
+                }}</span></span>
+            <span class="meta-sep" aria-hidden="true">&middot;</span>
+            <span class="meta-item"><span class="meta-label">Start</span><span class="meta-value">{{ item.startDate
+                }}</span></span>
+            <span class="meta-sep" aria-hidden="true">&middot;</span>
+            <span class="meta-item"><span class="meta-label">End</span><span class="meta-value">{{ item.endDate || '—'
+                }}</span></span>
+          </div>
+          <div class="rx-instructions" *ngIf="item.instructions">
+            <span class="meta-label">Instructions:</span> {{ item.instructions }}
+          </div>
+        </div>
+
+        <!-- Cloudinary Image Preview -->
+        <div class="rx-image-preview" *ngIf="p.imageUrl"
+          style="margin-top: 15px; border-top: 1px dashed #eee; padding-top: 15px;">
+          <div class="rx-section-label">📸 Original Prescription Image</div>
+          <a [href]="p.imageUrl" target="_blank" style="display: block; margin-top: 10px;">
+            <img [src]="p.imageUrl" alt="Prescription Image"
+              style="max-width: 100%; max-height: 200px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;"
+              onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"
+              onfocus="this.style.transform='scale(1.02)'" onblur="this.style.transform='scale(1)'" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Actions footer -->
+      <div class="rx-actions">
+        <button type="button" class="btn-pdf-shine" (click)="downloadPdf(p.id)">
+          <span class="pdf-icon">📄</span> PDF / QR Code
+          <span class="shine-effect"></span>
+        </button>
+        <a [routerLink]="[p.id, 'edit']" class="btn btn-secondary btn-sm">Edit</a>
+        <button type="button" class="btn btn-danger btn-sm" (click)="openDeletePrescription(p.id)">Delete</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<app-confirm-dialog [open]="!!deleteConfirm" title="Delete this prescription?"
+  message="This action is permanent. The prescription will be removed from the record." confirmLabel="Delete"
+  cancelLabel="Cancel" [danger]="true" (confirm)="confirmDeletePrescription()" (cancel)="closeDeleteConfirm()">
+</app-confirm-dialog>

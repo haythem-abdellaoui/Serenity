@@ -1,0 +1,79 @@
+<div class="game-panel">
+  <div class="game-header">
+    <span class="game-title">Take a Moment</span>
+    <span class="game-subtitle">Relax while you sign in</span>
+  </div>
+
+  <div class="game-tabs">
+    <button class="tab-btn" [class.active]="activeTab === 'breathe'" (click)="selectTab('breathe')">
+      <span class="tab-icon">🌬️</span> Breathe
+    </button>
+    <button class="tab-btn" [class.active]="activeTab === 'garden'" (click)="selectTab('garden')">
+      <span class="tab-icon">🌱</span> Garden
+    </button>
+    <button class="tab-btn" [class.active]="activeTab === 'match'" (click)="selectTab('match')">
+      <span class="tab-icon">🧩</span> Match
+    </button>
+  </div>
+
+  <div class="game-area">
+    <!-- Breathing Exercise -->
+    <div *ngIf="activeTab === 'breathe'" class="breathe-game">
+      <div class="breath-circle-wrapper">
+        <div class="breath-circle" [ngClass]="'phase-' + breathPhase">
+          <div class="breath-inner">
+            <span class="breath-icon">🍃</span>
+          </div>
+        </div>
+      </div>
+      <span class="breath-label">{{ breathLabel }}</span>
+      <span class="breath-hint">Follow the circle and relax</span>
+    </div>
+
+    <!-- Zen Garden -->
+    <div *ngIf="activeTab === 'garden'" class="garden-game">
+      <div class="garden-area" (click)="onGardenClick($event)" (keydown.enter)="onGardenKeyPlant()" tabindex="0" role="button">
+        <span *ngIf="gardenPlants.length === 0" class="garden-hint">Click anywhere to plant</span>
+        <span
+          *ngFor="let plant of gardenPlants"
+          class="garden-plant"
+          [style.left.%]="plant.x"
+          [style.top.%]="plant.y"
+        >{{ plant.emoji }}</span>
+      </div>
+      <button class="btn-clear" (click)="clearGarden()" *ngIf="gardenPlants.length > 0">Clear garden</button>
+    </div>
+
+    <!-- Memory Match -->
+    <div *ngIf="activeTab === 'match'" class="match-game">
+      <div class="match-header">
+        <span class="match-moves">Moves: {{ memoryMoves }}</span>
+        <button class="btn-new" (click)="initMemoryGame()">New game</button>
+      </div>
+
+      <div *ngIf="memoryWon" class="match-win">
+        <span class="win-text">You matched them all!</span>
+        <span class="win-moves">Completed in {{ memoryMoves }} moves</span>
+        <button class="btn-new" (click)="initMemoryGame()">Play again</button>
+      </div>
+
+      <div class="match-grid" [class.won]="memoryWon">
+        <div
+          *ngFor="let card of memoryCards"
+          class="match-card"
+          [class.flipped]="card.flipped"
+          [class.matched]="card.matched"
+          (click)="flipCard(card)"
+          (keydown.enter)="flipCard(card)"
+          tabindex="0"
+          role="button"
+        >
+          <div class="card-inner">
+            <div class="card-front">?</div>
+            <div class="card-back">{{ card.emoji }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

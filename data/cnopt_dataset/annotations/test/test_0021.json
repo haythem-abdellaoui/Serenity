@@ -1,0 +1,474 @@
+{
+  "id": "test_0021",
+  "image": "images/test/test_0021.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "Maroc",
+  "entities": {
+    "authority_name": "Ordre National des Pharmaciens",
+    "pharmacist_name": "Karim Richard",
+    "registration_number": "FR-PHAR-266061",
+    "issue_date": "25/05/2023"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        91,
+        92,
+        147,
+        105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        184,
+        77,
+        274,
+        98
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        284.203125,
+        77,
+        417.203125,
+        98
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        426.921875,
+        77,
+        482.921875,
+        98
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        492.375,
+        77,
+        695.375,
+        98
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        184,
+        114,
+        260,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        267.0,
+        114,
+        355.0,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maroc",
+      "bbox": [
+        184,
+        143,
+        248,
+        158
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        79,
+        249,
+        290,
+        269
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        299.546875,
+        249,
+        537.546875,
+        269
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        79,
+        320,
+        139,
+        338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        146.984375,
+        321,
+        259.984375,
+        338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        267.203125,
+        325,
+        312.203125,
+        343
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        320.046875,
+        326,
+        328.046875,
+        338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        79,
+        368,
+        135,
+        386
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        142.640625,
+        369,
+        166.640625,
+        386
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        174.4375,
+        367,
+        267.4375,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        274.6875,
+        374,
+        282.6875,
+        386
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Karim",
+      "bbox": [
+        290,
+        368,
+        370,
+        386
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Richard",
+      "bbox": [
+        378.25,
+        368,
+        481.25,
+        386
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        79,
+        415,
+        174,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        181.96875,
+        416,
+        329.96875,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        337.8125,
+        422,
+        345.8125,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-266061",
+      "bbox": [
+        353,
+        416,
+        583,
+        434
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        79,
+        464,
+        116,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        123.703125,
+        464,
+        230.703125,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        238.359375,
+        469,
+        268.359375,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        274.90625,
+        464,
+        367.90625,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        375.515625,
+        464,
+        405.515625,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        413.140625,
+        464,
+        495.140625,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        502.75,
+        464,
+        545.75,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        552.875,
+        464,
+        715.875,
+        487
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        79,
+        512,
+        136,
+        530
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        143.984375,
+        512,
+        291.984375,
+        535
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        299.828125,
+        518,
+        307.828125,
+        530
+      ],
+      "label": "O"
+    },
+    {
+      "text": "25/05/2023",
+      "bbox": [
+        315,
+        512,
+        466,
+        532
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        79,
+        560,
+        134,
+        583
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        141.421875,
+        566,
+        149.421875,
+        578
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maroc",
+      "bbox": [
+        157,
+        560,
+        240,
+        578
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        79,
+        697,
+        118,
+        714
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        124.859375,
+        696,
+        137.859375,
+        714
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Paris,",
+      "bbox": [
+        145.34375,
+        697,
+        204.34375,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        211.734375,
+        697,
+        231.734375,
+        714
+      ],
+      "label": "O"
+    },
+    {
+      "text": "25/05/2023",
+      "bbox": [
+        238.375,
+        698,
+        365.375,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        661,
+        755,
+        758,
+        774
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        763.859375,
+        754,
+        857.859375,
+        770
+      ],
+      "label": "O"
+    }
+  ]
+}

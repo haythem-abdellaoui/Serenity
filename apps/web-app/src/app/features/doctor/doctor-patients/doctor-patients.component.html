@@ -1,0 +1,37 @@
+<div class="doctor-patients container">
+  <div class="header">
+    <div>
+      <p class="eyebrow">Doctor workspace</p>
+      <h1>My Patients</h1>
+      <p class="sub">See who you are monitoring, with names instead of IDs.</p>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="state loading">
+    <div class="spinner"></div>
+    <p>Loading patients...</p>
+  </div>
+
+  <div *ngIf="errorMessage && !loading" class="state error">
+    <span class="material-icons">error</span>
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="emptyState && !loading" class="state empty">
+    <div class="empty-icon">🧘‍♂️</div>
+    <h3>No patients assigned yet</h3>
+    <p>Once patients are assigned to you, they will appear here with their names.</p>
+  </div>
+
+  <div *ngIf="!loading && !emptyState" class="patient-grid">
+    <div *ngFor="let patient of patients" class="patient-card">
+      <div class="avatar-circle">{{ (patient.firstName || '').charAt(0) }}{{ (patient.lastName || '').charAt(0) }}</div>
+      <div class="info">
+        <div class="name">{{ patient.fullName || (patient.firstName + ' ' + patient.lastName) }}</div>
+        <div class="email">{{ patient.email }}</div>
+        <div class="meta">Patient ID #{{ patient.id }}</div>
+        <div class="assigned">Assigned doctor: {{ patient.assignedDoctorName || 'You' }}</div>
+      </div>
+    </div>
+  </div>
+</div>

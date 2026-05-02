@@ -1,0 +1,101 @@
+<div class="doctor-container">
+  <div class="doctor-card card">
+    <div class="doctor-header">
+      <div class="doctor-icon">
+        <span class="material-icons">local_hospital</span>
+      </div>
+      <h1>Doctor Profile Setup</h1>
+      <p>Complete your professional information</p>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-error">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+      <!-- Speciality Input -->
+      <div class="form-group">
+        <label for="speciality">Professional Speciality</label>
+        <input
+          id="speciality"
+          type="text"
+          formControlName="speciality"
+          placeholder="Fill in your speciality"
+          class="input-animated"
+        />
+        <div class="error-message" *ngIf="doctorForm.get('speciality')?.touched && doctorForm.get('speciality')?.hasError('required')">
+          Speciality is required
+        </div>
+        <div class="error-message" *ngIf="doctorForm.get('speciality')?.touched && doctorForm.get('speciality')?.hasError('minlength')">
+          Minimum 2 characters required
+        </div>
+        <div class="error-message" *ngIf="doctorForm.get('speciality')?.touched && doctorForm.get('speciality')?.hasError('pattern')">
+          Only letters and spaces are allowed
+        </div>
+      </div>
+
+      <!-- Image Upload Section -->
+      <div class="form-group">
+        <label for="faceImage">Professional Photo</label>
+        <p class="upload-hint">Please upload your face image</p>
+        
+        <input
+          #fileInput
+          type="file"
+          id="faceImage"
+          accept="image/*"
+          (change)="onFileSelected($event)"
+          class="file-input-hidden"
+        />
+
+        <!-- Image Preview -->
+        <div class="image-preview-container" *ngIf="selectedImage; else noImage">
+          <div class="image-preview-wrapper">
+            <img [src]="selectedImage" alt="Preview" class="image-preview" />
+            <button
+              type="button"
+              class="btn-remove-image"
+              (click)="removeImage()"
+              title="Remove image"
+            >
+              <span class="material-icons">close</span>
+            </button>
+          </div>
+          <button
+            type="button"
+            class="btn-upload-new"
+            (click)="triggerFileInput()"
+          >
+            <span class="material-icons">edit</span>
+            Change Photo
+          </button>
+        </div>
+
+        <ng-template #noImage>
+          <button
+            type="button"
+            class="btn-upload-primary"
+            (click)="triggerFileInput()"
+          >
+            <span class="material-icons">cloud_upload</span>
+            Select Photo from Computer
+          </button>
+        </ng-template>
+
+        <div class="error-message" *ngIf="doctorForm.get('faceImage')?.touched && doctorForm.get('faceImage')?.hasError('required')">
+          Please upload a photo
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary btn-block btn-submit">
+        <span class="material-icons">check_circle</span>
+        Complete Setup
+      </button>
+    </form>
+  </div>
+</div>

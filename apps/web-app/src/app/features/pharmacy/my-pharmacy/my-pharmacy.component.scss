@@ -1,0 +1,142 @@
+.page {
+  display: grid;
+  gap: 1rem;
+}
+
+.page-header {
+  display: grid;
+  gap: 0.45rem;
+  justify-items: start;
+  margin-bottom: 0;
+}
+
+.header-copy h1 {
+  margin: 0;
+}
+
+.header-copy p {
+  margin: 0.25rem 0 0;
+  color: #5d7d7a;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+  max-width: 980px;
+  padding: 1.25rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field-title {
+  font-weight: 700;
+  color: #244945;
+}
+
+.field-hint {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #5a7471;
+}
+
+.field-error {
+  margin: 0;
+  color: #b52424;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='tel'],
+input[type='time'] {
+  border: 1px solid #c8d7e4;
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  font-size: 0.92rem;
+}
+
+.location-block {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.location-title {
+  margin: 0;
+  font-weight: 700;
+  color: #27514e;
+}
+
+.field-error {
+  margin: 0;
+  color: #b52424;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.mini-field {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: #41625f;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.btn-danger {
+  color: #ffffff;
+  background: #d96a73;
+  border-color: #cc5d67;
+}
+
+.success {
+  color: #1d7a2a;
+}
+
+.error {
+  color: #b52424;
+}
+
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .span-2 {
+    grid-column: span 1;
+  }
+
+  .hours-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,187 @@
+.claim-form {
+  max-width: 700px;
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    select,
+    textarea,
+    input[type="number"] {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: var(--bg);
+      color: var(--text);
+      resize: vertical;
+
+      &:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+      }
+    }
+  }
+}
+
+.reimbursement-preview {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #e4f4f3 0%, #d1fae5 100%);
+  border: 1px solid #a7ddd8;
+  border-radius: 12px;
+
+  .preview-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .preview-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .preview-label {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  .preview-amount {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+  }
+
+  .preview-detail {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    margin-top: 0.1rem;
+  }
+}
+
+.form-error {
+  color: var(--danger);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.form-hint {
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.file-upload-area {
+  margin-top: 0.25rem;
+}
+
+.file-upload-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: center;
+  color: var(--text-light);
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--primary);
+    background: rgba(99, 102, 241, 0.04);
+  }
+
+  span {
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  small {
+    font-size: 0.75rem;
+    color: var(--text-light);
+  }
+}
+
+.file-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  svg {
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .file-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    word-break: break-all;
+  }
+
+  .file-size {
+    font-size: 0.72rem;
+    color: var(--text-light);
+  }
+}
+
+.file-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 6px;
+  color: var(--text-light);
+  transition: color 0.15s, background 0.15s;
+
+  &:hover {
+    color: var(--danger);
+    background: rgba(239, 68, 68, 0.08);
+  }
+}

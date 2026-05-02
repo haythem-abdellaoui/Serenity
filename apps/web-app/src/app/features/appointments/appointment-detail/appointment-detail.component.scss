@@ -1,0 +1,265 @@
+.detail-page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.page-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.detail-card {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.reschedule-actions {
+  margin-top: 1rem;
+}
+
+.reschedule-panel .form-card {
+  max-width: none;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  label {
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.5rem 0.65rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+  }
+}
+
+.book-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(520px, 1.15fr);
+  gap: 1.5rem;
+  align-items: start;
+  max-width: 72rem;
+}
+
+.book-side {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(200px, 260px);
+  gap: 1rem;
+  align-items: start;
+}
+
+.cal-block {
+  min-width: 0;
+}
+
+.busy-wrap {
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .book-side {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .book-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cal-caption {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.cal-hint {
+  margin-bottom: 0.5rem;
+}
+
+.hint.muted {
+  opacity: 0.7;
+}
+
+.rules-hint {
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.hint.warn {
+  color: #b45309;
+  opacity: 1;
+}
+
+.tele-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tele-embed-wrap {
+  margin-top: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.tele-embed-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.tele-embed-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.tele-meeting-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 400px);
+  align-items: stretch;
+  min-height: min(62vh, 520px);
+  max-height: min(78vh, 720px);
+}
+
+.tele-meeting-pane {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #0d0d0d;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.tele-embed-frame {
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-height: 280px;
+  border: 0;
+  background: #1a1a1a;
+}
+
+.captions-card {
+  padding: 0.85rem 1rem 1rem;
+  background: #fff;
+  overflow: auto;
+  max-height: min(78vh, 720px);
+
+  h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+}
+
+.caption-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin: 0.35rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  cursor: pointer;
+
+  input {
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+  }
+}
+
+.transcript-area--translated {
+  min-height: 5.5rem;
+}
+
+@media (max-width: 960px) {
+  .tele-meeting-body {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .tele-meeting-pane {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    min-height: min(42vh, 380px);
+  }
+
+  .captions-card {
+    max-height: none;
+  }
+
+  .tele-embed-frame {
+    min-height: min(40vh, 360px);
+  }
+}
+
+.captions-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0.25rem;
+}
+
+.caption-status {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.transcript-area {
+  width: 100%;
+  margin-top: 0.35rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.translate-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+
+  label {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  select {
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+  }
+}
+
+.btn-sm {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.85rem;
+}
+
+.hint {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}

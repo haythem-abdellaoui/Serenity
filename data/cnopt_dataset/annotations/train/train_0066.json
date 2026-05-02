@@ -1,0 +1,474 @@
+{
+  "id": "train_0066",
+  "image": "images/train/train_0066.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Yasmine Dupont",
+    "registration_number": "FR-PHAR-597816",
+    "issue_date": "04/07/2024"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        105,
+        75,
+        161,
+        88
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        198,
+        60,
+        288,
+        81
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        298.203125,
+        60,
+        354.203125,
+        81
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        363.65625,
+        60,
+        566.65625,
+        81
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        198,
+        97,
+        274,
+        113
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        281.0,
+        97,
+        369.0,
+        113
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        198,
+        126,
+        268,
+        141
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        93,
+        232,
+        271,
+        252
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        280.9375,
+        232,
+        518.9375,
+        252
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        93,
+        303,
+        153,
+        321
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        160.984375,
+        304,
+        273.984375,
+        321
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        281.203125,
+        308,
+        326.203125,
+        326
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        334.046875,
+        309,
+        342.046875,
+        321
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        93,
+        351,
+        149,
+        369
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        156.640625,
+        352,
+        180.640625,
+        369
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        188.4375,
+        350,
+        281.4375,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        288.6875,
+        357,
+        296.6875,
+        369
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Yasmine",
+      "bbox": [
+        303,
+        351,
+        416,
+        369
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Dupont",
+      "bbox": [
+        424.640625,
+        351,
+        523.640625,
+        374
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        93,
+        398,
+        188,
+        417
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        195.96875,
+        399,
+        343.96875,
+        422
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        351.8125,
+        405,
+        359.8125,
+        417
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-597816",
+      "bbox": [
+        367,
+        399,
+        597,
+        417
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        93,
+        447,
+        130,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        137.703125,
+        446,
+        307.703125,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        314.875,
+        447,
+        421.875,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        429.53125,
+        452,
+        459.53125,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        466.078125,
+        447,
+        559.078125,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        566.6875,
+        447,
+        596.6875,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        604.3125,
+        447,
+        686.3125,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        693.921875,
+        447,
+        736.921875,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        744.046875,
+        447,
+        907.046875,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        93,
+        495,
+        150,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        157.984375,
+        495,
+        305.984375,
+        518
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        313.828125,
+        501,
+        321.828125,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": "04/07/2024",
+      "bbox": [
+        329,
+        495,
+        480,
+        515
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        93,
+        543,
+        148,
+        566
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        155.421875,
+        549,
+        163.421875,
+        561
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        171,
+        543,
+        262,
+        561
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        93,
+        680,
+        132,
+        697
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        138.859375,
+        679,
+        151.859375,
+        697
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Toulouse,",
+      "bbox": [
+        158.34375,
+        680,
+        262.34375,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        268.9375,
+        680,
+        288.9375,
+        697
+      ],
+      "label": "O"
+    },
+    {
+      "text": "04/07/2024",
+      "bbox": [
+        295.578125,
+        681,
+        422.578125,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        647,
+        738,
+        744,
+        757
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        749.859375,
+        737,
+        843.859375,
+        753
+      ],
+      "label": "O"
+    }
+  ]
+}

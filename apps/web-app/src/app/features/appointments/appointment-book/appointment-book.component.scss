@@ -1,0 +1,88 @@
+.form-card {
+  max-width: 32rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  label {
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 0.5rem 0.65rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+  }
+}
+
+.book-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(520px, 1.15fr);
+  gap: 1.5rem;
+  align-items: start;
+  max-width: 72rem;
+}
+
+.book-side {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(200px, 260px);
+  gap: 1rem;
+  align-items: start;
+}
+
+.cal-block {
+  min-width: 0;
+}
+
+.busy-wrap {
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .book-side {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .book-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.book-form.form-card {
+  max-width: none;
+}
+
+.book-calendar {
+  position: sticky;
+  top: 1rem;
+}
+
+.cal-caption {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.cal-hint {
+  margin-bottom: 0.5rem;
+}
+
+.hint {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+
+.hint.warn {
+  color: #b45309;
+  opacity: 1;
+}
+
+.rules-hint {
+  font-size: 0.82rem;
+  line-height: 1.35;
+}

@@ -1,0 +1,504 @@
+{
+  "id": "train_0106",
+  "image": "images/train/train_0106.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Marie Khelifi",
+    "registration_number": "FR-PHAR-924984",
+    "issue_date": "2025-06-28"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        82,
+        88,
+        138,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        175,
+        73,
+        290,
+        94
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        299.3125,
+        73,
+        432.3125,
+        94
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        442.03125,
+        73,
+        481.03125,
+        94
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        490.8125,
+        73,
+        599.8125,
+        94
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        609.1875,
+        73,
+        665.1875,
+        94
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        674.640625,
+        73,
+        877.640625,
+        94
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        175,
+        110,
+        251,
+        126
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        258.0,
+        110,
+        346.0,
+        126
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        175,
+        139,
+        245,
+        154
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        70,
+        245,
+        281,
+        265
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        290.546875,
+        245,
+        528.546875,
+        265
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        70,
+        316,
+        130,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        137.984375,
+        317,
+        250.984375,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        258.203125,
+        321,
+        303.203125,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        311.046875,
+        322,
+        319.046875,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        70,
+        364,
+        126,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        133.640625,
+        365,
+        157.640625,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        165.4375,
+        363,
+        258.4375,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        265.6875,
+        370,
+        273.6875,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marie",
+      "bbox": [
+        281,
+        364,
+        357,
+        382
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Khelifi",
+      "bbox": [
+        365.8125,
+        364,
+        451.8125,
+        382
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        70,
+        411,
+        165,
+        430
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        172.96875,
+        412,
+        320.96875,
+        435
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        328.8125,
+        418,
+        336.8125,
+        430
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-924984",
+      "bbox": [
+        344,
+        412,
+        574,
+        430
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        70,
+        460,
+        107,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        114.703125,
+        459,
+        284.703125,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        291.875,
+        460,
+        398.875,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        406.53125,
+        465,
+        436.53125,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        443.078125,
+        460,
+        536.078125,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        543.6875,
+        460,
+        573.6875,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        581.3125,
+        460,
+        663.3125,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        670.921875,
+        460,
+        713.921875,
+        478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        721.046875,
+        460,
+        884.046875,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        70,
+        508,
+        127,
+        526
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        134.984375,
+        508,
+        282.984375,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        290.828125,
+        514,
+        298.828125,
+        526
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-06-28",
+      "bbox": [
+        306,
+        508,
+        460,
+        526
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        70,
+        556,
+        125,
+        579
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        132.421875,
+        562,
+        140.421875,
+        574
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        148,
+        556,
+        239,
+        574
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        70,
+        693,
+        109,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        115.859375,
+        692,
+        128.859375,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Strasbourg,",
+      "bbox": [
+        136.34375,
+        693,
+        264.34375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        270.921875,
+        693,
+        290.921875,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-06-28",
+      "bbox": [
+        297.5625,
+        694,
+        425.5625,
+        710
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        670,
+        751,
+        767,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        772.859375,
+        750,
+        866.859375,
+        766
+      ],
+      "label": "O"
+    }
+  ]
+}

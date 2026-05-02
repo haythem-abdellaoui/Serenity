@@ -1,0 +1,109 @@
+<div class="reviews-container">
+  <div class="reviews-header">
+    <h3>Customer Reviews</h3>
+    <div class="rating-summary">
+      <div class="average-rating">
+        <span class="stars">★</span>
+        <span class="rating-value">{{ averageRating.toFixed(1) }}</span>
+        <span class="total-reviews">({{ reviews.length }} reviews)</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Review Form -->
+  <div class="review-form-section">
+    <h5>Write a Review</h5>
+    <form [formGroup]="reviewForm" (ngSubmit)="submitReview()" class="review-form">
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <div class="star-picker" (mouseleave)="clearHoverRating()">
+          <button
+            type="button"
+            class="star-btn"
+            *ngFor="let star of [1,2,3,4,5]"
+            [class.filled]="isStarFilled(star)"
+            [attr.aria-label]="'Rate ' + star + ' stars'"
+            (click)="setRating(star)"
+            (mouseenter)="setHoverRating(star)">
+            ★
+          </button>
+        </div>
+        <small class="form-text text-muted">Click a star to set your rating ({{ reviewForm.get('rating')?.value }}/5)</small>
+      </div>
+
+      <div class="form-group">
+        <label for="reviewText">Your Review</label>
+        <textarea 
+          id="reviewText" 
+          formControlName="reviewText" 
+          class="form-control"
+          rows="4"
+          placeholder="Share your experience with this product..."
+        ></textarea>
+        <small class="form-text text-muted">
+          {{ reviewForm.get('reviewText')?.value?.length || 0 }}/1000 characters
+        </small>
+        <small class="form-text text-danger" *ngIf="reviewForm.get('reviewText')?.touched && reviewForm.get('reviewText')?.hasError('maxlength')">
+          Review text must be 1000 characters or less.
+        </small>
+      </div>
+
+      <button 
+        type="submit" 
+        class="btn btn-primary"
+        [disabled]="submitting"
+      >
+        {{ submitting ? 'Submitting...' : 'Submit Review' }}
+      </button>
+    </form>
+  </div>
+
+  <!-- Reviews List -->
+  <div class="reviews-list">
+    <div *ngIf="loading" class="spinner">
+      Loading reviews...
+    </div>
+
+    <div *ngIf="!loading && reviews.length === 0" class="no-reviews">
+      <p>No reviews yet. Be the first to review!</p>
+    </div>
+
+    <div *ngIf="!loading && reviews.length > 0" class="review-items">
+      <div *ngFor="let review of reviews" class="review-item">
+        <div class="review-header">
+          <div class="reviewer-info">
+            <h6>{{ review.userEmail }}</h6>
+            <p class="review-rating">
+              <span class="stars">
+                <ng-container *ngFor="let star of getRatingArray(review.rating)">
+                  <span>{{ star ? '★' : '☆' }}</span>
+                </ng-container>
+              </span>
+              <span class="rating-text">{{ review.rating }}/5 stars</span>
+            </p>
+          </div>
+          <div class="review-date">
+            {{ review.createdAt | date: 'short' }}
+          </div>
+        </div>
+
+        <div class="review-text">
+          <p>{{ review.reviewText }}</p>
+        </div>
+
+        <div class="review-actions" *ngIf="isUserReview(review.userId)">
+          <button class="btn btn-sm btn-danger" (click)="deleteReview(review.id)">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

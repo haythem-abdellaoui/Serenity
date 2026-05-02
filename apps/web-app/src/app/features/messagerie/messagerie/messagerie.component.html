@@ -1,0 +1,193 @@
+<div class="main-content">
+  <div class="messagerie">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h3>Messages</h3>
+
+        <div class="search-wrapper">
+          <input
+            type="text"
+            placeholder="Search..."
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
+            (focus)="onFocusSearch()"
+            class="search-bar"
+          />
+          <button *ngIf="searchActive" class="cancel-btn" (click)="cancelSearch()">X</button>
+        </div>
+
+        <div *ngIf="searchActive && searchTerm.trim() && filteredUsers.length > 0" class="search-results">
+          <div
+            *ngFor="let user of filteredUsers"
+            class="search-user"
+            (click)="selectUser(user)"
+            (keydown.enter)="selectUser(user)"
+            (keydown.space)="selectUser(user)"
+          >
+            {{ user.firstName }} {{ user.lastName }}
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ✅ Show conversations regardless of searchActive so they appear after selecting a user -->
+      <div class="conversation-list">
+        <div
+          class="conversation"
+          *ngFor="let convo of filteredConversations"
+          [ngClass]="{ active: convo.id === activeConversationId }"
+          (click)="selectConversation(convo)"
+          (keydown.enter)="selectConversation(convo)"
+          (keydown.space)="selectConversation(convo)"
+          (contextmenu)="openConversationMenu($event, convo)"
+        >
+          <div class="avatar"></div>
+          <div class="conversation-info">
+            <div class="name">{{ convo.otherUserName }}</div>
+            <div class="last-message">{{ convo.lastMessage }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Context menu for conversation -->
+    <div
+      class="context-menu"
+      *ngIf="conversationMenuVisible"
+      [style.top.px]="conversationMenuY"
+      [style.left.px]="conversationMenuX"
+      (click)="$event.stopPropagation()"
+      (keydown)="$event.stopPropagation()"
+    >
+      <div
+        class="menu-item delete"
+        (click)="deleteConversationClicked()"
+        (keydown.enter)="deleteConversationClicked()"
+        (keydown.space)="deleteConversationClicked()"
+      >
+        Delete this conversation
+      </div>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-area" *ngIf="activeConversationId">
+      <div class="chat-header">
+        <div class="avatar"></div>
+        <div class="chat-name">{{ activeConversationName }}</div>
+      </div>
+
+      <!-- In-conversation message search -->
+      <div class="conversation-search-panel">
+        <div class="keyword-search-wrapper">
+          <input
+            type="text"
+            placeholder="Search messages in this conversation..."
+            [(ngModel)]="keywordSearchTerm"
+            (input)="onKeywordSearch()"
+            (focus)="onKeywordSearchFocus()"
+            class="keyword-search-bar"
+          />
+          <button *ngIf="keywordSearchTerm" class="cancel-btn" (click)="cancelKeywordSearch()">X</button>
+        </div>
+
+        <div *ngIf="keywordSearchActive && keywordSearchLoading" class="keyword-search-loading">
+          <span class="loader"></span> Searching messages...
+        </div>
+
+        <div *ngIf="keywordSearchActive && keywordSearchTerm.trim() && keywordSearchResults.length > 0" class="keyword-search-results">
+          <div
+            *ngFor="let result of keywordSearchResults"
+            class="search-result-item"
+            (click)="selectSearchResult(result)"
+            (keydown.enter)="selectSearchResult(result)"
+            (keydown.space)="selectSearchResult(result)"
+          >
+            <div class="result-header">
+              <div class="participants">{{ result.participants }}</div>
+              <span class="match-count">{{ result.matchCount }} match{{ result.matchCount !== 1 ? 'es' : '' }}</span>
+            </div>
+            <div class="result-preview">{{ result.lastMatchingMessage || 'Message preview unavailable' }}</div>
+          </div>
+        </div>
+
+        <div *ngIf="keywordSearchActive && keywordSearchTerm.trim() && !keywordSearchLoading && keywordSearchResults.length === 0" class="no-results">
+          No messages found in this conversation
+        </div>
+      </div>
+
+      <!-- Conversation Analysis Section -->
+      <div class="analysis-container" *ngIf="(analysisLoading || conversationAnalysis) && authService.hasRole('DOCTOR') ">
+        <div *ngIf="analysisLoading" class="analysis-loading">
+          <span class="loader"></span> Analyzing conversation...
+        </div>
+        <div *ngIf="conversationAnalysis && !analysisLoading" [ngClass]="['analysis-result', analysisBadgeClass]">
+          <div class="analysis-prediction">
+            <span class="prediction-badge">{{ conversationAnalysis.prediction }}</span>
+            <span class="confidence-score">Confidence: {{ (conversationAnalysis.confidence * 100).toFixed(1) }}%</span>
+            <button class="analyze-btn" (click)="loadConversationAnalysis(activeConversationId!)" [disabled]="analysisLoading">
+              🔄 Analyse with AI
+            </button>
+          </div>
+          <div class="analysis-message">{{ analysisMessage }}</div>
+        </div>
+      </div>
+
+      <div class="messages" #messagesContainer>
+        <div
+          class="message"
+          *ngFor="let msg of messages; let i = index"
+          [ngClass]="msg.type"
+          (contextmenu)="openMenu($event, i)"
+        >
+          <div class="bubble" *ngIf="editingIndex !== i" (dblclick)="startEdit(i)">
+            {{ msg.text }}
+          </div>
+
+          <input
+            *ngIf="editingIndex === i"
+            type="text"
+            [(ngModel)]="editText"
+            (keyup.enter)="saveEditMessage(i)"
+            (blur)="cancelEdit()"
+            placeholder="Edit message"
+            title="Edit message"
+            class="edit-input"
+            autofocus
+          />
+        </div>
+      </div>
+
+      <!-- Context menu for message -->
+      <div
+        class="context-menu"
+        *ngIf="menuVisible"
+        [style.top.px]="menuY"
+        [style.left.px]="menuX"
+        (click)="$event.stopPropagation()"
+        (keydown)="$event.stopPropagation()"
+      >
+        <div
+          class="menu-item delete"
+          (click)="removeMessage()"
+          (keydown.enter)="removeMessage()"
+          (keydown.space)="removeMessage()"
+        >
+          Delete Message
+        </div>
+      </div>
+
+      <div class="message-input">
+        <input
+          type="text"
+          [(ngModel)]="messageContent"
+          (keyup.enter)="sendMessage()"
+          placeholder="Type a message..."
+        />
+        <button class="send-btn" (click)="sendMessage()">Send</button>
+      </div>
+    </div>
+
+  </div>
+</div>

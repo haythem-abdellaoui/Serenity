@@ -1,0 +1,514 @@
+{
+  "id": "test_0006",
+  "image": "images/test/test_0006.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Ordre des Pharmaciens",
+    "pharmacist_name": "Julie Chevalier",
+    "registration_number": "FR-PHAR-939995",
+    "issue_date": "2025-12-02"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        94,
+        93,
+        150,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ordre",
+      "bbox": [
+        187,
+        78,
+        277,
+        99
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        287.203125,
+        78,
+        343.203125,
+        99
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        352.65625,
+        78,
+        555.65625,
+        99
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        187,
+        115,
+        263,
+        131
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        270.0,
+        115,
+        358.0,
+        131
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        187,
+        144,
+        257,
+        159
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        82,
+        250,
+        293,
+        270
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        302.546875,
+        250,
+        540.546875,
+        270
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AU",
+      "bbox": [
+        550.015625,
+        250,
+        594.015625,
+        270
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TABLEAU",
+      "bbox": [
+        603.3125,
+        250,
+        743.3125,
+        270
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DE",
+      "bbox": [
+        753.515625,
+        250,
+        795.515625,
+        270
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L’ORDRE",
+      "bbox": [
+        805.640625,
+        250,
+        936.640625,
+        270
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        82,
+        321,
+        142,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        149.984375,
+        322,
+        262.984375,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        270.203125,
+        326,
+        315.203125,
+        344
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        323.046875,
+        327,
+        331.046875,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        82,
+        369,
+        138,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        145.640625,
+        370,
+        169.640625,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        177.4375,
+        368,
+        270.4375,
+        392
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        277.6875,
+        375,
+        285.6875,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Julie",
+      "bbox": [
+        291,
+        369,
+        352,
+        392
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Chevalier",
+      "bbox": [
+        360.140625,
+        369,
+        488.140625,
+        387
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        82,
+        416,
+        177,
+        435
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        184.96875,
+        417,
+        332.96875,
+        440
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        340.8125,
+        423,
+        348.8125,
+        435
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-939995",
+      "bbox": [
+        356,
+        417,
+        586,
+        435
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        82,
+        465,
+        119,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        126.703125,
+        464,
+        296.703125,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        303.875,
+        465,
+        410.875,
+        486
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        418.53125,
+        470,
+        448.53125,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        455.078125,
+        465,
+        548.078125,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        555.6875,
+        465,
+        585.6875,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        593.3125,
+        465,
+        675.3125,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        682.921875,
+        465,
+        725.921875,
+        483
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        733.046875,
+        465,
+        896.046875,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        82,
+        513,
+        139,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        146.984375,
+        513,
+        294.984375,
+        536
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        302.828125,
+        519,
+        310.828125,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-12-02",
+      "bbox": [
+        318,
+        513,
+        472,
+        531
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        82,
+        561,
+        137,
+        584
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        144.421875,
+        567,
+        152.421875,
+        579
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        160,
+        561,
+        251,
+        579
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        82,
+        698,
+        121,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        127.859375,
+        697,
+        140.859375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nantes,",
+      "bbox": [
+        148.34375,
+        699,
+        233.34375,
+        717
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        239.84375,
+        698,
+        259.84375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-12-02",
+      "bbox": [
+        266.484375,
+        699,
+        394.484375,
+        715
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        658,
+        756,
+        755,
+        775
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        760.859375,
+        755,
+        854.859375,
+        771
+      ],
+      "label": "O"
+    }
+  ]
+}

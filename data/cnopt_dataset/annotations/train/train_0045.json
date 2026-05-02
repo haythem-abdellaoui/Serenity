@@ -1,0 +1,504 @@
+{
+  "id": "train_0045",
+  "image": "images/train/train_0045.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Amine Dubois",
+    "registration_number": "FR-PHAR-504573",
+    "issue_date": "2025-06-08"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        107,
+        87,
+        163,
+        100
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        200,
+        72,
+        315,
+        93
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        324.3125,
+        72,
+        457.3125,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        467.03125,
+        72,
+        506.03125,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        515.8125,
+        72,
+        624.8125,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        634.1875,
+        72,
+        690.1875,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        699.640625,
+        72,
+        902.640625,
+        93
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        200,
+        109,
+        276,
+        125
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        283.0,
+        109,
+        371.0,
+        125
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        200,
+        138,
+        270,
+        153
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "CERTIFICAT",
+      "bbox": [
+        95,
+        244,
+        273,
+        264
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        282.9375,
+        244,
+        520.9375,
+        264
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        95,
+        315,
+        155,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        162.984375,
+        316,
+        275.984375,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        283.203125,
+        320,
+        328.203125,
+        338
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        336.046875,
+        321,
+        344.046875,
+        333
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        95,
+        363,
+        151,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        158.640625,
+        364,
+        182.640625,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        190.4375,
+        362,
+        283.4375,
+        386
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        290.6875,
+        369,
+        298.6875,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Amine",
+      "bbox": [
+        306,
+        363,
+        391,
+        381
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Dubois",
+      "bbox": [
+        399.5625,
+        363,
+        492.5625,
+        381
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        95,
+        410,
+        190,
+        429
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        197.96875,
+        411,
+        345.96875,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        353.8125,
+        417,
+        361.8125,
+        429
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FR-PHAR-504573",
+      "bbox": [
+        369,
+        411,
+        599,
+        429
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Document",
+      "bbox": [
+        95,
+        459,
+        219,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "délivré",
+      "bbox": [
+        226.984375,
+        458,
+        308.984375,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        316.265625,
+        458,
+        331.265625,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "titre",
+      "bbox": [
+        338.59375,
+        459,
+        388.59375,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        395.8125,
+        459,
+        425.8125,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preuve",
+      "bbox": [
+        433.4375,
+        464,
+        517.4375,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        524.59375,
+        459,
+        672.59375,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        680.4375,
+        464,
+        710.4375,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau.",
+      "bbox": [
+        716.984375,
+        459,
+        817.984375,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        95,
+        507,
+        152,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        159.984375,
+        507,
+        307.984375,
+        530
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        315.828125,
+        513,
+        323.828125,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-06-08",
+      "bbox": [
+        331,
+        507,
+        485,
+        525
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        95,
+        555,
+        150,
+        578
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        157.421875,
+        561,
+        165.421875,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        173,
+        555,
+        264,
+        573
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        95,
+        692,
+        134,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        140.859375,
+        691,
+        153.859375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Paris,",
+      "bbox": [
+        161.34375,
+        692,
+        220.34375,
+        711
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        227.734375,
+        692,
+        247.734375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025-06-08",
+      "bbox": [
+        254.375,
+        693,
+        382.375,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        645,
+        750,
+        742,
+        769
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        747.859375,
+        749,
+        841.859375,
+        765
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+<div class="verification-page">
+  <header class="verification-topbar">
+    <a class="verification-brand" href="/">
+      <img src="assets/logo.png" alt="Serenity" class="verification-brand-logo" />
+      <span>Serenity</span>
+    </a>
+  </header>
+
+  <div class="verification-container">
+    <div class="verification-card card">
+      <!-- Header -->
+      <div class="verification-header">
+        <div class="verification-icon">
+          <span class="material-icons">verified_user</span>
+        </div>
+        <h1>Doctor Verification</h1>
+        <p>Complete your professional credentials verification</p>
+      </div>
+
+      <!-- Progress Indicator -->
+      <div class="progress-indicator">
+        <div class="progress-steps">
+          <div class="step" [class.active]="currentStep >= 1" [class.completed]="currentStep > 1">
+            <span>1</span>
+            <p>ID & License</p>
+          </div>
+          <div class="progress-line" [class.active]="currentStep > 1"></div>
+          <div class="step" [class.active]="currentStep >= 2" [class.completed]="currentStep > 2">
+            <span>2</span>
+            <p>Documents</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alert Messages -->
+      <div *ngIf="errorMessage" class="alert alert-error fade-in">
+        <span class="material-icons">error</span>
+        {{ errorMessage }}
+      </div>
+
+      <div *ngIf="successMessage" class="alert alert-success fade-in">
+        <span class="material-icons">check_circle</span>
+        {{ successMessage }}
+      </div>
+
+      <form [formGroup]="verificationForm" (ngSubmit)="onSubmit()">
+        <!-- Step 1: ID & License -->
+        <div class="form-step" *ngIf="currentStep === 1">
+          <div class="step-content">
+            <h2>Step 1: Professional Information</h2>
+            <p class="step-description">Please provide your license and national identification numbers</p>
+
+            <div class="form-group">
+              <label for="licenseNumber">
+                <span class="material-icons">badge</span>
+                License Number
+                <span class="required">*</span>
+              </label>
+              <input
+                id="licenseNumber"
+                type="text"
+                formControlName="licenseNumber"
+                placeholder="Enter your medical license number"
+                class="input-with-icon"
+              />
+              <div class="error-message" *ngIf="licenseNumber?.touched && licenseNumber?.hasError('required')">
+                <span class="material-icons">close</span>
+                License number is required
+              </div>
+              <div class="error-message" *ngIf="licenseNumber?.touched && licenseNumber?.hasError('minlength')">
+                <span class="material-icons">close</span>
+                License number must be at least 5 characters
+              </div>
+              <div class="error-message" *ngIf="licenseNumber?.touched && licenseNumber?.hasError('pattern')">
+                <span class="material-icons">close</span>
+                License number can't have special characters
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <label for="nationalId">
+                <span class="material-icons">perm_identity</span>
+                National ID
+                <span class="required">*</span>
+              </label>
+              <input
+                id="nationalId"
+                type="text"
+                formControlName="nationalId"
+                placeholder="Enter your national identification number"
+                class="input-with-icon"
+              />
+              <div class="error-message" *ngIf="nationalId?.touched && nationalId?.hasError('required')">
+                <span class="material-icons">close</span>
+                National ID is required
+              </div>
+              <div class="error-message" *ngIf="nationalId?.touched && nationalId?.hasError('minlength')">
+                <span class="material-icons">close</span>
+                National ID must be 8 characters
+              </div>
+              <div class="error-message" *ngIf="nationalId?.touched && nationalId?.hasError('pattern')">
+                <span class="material-icons">close</span>
+                National ID must be a valid number
+              </div>
+              <div class="error-message" *ngIf="nationalId?.touched && nationalId?.hasError('maxlength')">
+                <span class="material-icons">close</span>
+                National ID must be 8 characters
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="prevStep()"
+                disabled
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="nextStep()"
+                [disabled]="!licenseNumber?.valid || !nationalId?.valid"
+              >
+                Next Step
+                <span class="material-icons">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Documents -->
+        <div class="form-step" *ngIf="currentStep === 2">
+          <div class="step-content">
+            <h2>Step 2: Upload Documents</h2>
+            <p class="step-description">Upload your CV and diploma in PDF or image format (Max 5MB each)</p>
+
+            <!-- CV Upload -->
+            <div class="form-group">
+              <label class="file-upload-label">
+                <span class="material-icons">description</span>
+                Curriculum Vitae (CV)
+                <span class="required">*</span>
+              </label>
+
+              <div
+                class="file-drag-drop"
+                [class.drag-over]="cvDragOver"
+                (dragover)="onCvDragOver($event)"
+                (dragleave)="onCvDragLeave()"
+                (drop)="onCvDropped($event)"
+                (click)="cvInput.click()"
+                (keydown.enter)="cvInput.click()"
+                (keydown.space)="cvInput.click()"
+              >
+                <div *ngIf="!cvFile" class="drop-content">
+                  <span class="material-icons">cloud_upload</span>
+                  <p class="drop-text">Drag and drop your CV here</p>
+                  <p class="drop-subtext">or</p>
+                  <button type="button" class="btn-browse">Browse Files</button>
+                  <p class="file-formats">PDF, PNG, JPG (Max 5MB)</p>
+                </div>
+
+                <div *ngIf="cvFile" class="file-content">
+                  <div class="file-preview" *ngIf="cvPreview">
+                    <img [src]="cvPreview" alt="CV Preview" class="preview-image" />
+                  </div>
+                  <div *ngIf="!cvPreview" class="file-icon">
+                    <span class="material-icons">picture_as_pdf</span>
+                  </div>
+                  <div class="file-info">
+                    <p class="file-name">{{ getFileName(cvFile) }}</p>
+                    <p class="file-size">{{ getFileSize(cvFile) }}</p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-remove"
+                    (click)="removeCv()"
+                    title="Remove file"
+                  >
+                    <span class="material-icons">close</span>
+                  </button>
+                </div>
+              </div>
+
+              <input
+                #cvInput
+                type="file"
+                accept=".pdf,.png,.jpg,.jpeg"
+                (change)="onCvSelected($event)"
+                style="display: none"
+              />
+
+              <div class="error-message" *ngIf="verificationForm.get('cv')?.touched && verificationForm.get('cv')?.hasError('required')">
+                <span class="material-icons">close</span>
+                CV is required
+              </div>
+            </div>
+
+            <!-- Diploma Upload -->
+            <div class="form-group">
+              <label class="file-upload-label">
+                <span class="material-icons">school</span>
+                Diploma
+                <span class="required">*</span>
+              </label>
+
+              <div
+                class="file-drag-drop"
+                [class.drag-over]="diplomaDragOver"
+                (dragover)="onDiplomaDragOver($event)"
+                (dragleave)="onDiplomaDragLeave()"
+                (drop)="onDiplomaDropped($event)"
+                (click)="diplomaInput.click()"
+                (keydown.enter)="diplomaInput.click()"
+                (keydown.space)="diplomaInput.click()"
+              >
+                <div *ngIf="!diplomaFile" class="drop-content">
+                  <span class="material-icons">cloud_upload</span>
+                  <p class="drop-text">Drag and drop your diploma here</p>
+                  <p class="drop-subtext">or</p>
+                  <button type="button" class="btn-browse">Browse Files</button>
+                  <p class="file-formats">PDF, PNG, JPG (Max 5MB)</p>
+                </div>
+
+                <div *ngIf="diplomaFile" class="file-content">
+                  <div class="file-preview" *ngIf="diplomaPreview">
+                    <img [src]="diplomaPreview" alt="Diploma Preview" class="preview-image" />
+                  </div>
+                  <div *ngIf="!diplomaPreview" class="file-icon">
+                    <span class="material-icons">picture_as_pdf</span>
+                  </div>
+                  <div class="file-info">
+                    <p class="file-name">{{ getFileName(diplomaFile) }}</p>
+                    <p class="file-size">{{ getFileSize(diplomaFile) }}</p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-remove"
+                    (click)="removeDiploma()"
+                    title="Remove file"
+                  >
+                    <span class="material-icons">close</span>
+                  </button>
+                </div>
+              </div>
+
+              <input
+                #diplomaInput
+                type="file"
+                accept=".pdf,.png,.jpg,.jpeg"
+                (change)="onDiplomaSelected($event)"
+                style="display: none"
+              />
+
+              <div class="error-message" *ngIf="verificationForm.get('diploma')?.touched && verificationForm.get('diploma')?.hasError('required')">
+                <span class="material-icons">close</span>
+                Diploma is required
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="prevStep()"
+              >
+                <span class="material-icons">arrow_back</span>
+                Back
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="verificationForm.invalid || loading"
+              >
+                <span *ngIf="loading" class="spinner"></span>
+                <span *ngIf="!loading">Submit Verification</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Info Cards -->
+    <div class="info-cards">
+      <div class="info-card">
+        <span class="material-icons">lock</span>
+        <h3>Secure & Private</h3>
+        <p>Your documents are encrypted and securely stored</p>
+      </div>
+      <div class="info-card">
+        <span class="material-icons">schedule</span>
+        <h3>Quick Review</h3>
+        <p>Usually reviewed within 24-48 hours</p>
+      </div>
+      <div class="info-card">
+        <span class="material-icons">support_agent</span>
+        <h3>Support</h3>
+        <p>Contact us if you need assistance</p>
+      </div>
+    </div>
+  </div>
+</div>

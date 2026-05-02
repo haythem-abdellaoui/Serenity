@@ -1,0 +1,30 @@
+<div
+  class="confirm-backdrop"
+  *ngIf="open"
+  (click)="onBackdropClick($event)"
+  (keydown.enter)="cancel.emit()"
+  (keydown.space)="cancel.emit()"
+  role="presentation"
+  aria-hidden="true">
+  <div
+    class="confirm-dialog"
+    role="alertdialog"
+    [attr.aria-labelledby]="'confirm-title'"
+    [attr.aria-describedby]="'confirm-desc'"
+    (click)="$event.stopPropagation()"
+    (keydown)="$event.stopPropagation()">
+    <h2 id="confirm-title" class="confirm-title">{{ title }}</h2>
+    <p id="confirm-desc" class="confirm-message">{{ message }}</p>
+    <div class="confirm-actions">
+      <button type="button" class="btn btn-secondary" (click)="cancel.emit()">{{ cancelLabel }}</button>
+      <button
+        type="button"
+        class="btn"
+        [ngClass]="danger ? 'btn-danger' : 'btn-primary'"
+        (click)="confirm.emit()">
+        {{ confirmLabel }}
+      </button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,4 @@
+clip_id,audio_path,transcript,source_notes
+SE-CAL-440,audio/serenity_eval_tone_440.wav,,"Bundled synthetic calibration tone (440 Hz, mono 16 kHz). Same layout as LibriSpeech-style manifests."
+SE-CAL-880,audio/serenity_eval_tone_880.wav,,Bundled synthetic calibration tone (880 Hz).
+SE-SIL-05,audio/serenity_eval_silence_0p5s.wav,,Bundled silence clip (noise-floor / pipeline check).

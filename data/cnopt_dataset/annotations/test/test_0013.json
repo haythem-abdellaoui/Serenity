@@ -1,0 +1,544 @@
+{
+  "id": "test_0013",
+  "image": "images/test/test_0013.png",
+  "document_type": "pharmacist_registration_certificate",
+  "country": "France",
+  "entities": {
+    "authority_name": "Conseil National de l'Ordre des Pharmaciens",
+    "pharmacist_name": "Antoine Dupont",
+    "registration_number": "ORD-22-2022-5508",
+    "issue_date": "13 mars 2022"
+  },
+  "tokens": [
+    {
+      "text": "LOGO",
+      "bbox": [
+        97,
+        73,
+        153,
+        86
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        190,
+        58,
+        305,
+        79
+      ],
+      "label": "B-AUTHORITY"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        314.3125,
+        58,
+        447.3125,
+        79
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        457.03125,
+        58,
+        496.03125,
+        79
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "l'Ordre",
+      "bbox": [
+        505.8125,
+        58,
+        614.8125,
+        79
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        624.1875,
+        58,
+        680.1875,
+        79
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Pharmaciens",
+      "bbox": [
+        689.640625,
+        58,
+        892.640625,
+        79
+      ],
+      "label": "I-AUTHORITY"
+    },
+    {
+      "text": "Conseil",
+      "bbox": [
+        190,
+        95,
+        266,
+        111
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "bbox": [
+        273.0,
+        95,
+        361.0,
+        111
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        190,
+        124,
+        260,
+        139
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "ATTESTATION",
+      "bbox": [
+        85,
+        230,
+        296,
+        250
+      ],
+      "label": "O"
+    },
+    {
+      "text": "D’INSCRIPTION",
+      "bbox": [
+        305.546875,
+        230,
+        543.546875,
+        250
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nous",
+      "bbox": [
+        85,
+        301,
+        145,
+        319
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attestons",
+      "bbox": [
+        152.984375,
+        302,
+        265.984375,
+        319
+      ],
+      "label": "O"
+    },
+    {
+      "text": "que",
+      "bbox": [
+        273.203125,
+        306,
+        318.203125,
+        324
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        326.046875,
+        307,
+        334.046875,
+        319
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nom",
+      "bbox": [
+        85,
+        349,
+        141,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "et",
+      "bbox": [
+        148.640625,
+        350,
+        172.640625,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prénom",
+      "bbox": [
+        180.4375,
+        348,
+        273.4375,
+        372
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        280.6875,
+        355,
+        288.6875,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Antoine",
+      "bbox": [
+        296,
+        349,
+        401,
+        367
+      ],
+      "label": "B-NAME"
+    },
+    {
+      "text": "Dupont",
+      "bbox": [
+        409.59375,
+        349,
+        508.59375,
+        372
+      ],
+      "label": "I-NAME"
+    },
+    {
+      "text": "Numéro",
+      "bbox": [
+        85,
+        396,
+        180,
+        415
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        187.96875,
+        397,
+        335.96875,
+        420
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        343.8125,
+        403,
+        351.8125,
+        415
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ORD-22-2022-5508",
+      "bbox": [
+        359,
+        397,
+        615,
+        415
+      ],
+      "label": "B-REG_NUMBER"
+    },
+    {
+      "text": "Est",
+      "bbox": [
+        85,
+        445,
+        122,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "régulièrement",
+      "bbox": [
+        129.703125,
+        444,
+        299.703125,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inscrit(e)",
+      "bbox": [
+        306.875,
+        445,
+        413.875,
+        466
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "bbox": [
+        421.53125,
+        450,
+        451.53125,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tableau",
+      "bbox": [
+        458.078125,
+        445,
+        551.078125,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "de",
+      "bbox": [
+        558.6875,
+        445,
+        588.6875,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "l’Ordre",
+      "bbox": [
+        596.3125,
+        445,
+        678.3125,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "des",
+      "bbox": [
+        685.921875,
+        445,
+        728.921875,
+        463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pharmaciens.",
+      "bbox": [
+        736.046875,
+        445,
+        899.046875,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        85,
+        493,
+        142,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d’inscription",
+      "bbox": [
+        149.984375,
+        493,
+        297.984375,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        305.828125,
+        499,
+        313.828125,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "13",
+      "bbox": [
+        321,
+        493,
+        354,
+        511
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "mars",
+      "bbox": [
+        362.765625,
+        498,
+        429.765625,
+        511
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "2022",
+      "bbox": [
+        438.46875,
+        493,
+        505.46875,
+        511
+      ],
+      "label": "I-ISSUE_DATE"
+    },
+    {
+      "text": "Pays",
+      "bbox": [
+        85,
+        541,
+        140,
+        564
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "bbox": [
+        147.421875,
+        547,
+        155.421875,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "France",
+      "bbox": [
+        163,
+        541,
+        254,
+        559
+      ],
+      "label": "B-COUNTRY"
+    },
+    {
+      "text": "Fait",
+      "bbox": [
+        85,
+        678,
+        124,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "à",
+      "bbox": [
+        130.859375,
+        677,
+        143.859375,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Paris,",
+      "bbox": [
+        151.34375,
+        678,
+        210.34375,
+        697
+      ],
+      "label": "O"
+    },
+    {
+      "text": "le",
+      "bbox": [
+        217.734375,
+        678,
+        237.734375,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "13",
+      "bbox": [
+        244.375,
+        679,
+        272.375,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mars",
+      "bbox": [
+        279.375,
+        683,
+        334.375,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2022",
+      "bbox": [
+        341.8125,
+        679,
+        397.8125,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        655,
+        736,
+        752,
+        755
+      ],
+      "label": "O"
+    },
+    {
+      "text": "autorisée",
+      "bbox": [
+        757.859375,
+        735,
+        851.859375,
+        751
+      ],
+      "label": "O"
+    }
+  ]
+}
